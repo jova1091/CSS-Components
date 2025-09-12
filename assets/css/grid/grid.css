@@ -1,0 +1,125 @@
+@import url("root.css") layer(layout.vars);
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 var(--grid-col-x-gap);
+}
+
+.container-full {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 var(--grid-col-x-gap);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  gap: var(--grid-col-y-gap) var(--grid-col-x-gap);
+  line-break: anywhere;
+  hyphens: auto;
+}
+
+.col-1 {
+  grid-column-end: span 1;
+}
+.col-2 {
+  grid-column-end: span 2;
+}
+.col-3 {
+  grid-column-end: span 3;
+}
+.col-4 {
+  grid-column-end: span 4;
+}
+.col-5 {
+  grid-column-end: span 5;
+}
+.col-6 {
+  grid-column-end: span 6;
+}
+.col-7 {
+  grid-column-end: span 7;
+}
+.col-8 {
+  grid-column-end: span 8;
+}
+.col-9 {
+  grid-column-end: span 9;
+}
+.col-10 {
+  grid-column-end: span 10;
+}
+.col-11 {
+  grid-column-end: span 11;
+}
+.col-12 {
+  grid-column-end: span 12;
+}
+
+.offset-1 {
+  grid-column-start: 2;
+}
+.offset-2 {
+  grid-column-start: 3;
+}
+.offset-3 {
+  grid-column-start: 4;
+}
+.offset-4 {
+  grid-column-start: 5;
+}
+.offset-5 {
+  grid-column-start: 6;
+}
+.offset-6 {
+  grid-column-start: 7;
+}
+.offset-7 {
+  grid-column-start: 8;
+}
+.offset-8 {
+  grid-column-start: 9;
+}
+.offset-9 {
+  grid-column-start: 10;
+}
+.offset-10 {
+  grid-column-start: 11;
+}
+.offset-11 {
+  grid-column-start: 12;
+}
+
+/* Laptop */
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  /* Add tablet-specific styles here. For example, you could change the number of columns. */
+  /* .row { grid-template-columns: repeat(8, 1fr); } */
+}
+
+/* Mobile */
+@media screen and (max-width: 425px) {
+  .container {
+    margin: 0;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  /* 
+    Explicitly reset all column and offset classes to span the full width on mobile.
+    This ensures that any combination of col-* and offset-* will stack correctly.
+  */
+  [class*="col-"],
+  [class*="offset-"] {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,9 @@
+:root {
+  /* Spacers */
+  --spacer-0: 0;
+  --spacer-1: min(0.25em, 1%);
+  --spacer-2: min(0.5em, 2%);
+  --spacer-3: min(1em, 3%);
+  --spacer-4: min(1.5em, 4%);
+  --spacer-5: min(3em, 6%);
+}

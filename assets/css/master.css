@@ -1,2 +1,11 @@
-@import url("grid.css");
-@import url("spacers.css");
+@layer layout, utilities;
+
+@import url("/assets/css/grid/grid.css") layer(layout);
+@import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
+
+body,
+main {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+}

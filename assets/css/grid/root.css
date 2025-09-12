@@ -1,0 +1,12 @@
+:root {
+  /* Grid */
+  --grid-cols: 12;
+  --grid-col-x-gap: 20px;
+  --grid-col-y-gap: 20px;
+
+  /* Breakpoints (based on Google DevTools) */
+  --breakpoint-xs: 425px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+}
