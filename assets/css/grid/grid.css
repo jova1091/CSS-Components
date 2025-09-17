@@ -22,7 +22,8 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-cols), 1fr);
   gap: var(--grid-col-y-gap) var(--grid-col-x-gap);
-  line-break: anywhere;
+  line-break: auto;
+  word-break: normal;
   hyphens: auto;
 }
 

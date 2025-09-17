@@ -17,21 +17,110 @@
     <div class="container-full">
       <section class="row">
         <article class="col-6">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolorem eveniet
-          quibusdam consequatur harum blanditiis tempora impedit dolores nesciunt facere, aperiam aliquam, id
-          perferendis facilis ullam porro sit expedita unde?
+          <h1>Heading 1</h1>
+          <p>This is a paragraph of text. It demonstrates the base font styles, size, and line height. You can also
+            include <a href="#">links</a> within your text, and they will be styled appropriately.</p>
+          <h2>Heading 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolorem eveniet quibusdam consequatur harum
+            blanditiis tempora impedit dolores nesciunt facere.</p>
         </article>
-        <article class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquam eum nulla
-          laboriosam excepturi qui magni voluptatibus nobis ab deserunt pariatur sit amet alias, cupiditate incidunt
-          aperiam, velit, culpa ipsam.</article>
-        <article class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquam eum nulla
-          laboriosam excepturi qui magni voluptatibus nobis ab deserunt pariatur sit amet alias, cupiditate incidunt
-          aperiam, velit, culpa ipsam.</article>
-        <article class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquam eum nulla
-          laboriosam excepturi qui magni voluptatibus nobis ab deserunt pariatur sit amet alias, cupiditate incidunt
-          aperiam, velit, culpa ipsam.</article>
+        <article class="col-6">
+          <h3>Heading 3</h3>
+          <p>This section shows how lists are styled. They have consistent padding and margin.</p>
+          <ul>
+            <li>Unordered list item 1.</li>
+            <li>Unordered list item 2.
+              <ul>
+                <li>Nested item.
+                  <ul>
+                    <li>Deeper nested item.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="row">
+        <article class="col-12">
+          <h4>Inline Text Elements</h4>
+          <p>
+            This paragraph includes <b>bold text (b)</b> and <strong>strong text (strong)</strong>. You can also have
+            <i>italic text (i)</i> or <em>emphasized text (em)</em>. For smaller text, use the <small>small</small> tag.
+            If you need to <mark>highlight</mark> something, the mark tag is perfect. This is <u>underlined text
+              (u)</u> and this is <s>strikethrough text (s)</s>. Finally, here is some inline <code>code</code>, a
+            keyboard
+            shortcut <kbd>Ctrl+C</kbd>, and some <samp>sample output</samp>.
+          </p>
+        </article>
       </section>
     </div>
+    <section class="container">
+      <article class="row">
+        <div class="col-12">
+          <h2>All Heading Levels</h2>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+          <hr>
+          <h2>Display Headings</h2>
+          <p>For creating extra-large, high-impact titles. Below, <code>.display-1</code> has a custom padding and
+            border applied as an example of specific customization.</p>
+          <h1 class="display-1">Display 1</h1>
+          <h1 class="display-2">Display 2</h1>
+          <h1 class="display-3">Display 3</h1>
+          <h1 class="display-4">Display 4</h1>
+          <hr>
+          <h2>Text Utilities</h2>
+          <p class="lead">This is a lead paragraph. It's perfect for making an introduction or summary stand out with a
+            larger font size and lighter weight.</p>
+          <p>This is a regular paragraph for comparison. Below is an example of meta text, ideal for dates, authors, or
+            other secondary information.</p>
+          <p class="meta">Published on October 26, 2023 by JOVA1091.</p>
+          <hr>
+          <h2>Block-level & Special Text</h2>
+          <blockquote>
+            <p>This is a blockquote. It is used for citing content from another source. It has a distinctive style to
+              set it apart from regular paragraphs.</p>
+            <footer>Someone famous in <cite>Source Title</cite></footer>
+          </blockquote>
+          <p>This is a definition list:</p>
+          <dl>
+            <dt>Definition Term</dt>
+            <dd>This is the definition for the term. It is indented and provides more detail.</dd>
+            <dt>Another Term</dt>
+            <dd>And its corresponding definition.</dd>
+          </dl>
+          <p>This is an ordered list:</p>
+          <ol>
+            <li>First level item 1</li>
+            <li>First level item 2
+              <ol>
+                <li>Second level item 1</li>
+                <li>Second level item 2
+                  <ol>
+                    <li>Deeper second level item</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li>First level item 3</li>
+          </ol>
+          <p>And here is an example of a pre-formatted code block, perfect for showing multiple lines of code:</p>
+          <pre>
+            <code>
+              body {
+                font-family: var(--base-font-family);
+                color: #333;
+              }
+            </code>
+          </pre>
+        </div>
+      </article>
+    </section>
     <div class="container">
       <div class="row">
         <div class="col-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim mollitia dignissimos aliquam
@@ -253,45 +342,53 @@
         </div>
       </div>
     </div>
+
+    <section id="buttons" class="container">
+      <article class="row">
+        <div class="col-12">
+          <h4>Buttons</h4>
+          <button class="btn">Primary</button>
+          <button class="btn btn-secondary">Secondary</button>
+          <button class="btn btn-outline-primary">Outline</button>
+          <br /><br />
+          <button class="btn btn-success">Success</button>
+          <button class="btn btn-danger">Danger</button>
+          <button class="btn btn-warning">Warning</button>
+          <button class="btn btn-info">Info</button>
+          <br /><br />
+          <button class="btn btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14Zm0-2A5 5 0 1 0 8 3a5 5 0 0 0 0 10Z" />
+            </svg>
+            Icon Left
+          </button>
+          <button class="btn btn-secondary btn-icon">
+            Icon Right
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14Zm0-2A5 5 0 1 0 8 3a5 5 0 0 0 0 10Z" />
+            </svg>
+          </button>
+          <br /><br />
+          <button class="btn btn-link">Link Button</button>
+          <button class="btn btn-link btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M8.22 2.53a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 8 8.22 4.28a.75.75 0 0 1 0-1.06Z"
+                clip-rule="evenodd" />
+              <path fill-rule="evenodd"
+                d="M3.22 2.53a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L6.94 8 3.22 4.28a.75.75 0 0 1 0-1.06Z"
+                clip-rule="evenodd" />
+            </svg>
+            Link with Icon
+          </button>
+        </div>
+      </article>
+    </section>
   </main>
   <footer class="container-full">
     <div class="row">
       <div class="col-12 p-4">
-        Made, moving the hands by JOVA1091 <br /><br />
-        <button class="btn">Primary</button>
-        <button class="btn btn-secondary">Secondary</button>
-        <button class="btn btn-outline-primary">Outline</button>
-        <br /><br />
-        <button class="btn btn-success">Success</button>
-        <button class="btn btn-danger">Danger</button>
-        <button class="btn btn-warning">Warning</button>
-        <button class="btn btn-info">Info</button>
-        <br /><br />
-        <button class="btn btn-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14Zm0-2A5 5 0 1 0 8 3a5 5 0 0 0 0 10Z" />
-          </svg>
-          Icon Left
-        </button>
-        <button class="btn btn-secondary btn-icon">
-          Icon Right
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14Zm0-2A5 5 0 1 0 8 3a5 5 0 0 0 0 10Z" />
-          </svg>
-        </button>
-        <br /><br />
-        <button class="btn btn-link">Link Button</button>
-        <button class="btn btn-link btn-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M8.22 2.53a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 8 8.22 4.28a.75.75 0 0 1 0-1.06Z"
-              clip-rule="evenodd" />
-            <path fill-rule="evenodd"
-              d="M3.22 2.53a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L6.94 8 3.22 4.28a.75.75 0 0 1 0-1.06Z"
-              clip-rule="evenodd" />
-          </svg>
-          Link with Icon
-        </button>
+        Made, moving the hands by JOVA1091
       </div>
     </div>
   </footer>

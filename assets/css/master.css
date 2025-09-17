@@ -1,8 +1,48 @@
 @layer base, layout, components, utilities;
 
 @import url("/assets/css/grid/grid.css") layer(layout);
+@import url("/assets/css/base/typography/typography.css") layer(base.typography);
 @import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
 @import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
+
+/*
+ * =================================================================================
+ * THEME CUSTOMIZATIONS
+ * =================================================================================
+ *
+ * Este es el lugar para sobreescribir las variables CSS por defecto
+ * y aplicar un tema personalizado a todo el sitio.
+ *
+ * Las variables definidas aquí en el selector :root anularán las que se
+ * encuentran en los archivos `root.css` de cada componente, permitiendo
+ * una personalización centralizada. 
+ *
+ * NOTA: Para que las variables de espaciado responsivo (ej. --spacer-2) funcionen,
+ * es obligatorio que el módulo de utilidades `spacers.css` esté importado.
+ */
+
+:root {
+  /* Ejemplo de personalización de headings */
+  /* Estilo de separador para H3 con padding responsivo */
+  --h3-font-weight: 600;
+  /* Para paddings/márgenes, puedes usar las variables de espaciado adaptable
+     (ej. var(--spacer-2)) o cualquier otro valor CSS válido (ej. 0.5rem, 10px).
+     Los spacers son una opción, no una obligación. */
+  --h3-padding-bottom: var(--spacer-2); /* Corresponde a min(0.5em, 2%) */
+  --h3-border-bottom: 2px solid #e0e0e0;
+
+  /* Ejemplo de personalización de parrafos */
+  /* Estilo para P con padding responsivo */
+  --p-padding-top: var(--spacer-1);
+  --p-padding-bottom: var(--spacer-2);
+}
+
+/* Ejemplo de personalización específica para un Display Heading */
+/* Sobrescribimos las variables solo para la clase .display-1 */
+.display-1 {
+  --display-padding-bottom: var(--spacer-3); /* Corresponde a min(1em, 3%) */
+  --display-border-bottom: 1px solid #ccc;
+}
 
 body,
 main {
