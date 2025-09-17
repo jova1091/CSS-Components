@@ -1,0 +1,115 @@
+/*
+ * =================================================================================
+ * BUTTON GROUP COMPONENT
+ * =================================================================================
+ */
+
+.btn-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/*
+ * 1. Reset margins for buttons inside the group.
+ *    The global style in master.css adds margins, which we need to remove.
+ * 2. Set position to relative to handle z-index on hover.
+ */
+.btn-group > .btn {
+  position: relative;
+  flex: 1 1 auto;
+  --btn-margin-right: 0;
+  --btn-margin-bottom: 0;
+}
+
+/*
+ * 3. Create the "attached" look by collapsing the left margin.
+ *    This makes the left border of a button overlap the right border of the previous one.
+ */
+.btn-group:not(.btn-group-vertical) > .btn:not(:first-child) {
+  margin-left: -1px;
+}
+
+/*
+ * 4. On hover/focus, bring the button to the front so its borders are fully visible.
+ */
+.btn-group > .btn:hover,
+.btn-group > .btn:focus-visible {
+  z-index: 1;
+}
+
+/*
+ * 5. Square off the corners of buttons that are "attached" to others.
+ */
+
+/* Horizontal Group Radius */
+.btn-group:not(.btn-group-vertical) > .btn:not(:last-child) {
+  --btn-border-top-right-radius: 0;
+  --btn-border-bottom-right-radius: 0;
+}
+
+.btn-group:not(.btn-group-vertical) > .btn:not(:first-child) {
+  --btn-border-top-left-radius: 0;
+  --btn-border-bottom-left-radius: 0;
+}
+
+/*
+ * =================================================================================
+ * VERTICAL BUTTON GROUP
+ * =================================================================================
+ */
+
+.btn-group-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.btn-group-vertical > .btn {
+  width: 100%;
+}
+
+.btn-group-vertical > .btn:not(:first-child) {
+  margin-top: -1px;
+}
+
+/* Vertical Group Radius */
+.btn-group-vertical > .btn:not(:last-child) {
+  --btn-border-bottom-left-radius: 0;
+  --btn-border-bottom-right-radius: 0;
+}
+
+.btn-group-vertical > .btn:not(:first-child) {
+  --btn-border-top-left-radius: 0;
+  --btn-border-top-right-radius: 0;
+}
+
+/*
+ * =================================================================================
+ * BUTTON GROUP SIZING
+ * =================================================================================
+ */
+
+.btn-group-lg > .btn {
+  --btn-padding-top: var(--btn-lg-padding-top);
+  --btn-padding-right: var(--btn-lg-padding-right);
+  --btn-padding-bottom: var(--btn-lg-padding-bottom);
+  --btn-padding-left: var(--btn-lg-padding-left);
+  --btn-font-size: var(--btn-lg-font-size);
+  --btn-border-top-left-radius: var(--btn-lg-border-radius);
+  --btn-border-top-right-radius: var(--btn-lg-border-radius);
+  --btn-border-bottom-right-radius: var(--btn-lg-border-radius);
+  --btn-border-bottom-left-radius: var(--btn-lg-border-radius);
+}
+
+.btn-group-sm > .btn {
+  --btn-padding-top: var(--btn-sm-padding-top);
+  --btn-padding-right: var(--btn-sm-padding-right);
+  --btn-padding-bottom: var(--btn-sm-padding-bottom);
+  --btn-padding-left: var(--btn-sm-padding-left);
+  --btn-font-size: var(--btn-sm-font-size);
+  --btn-border-top-left-radius: var(--btn-sm-border-radius);
+  --btn-border-top-right-radius: var(--btn-sm-border-radius);
+  --btn-border-bottom-right-radius: var(--btn-sm-border-radius);
+  --btn-border-bottom-left-radius: var(--btn-sm-border-radius);
+}

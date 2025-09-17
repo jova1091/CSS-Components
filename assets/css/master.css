@@ -4,6 +4,7 @@
 @import url("/assets/css/base/typography/typography.css") layer(base.typography);
 @import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
 @import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
+@import url("/assets/css/components/buttons/btn-group.css") layer(components.buttons);
 
 /*
  * =================================================================================
@@ -35,6 +36,11 @@
   /* Estilo para P con padding responsivo */
   --p-padding-top: var(--spacer-1);
   --p-padding-bottom: var(--spacer-2);
+
+  /* Ejemplo de personalización de botones con spacers */
+  /* Sobrescribimos las variables de margen para todos los botones */
+  --btn-margin-right: var(--spacer-2); /* min(0.5em, 2%) */
+  --btn-margin-bottom: var(--spacer-2); /* min(0.5em, 2%) */
 }
 
 /* Ejemplo de personalización específica para un Display Heading */

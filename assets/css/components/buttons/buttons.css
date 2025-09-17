@@ -2,7 +2,6 @@
 
 .btn {
   display: inline-block;
-  padding: var(--btn-padding-y) var(--btn-padding-x);
   font-family: var(--btn-font-family);
   font-style: var(--btn-font-style);
   font-size: var(--btn-font-size);
@@ -12,12 +11,24 @@
   text-transform: var(--btn-text-transform);
   color: var(--btn-color);
   background-color: var(--btn-bg);
-  border-width: var(--btn-border-width);
-  border-style: var(--btn-border-style);
-  border-color: var(--btn-border-color);
-  border-radius: var(--btn-border-radius);
   text-shadow: var(--btn-text-shadow);
   box-shadow: var(--btn-box-shadow);
+  margin-top: var(--btn-margin-top);
+  margin-right: var(--btn-margin-right);
+  margin-bottom: var(--btn-margin-bottom);
+  margin-left: var(--btn-margin-left);
+  padding-top: var(--btn-padding-top);
+  padding-right: var(--btn-padding-right);
+  padding-bottom: var(--btn-padding-bottom);
+  padding-left: var(--btn-padding-left);
+  border-top: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+  border-right: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+  border-bottom: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+  border-left: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+  border-top-left-radius: var(--btn-border-top-left-radius);
+  border-top-right-radius: var(--btn-border-top-right-radius);
+  border-bottom-right-radius: var(--btn-border-bottom-right-radius);
+  border-bottom-left-radius: var(--btn-border-bottom-left-radius);
   text-align: center;
   text-decoration: var(--btn-text-decoration);
   vertical-align: middle;
@@ -41,6 +52,46 @@
   box-shadow: var(--btn-focus-box-shadow);
 }
 
+.btn:disabled,
+.btn.disabled {
+  pointer-events: var(--btn-disabled-pointer-events);
+  opacity: var(--btn-disabled-opacity);
+  box-shadow: none; /* Remove focus shadow on disabled elements */
+}
+
+.btn-lg {
+  --btn-padding-top: var(--btn-lg-padding-top);
+  --btn-padding-right: var(--btn-lg-padding-right);
+  --btn-padding-bottom: var(--btn-lg-padding-bottom);
+  --btn-padding-left: var(--btn-lg-padding-left);
+  --btn-font-size: var(--btn-lg-font-size);
+  --btn-border-top-left-radius: var(--btn-lg-border-radius);
+  --btn-border-top-right-radius: var(--btn-lg-border-radius);
+  --btn-border-bottom-right-radius: var(--btn-lg-border-radius);
+  --btn-border-bottom-left-radius: var(--btn-lg-border-radius);
+}
+
+.btn-sm {
+  --btn-padding-top: var(--btn-sm-padding-top);
+  --btn-padding-right: var(--btn-sm-padding-right);
+  --btn-padding-bottom: var(--btn-sm-padding-bottom);
+  --btn-padding-left: var(--btn-sm-padding-left);
+  --btn-font-size: var(--btn-sm-font-size);
+  --btn-border-top-left-radius: var(--btn-sm-border-radius);
+  --btn-border-top-right-radius: var(--btn-sm-border-radius);
+  --btn-border-bottom-right-radius: var(--btn-sm-border-radius);
+  --btn-border-bottom-left-radius: var(--btn-sm-border-radius);
+}
+
+/* Makes an element (button or button group) span the full width of its parent. */
+.btn-block {
+  width: 100%;
+}
+
+.btn.btn-block {
+  display: block;
+}
+
 .btn-secondary {
   --btn-color: var(--btn-secondary-color);
   --btn-bg: var(--btn-secondary-bg);
@@ -52,10 +103,63 @@
 }
 
 .btn-outline-primary {
-  --btn-color: var(--btn-border-color); /* El texto toma el color primario del borde */
+  --btn-color: var(--btn-primary-bg);
+  --btn-border-color: var(--btn-primary-bg);
   --btn-bg: transparent;
-  --btn-hover-color: #fff; /* Al pasar el mouse, el texto se vuelve blanco */
-  --btn-hover-bg: var(--btn-border-color); /* Y el fondo toma el color primario */
+  --btn-hover-color: var(--btn-primary-color);
+  --btn-hover-bg: var(--btn-primary-bg);
+  --btn-hover-border-color: var(--btn-primary-bg);
+  --btn-focus-box-shadow: var(--btn-primary-focus-box-shadow);
+}
+
+.btn-outline-secondary {
+  --btn-color: var(--btn-secondary-bg);
+  --btn-border-color: var(--btn-secondary-bg);
+  --btn-bg: transparent;
+  --btn-hover-color: var(--btn-secondary-color);
+  --btn-hover-bg: var(--btn-secondary-bg);
+  --btn-hover-border-color: var(--btn-secondary-bg);
+  --btn-focus-box-shadow: var(--btn-secondary-focus-box-shadow);
+}
+
+.btn-outline-success {
+  --btn-color: var(--btn-success-bg);
+  --btn-border-color: var(--btn-success-bg);
+  --btn-bg: transparent;
+  --btn-hover-color: var(--btn-success-color);
+  --btn-hover-bg: var(--btn-success-bg);
+  --btn-hover-border-color: var(--btn-success-bg);
+  --btn-focus-box-shadow: var(--btn-success-focus-box-shadow);
+}
+
+.btn-outline-danger {
+  --btn-color: var(--btn-danger-bg);
+  --btn-border-color: var(--btn-danger-bg);
+  --btn-bg: transparent;
+  --btn-hover-color: var(--btn-danger-color);
+  --btn-hover-bg: var(--btn-danger-bg);
+  --btn-hover-border-color: var(--btn-danger-bg);
+  --btn-focus-box-shadow: var(--btn-danger-focus-box-shadow);
+}
+
+.btn-outline-warning {
+  --btn-color: var(--btn-warning-bg);
+  --btn-border-color: var(--btn-warning-bg);
+  --btn-bg: transparent;
+  --btn-hover-color: var(--btn-warning-color);
+  --btn-hover-bg: var(--btn-warning-bg);
+  --btn-hover-border-color: var(--btn-warning-bg);
+  --btn-focus-box-shadow: var(--btn-warning-focus-box-shadow);
+}
+
+.btn-outline-info {
+  --btn-color: var(--btn-info-bg);
+  --btn-border-color: var(--btn-info-bg);
+  --btn-bg: transparent;
+  --btn-hover-color: var(--btn-info-color);
+  --btn-hover-bg: var(--btn-info-bg);
+  --btn-hover-border-color: var(--btn-info-bg);
+  --btn-focus-box-shadow: var(--btn-info-focus-box-shadow);
 }
 
 .btn-success {
@@ -102,12 +206,21 @@
   --btn-font-weight: 400;
   --btn-color: var(--btn-link-color);
   --btn-bg: transparent;
+  --btn-padding-top: 0;
+  --btn-padding-right: 0;
+  --btn-padding-bottom: 0;
+  --btn-padding-left: 0;
   --btn-hover-bg: transparent;
   --btn-border-color: transparent;
   --btn-hover-color: var(--btn-link-hover-color);
   --btn-hover-border-color: transparent;
   --btn-hover-text-decoration: var(--btn-link-hover-text-decoration);
   --btn-focus-box-shadow: none;
+}
+
+.btn-link:disabled,
+.btn-link.disabled {
+  color: var(--btn-link-disabled-color);
 }
 
 .btn-icon {
