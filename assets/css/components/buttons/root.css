@@ -1,0 +1,79 @@
+:root {
+  /* Sizing & Spacing */
+  --btn-padding-y: 0.5em;
+  --btn-padding-x: 1em;
+
+  /* Typography */
+  --btn-font-family: inherit;
+  --btn-font-size: 1rem;
+  --btn-font-style: normal;
+  --btn-font-weight: 600;
+  --btn-line-height: 1.5;
+  --btn-letter-spacing: normal;
+  --btn-text-transform: none;
+  --btn-text-decoration: none;
+
+  /* Appearance */
+  --btn-color: #fff;
+  --btn-bg: #0d6efd;
+  --btn-text-shadow: none;
+  --btn-box-shadow: none;
+  --btn-border-width: 1px;
+  --btn-border-style: solid;
+  --btn-border-color: var(--btn-bg);
+  --btn-border-radius: 0.375rem;
+  --btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  /* Hover/Focus state */
+  --btn-hover-bg: #0b5ed7;
+  --btn-hover-color: var(--btn-color);
+  --btn-hover-border-color: #0a58ca;
+  --btn-hover-text-decoration: none;
+  --btn-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+
+  /* Secondary Button */
+  --btn-secondary-color: #fff;
+  --btn-secondary-bg: #6c757d;
+  --btn-secondary-border-color: #6c757d;
+  --btn-secondary-hover-bg: #5c636a;
+  --btn-secondary-hover-border-color: #565e64;
+  --btn-secondary-focus-box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+
+  /* Success Button */
+  --btn-success-color: #fff;
+  --btn-success-bg: #198754;
+  --btn-success-border-color: #198754;
+  --btn-success-hover-bg: #157347;
+  --btn-success-hover-border-color: #146c43;
+  --btn-success-focus-box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5);
+
+  /* Danger Button */
+  --btn-danger-color: #fff;
+  --btn-danger-bg: #dc3545;
+  --btn-danger-border-color: #dc3545;
+  --btn-danger-hover-bg: #bb2d3b;
+  --btn-danger-hover-border-color: #b02a37;
+  --btn-danger-focus-box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
+
+  /* Warning Button */
+  --btn-warning-color: #000;
+  --btn-warning-bg: #ffc107;
+  --btn-warning-border-color: #ffc107;
+  --btn-warning-hover-bg: #ffca2c;
+  --btn-warning-hover-border-color: #ffc720;
+  --btn-warning-focus-box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
+
+  /* Info Button */
+  --btn-info-color: #000;
+  --btn-info-bg: #0dcaf0;
+  --btn-info-border-color: #0dcaf0;
+  --btn-info-hover-bg: #31d2f2;
+  --btn-info-hover-border-color: #25cff2;
+  --btn-info-focus-box-shadow: 0 0 0 0.25rem rgba(11, 172, 204, 0.5);
+
+  /* Link Button */
+  --btn-link-color: var(--btn-bg); /* Usa el color primario por defecto */
+  --btn-link-hover-color: var(--btn-hover-bg);
+  --btn-link-hover-text-decoration: underline;
+  --btn-icon-gap: 0.375em;
+}

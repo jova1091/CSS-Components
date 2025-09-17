@@ -1,7 +1,8 @@
-@layer layout, utilities;
+@layer base, layout, components, utilities;
 
 @import url("/assets/css/grid/grid.css") layer(layout);
 @import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
+@import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
 
 body,
 main {
