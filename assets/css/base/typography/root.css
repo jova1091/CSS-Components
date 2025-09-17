@@ -280,7 +280,7 @@
   /* Text Utilities */
   /* Lead */
   --lead-font-family: inherit;
-  --lead-font-size: 1.25rem;
+  --lead-font-size: clamp(1rem, 0.8rem + 1vw, 1.25rem);
   --lead-font-style: normal;
   --lead-font-weight: 300;
   --lead-line-height: 1.4;
@@ -294,7 +294,7 @@
 
   /* Meta */
   --meta-font-family: inherit;
-  --meta-font-size: 0.875em;
+  --meta-font-size: clamp(0.8em, 0.75em + 0.25vw, 0.875em);
   --meta-font-style: normal;
   --meta-font-weight: inherit;
   --meta-line-height: inherit;
@@ -309,14 +309,14 @@
   /* Inline Text Elements */
   --b-strong-font-weight: bolder;
   --em-i-font-style: italic;
-  --small-font-size: 0.875em;
+  --small-font-size: clamp(0.8em, 0.75em + 0.25vw, 0.875em);
   --mark-bg: #ffc107;
   --mark-color: #000;
   --mark-padding: 0.2em;
   --u-text-decoration: underline;
   --s-text-decoration: line-through;
   --code-kbd-samp-font-family: var(--font-family-monospace);
-  --code-kbd-samp-font-size: 0.875em;
+  --code-kbd-samp-font-size: clamp(0.8em, 0.75em + 0.25vw, 0.875em);
   --code-color: #d63384;
   --code-bg: #f8f9fa;
   --code-padding: 0.2rem 0.4rem;
@@ -361,7 +361,7 @@
 
   /* Blockquotes */
   --blockquote-font-family: inherit;
-  --blockquote-font-size: 1.25rem;
+  --blockquote-font-size: clamp(1rem, 0.8rem + 1vw, 1.25rem);
   --blockquote-font-style: italic;
   --blockquote-font-weight: inherit;
   --blockquote-line-height: inherit;
@@ -382,7 +382,7 @@
 
   /* Blockquote Footer */
   --blockquote-footer-display: block;
-  --blockquote-footer-font-size: 0.875em;
+  --blockquote-footer-font-size: clamp(0.8em, 0.75em + 0.25vw, 0.875em);
   --blockquote-footer-font-style: normal;
   --blockquote-footer-color: #6c757d; /* Same as meta text */
   --blockquote-footer-text-align: right;
@@ -411,7 +411,7 @@
 
   /* Pre-formatted Text */
   --pre-font-family: var(--font-family-monospace);
-  --pre-font-size: 0.875em;
+  --pre-font-size: clamp(0.8em, 0.75em + 0.25vw, 0.875em);
   --pre-line-height: inherit;
   --pre-color: inherit;
   --pre-bg: #f8f9fa; /* Mismo fondo que 'code' para consistencia */
