@@ -2,6 +2,7 @@
 
 /* Estilos base del body */
 body {
+  margin: 0;
   font-family: var(--base-font-family);
   font-size: var(--base-font-size);
   font-weight: var(--base-font-weight);

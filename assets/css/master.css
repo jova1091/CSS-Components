@@ -22,7 +22,16 @@
  * es obligatorio que el módulo de utilidades `spacers.css` esté importado.
  */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
+  /* Ejemplo de personalización de la fuente base */
+  /* --base-font-size: 18px; */ /* Descomenta y ajusta para cambiar el tamaño de fuente global */
+
   /* Ejemplo de personalización de headings */
   /* Estilo de separador para H3 con padding responsivo */
   --h3-font-weight: 600;
@@ -48,11 +57,4 @@
 .display-1 {
   --display-padding-bottom: var(--spacer-3); /* Corresponde a min(1em, 3%) */
   --display-border-bottom: 1px solid #ccc;
-}
-
-body,
-main {
-  max-width: 100%;
-  width: 100%;
-  margin: 0;
 }

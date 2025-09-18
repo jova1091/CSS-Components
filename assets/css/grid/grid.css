@@ -107,26 +107,21 @@
 
 /* Tablet */
 @media screen and (max-width: 768px) {
-  /* Add tablet-specific styles here. For example, you could change the number of columns. */
-  /* .row { grid-template-columns: repeat(8, 1fr); } */
-}
-
-/* Mobile */
-@media screen and (max-width: 425px) {
-  .container {
-    margin: 0;
-  }
-
   .row {
     grid-template-columns: 1fr;
   }
 
   /* 
-    Explicitly reset all column and offset classes to span the full width on mobile.
-    This ensures that any combination of col-* and offset-* will stack correctly.
+    Explicitly reset all column and offset classes to span the full width on tablet and mobile.
+    This ensures that any combination of col-* and offset-* will stack correctly into a single column.
   */
   [class*="col-"],
   [class*="offset-"] {
     grid-column: 1 / -1;
   }
+}
+
+/* Mobile */
+@media screen and (max-width: 425px) {
+  /* Mobile-specific overrides can be added here if needed in the future. */
 }
