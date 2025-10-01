@@ -252,7 +252,7 @@
   --p-padding-left: 0;
 
   /* Links */
-  --link-color: var(--btn-bg); /* Reutilizamos el color primario del botón */
+  --link-color: var(--color-primary);
   --link-decoration: underline;
   --link-decoration-thickness: auto;
   --link-underline-offset: auto;
@@ -262,7 +262,7 @@
   --link-border-radius: 0;
   --link-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, text-decoration-color 0.15s ease-in-out;
   /* Link Hover */
-  --link-hover-color: var(--btn-hover-bg);
+  --link-hover-color: var(--color-primary); /* Simplificado para que no dependa del botón */
   --link-hover-decoration: underline;
   --link-hover-background: transparent;
 
@@ -298,7 +298,7 @@
   --meta-font-style: normal;
   --meta-font-weight: inherit;
   --meta-line-height: inherit;
-  --meta-color: #6c757d; /* Mismo color que blockquote para consistencia */
+  --meta-color: var(--color-text-muted);
   --meta-margin-top: 0;
   --meta-margin-bottom: 1rem;
   --meta-padding-top: 0;
@@ -317,8 +317,8 @@
   --s-text-decoration: line-through;
   --code-kbd-samp-font-family: var(--font-family-monospace);
   --code-kbd-samp-font-size: clamp(0.8em, 0.75em + 0.25vw, 0.875em);
-  --code-color: #d63384;
-  --code-bg: #f8f9fa;
+  --code-color: var(--color-primary);
+  --code-bg: var(--color-surface-subtle);
   --code-padding: 0.2rem 0.4rem;
   --code-border-radius: 0.25rem;
 
@@ -365,7 +365,7 @@
   --blockquote-font-style: italic;
   --blockquote-font-weight: inherit;
   --blockquote-line-height: inherit;
-  --blockquote-color: #6c757d;
+  --blockquote-color: var(--color-text-muted);
   --blockquote-margin-top: 0;
   --blockquote-margin-right: 0;
   --blockquote-margin-bottom: 1rem;
@@ -377,14 +377,14 @@
   --blockquote-border-top: 0 solid transparent;
   --blockquote-border-right: 0 solid transparent;
   --blockquote-border-bottom: 0 solid transparent;
-  --blockquote-border-left: 0.25rem solid #e9ecef;
+  --blockquote-border-left: 0.25rem solid var(--color-border);
   --blockquote-border-radius: 0;
 
   /* Blockquote Footer */
   --blockquote-footer-display: block;
   --blockquote-footer-font-size: clamp(0.8em, 0.75em + 0.25vw, 0.875em);
   --blockquote-footer-font-style: normal;
-  --blockquote-footer-color: #6c757d; /* Same as meta text */
+  --blockquote-footer-color: var(--color-text-muted);
   --blockquote-footer-text-align: right;
   --blockquote-footer-margin-top: 0.5rem;
 
@@ -414,7 +414,7 @@
   --pre-font-size: clamp(0.8em, 0.75em + 0.25vw, 0.875em);
   --pre-line-height: inherit;
   --pre-color: inherit;
-  --pre-bg: #f8f9fa; /* Mismo fondo que 'code' para consistencia */
+  --pre-bg: var(--color-surface-subtle);
   --pre-margin-top: 0;
   --pre-margin-bottom: 1rem;
   --pre-padding-top: 1rem;
