@@ -5,6 +5,7 @@
 @import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
 @import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
 @import url("/assets/css/components/buttons/btn-group.css") layer(components.buttons);
+@import url("/assets/css/components/forms/forms.css") layer(components.forms);
 
 /*
  * =================================================================================

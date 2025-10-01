@@ -1,0 +1,353 @@
+@import url("root.css") layer(components.forms.vars);
+
+.form-label {
+  display: inline-block;
+  margin-bottom: var(--form-label-margin-bottom);
+  font-size: var(--form-label-font-size);
+  font-weight: var(--form-label-font-weight);
+}
+
+.form-control {
+  display: var(--form-control-display);
+  width: var(--form-control-width);
+  padding-top: var(--form-control-padding-top);
+  padding-right: var(--form-control-padding-right);
+  padding-bottom: var(--form-control-padding-bottom);
+  padding-left: var(--form-control-padding-left);
+  font-family: var(--form-control-font-family);
+  font-size: var(--form-control-font-size);
+  font-weight: var(--form-control-font-weight);
+  line-height: var(--form-control-line-height);
+  color: var(--form-control-color);
+  background-color: var(--form-control-bg);
+  background-clip: padding-box;
+  border-top: var(--form-control-border-top-width) var(--form-control-border-style) var(--form-control-border-color);
+  border-right: var(--form-control-border-right-width) var(--form-control-border-style) var(--form-control-border-color);
+  border-bottom: var(--form-control-border-bottom-width) var(--form-control-border-style) var(--form-control-border-color);
+  border-left: var(--form-control-border-left-width) var(--form-control-border-style) var(--form-control-border-color);
+  border-top-left-radius: var(--form-control-border-top-left-radius);
+  border-top-right-radius: var(--form-control-border-top-right-radius);
+  border-bottom-right-radius: var(--form-control-border-bottom-right-radius);
+  border-bottom-left-radius: var(--form-control-border-bottom-left-radius);
+  box-shadow: var(--form-control-box-shadow);
+  transition: var(--form-control-transition);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-control:focus {
+  color: var(--form-control-focus-color);
+  background-color: var(--form-control-focus-bg);
+  border-color: var(--form-control-focus-border-color);
+  outline: 0;
+  box-shadow: var(--form-control-focus-box-shadow);
+}
+
+.form-control:disabled {
+  background-color: var(--form-control-disabled-bg);
+  opacity: var(--form-control-disabled-opacity);
+}
+
+/* Estilo para inputs de solo lectura */
+.form-control[readonly] {
+  background-color: var(--form-control-readonly-bg);
+  /* Evita que el usuario pueda cambiar el valor, pero permite seleccionarlo */
+  opacity: 1;
+}
+
+/* Placeholder styles */
+.form-control::placeholder {
+  color: var(--form-control-placeholder-color);
+  opacity: 1;
+}
+
+.form-text {
+  margin-top: var(--form-text-margin-top);
+  font-size: var(--form-text-font-size);
+  color: var(--form-text-color);
+}
+
+/* Select specific styles */
+select.form-control {
+  /* Aumentamos el padding derecho para dejar espacio al ícono de flecha */
+  --form-control-padding-right: calc(var(--btn-padding-right) + 1.75rem); /* padding original + espacio para el ícono */
+  background-image: var(--form-select-indicator);
+  background-repeat: no-repeat;
+  background-position: var(--form-select-bg-position);
+  background-size: var(--form-select-bg-size);
+}
+
+/* Option specific styles */
+select.form-control option {
+  color: var(--form-option-color);
+  background-color: var(--form-option-bg);
+}
+
+/* Estilo para la opción seleccionada. El soporte puede variar entre navegadores. */
+select.form-control option:checked {
+  background-color: var(--form-option-checked-bg);
+  color: var(--form-option-checked-color);
+}
+
+/* File input specific styles */
+.form-control[type="file"] {
+  /* Sobrescribimos las propiedades del .form-control con variables específicas para el input de archivo */
+  overflow: hidden; /* For better appearance */
+  padding-top: var(--file-input-padding-top);
+  padding-right: var(--file-input-padding-right);
+  padding-bottom: var(--file-input-padding-bottom);
+  padding-left: var(--file-input-padding-left);
+  color: var(--file-input-color);
+  background-color: var(--file-input-bg);
+  border-top: var(--file-input-border-top-width) var(--file-input-border-style) var(--file-input-border-color);
+  border-right: var(--file-input-border-right-width) var(--file-input-border-style) var(--file-input-border-color);
+  border-bottom: var(--file-input-border-bottom-width) var(--file-input-border-style) var(--file-input-border-color);
+  border-left: var(--file-input-border-left-width) var(--file-input-border-style) var(--file-input-border-color);
+  border-top-left-radius: var(--file-input-border-top-left-radius);
+  border-top-right-radius: var(--file-input-border-top-right-radius);
+  border-bottom-right-radius: var(--file-input-border-bottom-right-radius);
+  border-bottom-left-radius: var(--file-input-border-bottom-left-radius);
+}
+
+.form-control[type="file"]:not(:disabled):not([readonly]) {
+  cursor: pointer;
+}
+
+/*
+ * =================================================================================
+ * FILE INPUT BUTTON STYLING
+ * =================================================================================
+ *
+ * Aplicamos los estilos de nuestros botones (.btn) directamente al botón
+ * del input de archivo usando el pseudo-elemento ::file-selector-button.
+ */
+
+.form-control[type="file"]::file-selector-button {
+  /* Replicamos los estilos base del componente .btn */
+  font-family: var(--btn-font-family);
+  font-weight: var(--btn-font-weight);
+  line-height: var(--btn-line-height);
+  color: var(--btn-color);
+  background-color: var(--btn-bg);
+  border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+  border-radius: var(--btn-border-radius);
+  padding-top: var(--file-selector-button-padding-top);
+  padding-right: var(--file-selector-button-padding-right);
+  padding-bottom: var(--file-selector-button-padding-bottom);
+  padding-left: var(--file-selector-button-padding-left);
+  margin-inline-end: var(--btn-padding-right); /* Espacio entre el botón y el texto del archivo */
+  transition: var(--btn-transition);
+  cursor: pointer;
+}
+
+.form-control[type="file"]::file-selector-button:hover {
+  background-color: var(--btn-hover-bg);
+  border-color: var(--btn-hover-border-color);
+}
+
+/*
+ * Para que las variantes de color (.btn-secondary, etc.) funcionen en el input,
+ * necesitamos que el input herede las variables de la clase que le pongamos.
+ */
+.form-control.btn-secondary::file-selector-button {
+  color: var(--btn-secondary-color);
+  background-color: var(--btn-secondary-bg);
+  border-color: var(--btn-secondary-border-color);
+}
+.form-control.btn-secondary::file-selector-button:hover {
+  background-color: var(--btn-secondary-hover-bg);
+  border-color: var(--btn-secondary-hover-border-color);
+}
+/*
+ * =================================================================================
+ * FILE INPUT BUTTON DISABLED STATE
+ * =================================================================================
+ */
+/*
+ * =================================================================================
+ * FORM CHECK (CHECKBOX & RADIO)
+ * =================================================================================
+ */
+
+.form-check {
+  display: var(--form-check-display);
+  min-height: 1.5rem; /* Ensure label height is consistent */
+  margin-top: var(--form-check-margin-top);
+  padding-left: var(--form-check-padding-left);
+  margin-bottom: var(--form-check-margin-bottom);
+}
+
+.form-check-input {
+  float: left;
+  width: var(--form-check-input-width);
+  height: var(--form-check-input-height);
+  margin-top: var(--form-check-input-margin-top);
+  margin-left: var(--form-check-input-margin-left);
+  vertical-align: top;
+  background-color: var(--form-check-input-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: var(--form-check-input-border);
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: var(--form-check-input-cursor);
+  transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-check-input:focus {
+  border-color: var(--form-check-input-focus-border);
+  outline: 0;
+  box-shadow: var(--form-check-input-focus-box-shadow);
+}
+
+.form-check-input:checked {
+  background-color: var(--form-check-input-checked-bg-color);
+  border-color: var(--form-check-input-checked-border-color);
+}
+
+/* Estilos para Checkbox/Radio deshabilitados */
+.form-check-input:disabled {
+  pointer-events: none;
+  opacity: var(--form-check-input-disabled-opacity);
+}
+
+.form-check-input:disabled ~ .form-check-label {
+  opacity: var(--form-check-label-disabled-opacity);
+}
+
+.form-check-input[type="checkbox"] {
+  border-top-left-radius: var(--form-check-input-border-top-left-radius);
+  border-top-right-radius: var(--form-check-input-border-top-right-radius);
+  border-bottom-right-radius: var(--form-check-input-border-bottom-right-radius);
+  border-bottom-left-radius: var(--form-check-input-border-bottom-left-radius);
+}
+
+.form-check-input[type="checkbox"]:checked {
+  background-image: var(--form-check-input-checked-bg-image);
+}
+
+.form-check-input[type="radio"] {
+  border-top-left-radius: var(--form-check-radio-border-top-left-radius);
+  border-top-right-radius: var(--form-check-radio-border-top-right-radius);
+  border-bottom-right-radius: var(--form-check-radio-border-bottom-right-radius);
+  border-bottom-left-radius: var(--form-check-radio-border-bottom-left-radius);
+}
+
+.form-check-input[type="radio"]:checked {
+  background-image: var(--form-check-radio-checked-bg-image);
+}
+
+.form-check-label {
+  color: var(--form-control-color);
+  cursor: var(--form-check-label-cursor);
+}
+
+/*
+ * =================================================================================
+ * FORM VALIDATION STYLES
+ * =================================================================================
+ */
+
+.valid-feedback,
+.invalid-feedback {
+  /* Se añade .warning-feedback al selector */
+  display: none;
+  width: 100%;
+  margin-top: var(--form-feedback-margin-top);
+  font-size: var(--form-feedback-font-size);
+}
+
+.valid-feedback {
+  color: var(--form-feedback-valid-color);
+}
+
+.invalid-feedback {
+  color: var(--form-feedback-invalid-color);
+}
+
+.warning-feedback {
+  color: var(--form-feedback-warning-color);
+}
+
+.form-control.is-valid,
+.form-control.is-invalid,
+.form-control.is-warning {
+  padding-right: var(--form-validation-icon-padding);
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem 1rem;
+}
+/* Muestra el mensaje de feedback cuando el campo tiene la clase correspondiente */
+.is-valid ~ .valid-feedback,
+.is-invalid ~ .invalid-feedback,
+.is-warning ~ .warning-feedback {
+  display: block;
+}
+
+/* Estilos para campos válidos */
+.form-control.is-valid {
+  border-color: var(--form-validation-valid-border-color);
+  background-image: var(--form-validation-valid-icon);
+}
+
+.form-control.is-valid:focus {
+  border-color: var(--form-validation-valid-border-color);
+  box-shadow: var(--form-validation-valid-focus-box-shadow);
+}
+
+/* Estilos para campos inválidos */
+.form-control.is-invalid {
+  border-color: var(--form-validation-invalid-border-color);
+  background-image: var(--form-validation-invalid-icon);
+}
+
+.form-control.is-invalid:focus {
+  border-color: var(--form-validation-invalid-border-color);
+  box-shadow: var(--form-validation-invalid-focus-box-shadow);
+}
+
+/* Estilos para campos con advertencia */
+.form-control.is-warning {
+  border-color: var(--form-validation-warning-border-color);
+  background-image: var(--form-validation-warning-icon);
+}
+
+.form-control.is-warning:focus {
+  border-color: var(--form-validation-warning-border-color);
+  box-shadow: var(--form-validation-warning-focus-box-shadow);
+}
+
+/* Estilos de validación para Checkboxes y Radios */
+.form-check-input.is-valid ~ .form-check-label {
+  color: var(--form-validation-valid-color);
+}
+
+.form-check-input.is-valid:checked {
+  background-color: var(--form-validation-valid-color);
+}
+
+.form-check-input.is-invalid ~ .form-check-label {
+  color: var(--form-validation-invalid-color);
+}
+
+.form-check-input.is-invalid:checked {
+  background-color: var(--form-validation-invalid-color);
+}
+
+.form-check-input.is-warning ~ .form-check-label {
+  color: var(--form-validation-warning-color);
+}
+
+.form-check-input.is-warning:checked {
+  background-color: var(--form-validation-warning-color);
+}
+
+/* Ajuste para que el ícono de validación no se superponga con la flecha del select */
+select.form-control.is-valid,
+select.form-control.is-invalid,
+select.form-control.is-warning {
+  /* El icono de validación y la flecha del select son ambos background-image.
+     Esta regla los posiciona para que no se solapen. */
+  background-position: right 1rem center, var(--form-select-bg-position);
+}
