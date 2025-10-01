@@ -9,6 +9,8 @@ body {
   line-height: var(--base-line-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--body-bg);
+  color: var(--body-color);
 }
 
 /* Encabezados */

@@ -3,6 +3,7 @@
 @import url("/assets/css/grid/grid.css") layer(layout);
 @import url("/assets/css/base/typography/typography.css") layer(base.typography);
 @import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
+@import url("/assets/css/utilities/helpers/helpers.css") layer(utilities.helpers);
 @import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
 @import url("/assets/css/components/buttons/btn-group.css") layer(components.buttons);
 @import url("/assets/css/components/forms/forms.css") layer(components.forms);
@@ -29,7 +30,29 @@
   box-sizing: border-box;
 }
 
+/*
+ * =================================================================================
+ * THEME DEFINITIONS (Light & Dark Mode)
+ * =================================================================================
+ */
+
+/* 1. Light Theme (Default) */
+/* Le indicamos al navegador que nuestro sitio soporta ambos temas. */
+/* Esto permite que el navegador ajuste automáticamente los estilos de la UI nativa (scrollbars, etc.) */
 :root {
+  color-scheme: light dark;
+
+  --body-bg: #fff;
+  --body-color: #212529;
+  --border-color: #dee2e6;
+  --form-control-bg: #fff;
+  --form-control-color: #212529;
+  --form-control-border-color: #ced4da;
+  --form-control-disabled-bg: #e9ecef;
+  --form-control-readonly-bg: #e9ecef;
+  --bg-light-color: #f8f9fa;
+  --form-control-placeholder-color: #6c757d;
+
   /* Ejemplo de personalización de la fuente base */
   /* --base-font-size: 18px; */ /* Descomenta y ajusta para cambiar el tamaño de fuente global */
 
@@ -51,6 +74,33 @@
   /* Sobrescribimos las variables de margen para todos los botones */
   --btn-margin-right: var(--spacer-2); /* min(0.5em, 2%) */
   --btn-margin-bottom: var(--spacer-2); /* min(0.5em, 2%) */
+}
+
+/* 2. Dark Theme Overrides */
+html[data-theme="dark"] {
+  --body-bg: #121212;
+  --body-color: #e0e0e0;
+  --border-color: #444;
+  --form-control-bg: #2b2b2b;
+  --form-control-color: #e0e0e0;
+  --form-control-border-color: #555;
+  --form-control-disabled-bg: #333;
+  --form-control-readonly-bg: #333;
+  --bg-light-color: #1e1e1e; /* Usamos el mismo que los bloques de código para consistencia */
+  --form-control-placeholder-color: #888;
+
+  /* Sobrescribimos variables específicas de componentes */
+  --h3-border-bottom: 2px solid var(--border-color);
+  --display-border-bottom: 1px solid var(--border-color);
+  --blockquote-border-left: 0.25rem solid var(--border-color);
+  --pre-bg: #1e1e1e;
+  --code-bg: #1e1e1e;
+  --hr-opacity: 0.1;
+
+  /* Ajustamos los colores de validación para que tengan mejor contraste */
+  --form-validation-valid-color: #28a745;
+  --form-validation-invalid-color: #dc3545;
+  --form-validation-warning-color: #ffc107;
 }
 
 /* Ejemplo de personalización específica para un Display Heading */

@@ -1,0 +1,31 @@
+/*
+ * =================================================================================
+ * HELPER & DEMO-SPECIFIC CLASSES
+ * =================================================================================
+ *
+ * Clases de utilidad para alineación, colores de fondo y otros estilos
+ * que no pertenecen a un componente específico.
+ */
+
+.bg-light {
+  background-color: var(--bg-light-color);
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-flex-start {
+  align-items: flex-start;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.button-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}

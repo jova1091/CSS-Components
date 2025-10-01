@@ -6,21 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Components</title>
   <link rel="stylesheet" href="/assets/css/master.css">
-
-  <style>
-    .button-showcase {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-  </style>
-
 </head>
 
 <body>
-  <header class="row">
-    <nav class="col-12"></nav>
+  <header class="container-full py-3 bg-light">
+    <div class="row align-items-center">
+      <div class="col-6">
+        <h4 class="m-0">CSS Components Demo</h4>
+      </div>
+      <div class="col-6 text-right">
+        <button id="theme-toggle" class="btn btn-secondary btn-sm">
+          Toggle Theme
+        </button>
+      </div>
+    </div>
   </header>
   <main>
     <div class="container-full">
@@ -376,7 +375,7 @@ body {
           </div>
           <hr class="my-4">
           <h4>Button Sizes</h4>
-          <div class="button-showcase" style="align-items: center;">
+          <div class="button-showcase align-items-center">
             <button class="btn btn-primary btn-lg">Large button</button>
             <button class="btn btn-secondary">Default button</button>
             <button class="btn btn-success btn-sm">Small button</button>
@@ -414,7 +413,7 @@ body {
           <h4>Link Buttons</h4>
           <p>Link buttons are designed to look like hyperlinks but behave like buttons. They support sizing and disabled
             states.</p>
-          <div class="button-showcase" style="align-items: center;">
+          <div class="button-showcase align-items-center">
             <button class="btn btn-link btn-lg">Large link</button>
             <button class="btn btn-link">Default link</button>
             <button class="btn btn-link btn-sm">Small link</button>
@@ -453,7 +452,7 @@ body {
             <button type="button" class="btn btn-success">Right</button>
           </div>
           <p class="mt-3">Button group sizing (applies to horizontal and vertical groups):</p>
-          <div class="button-showcase" style="align-items: flex-start;">
+          <div class="button-showcase align-items-flex-start">
             <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
               <button type="button" class="btn btn-outline-primary">Large</button>
               <button type="button" class="btn btn-outline-primary">Large</button>
@@ -654,6 +653,26 @@ body {
   </footer>
 
   <script type="module" src="assets/js/main.js"></script>
+  <script>
+    // Simple Theme Toggler
+    const themeToggleBtn = document.getElementById( 'theme-toggle' );
+    const htmlEl = document.documentElement;
+
+    themeToggleBtn.addEventListener( 'click', () => {
+      if ( htmlEl.getAttribute( 'data-theme' ) === 'dark' ) {
+        htmlEl.removeAttribute( 'data-theme' );
+        localStorage.removeItem( 'theme' );
+      } else {
+        htmlEl.setAttribute( 'data-theme', 'dark' );
+        localStorage.setItem( 'theme', 'dark' );
+      }
+    } );
+
+    // Check for saved theme in localStorage
+    if ( localStorage.getItem( 'theme' ) === 'dark' ) {
+      htmlEl.setAttribute( 'data-theme', 'dark' );
+    }
+  </script>
 </body>
 
 </html>
