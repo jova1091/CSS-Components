@@ -4,6 +4,12 @@
  * =================================================================================
  */
 
+fieldset.btn-group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
 .btn-group {
   position: relative;
   display: inline-flex;

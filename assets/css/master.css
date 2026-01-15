@@ -124,6 +124,7 @@ html[data-theme="dark"] {
   --blockquote-border-left: 0.25rem solid var(--border-color);
   --pre-bg: var(--palette-dark-pre-bg);
   --code-bg: var(--palette-dark-code-bg);
+  --code-color: var(--palette-dark-text);
   --hr-opacity: 0.1;
 
   /* Ajustamos los colores de validación para que tengan mejor contraste */

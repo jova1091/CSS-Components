@@ -1,0 +1,20 @@
+// Simple Theme Toggler
+const themeToggleBtn = document.getElementById("theme-toggle");
+const htmlEl = document.getElementsByTagName("html")[0];
+
+themeToggleBtn.addEventListener("click", () => {
+  if (htmlEl.dataset.theme === "dark") {
+    htmlEl.dataset.theme = "light";
+    localStorage.removeItem("theme");
+  } else {
+    htmlEl.dataset.theme = "dark";
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+// Check for saved theme in localStorage
+if (localStorage.getItem("theme") === "dark") {
+  htmlEl.dataset.theme = "dark";
+} else {
+  htmlEl.dataset.theme = "light";
+}
