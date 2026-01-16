@@ -5,7 +5,7 @@ const htmlEl = document.getElementsByTagName("html")[0];
 themeToggleBtn.addEventListener("click", () => {
   if (htmlEl.dataset.theme === "dark") {
     htmlEl.dataset.theme = "light";
-    localStorage.removeItem("theme");
+    localStorage.setItem("theme", "light");
   } else {
     htmlEl.dataset.theme = "dark";
     localStorage.setItem("theme", "dark");
