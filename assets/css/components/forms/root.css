@@ -56,6 +56,7 @@
   --form-select-indicator: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   --form-select-bg-size: 16px 12px;
   --form-select-bg-position: right 0.75rem center;
+  --form-select-indicator-padding: 1.75rem; /* Espacio reservado para la flecha */
 
   /* Form Option (inside <select>) */
   /*
@@ -71,6 +72,7 @@
 
   /* Form Check (checkboxes, radios) */
   --form-check-display: block;
+  --form-check-min-height: 1.5rem;
   --form-check-padding-left: 1.5em; /* Padding para dejar espacio al input */
   --form-check-margin-top: 0;
   --form-check-margin-bottom: 0.125rem;
@@ -158,6 +160,8 @@
   --form-validation-invalid-focus-box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 
   --form-validation-icon-padding: 3rem; /* Espacio extra en el padding-right para el ícono */
+  --form-validation-bg-position: right 1rem center;
+  --form-validation-bg-size: 1rem 1rem;
   /* Usamos máscaras para permitir la personalización del color del icono a través de background-color */
   --form-validation-valid-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='6' fill='%23198754'/%3e%3cpath stroke='%23fff' stroke-width='1.5' stroke-linecap='round' d='M3.5 6.5l2 2 3.5-3.5'/%3e%3c/svg%3e");
   --form-validation-invalid-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='6' fill='%23dc3545'/%3e%3cpath stroke='%23fff' stroke-width='1.5' stroke-linecap='round' d='M3.5 3.5l5 5M8.5 3.5l-5 5'/%3e%3c/svg%3e");

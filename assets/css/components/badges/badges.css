@@ -9,17 +9,26 @@
   color: var(--badge-color);
   text-align: var(--badge-text-align);
   white-space: nowrap;
-  vertical-align: baseline;
+  vertical-align: var(--badge-vertical-align);
   border-radius: var(--badge-border-radius);
   border: var(--badge-border-width) solid transparent;
-  transition:
-    color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
+  transition: var(--badge-transition);
+  position: relative;
+  top: var(--badge-top-offset);
 }
 
 .badge:empty {
   display: none;
+}
+
+/* Badges inside headings */
+h1 .badge,
+h2 .badge,
+h3 .badge,
+h4 .badge,
+h5 .badge,
+h6 .badge {
+  font-size: var(--badge-font-size-heading);
 }
 
 /* Posicionamiento relativo para badges dentro de botones */

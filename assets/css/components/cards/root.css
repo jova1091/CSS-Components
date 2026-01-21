@@ -22,4 +22,9 @@
 
   --card-img-overlay-padding: 1rem;
   --card-img-aspect-ratio: 16/9; /* Proporción estándar para imágenes de tarjeta */
+
+  /* Horizontal Card Settings */
+  --card-horizontal-img-width: 35%;
+  --card-horizontal-ticket-min-width: 130px;
+  --card-actions-link-margin-top: 0.5rem;
 }

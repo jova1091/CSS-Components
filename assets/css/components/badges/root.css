@@ -3,11 +3,16 @@
   --badge-padding-y: 0.35em;
   --badge-padding-x: 0.65em;
   --badge-font-size: 0.75em;
+  --badge-font-size-heading: 0.5em;
   --badge-font-weight: 700;
   --badge-border-radius: 0.375rem;
   --badge-line-height: 1;
   --badge-text-align: center;
   --badge-border-width: 1px;
+  --badge-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  --badge-vertical-align: middle;
+  /* Ajuste óptico: levanta el badge un porcentaje de su padding para centrarlo mejor visualmente */
+  --badge-top-offset: calc(var(--badge-padding-y) * -0.25);
 
   /* Colors (Text) */
   --badge-color: #fff; /* Texto blanco para fondos oscuros */

@@ -7,6 +7,8 @@
   --alert-link-font-weight: 700;
   --alert-border-width: 1px;
   --alert-heading-margin-bottom: 0.5rem;
+  --alert-heading-font-weight: bold;
+  --alert-link-text-decoration: underline;
 
   /* Default Colors (Base) */
   --alert-bg: var(--color-surface);

@@ -28,14 +28,14 @@
 
 .alert-heading {
   color: inherit;
-  font-weight: bold;
+  font-weight: var(--alert-heading-font-weight);
   margin-bottom: var(--alert-heading-margin-bottom);
 }
 
 .alert-link {
   font-weight: var(--alert-link-font-weight);
   color: inherit;
-  text-decoration: underline;
+  text-decoration: var(--alert-link-text-decoration);
 }
 
 /* 

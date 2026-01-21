@@ -70,7 +70,7 @@
 /* Select specific styles */
 select.form-control {
   /* Aumentamos el padding derecho para dejar espacio al ícono de flecha */
-  --form-control-padding-right: calc(var(--btn-padding-right) + 1.75rem); /* padding original + espacio para el ícono */
+  --form-control-padding-right: calc(var(--btn-padding-right) + var(--form-select-indicator-padding)); /* padding original + espacio para el ícono */
   background-image: var(--form-select-indicator);
   background-repeat: no-repeat;
   background-position: var(--form-select-bg-position);
@@ -171,7 +171,7 @@ select.form-control option:checked {
 
 .form-check {
   display: var(--form-check-display);
-  min-height: 1.5rem; /* Ensure label height is consistent */
+  min-height: var(--form-check-min-height); /* Ensure label height is consistent */
   margin-top: var(--form-check-margin-top);
   padding-left: var(--form-check-padding-left);
   margin-bottom: var(--form-check-margin-bottom);
@@ -192,7 +192,11 @@ select.form-control option:checked {
   -webkit-appearance: none;
   appearance: none;
   cursor: var(--form-check-input-cursor);
-  transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    background-position 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 .form-check-input:focus {
@@ -275,8 +279,8 @@ select.form-control option:checked {
 .form-control.is-warning {
   padding-right: var(--form-validation-icon-padding);
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1rem 1rem;
+  background-position: var(--form-validation-bg-position);
+  background-size: var(--form-validation-bg-size);
 }
 /* Muestra el mensaje de feedback cuando el campo tiene la clase correspondiente */
 .is-valid ~ .valid-feedback,
@@ -349,5 +353,5 @@ select.form-control.is-invalid,
 select.form-control.is-warning {
   /* El icono de validación y la flecha del select son ambos background-image.
      Esta regla los posiciona para que no se solapen. */
-  background-position: right 1rem center, var(--form-select-bg-position);
+  background-position: var(--form-validation-bg-position), var(--form-select-bg-position);
 }
