@@ -141,6 +141,8 @@
   padding: var(--card-spacer-y) var(--card-spacer-x);
   border-left: var(--card-border-width) solid var(--card-border-color);
   background-color: var(--card-cap-bg); /* Mismo fondo sutil que headers/footers */
+  border-radius: 0 var(--card-inner-border-radius) var(--card-inner-border-radius) 0;
+
   flex-shrink: 0; /* Evita que la columna de acciones se encoja */
   white-space: nowrap; /* Mantiene el texto de los enlaces en una sola línea */
 }
