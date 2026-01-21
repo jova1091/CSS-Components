@@ -1,0 +1,151 @@
+@import url("root.css") layer(components.cards.vars);
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: var(--card-height);
+  word-wrap: break-word;
+  background-color: var(--card-bg);
+  background-clip: border-box;
+  border: var(--card-border-width) solid var(--card-border-color);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-box-shadow);
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: var(--card-spacer-y) var(--card-spacer-x);
+  color: var(--card-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  margin-bottom: var(--card-title-spacer-y);
+}
+
+.card-subtitle {
+  margin-top: calc(-0.5 * var(--card-title-spacer-y));
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link + .card-link {
+  margin-left: var(--card-spacer-x);
+}
+
+.card-header {
+  padding: var(--card-cap-padding-y) var(--card-cap-padding-x);
+  margin-bottom: 0;
+  color: var(--card-cap-color);
+  background-color: var(--card-cap-bg);
+  border-bottom: var(--card-border-width) solid var(--card-border-color);
+}
+
+.card-header:first-child {
+  border-radius: var(--card-inner-border-radius) var(--card-inner-border-radius) 0 0;
+}
+
+.card-footer {
+  padding: var(--card-cap-padding-y) var(--card-cap-padding-x);
+  color: var(--card-cap-color);
+  background-color: var(--card-cap-bg);
+  border-top: var(--card-border-width) solid var(--card-border-color);
+}
+
+.card-footer:last-child {
+  border-radius: 0 0 var(--card-inner-border-radius) var(--card-inner-border-radius);
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: var(--card-img-overlay-padding);
+  border-radius: var(--card-inner-border-radius);
+}
+
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  width: 100%;
+  object-fit: cover; /* Evita que la imagen se deforme */
+  aspect-ratio: var(--card-img-aspect-ratio); /* Fuerza una altura consistente */
+}
+
+.card-img,
+.card-img-top {
+  border-top-left-radius: var(--card-inner-border-radius);
+  border-top-right-radius: var(--card-inner-border-radius);
+}
+
+.card-img,
+.card-img-bottom {
+  border-bottom-right-radius: var(--card-inner-border-radius);
+  border-bottom-left-radius: var(--card-inner-border-radius);
+}
+
+/* Horizontal Card Variant */
+.card-horizontal {
+  flex-direction: row;
+}
+
+.card-img-left {
+  width: 35%; /* Ancho fijo relativo para la imagen */
+  height: 100%; /* Asegura que ocupe toda la altura disponible en la tarjeta horizontal */
+  flex-shrink: 0; /* Evita que la imagen se encoja si hay mucho texto */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+  border-top-left-radius: var(--card-inner-border-radius);
+  border-bottom-left-radius: var(--card-inner-border-radius);
+}
+
+/* 
+ * Horizontal Header & Footer (Ticket/Widget Style)
+ * Transforma el header y footer en paneles laterales.
+ */
+.card-horizontal > .card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 130px; /* Ancho mínimo para asegurar legibilidad */
+  text-align: center;
+  border-bottom: 0;
+  border-right: var(--card-border-width) solid var(--card-border-color);
+  border-radius: var(--card-inner-border-radius) 0 0 var(--card-inner-border-radius);
+}
+
+.card-horizontal > .card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 130px;
+  border-top: 0;
+  border-left: var(--card-border-width) solid var(--card-border-color);
+  border-radius: 0 var(--card-inner-border-radius) var(--card-inner-border-radius) 0;
+}
+
+/* Actions Column (Para la tarjeta básica horizontal) */
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--card-spacer-y) var(--card-spacer-x);
+  border-left: var(--card-border-width) solid var(--card-border-color);
+  background-color: var(--card-cap-bg); /* Mismo fondo sutil que headers/footers */
+  flex-shrink: 0; /* Evita que la columna de acciones se encoja */
+  white-space: nowrap; /* Mantiene el texto de los enlaces en una sola línea */
+}
+
+.card-actions .card-link + .card-link {
+  margin-left: 0;
+  margin-top: 0.5rem; /* Espaciado vertical entre enlaces */
+}

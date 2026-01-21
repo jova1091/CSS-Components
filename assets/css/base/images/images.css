@@ -1,0 +1,11 @@
+/*
+ * =================================================================================
+ * IMAGES RESET
+ * =================================================================================
+ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; /* Elimina el espacio blanco extraño debajo de las imágenes inline */
+}

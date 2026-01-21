@@ -644,6 +644,115 @@ body {
         </div>
       </article>
     </section>
+    <section id="cards" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Cards</h2>
+          <p>Ejemplos del componente de tarjeta (Card) integrado con el sistema de diseño.</p>
+        </div>
+      </article>
+      <div class="row">
+        <!-- Basic Card -->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Título de Tarjeta</h5>
+              <h6 class="card-subtitle mb-2">Subtítulo</h6>
+              <p class="card-text">Ejemplo de texto rápido para construir sobre el título de la tarjeta y componer el
+                contenido.</p>
+              <div class="mt-auto">
+                <a href="#" class="card-link">Enlace 1</a>
+                <a href="#" class="card-link">Enlace 2</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card with Image -->
+        <div class="col-4">
+          <div class="card">
+            <svg class="card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img"
+              aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"
+              style="background-color: var(--color-surface-muted);">
+              <title>Placeholder</title><text x="50%" y="50%" fill="currentColor" dy=".3em"
+                text-anchor="middle">Imagen</text>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta con Imagen</h5>
+              <p class="card-text">Un ejemplo de tarjeta que incluye una imagen en la parte superior.</p>
+              <button class="btn btn-primary mt-auto">Acción</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card with Header/Footer -->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              Encabezado
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Título Especial</h5>
+              <p class="card-text">Con texto de apoyo a continuación como introducción natural.</p>
+              <button class="btn btn-secondary mt-auto">Ver más</button>
+            </div>
+            <div class="card-footer">
+              Pie de página
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-6">
+          <div class="card card-horizontal">
+            <svg class="card-img-left" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img"
+              aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"
+              style="background-color: var(--color-surface-muted);">
+              <title>Placeholder</title>
+              <text x="50%" y="50%" fill="currentColor" dy=".3em" text-anchor="middle">IMG</text>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta Horizontal</h5>
+              <p class="card-text">Esta variante alinea la imagen a la izquierda y el contenido a la derecha. Ideal para
+                listados de artículos o noticias.</p>
+              <button class="btn btn-primary mt-auto">Leer más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <!-- Basic Horizontal with Actions Column -->
+        <div class="col-6">
+          <div class="card card-horizontal">
+            <div class="card-body">
+              <h5 class="card-title">Horizontal con Acciones</h5>
+              <p class="card-text">Aquí el contenido fluye a la izquierda, mientras que los enlaces de acción se agrupan
+                en una columna dedicada a la derecha.</p>
+            </div>
+            <div class="card-actions">
+              <a href="#" class="card-link">Editar</a>
+              <a href="#" class="card-link">Eliminar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Full Horizontal (Ticket Style) -->
+        <div class="col-6">
+          <div class="card card-horizontal">
+            <div class="card-header">
+              <small class="text-muted">ESTADO</small>
+              <strong>ACTIVO</strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Estilo Ticket</h5>
+              <p class="card-text">El header y footer se convierten en paneles laterales. Ideal para eventos, tickets o
+                widgets de dashboard.</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-sm btn-primary">Ver</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="container-full">
     <div class="row">

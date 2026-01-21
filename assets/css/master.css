@@ -2,11 +2,13 @@
 
 @import url("/assets/css/grid/grid.css") layer(layout);
 @import url("/assets/css/base/typography/typography.css") layer(base.typography);
+@import url("/assets/css/base/images/images.css") layer(base.images);
 @import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
 @import url("/assets/css/utilities/helpers/helpers.css") layer(utilities.helpers);
 @import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
 @import url("/assets/css/components/buttons/btn-group.css") layer(components.buttons);
 @import url("/assets/css/components/forms/forms.css") layer(components.forms);
+@import url("/assets/css/components/cards/cards.css") layer(components.cards);
 
 /*
  * =================================================================================
