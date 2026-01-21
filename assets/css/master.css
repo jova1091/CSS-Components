@@ -105,6 +105,41 @@
   --btn-margin-bottom: var(--spacer-2); /* min(0.5em, 2%) */
 }
 
+/* 
+ * =================================================================================
+ * SYSTEM PREFERENCE OVERRIDES
+ * =================================================================================
+ * Si el usuario no ha definido un tema explícito (data-theme), usamos la preferencia del sistema.
+ * Esto asegura que las variables oscuras se carguen automáticamente.
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Dark Theme Palette */
+    --color-primary: var(--palette-dark-primary);
+    --color-text: var(--palette-dark-text);
+    --color-text-muted: var(--palette-dark-text-muted);
+    --color-surface: var(--palette-dark-surface);
+    --color-surface-subtle: var(--palette-dark-surface-subtle);
+    --color-surface-muted: var(--palette-dark-surface-muted);
+    --color-border: var(--palette-dark-border);
+    --color-border-input: var(--palette-dark-border-input);
+    --color-focus-ring: var(--palette-dark-focus-ring);
+
+    /* Component Overrides for Dark Mode (System) */
+    --h3-border-bottom: 2px solid var(--border-color);
+    --display-border-bottom: 1px solid var(--border-color);
+    --blockquote-border-left: 0.25rem solid var(--border-color);
+    --pre-bg: var(--palette-dark-pre-bg);
+    --code-bg: var(--palette-dark-code-bg);
+    --code-color: var(--palette-dark-text);
+    --hr-opacity: 0.1;
+
+    /* Form Fixes for Dark Mode */
+    --form-select-indicator: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e0e1dd' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    --form-check-input-border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+}
+
 /* 2. Dark Theme Overrides */
 html[data-theme="dark"] {
   /* Dark Theme Palette */
@@ -126,6 +161,11 @@ html[data-theme="dark"] {
   --code-bg: var(--palette-dark-code-bg);
   --code-color: var(--palette-dark-text);
   --hr-opacity: 0.1;
+
+  /* Form Fixes for Dark Mode (Manual Toggle) */
+  /* Cambiamos el color del stroke del SVG a claro (%23e0e1dd) para que se vea sobre fondo oscuro */
+  --form-select-indicator: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e0e1dd' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  --form-check-input-border: 1px solid rgba(255, 255, 255, 0.25);
 
   /* Ajustamos los colores de validación para que tengan mejor contraste */
   --form-validation-valid-color: #28a745;

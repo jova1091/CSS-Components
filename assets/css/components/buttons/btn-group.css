@@ -75,19 +75,16 @@ fieldset.btn-group {
   width: 100%;
 }
 
+/* Vertical Group Radius */
 .btn-group-vertical > .btn:not(:first-child) {
   margin-top: -1px;
+  --btn-border-top-left-radius: 0;
+  --btn-border-top-right-radius: 0;
 }
 
-/* Vertical Group Radius */
 .btn-group-vertical > .btn:not(:last-child) {
   --btn-border-bottom-left-radius: 0;
   --btn-border-bottom-right-radius: 0;
-}
-
-.btn-group-vertical > .btn:not(:first-child) {
-  --btn-border-top-left-radius: 0;
-  --btn-border-top-right-radius: 0;
 }
 
 /*
