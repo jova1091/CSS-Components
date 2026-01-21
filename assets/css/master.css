@@ -9,6 +9,7 @@
 @import url("/assets/css/components/buttons/btn-group.css") layer(components.buttons);
 @import url("/assets/css/components/forms/forms.css") layer(components.forms);
 @import url("/assets/css/components/cards/cards.css") layer(components.cards);
+@import url("/assets/css/components/breadcrumb/breadcrumb.css") layer(components.breadcrumb);
 
 /*
  * =================================================================================

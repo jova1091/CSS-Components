@@ -1,0 +1,33 @@
+@import url("root.css") layer(components.breadcrumb.vars);
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--breadcrumb-padding-y) var(--breadcrumb-padding-x);
+  margin-bottom: var(--breadcrumb-margin-bottom);
+  font-size: var(--breadcrumb-font-size);
+  list-style: none;
+  background-color: var(--breadcrumb-bg);
+  border-radius: var(--breadcrumb-border-radius);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+/* El separador se añade antes de cada item (excepto el primero) */
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: var(--breadcrumb-item-padding);
+  padding-left: var(--breadcrumb-item-padding);
+  color: var(--breadcrumb-divider-color);
+  content: var(--breadcrumb-divider);
+}
+
+.breadcrumb-item.active {
+  color: var(--breadcrumb-active-color);
+  pointer-events: none; /* Evita clics en la página actual */
+  cursor: default;
+  text-decoration: none;
+}
