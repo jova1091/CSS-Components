@@ -1,0 +1,138 @@
+:root {
+  /* Alert Variables */
+  --alert-padding-y: 1rem;
+  --alert-padding-x: 1rem;
+  --alert-margin-bottom: 1rem;
+  --alert-border-radius: 0.375rem;
+  --alert-link-font-weight: 700;
+  --alert-border-width: 1px;
+  --alert-heading-margin-bottom: 0.5rem;
+
+  /* Default Colors (Base) */
+  --alert-bg: var(--color-surface);
+  --alert-color: var(--color-text);
+  --alert-border-color: var(--color-border);
+
+  /* State Colors (Base) */
+  --color-success: #198754;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #0dcaf0;
+
+  /* 
+   * Variant Variables (Light Mode Default)
+   * Definimos bg, color y border para cada variante aquí.
+   */
+
+  /* Primary */
+  --alert-primary-bg: color-mix(in srgb, var(--color-primary), white 85%);
+  --alert-primary-color: var(--color-primary);
+  --alert-primary-border-color: var(--color-primary);
+
+  /* Secondary */
+  --alert-secondary-bg: var(--color-surface-muted);
+  --alert-secondary-color: var(--color-text);
+  --alert-secondary-border-color: var(--color-border);
+
+  /* Success */
+  --alert-success-bg: #d1e7dd;
+  --alert-success-color: #0f5132;
+  --alert-success-border-color: #badbcc;
+
+  /* Danger */
+  --alert-danger-bg: #f8d7da;
+  --alert-danger-color: #842029;
+  --alert-danger-border-color: #f5c2c7;
+
+  /* Warning */
+  --alert-warning-bg: #fff3cd;
+  --alert-warning-color: #664d03;
+  --alert-warning-border-color: #ffecb5;
+
+  /* Info */
+  --alert-info-bg: #cff4fc;
+  --alert-info-color: #055160;
+  --alert-info-border-color: #b6effb;
+
+  /* Close Button (Dismissible Alerts) */
+  --btn-close-width: 1em;
+  --btn-close-height: 1em;
+  --btn-close-opacity: 0.5;
+  --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  --btn-close-padding: 1.25rem 1rem; /* Padding para posicionar el botón */
+  --alert-dismissible-padding-right: 3rem; /* Espacio reservado para la X */
+  --btn-close-color: inherit;
+  --btn-close-bg-color: transparent;
+  --btn-close-border: 0;
+  --btn-close-border-radius: 0.25rem;
+  --btn-close-hover-opacity: 1;
+
+  /* Animation Settings */
+  --alert-max-height: 50em; /* Altura máxima inicial para la animación de colapso */
+  --alert-transition-timing: ease-out;
+  --alert-fade-duration: 0.3s;
+  --alert-collapse-duration: 0.4s;
+  --alert-border-transition-duration: 0.1s;
+  --alert-border-transition-delay: 0.3s; /* Generalmente igual al fade-duration */
+}
+
+/* 
+ * Dark Mode Overrides 
+ * Redefinimos las variables para el tema oscuro usando color-mix con negro
+ * para reducir el brillo, manteniendo el tinte del color semántico.
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Primary */
+    --alert-primary-bg: color-mix(in srgb, var(--color-primary), black 60%);
+    --alert-primary-color: var(--color-text);
+
+    /* Success */
+    --alert-success-bg: color-mix(in srgb, var(--color-success), black 60%);
+    --alert-success-color: var(--color-text);
+    --alert-success-border-color: var(--color-success);
+
+    /* Danger */
+    --alert-danger-bg: color-mix(in srgb, var(--color-danger), black 60%);
+    --alert-danger-color: var(--color-text);
+    --alert-danger-border-color: var(--color-danger);
+
+    /* Warning */
+    --alert-warning-bg: color-mix(in srgb, var(--color-warning), black 70%);
+    --alert-warning-color: var(--color-text);
+    --alert-warning-border-color: var(--color-warning);
+
+    /* Info */
+    --alert-info-bg: color-mix(in srgb, var(--color-info), black 60%);
+    --alert-info-color: var(--color-text);
+    --alert-info-border-color: var(--color-info);
+
+    /* Close Button Dark Mode (White Icon) */
+    --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e0e1dd'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  }
+}
+
+/* Manual Dark Mode Toggle */
+html[data-theme="dark"] {
+  --alert-primary-bg: color-mix(in srgb, var(--color-primary), black 60%);
+  --alert-primary-color: var(--color-text);
+
+  --alert-success-bg: color-mix(in srgb, var(--color-success), black 60%);
+  --alert-success-color: var(--color-text);
+  --alert-success-border-color: var(--color-success);
+
+  --alert-danger-bg: color-mix(in srgb, var(--color-danger), black 60%);
+  --alert-danger-color: var(--color-text);
+  --alert-danger-border-color: var(--color-danger);
+
+  --alert-warning-bg: color-mix(in srgb, var(--color-warning), black 70%);
+  --alert-warning-color: var(--color-text);
+  --alert-warning-border-color: var(--color-warning);
+
+  --alert-info-bg: color-mix(in srgb, var(--color-info), black 60%);
+  --alert-info-color: var(--color-text);
+  --alert-info-border-color: var(--color-info);
+
+  /* Close Button Dark Mode (Manual Toggle) */
+  --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e0e1dd'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
