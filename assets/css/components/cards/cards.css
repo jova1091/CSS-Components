@@ -92,62 +92,83 @@
   border-bottom-left-radius: var(--card-inner-border-radius);
 }
 
-/* Horizontal Card Variant */
-.card-horizontal {
-  flex-direction: row;
-}
+/* 
+ * =================================================================================
+ * HORIZONTAL CARD VARIANT (Responsive)
+ * =================================================================================
+ * 
+ * Mobile First: Por defecto (< 425px), estos elementos se comportan como una
+ * tarjeta vertical estándar.
+ */
 
 .card-img-left {
-  width: 35%; /* Ancho fijo relativo para la imagen */
-  height: 100%; /* Asegura que ocupe toda la altura disponible en la tarjeta horizontal */
-  flex-shrink: 0; /* Evita que la imagen se encoja si hay mucho texto */
-  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: var(--card-img-aspect-ratio); /* Mantiene proporción en móvil */
   border-top-left-radius: var(--card-inner-border-radius);
-  border-bottom-left-radius: var(--card-inner-border-radius);
+  border-top-right-radius: var(--card-inner-border-radius);
 }
 
-/* 
- * Horizontal Header & Footer (Ticket/Widget Style)
- * Transforma el header y footer en paneles laterales.
- */
-.card-horizontal > .card-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 130px; /* Ancho mínimo para asegurar legibilidad */
-  text-align: center;
-  border-bottom: 0;
-  border-right: var(--card-border-width) solid var(--card-border-color);
-  border-radius: var(--card-inner-border-radius) 0 0 var(--card-inner-border-radius);
-}
-
-.card-horizontal > .card-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 130px;
-  border-top: 0;
-  border-left: var(--card-border-width) solid var(--card-border-color);
-  border-radius: 0 var(--card-inner-border-radius) var(--card-inner-border-radius) 0;
-}
-
-/* Actions Column (Para la tarjeta básica horizontal) */
 .card-actions {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: var(--card-spacer-y) var(--card-spacer-x);
-  border-left: var(--card-border-width) solid var(--card-border-color);
-  background-color: var(--card-cap-bg); /* Mismo fondo sutil que headers/footers */
-  border-radius: 0 var(--card-inner-border-radius) var(--card-inner-border-radius) 0;
-
-  flex-shrink: 0; /* Evita que la columna de acciones se encoja */
-  white-space: nowrap; /* Mantiene el texto de los enlaces en una sola línea */
+  background-color: var(--card-cap-bg);
+  border-top: var(--card-border-width) solid var(--card-border-color);
+  border-radius: 0 0 var(--card-inner-border-radius) var(--card-inner-border-radius);
 }
 
-.card-actions .card-link + .card-link {
-  margin-left: 0;
-  margin-top: 0.5rem; /* Espaciado vertical entre enlaces */
+/* Desktop / Tablet (>= 425px breakpoint XS) */
+@media (min-width: 426px) {
+  .card-horizontal {
+    flex-direction: row;
+  }
+
+  .card-img-left {
+    width: 35%;
+    height: 100%;
+    aspect-ratio: auto; /* Reseteamos para que llene la altura */
+    flex-shrink: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--card-inner-border-radius);
+  }
+
+  /* Ticket Style Layout */
+  .card-horizontal > .card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 130px;
+    text-align: center;
+    border-bottom: 0;
+    border-right: var(--card-border-width) solid var(--card-border-color);
+    border-radius: var(--card-inner-border-radius) 0 0 var(--card-inner-border-radius);
+  }
+
+  .card-horizontal > .card-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 130px;
+    border-top: 0;
+    border-left: var(--card-border-width) solid var(--card-border-color);
+    border-radius: 0 var(--card-inner-border-radius) var(--card-inner-border-radius) 0;
+  }
+
+  /* Actions Column Layout */
+  .card-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 0;
+    border-left: var(--card-border-width) solid var(--card-border-color);
+    border-radius: 0 var(--card-inner-border-radius) var(--card-inner-border-radius) 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .card-actions .card-link + .card-link {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
 }
