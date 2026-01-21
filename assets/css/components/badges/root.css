@@ -1,0 +1,26 @@
+:root {
+  /* Badge Variables */
+  --badge-padding-y: 0.35em;
+  --badge-padding-x: 0.65em;
+  --badge-font-size: 0.75em;
+  --badge-font-weight: 700;
+  --badge-border-radius: 0.375rem;
+  --badge-line-height: 1;
+  --badge-text-align: center;
+  --badge-border-width: 1px;
+
+  /* Colors (Text) */
+  --badge-color: #fff; /* Texto blanco para fondos oscuros */
+  --badge-color-dark: #000; /* Texto negro para fondos claros (warning, info) */
+
+  /* Background Colors */
+  /* Usamos las variables globales donde existen, y definimos las de estado */
+  --badge-bg-primary: var(--color-primary);
+  --badge-bg-secondary: var(--color-text-muted);
+  --badge-bg-success: #198754;
+  --badge-bg-danger: #dc3545;
+  --badge-bg-warning: #ffc107;
+  --badge-bg-info: #0dcaf0;
+  --badge-bg-light: #f8f9fa;
+  --badge-bg-dark: #212529;
+}

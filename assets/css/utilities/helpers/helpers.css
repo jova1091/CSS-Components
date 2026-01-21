@@ -11,6 +11,14 @@
   background-color: var(--bg-light-color);
 }
 
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -49,4 +57,8 @@
 
 .rounded-0 {
   border-radius: 0 !important;
+}
+
+.rounded-pill {
+  border-radius: 50rem !important;
 }

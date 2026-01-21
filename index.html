@@ -712,7 +712,10 @@ body {
         <div class="col-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Título de Tarjeta</h5>
+              <h5 class="card-title d-flex justify-content-between align-items-center">
+                Título de Tarjeta
+                <small><span class="badge badge-primary">Nuevo</span></small>
+              </h5>
               <h6 class="card-subtitle mb-2">Subtítulo</h6>
               <p class="card-text">Ejemplo de texto rápido para construir sobre el título de la tarjeta y componer el
                 contenido.</p>
@@ -865,6 +868,47 @@ body {
             <strong>¡Info!</strong> Esta alerta se puede cerrar haciendo clic en la X, sin usar JavaScript.
             <label for="alert-dismiss-example" class="btn-close" aria-label="Cerrar"></label>
           </div>
+        </div>
+      </article>
+    </section>
+    <section id="badges" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Badges (Etiquetas)</h2>
+          <p>Documentación y ejemplos de badges, nuestro componente de conteo y etiquetado pequeño.</p>
+        </div>
+        <div class="col-12">
+          <h4>Contextual Variations</h4>
+          <span class="badge badge-primary">Primary</span>
+          <span class="badge badge-secondary">Secondary</span>
+          <span class="badge badge-success">Success</span>
+          <span class="badge badge-danger">Danger</span>
+          <span class="badge badge-warning">Warning</span>
+          <span class="badge badge-info">Info</span>
+          <span class="badge badge-light">Light</span>
+          <span class="badge badge-dark">Dark</span>
+
+          <h4 class="mt-4">Outline Badges</h4>
+          <span class="badge badge-outline-primary">Primary</span>
+          <span class="badge badge-outline-secondary">Secondary</span>
+          <span class="badge badge-outline-success">Success</span>
+          <span class="badge badge-outline-danger">Danger</span>
+          <span class="badge badge-outline-warning">Warning</span>
+          <span class="badge badge-outline-info">Info</span>
+          <span class="badge badge-outline-dark">Dark</span>
+
+          <h4 class="mt-4">Pill Badges</h4>
+          <span class="badge badge-primary rounded-pill">Primary</span>
+          <span class="badge badge-secondary rounded-pill">Secondary</span>
+
+          <h4 class="mt-4">Inside Headings</h4>
+          <h1>Ejemplo de H1 <span class="badge badge-secondary">Nuevo</span></h1>
+          <h2>Ejemplo de H2 <span class="badge badge-secondary">Nuevo</span></h2>
+
+          <h4 class="mt-4">Inside Buttons</h4>
+          <button type="button" class="btn btn-primary"> Notificaciones <span class="badge badge-light">4</span>
+          </button>
         </div>
       </article>
     </section>
