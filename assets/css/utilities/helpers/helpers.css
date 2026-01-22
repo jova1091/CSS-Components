@@ -46,6 +46,11 @@
   color: var(--color-text-muted) !important;
 }
 
+/* Positioning Utilities */
+.position-relative {
+  position: relative !important;
+}
+
 /* Border Radius Utilities */
 .rounded {
   border-radius: 0.25rem !important;
@@ -61,4 +66,39 @@
 
 .rounded-pill {
   border-radius: 50rem !important;
+}
+
+/* Flex Utilities */
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+/* Display Utilities */
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+/* Responsive Display Utilities (Desktop >= 769px) */
+@media (min-width: 769px) {
+  .d-md-none {
+    display: none !important;
+  }
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-flex {
+    display: flex !important;
+  }
 }

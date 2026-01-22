@@ -108,7 +108,7 @@
 /* Tablet */
 @media screen and (max-width: 768px) {
   .row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   /* 

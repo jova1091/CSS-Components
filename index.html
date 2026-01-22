@@ -9,18 +9,33 @@
 </head>
 
 <body>
-  <header class="container-full py-3 bg-light">
-    <div class="row align-items-center">
-      <div class="col-6">
-        <h4 class="m-0">CSS Components Demo</h4>
+  <nav class="navbar navbar-sticky">
+    <div class="container-full">
+      <a class="navbar-brand" href="#">CSS Components</a>
+
+      <button class="navbar-toggler" type="button" aria-controls="navbar-menu" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" id="navbar-menu" hidden>
+        <!-- Close Button (Mobile Only) -->
+        <button type="button" class="btn-close" aria-label="Close navigation"></button>
+
+        <ul class="navbar-nav navbar-nav-center">
+          <li><a class="nav-link" href="#buttons">Buttons</a></li>
+          <li><a class="nav-link" href="#forms">Forms</a></li>
+          <li><a class="nav-link" href="#cards">Cards</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <button id="theme-toggle" class="btn btn-secondary btn-sm">Toggle Theme</button>
+        </div>
       </div>
-      <div class="col-6 text-right">
-        <button id="theme-toggle" class="btn btn-secondary btn-sm">
-          Toggle Theme
-        </button>
-      </div>
+
+      <!-- Backdrop Overlay -->
+      <div class="navbar-backdrop"></div>
     </div>
-  </header>
+  </nav>
   <main>
     <div class="container-full">
       <section class="row">
@@ -910,6 +925,176 @@ body {
           <button type="button" class="btn btn-primary"> Notificaciones <small><span
                 class="badge badge-light">4</span></small>
           </button>
+        </div>
+      </article>
+    </section>
+    <section id="navbar-docs" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Navbar Documentation</h2>
+          <p>El componente Navbar es responsive y soporta navegación móvil tipo Offcanvas (Sidebar). A continuación se
+            detallan las clases de alineación disponibles. Adicionalmente, el comportamiento 'sticky' (fijo arriba) es
+            opcional y se activa añadiendo la clase <code>.navbar-sticky</code> al elemento <code>nav</code>.</p>
+
+          <div class="alert alert-info">
+            <strong>Nota:</strong> Los siguientes ejemplos son estáticos para demostración. El Navbar principal del
+            sitio está fijado arriba (Sticky).
+          </div>
+
+          <h4 class="mt-4">1. Alineación a la Izquierda (Start)</h4>
+          <p>Clase: <code>.navbar-nav-start</code>. Es el comportamiento por defecto. Los items se pegan al logo.</p>
+          <nav class="navbar mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <!-- Simulación de estado desktop -->
+                <ul class="navbar-nav navbar-nav-start flex-row">
+                  <li><a class="nav-link" href="#">Link 1</a></li>
+                  <li><a class="nav-link" href="#">Link 2</a></li>
+                </ul>
+                <button class="btn btn-sm btn-primary ml-auto">Action</button>
+              </div>
+            </div>
+          </nav>
+
+          <h4 class="mt-4">2. Alineación al Centro (Center)</h4>
+          <p>Clase: <code>.navbar-nav-center</code>. Los items se centran en el espacio disponible entre el logo y el
+            contenido derecho.</p>
+          <nav class="navbar mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-center flex-row">
+                  <li><a class="nav-link" href="#">Link 1</a></li>
+                  <li><a class="nav-link" href="#">Link 2</a></li>
+                </ul>
+                <button class="btn btn-sm btn-primary">Action</button>
+              </div>
+            </div>
+          </nav>
+
+          <h4 class="mt-4">3. Alineación a la Derecha (End)</h4>
+          <p>Clase: <code>.navbar-nav-end</code>. Los items se pegan al contenido derecho (o al borde derecho si no hay
+            nada más).</p>
+          <nav class="navbar mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-end flex-row">
+                  <li><a class="nav-link" href="#">Link 1</a></li>
+                  <li><a class="nav-link" href="#">Link 2</a></li>
+                </ul>
+                <button class="btn btn-sm btn-primary ml-3">Action</button>
+              </div>
+            </div>
+          </nav>
+
+          <h4 class="mt-4">4. Brand Centrado (Absolute)</h4>
+          <p>Para centrar el logotipo independientemente del contenido, usamos la clase
+            <code>.navbar-brand-center</code> junto con <code>.position-relative</code> en el contenedor padre.
+          </p>
+          <!-- 
+            COMO HACERLO:
+            1. Agrega la clase 'position-relative' al div .container-full (o .container).
+            2. Agrega la clase 'navbar-brand-center' al elemento .navbar-brand.
+            3. Usa las clases de alineación (.navbar-nav-start, .navbar-nav-end) para ubicar los enlaces donde desees.
+          -->
+          <nav class="navbar mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full position-relative">
+              <a class="navbar-brand navbar-brand-center" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-start flex-row">
+                  <li><a class="nav-link" href="#">Left Link</a></li>
+                </ul>
+                <button class="btn btn-sm btn-primary ml-auto">Right Action</button>
+              </div>
+            </div>
+          </nav>
+
+          <h4 class="mt-4">5. Offcanvas Siempre Visible (Always Offcanvas)</h4>
+          <p>Para forzar que el menú se comporte como un sidebar en <strong>todas las resoluciones</strong> (incluido
+            escritorio), añade la clase <code>.navbar-offcanvas-always</code> al elemento <code>nav</code>.</p>
+
+          <nav class="navbar navbar-offcanvas-always mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <!-- El botón siempre será visible -->
+              <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- El menú siempre estará oculto a la derecha hasta que se active -->
+              <div class="navbar-collapse">
+                <!-- Contenido del menú... -->
+              </div>
+            </div>
+          </nav>
+
+          <h4 class="mt-4">6. Tipos de Brand (Texto, Imagen, Mixto)</h4>
+          <p>El componente <code>.navbar-brand</code> soporta texto, imágenes o una combinación de ambos gracias a
+            Flexbox.</p>
+
+          <!-- Texto -->
+          <nav class="navbar mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Solo Texto</a>
+            </div>
+          </nav>
+
+          <!-- Imagen -->
+          <nav class="navbar mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='30' height='30'%3e%3ccircle cx='15' cy='15' r='15' fill='%778da9'/%3e%3c/svg%3e"
+                  alt="Logo">
+              </a>
+            </div>
+          </nav>
+
+          <!-- Imagen + Texto -->
+          <nav class="navbar mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='30' height='30'%3e%3ccircle cx='15' cy='15' r='15' fill='%778da9'/%3e%3c/svg%3e"
+                  alt="Logo">
+                Imagen + Texto
+              </a>
+            </div>
+          </nav>
+
+          <h4 class="mt-4">Estructura Base</h4>
+          <pre><code>
+&lt;nav class="navbar navbar-sticky"&gt;
+  &lt;div class="container-full"&gt;
+    &lt;!-- Logo --&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Brand&lt;/a&gt;
+
+    &lt;!-- Botón Móvil --&gt;
+    &lt;button class="navbar-toggler" ...&gt;...&lt;/button&gt;
+
+    &lt;!-- Contenido Colapsable --&gt;
+    &lt;div class="navbar-collapse" id="menu"&gt;
+      &lt;!-- Menú de Navegación (Aquí va la clase de alineación) --&gt;
+      &lt;ul class="navbar-nav navbar-nav-center"&gt;
+        &lt;li&gt;&lt;a class="nav-link" href="#"&gt;Item&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;!-- Otros elementos (Botones, etc) --&gt;
+      &lt;div&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+          </code></pre>
         </div>
       </article>
     </section>
