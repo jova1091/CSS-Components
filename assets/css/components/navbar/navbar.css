@@ -199,7 +199,7 @@
   .navbar-nav .dropdown-menu {
     position: static;
     float: none;
-    width: auto;
+    width: 100%;
     margin-top: 0;
     background-color: transparent;
     border: 0;
@@ -311,4 +311,16 @@
 
 .navbar-offcanvas-always .navbar-backdrop {
   display: block !important; /* Revertir el display: none de escritorio */
+}
+
+/* Dropdown dentro del Navbar Offcanvas Always */
+.navbar-offcanvas-always .navbar-nav .dropdown-menu {
+  position: static;
+  float: none;
+  width: 100%;
+  margin-top: 0;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  padding-left: 1rem;
 }
