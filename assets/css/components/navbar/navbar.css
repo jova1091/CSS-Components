@@ -194,6 +194,18 @@
     display: block;
     margin-bottom: var(--navbar-sidebar-close-btn-margin-bottom);
   }
+
+  /* Dropdown dentro del Navbar Móvil */
+  .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    padding-left: 1rem; /* Indentación para jerarquía */
+  }
 }
 
 @media (min-width: 769px) {

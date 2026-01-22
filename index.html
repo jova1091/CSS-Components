@@ -26,6 +26,21 @@
           <li><a class="nav-link" href="#buttons">Buttons</a></li>
           <li><a class="nav-link" href="#forms">Forms</a></li>
           <li><a class="nav-link" href="#cards">Cards</a></li>
+          <!-- Dropdown in Navbar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">Más</a>
+            <ul class="dropdown-menu">
+              <li>
+                <h6 class="dropdown-header">Componentes</h6>
+              </li>
+              <li><a class="dropdown-item" href="#alerts">Alertas</a></li>
+              <li><a class="dropdown-item" href="#badges">Badges</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#dropdowns">Dropdowns</a></li>
+            </ul>
+          </li>
         </ul>
         <div class="d-flex align-items-center">
           <button id="theme-toggle" class="btn btn-secondary btn-sm">Toggle Theme</button>
@@ -928,6 +943,41 @@ body {
         </div>
       </article>
     </section>
+    <section id="dropdowns" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Dropdowns</h2>
+          <p>Menús desplegables contextuales para mostrar listas de enlaces y más.</p>
+        </div>
+        <div class="col-12">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" aria-expanded="false">
+              Dropdown Button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Acción</a></li>
+              <li><a class="dropdown-item" href="#">Otra acción</a></li>
+              <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown ml-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" aria-expanded="false">
+              Otro Dropdown
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Item 1</a></li>
+              <li><a class="dropdown-item" href="#">Item 2</a></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
     <section id="navbar-docs" class="container">
       <article class="row">
         <div class="col-12">
@@ -1069,6 +1119,31 @@ body {
                   alt="Logo">
                 Imagen + Texto
               </a>
+            </div>
+          </nav>
+
+          <h4 class="mt-4">7. Navbar con Dropdown</h4>
+          <p>Ejemplo de un menú desplegable integrado en la barra de navegación.</p>
+          <nav class="navbar mb-3 rounded"
+            style="background-color: var(--color-surface-muted); border: 1px solid var(--color-border);">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-start flex-row">
+                  <li><a class="nav-link" href="#">Link 1</a></li>
+                  <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </nav>
 
