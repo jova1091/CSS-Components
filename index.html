@@ -43,6 +43,7 @@
               </li>
               <li><a class="dropdown-item" href="#dropdowns">Dropdowns</a></li>
               <li><a class="dropdown-item" href="#tabs">Pestañas</a></li>
+              <li><a class="dropdown-item" href="#modals">Modales</a></li>
             </ul>
           </li>
         </ul>
@@ -1055,6 +1056,42 @@ body {
               </div>
             </div>
           </div>
+        </div>
+      </article>
+    </section>
+    <section id="modals" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Modales (Nativo &lt;dialog&gt;)</h2>
+          <p>Componente modal accesible utilizando el elemento nativo del navegador. Soporta cierre con tecla ESC, foco
+            atrapado y animaciones CSS.</p>
+        </div>
+        <div class="col-12">
+          <!-- Trigger Button -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Abrir Modal de Demostración
+          </button>
+
+          <!-- Modal Structure -->
+          <dialog id="exampleModal" aria-labelledby="modalTitle">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitle">Título del Modal</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <p>Este es un modal nativo. El navegador maneja automáticamente:</p>
+              <ul>
+                <li>El foco del teclado (Focus Trap).</li>
+                <li>El cierre con la tecla Escape.</li>
+                <li>La accesibilidad (Roles ARIA).</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+          </dialog>
         </div>
       </article>
     </section>

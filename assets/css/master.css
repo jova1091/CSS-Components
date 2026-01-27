@@ -16,6 +16,7 @@
 @import url("/assets/css/components/badges/badges.css") layer(components.badges);
 @import url("/assets/css/components/accordion/accordion.css") layer(components.accordion);
 @import url("/assets/css/components/tabs/tabs.css") layer(components.tabs);
+@import url("/assets/css/components/modal/modal.css") layer(components.modal);
 
 /*
  * =================================================================================

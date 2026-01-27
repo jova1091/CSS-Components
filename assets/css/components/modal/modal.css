@@ -1,0 +1,93 @@
+@import url("root.css") layer(components.modal.vars);
+
+dialog {
+  position: fixed;
+  inset: 0;
+  z-index: var(--modal-z-index);
+  display: block; /* Reset para controlar visibilidad con opacity/visibility */
+  padding: 0;
+  margin: auto; /* Centrado nativo del dialog */
+  width: min(100% - var(--modal-margin-x), var(--modal-width));
+  max-width: 100%;
+  color: var(--modal-color);
+  background-color: var(--modal-bg);
+  border: var(--modal-border-width) solid var(--modal-border-color);
+  border-radius: var(--modal-border-radius);
+  box-shadow: var(--modal-box-shadow);
+
+  /* Estado inicial (Cerrado) para animación */
+  opacity: 0;
+  transform: scale(var(--modal-scale-start));
+  visibility: hidden;
+  transition:
+    opacity var(--modal-transition-duration) var(--modal-transition-timing),
+    transform var(--modal-transition-duration) var(--modal-transition-timing),
+    visibility var(--modal-transition-duration) var(--modal-transition-timing),
+    display var(--modal-transition-duration) allow-discrete;
+}
+
+/* Estado Abierto [open] */
+dialog[open] {
+  opacity: 1;
+  transform: scale(var(--modal-scale-end));
+  visibility: visible;
+}
+
+/* Backdrop (Fondo) */
+dialog::backdrop {
+  background-color: var(--modal-backdrop-bg);
+  backdrop-filter: var(--modal-backdrop-filter);
+  opacity: 0;
+  transition:
+    opacity var(--modal-transition-duration) var(--modal-transition-timing),
+    display var(--modal-transition-duration) allow-discrete,
+    overlay var(--modal-transition-duration) allow-discrete;
+}
+
+dialog[open]::backdrop {
+  opacity: 1;
+}
+
+/* Soporte para animación de entrada en navegadores modernos */
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scale(var(--modal-scale-start));
+  }
+  dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+/* Estructura Interna */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--modal-header-padding);
+  border-bottom: var(--modal-header-border-width) solid var(--modal-header-border-color);
+}
+
+.modal-header .btn-close {
+  position: static; /* Reset de la posición absoluta que tiene en alerts */
+  margin-left: auto;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: var(--modal-title-font-size);
+  font-weight: var(--modal-title-font-weight);
+}
+
+.modal-body {
+  padding: var(--modal-padding);
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--modal-footer-padding);
+  border-top: var(--modal-footer-border-width) solid var(--modal-footer-border-color);
+  gap: var(--modal-footer-gap);
+}

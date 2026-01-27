@@ -1,0 +1,26 @@
+:root {
+  --modal-z-index: 1050;
+  --modal-width: 32rem; /* aprox 500px */
+  --modal-margin-x: 2rem; /* Margen horizontal para el cálculo de ancho responsive */
+  --modal-bg: var(--color-surface);
+  --modal-color: var(--color-text);
+  --modal-border-width: 1px;
+  --modal-border-color: var(--color-border);
+  --modal-border-radius: 0.5rem;
+  --modal-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  /* Backdrop (Fondo oscuro) */
+  --modal-backdrop-bg: rgba(0, 0, 0, 0.5);
+  --modal-backdrop-filter: blur(2px);
+
+  /* Spacing */
+  --modal-padding: 1.5rem;
+  --modal-header-padding: 1rem 1.5rem;
+  --modal-footer-padding: 1rem 1.5rem;
+
+  /* Animation */
+  --modal-transition-duration: 0.3s;
+  --modal-transition-timing: ease-out;
+  --modal-scale-start: 0.95;
+  --modal-scale-end: 1;
+}

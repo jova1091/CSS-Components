@@ -1,6 +1,7 @@
 import initNavbar from "./components/navbar.js";
 import initDropdowns from "./components/dropdown.js";
 import initTabs from "./components/tabs.js";
+import initModals from "./components/modal.js";
 
 // Simple Theme Toggler
 const themeToggleBtn = document.getElementById("theme-toggle");
@@ -27,4 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
   initDropdowns();
   initTabs();
+  initModals();
 });
