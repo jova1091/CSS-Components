@@ -50,13 +50,13 @@
   /* Light Theme Palette */
   --color-primary: #1b263b;
   --color-text: #0d1b2a;
-  --color-text-muted: #778da9;
+  --color-text-muted: #415a77; /* Oscurecido para cumplir ratio 4.5:1 (WCAG AA) */
   --color-surface: #e0e1dd;
   --color-surface-subtle: #dedbd2;
   --color-surface-muted: #e9ecef;
   --color-border: #1b263b;
   --color-border-input: #1b263b;
-  --color-focus-ring: rgba(65, 90, 119, 0.25);
+  --color-focus-ring: rgba(65, 90, 119, 0.5); /* Aumentada opacidad para mejor visibilidad del foco */
   --color-pre-bg: #778da9;
   --color-code-bg: #778da9;
 
@@ -186,4 +186,21 @@ html[data-theme="dark"] {
 .display-1 {
   --display-padding-bottom: var(--spacer-3); /* Corresponde a min(1em, 3%) */
   --display-border-bottom: 1px solid var(--border-color);
+}
+
+/* 
+ * =================================================================================
+ * ACCESSIBILITY: REDUCED MOTION
+ * =================================================================================
+ * Desactiva o reduce animaciones para usuarios con sensibilidad al movimiento.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

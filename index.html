@@ -9,6 +9,9 @@
 </head>
 
 <body>
+  <!-- Accessibility: Skip to main content -->
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+
   <nav class="navbar navbar-sticky">
     <div class="container-full">
       <a class="navbar-brand" href="#">CSS Components</a>
@@ -51,7 +54,7 @@
       <div class="navbar-backdrop"></div>
     </div>
   </nav>
-  <main>
+  <main id="main">
     <div class="container-full">
       <section class="row">
         <article class="col-6">
@@ -148,7 +151,7 @@
             <li>First level item 3</li>
           </ol>
           <p>And here is an example of a pre-formatted code block, perfect for showing multiple lines of code:</p>
-          <pre>
+          <pre tabindex="0">
             <code>
 body {
   font-family: var(--base-font-family);
@@ -984,7 +987,8 @@ body {
           <hr class="my-5" />
           <h2>Accordion (Nativo)</h2>
           <p>Utilizando los elementos <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code> con el atributo
-            <code>name</code> para comportamiento exclusivo sin JS.</p>
+            <code>name</code> para comportamiento exclusivo sin JS.
+          </p>
         </div>
         <div class="col-8 offset-2">
           <div class="accordion">
