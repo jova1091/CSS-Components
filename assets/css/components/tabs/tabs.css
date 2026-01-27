@@ -1,0 +1,50 @@
+@import url("root.css") layer(components.tabs.vars);
+
+.tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: var(--tabs-border-width) solid var(--tabs-border-color);
+}
+
+.tab-item {
+  margin-bottom: calc(-1 * var(--tabs-border-width)); /* Levanta el item para que su borde se fusione con el borde de la lista */
+}
+
+.tab-link {
+  display: block;
+  padding: var(--tab-link-padding-y) var(--tab-link-padding-x);
+  color: var(--tab-link-color);
+  background-color: transparent;
+  border: var(--tab-link-border-width) solid transparent;
+  border-top-left-radius: var(--tab-link-border-radius);
+  border-top-right-radius: var(--tab-link-border-radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--tab-link-transition);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.tab-link:hover,
+.tab-link:focus {
+  color: var(--tab-link-hover-color);
+  border-color: var(--tabs-border-color);
+}
+
+.tab-link[aria-selected="true"] {
+  color: var(--tab-link-active-color);
+  border-color: var(--tab-link-active-border-color);
+  border-bottom-color: var(--tab-link-active-border-bottom-color); /* "Corta" el borde inferior de la lista */
+}
+
+.tab-link:focus-visible {
+  outline: var(--tab-link-focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--tab-link-focus-outline-offset);
+}
+
+.tab-content {
+  padding: var(--tab-content-padding);
+}

@@ -42,6 +42,7 @@
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="#dropdowns">Dropdowns</a></li>
+              <li><a class="dropdown-item" href="#tabs">Pestañas</a></li>
             </ul>
           </li>
         </ul>
@@ -1012,6 +1013,47 @@ body {
                 Tercer elemento para demostrar el grupo.
               </div>
             </details>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section id="tabs" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Pestañas (Tabs)</h2>
+          <p>Componente de pestañas accesible con navegación por teclado (flechas, inicio, fin) gestionada por JS.</p>
+        </div>
+        <div class="col-8 offset-2">
+          <div class="tabs">
+            <div class="tab-list" role="tablist" aria-label="Ejemplo de pestañas">
+              <div class="tab-item">
+                <button class="tab-link" id="tab-1" type="button" role="tab" aria-controls="panel-1"
+                  aria-selected="true" tabindex="0">Pestaña 1</button>
+              </div>
+              <div class="tab-item">
+                <button class="tab-link" id="tab-2" type="button" role="tab" aria-controls="panel-2"
+                  aria-selected="false" tabindex="-1">Pestaña 2</button>
+              </div>
+              <div class="tab-item">
+                <button class="tab-link" id="tab-3" type="button" role="tab" aria-controls="panel-3"
+                  aria-selected="false" tabindex="-1">Pestaña 3</button>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+                <p><strong>Contenido del Panel 1.</strong> Este es el contenido asociado con la primera pestaña. Está
+                  visible por defecto.</p>
+              </div>
+              <div id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" hidden>
+                <p><strong>Contenido del Panel 2.</strong> Al hacer clic en la "Pestaña 2", este contenido se hace
+                  visible.</p>
+              </div>
+              <div id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" hidden>
+                <p><strong>Contenido del Panel 3.</strong> Y este es el contenido final. La navegación con flechas del
+                  teclado funciona en la lista de pestañas.</p>
+              </div>
+            </div>
           </div>
         </div>
       </article>

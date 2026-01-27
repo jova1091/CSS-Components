@@ -1,5 +1,6 @@
 import initNavbar from "./components/navbar.js";
 import initDropdowns from "./components/dropdown.js";
+import initTabs from "./components/tabs.js";
 
 // Simple Theme Toggler
 const themeToggleBtn = document.getElementById("theme-toggle");
@@ -25,4 +26,5 @@ if (localStorage.getItem("theme") === "dark") {
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
   initDropdowns();
+  initTabs();
 });
