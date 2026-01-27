@@ -91,3 +91,38 @@ dialog[open]::backdrop {
   border-top: var(--modal-footer-border-width) solid var(--modal-footer-border-color);
   gap: var(--modal-footer-gap);
 }
+
+/* 
+ * =================================================================================
+ * MODAL VARIANTS
+ * =================================================================================
+ */
+
+/* Tamaños opcionales */
+.modal-sm {
+  --modal-width: var(--modal-sm-width);
+}
+.modal-lg {
+  --modal-width: var(--modal-lg-width);
+}
+
+/* 
+ * Modal Fullscreen
+ * Sobrescribimos las variables para ocupar toda la pantalla y eliminamos bordes.
+ */
+.modal-fullscreen {
+  --modal-width: var(--modal-fullscreen-width);
+  --modal-margin-x: var(--modal-fullscreen-margin-x);
+  --modal-border-radius: var(--modal-fullscreen-border-radius);
+  --modal-border-width: 0;
+
+  width: 100%;
+  height: var(--modal-fullscreen-height);
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0; /* Eliminamos el centrado automático */
+}
+
+.modal-fullscreen .modal-body {
+  overflow-y: auto; /* Aseguramos scroll si el contenido es largo */
+}

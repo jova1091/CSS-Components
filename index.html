@@ -1072,6 +1072,9 @@ body {
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Abrir Modal de Demostración
           </button>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#fullscreenModal">
+            Abrir Modal Fullscreen
+          </button>
 
           <!-- Modal Structure -->
           <dialog id="exampleModal" aria-labelledby="modalTitle">
@@ -1090,6 +1093,26 @@ body {
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+          </dialog>
+
+          <!-- Fullscreen Modal Structure -->
+          <dialog id="fullscreenModal" class="modal-fullscreen" aria-labelledby="fullModalTitle">
+            <div class="modal-header">
+              <h5 class="modal-title" id="fullModalTitle">Modal Pantalla Completa</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <p>Este modal utiliza la clase <code>.modal-fullscreen</code> que sobrescribe las variables CSS:</p>
+              <pre><code>.modal-fullscreen {
+  --modal-width: var(--modal-fullscreen-width);
+  --modal-margin-x: var(--modal-fullscreen-margin-x);
+  --modal-border-radius: var(--modal-fullscreen-border-radius);
+}</code></pre>
+              <p>Esto demuestra el poder de la arquitectura basada en variables.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
           </dialog>
         </div>
