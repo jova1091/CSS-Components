@@ -978,6 +978,40 @@ body {
         </div>
       </article>
     </section>
+    <section id="accordion" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Accordion (Nativo)</h2>
+          <p>Utilizando los elementos <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code> con el atributo
+            <code>name</code> para comportamiento exclusivo sin JS.</p>
+        </div>
+        <div class="col-8 offset-2">
+          <div class="accordion">
+            <details class="accordion-item" name="accordion-demo" open>
+              <summary class="accordion-header">Acordeón Item #1</summary>
+              <div class="accordion-body">
+                <strong>Este es el cuerpo del primer item.</strong> Se muestra por defecto gracias al atributo
+                <code>open</code>.
+              </div>
+            </details>
+            <details class="accordion-item" name="accordion-demo">
+              <summary class="accordion-header">Acordeón Item #2</summary>
+              <div class="accordion-body">
+                El contenido fluye libremente dentro de este contenedor. Al abrir este, el primero se cerrará
+                automáticamente.
+              </div>
+            </details>
+            <details class="accordion-item" name="accordion-demo">
+              <summary class="accordion-header">Acordeón Item #3</summary>
+              <div class="accordion-body">
+                Tercer elemento para demostrar el grupo.
+              </div>
+            </details>
+          </div>
+        </div>
+      </article>
+    </section>
     <section id="navbar-docs" class="container">
       <article class="row">
         <div class="col-12">

@@ -1,0 +1,23 @@
+:root {
+  --accordion-bg: var(--color-surface);
+  --accordion-color: var(--color-text);
+  --accordion-border-color: var(--color-border);
+  --accordion-border-width: 1px;
+  --accordion-border-radius: 0.375rem;
+
+  /* Header (Summary) */
+  --accordion-btn-padding-y: 1rem;
+  --accordion-btn-padding-x: 1.25rem;
+  --accordion-btn-bg: transparent;
+  --accordion-btn-color: var(--color-text);
+  --accordion-btn-focus-box-shadow: var(--btn-focus-box-shadow);
+  --accordion-btn-icon-width: 1.25rem;
+  --accordion-btn-icon-transition: transform 0.2s ease-in-out;
+
+  /* Active State */
+  --accordion-active-color: var(--color-primary);
+  --accordion-active-bg: var(--color-surface-subtle);
+
+  /* Body */
+  --accordion-body-padding: 1rem 1.25rem;
+}

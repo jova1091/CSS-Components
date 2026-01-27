@@ -14,6 +14,7 @@
 @import url("/assets/css/components/breadcrumb/breadcrumb.css") layer(components.breadcrumb);
 @import url("/assets/css/components/alerts/alerts.css") layer(components.alerts);
 @import url("/assets/css/components/badges/badges.css") layer(components.badges);
+@import url("/assets/css/components/accordion/accordion.css") layer(components.accordion);
 
 /*
  * =================================================================================
