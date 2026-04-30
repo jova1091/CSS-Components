@@ -177,7 +177,19 @@
   --btn-bg: transparent;
   --btn-border-color: transparent;
   --btn-color: var(--btn-link-color);
-  text-decoration: underline;
+  text-decoration: none; /* Quitamos el subrayado por defecto */
+}
+
+.btn-link:hover {
+  /* Aplicamos un filtro de brillo solo a este tipo de botón */
+  filter: brightness(75%);
+  color: var(--btn-link-hover-color);
+  text-decoration: var(--btn-link-hover-decoration);
+}
+
+.btn-link:focus-visible {
+  filter: none; /* Anulamos también el filtro en el foco */
+  box-shadow: var(--btn-focus-box-shadow);
 }
 
 .btn-icon {

@@ -98,4 +98,6 @@
    * =================================================================================
    */
   --btn-link-color: var(--color-primary);
+  --btn-link-hover-color: var(--color-primary); /* Usamos filter en el :hover para oscurecerlo */
+  --btn-link-hover-decoration: underline;
 }
