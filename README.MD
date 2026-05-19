@@ -54,9 +54,11 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Dropdowns
   - Forms (Inputs, Textarea, Select, Checkbox, Radio, File, Floating Labels, Switches)
   - Form Validation (estados de validación y advertencia con animación de sacudida y pulso de foco)
+  - List Groups (grupos de listas estructuradas e interactivas)
   - Modals (Nativo con `<dialog>`, responsivo y fullscreen)
   - Navbar (responsive, off-canvas, sticky, con múltiples alineaciones y soporte de glassmorphism)
   - Pagination (paginación accesible con estados interactivos)
+  - Popovers (ventanas flotantes informativas interactivas)
   - Progress Bars (barras de progreso semánticas, con rayas y animadas)
   - Skeleton Loaders (cargadores de esqueleto animados con shimmer)
   - Spinners (cargadores de espera circulares y pulsantes)
@@ -102,3 +104,8 @@ Nuestra biblioteca no es solo un conjunto de estilos CSS; está diseñada con fo
    - Implementación moderna de etiquetas flotantes híbrida (CSS puro + fallback de JS para selectores).
    - Animaciones avanzadas de foco (pulse ring) y de error (sacudida o shake en elementos inválidos).
    - Switches táctiles y responsivos con transiciones y micro-interacciones al hacer clic.
+
+8. **Popovers y List Groups Enriquecidos:**
+   - Ventanas emergentes de popover estructuradas con título y cuerpo, posicionadas dinámicamente.
+   - Activación por clic, con cierre automático al pulsar fuera o presionar la tecla `Escape`.
+   - Grupos de listas con soporte para hover interactivo, elementos activos/deshabilitados y diseño estructurado para contenido complejo con insignias.

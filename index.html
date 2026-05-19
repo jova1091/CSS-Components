@@ -1615,6 +1615,71 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         </div>
       </article>
     </section>
+
+    <!-- Sección de Popovers -->
+    <section id="popovers" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Popovers Interactivos</h2>
+          <p>Muestra contenedores de información enriquecida (título y cuerpo) al hacer clic en un elemento. Soporta posicionamiento inteligente en las cuatro direcciones.</p>
+          
+          <div class="my-3 button-showcase">
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="top" data-title="Popover Superior" data-content="Este es un popover que se posiciona de forma automática en la parte superior del botón disparador.">Popover Arriba</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="bottom" data-title="Popover Inferior" data-content="Aquí puedes colocar descripciones más largas u otros datos relevantes que ayuden al usuario.">Popover Abajo</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="left" data-title="Popover Izquierdo" data-content="El popover aparecerá alineado hacia el lado izquierdo de este botón.">Popover Izquierda</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="right" data-title="Popover Derecho" data-content="Perfecto para añadir ayuda contextual sin obstruir el contenido principal de la pantalla.">Popover Derecha</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Sección de List Groups -->
+    <section id="list-groups" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Grupos de Listas (List Groups)</h2>
+          <p>Muestra series de contenido de forma organizada. Soporta elementos interactivos, estados activos, deshabilitados y contenido complejo con insignias.</p>
+          
+          <div class="row my-4">
+            <div class="col-12 col-md-6 mb-4">
+              <h4>Grupo de Lista Básico e Interactivo</h4>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">
+                  Elemento Activo
+                  <span class="badge bg-secondary" style="font-size: 0.75rem; border: none; padding: 0.2rem 0.5rem;">Nuevo</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  Elemento Estándar
+                  <span class="badge bg-info" style="font-size: 0.75rem; border: none; padding: 0.2rem 0.5rem;">Info</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">Elemento sin badge</a>
+                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Elemento Deshabilitado</a>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-4">
+              <h4>Contenido Complejo</h4>
+              <div class="list-group">
+                <div class="list-group-item">
+                  <div class="list-group-item-content">
+                    <h5 class="list-group-item-heading">Notificación de Sistema</h5>
+                    <p class="list-group-item-text">La sincronización con el servidor de la nube se ha completado correctamente hace unos minutos.</p>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="list-group-item-content">
+                    <h5 class="list-group-item-heading">Actualización Requerida</h5>
+                    <p class="list-group-item-text">Una nueva versión del sistema de componentes de CSS está disponible para descarga inmediata.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
   <footer class="container-full">
     <div class="row">

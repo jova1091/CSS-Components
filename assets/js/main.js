@@ -5,6 +5,7 @@ import initModals from "./components/modal.js";
 import initAccordions from "./components/accordion.js";
 import initTooltips from "./components/tooltips.js";
 import initFloatLabels from "./components/float-labels.js";
+import initPopovers from "./components/popovers.js";
 import Toasts from "./components/toasts.js";
 
 // Simple Theme Toggler
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initAccordions();
   initTooltips();
   initFloatLabels();
+  initPopovers();
 
   // Inicializar disparadores de Toasts del Showcase
   const btnSuccess = document.getElementById("btn-toast-success");

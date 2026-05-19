@@ -24,6 +24,8 @@
 @import url("/assets/css/components/progress/progress.css") layer(components.progress);
 @import url("/assets/css/components/spinners/spinners.css") layer(components.spinners);
 @import url("/assets/css/components/pagination/pagination.css") layer(components.pagination);
+@import url("/assets/css/components/popovers/popovers.css") layer(components.popovers);
+@import url("/assets/css/components/list-groups/list-groups.css") layer(components.listGroups);
 
 
 /* Corrección de accesibilidad y renderizado HTML5 */

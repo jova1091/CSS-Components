@@ -1,0 +1,114 @@
+:root {
+  --list-group-bg: var(--color-surface);
+  --list-group-border-color: var(--color-border);
+  --list-group-border-width: 1px;
+  --list-group-border-radius: 0.375rem;
+  --list-group-item-padding-y: 0.75rem;
+  --list-group-item-padding-x: 1rem;
+  --list-group-hover-bg: var(--color-surface-subtle);
+  --list-group-active-color: #ffffff;
+  --list-group-active-bg: var(--color-primary);
+  --list-group-active-border-color: var(--color-primary);
+  --list-group-disabled-color: var(--color-text-muted);
+  --list-group-disabled-bg: var(--color-surface-muted);
+}
+
+[data-theme="dark"] {
+  --list-group-bg: var(--palette-dark-surface);
+  --list-group-border-color: var(--palette-dark-border);
+  --list-group-hover-bg: var(--palette-dark-surface-subtle);
+  --list-group-active-color: var(--palette-dark-surface);
+  --list-group-active-bg: var(--palette-dark-primary);
+  --list-group-active-border-color: var(--palette-dark-primary);
+  --list-group-disabled-color: var(--palette-dark-text-muted);
+  --list-group-disabled-bg: var(--palette-dark-surface-muted);
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: var(--list-group-border-radius);
+  border: var(--list-group-border-width) solid var(--list-group-border-color);
+  overflow: hidden;
+}
+
+.list-group-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--list-group-item-padding-y) var(--list-group-item-padding-x);
+  color: var(--color-text);
+  text-decoration: none;
+  background-color: var(--list-group-bg);
+  border-bottom: var(--list-group-border-width) solid var(--list-group-border-color);
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.list-group-item:last-child {
+  border-bottom: 0;
+}
+
+/* Elementos Interactivos (Enlaces o Botones) */
+.list-group-item-action {
+  width: 100%;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+.list-group-item-action:hover,
+.list-group-item-action:focus {
+  z-index: 1;
+  color: var(--color-text);
+  text-decoration: none;
+  background-color: var(--list-group-hover-bg);
+}
+
+.list-group-item-action:active {
+  color: var(--color-text);
+  background-color: var(--color-surface-muted);
+}
+
+/* Estado Activo */
+.list-group-item.active {
+  z-index: 2;
+  color: var(--list-group-active-color);
+  background-color: var(--list-group-active-bg);
+  border-color: var(--list-group-active-border-color);
+}
+
+.list-group-item.active .list-group-item-text {
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* Estado Deshabilitado */
+.list-group-item.disabled,
+.list-group-item:disabled {
+  color: var(--list-group-disabled-color);
+  pointer-events: none;
+  background-color: var(--list-group-disabled-bg);
+  opacity: 0.6;
+}
+
+/* Contenido Complejo */
+.list-group-item-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.list-group-item-text {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
