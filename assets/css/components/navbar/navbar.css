@@ -173,7 +173,8 @@
 
     /* Estado inicial: Oculto a la derecha */
     transform: translateX(100%);
-    transition: var(--navbar-sidebar-transition);
+    visibility: hidden;
+    transition: var(--navbar-sidebar-transition), visibility 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
   }
@@ -181,6 +182,7 @@
   /* Estado expandido (activado por JS) */
   .navbar-collapse.show {
     transform: translateX(0);
+    visibility: visible;
   }
 
   .navbar-nav {
@@ -285,15 +287,16 @@
   overflow-y: auto;
   box-shadow: var(--navbar-sidebar-box-shadow);
   transform: translateX(100%);
-  transition: var(--navbar-sidebar-transition);
+  transition: var(--navbar-sidebar-transition), visibility 0.3s ease-in-out;
   display: flex !important;
   flex-direction: column;
   max-height: none !important;
-  visibility: visible !important;
+  visibility: hidden !important;
 }
 
 .navbar-offcanvas-always .navbar-collapse.show {
   transform: translateX(0);
+  visibility: visible !important;
 }
 
 .navbar-offcanvas-always .navbar-nav {

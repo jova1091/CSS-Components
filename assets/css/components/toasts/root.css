@@ -1,0 +1,21 @@
+:root {
+  /* Toast Global Variables */
+  --toast-bg: rgba(var(--color-surface-rgb), 0.85);
+  --toast-color: var(--color-text);
+  --toast-border-width: 1px;
+  --toast-border-color: var(--color-border);
+  --toast-border-radius: 0.5rem;
+  --toast-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  --toast-width: 350px;
+  --toast-max-width: 100%;
+  --toast-font-size: 0.875rem;
+  --toast-padding-y: 0.75rem;
+  --toast-padding-x: 1rem;
+  --toast-z-index: 2000; /* Siempre por encima de todo */
+
+  /* Toast Types Colors */
+  --toast-success-border: var(--color-success);
+  --toast-info-border: var(--color-info);
+  --toast-warning-border: var(--color-warning);
+  --toast-danger-border: var(--color-danger);
+}

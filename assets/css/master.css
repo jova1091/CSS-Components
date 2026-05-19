@@ -17,6 +17,13 @@
 @import url("/assets/css/components/accordion/accordion.css") layer(components.accordion);
 @import url("/assets/css/components/tabs/tabs.css") layer(components.tabs);
 @import url("/assets/css/components/modal/modal.css") layer(components.modal);
+@import url("/assets/css/components/toasts/toasts.css") layer(components.toasts);
+
+
+/* Corrección de accesibilidad y renderizado HTML5 */
+[hidden] {
+  display: none !important;
+}
 
 /*
  * =================================================================================
@@ -51,14 +58,17 @@
 :root {
   /* Light Theme Palette */
   --color-primary: #1b263b;
+  --color-primary-rgb: 27, 38, 59;
   --color-secondary: #415a77;
   --color-success: #2a9d8f;
   --color-danger: #e63946;
   --color-warning: #f4a261;
   --color-info: #219ebc;
   --color-text: #0d1b2a;
+  --color-text-rgb: 13, 27, 42;
   --color-text-muted: #415a77; /* Oscurecido para cumplir ratio 4.5:1 (WCAG AA) */
   --color-surface: #e0e1dd;
+  --color-surface-rgb: 224, 225, 221;
   --color-surface-subtle: #dedbd2;
   --color-surface-muted: #e9ecef;
   --color-border: #1b263b;
@@ -69,14 +79,17 @@
 
   /* Default Dark Palette (User's Palette) */
   --palette-dark-primary: #778da9;
+  --palette-dark-primary-rgb: 119, 141, 169;
   --palette-dark-secondary: #415a77;
   --palette-dark-success: #2a9d8f;
   --palette-dark-danger: #e63946;
   --palette-dark-warning: #f4a261;
   --palette-dark-info: #219ebc;
   --palette-dark-text: #e0e1dd;
+  --palette-dark-text-rgb: 224, 225, 221;
   --palette-dark-text-muted: #778da9;
   --palette-dark-surface: #0d1b2a;
+  --palette-dark-surface-rgb: 13, 27, 42;
   --palette-dark-surface-subtle: #1b263b;
   --palette-dark-surface-muted: #1b263b;
   --palette-dark-border: #415a77;
@@ -101,6 +114,12 @@
   --form-control-readonly-bg: var(--color-surface-muted);
   --bg-light-color: var(--color-surface-subtle);
   --form-control-placeholder-color: var(--color-text-muted);
+
+  /* Component Glassmorphism Overrides */
+  --navbar-bg: rgba(var(--color-surface-rgb), 0.75);
+  --navbar-sidebar-bg: rgba(var(--color-surface-rgb), 0.85);
+  --dropdown-bg: rgba(var(--color-surface-rgb), 0.85);
+  --modal-bg: rgba(var(--color-surface-rgb), 0.85);
 
   /* Ejemplo de personalización de la fuente base */
   /* --base-font-size: 18px; */ /* Descomenta y ajusta para cambiar el tamaño de fuente global */
@@ -136,14 +155,17 @@
   :root:not([data-theme="light"]) {
     /* Dark Theme Palette */
     --color-primary: var(--palette-dark-primary);
+    --color-primary-rgb: var(--palette-dark-primary-rgb);
     --color-secondary: var(--palette-dark-secondary);
     --color-success: var(--palette-dark-success);
     --color-danger: var(--palette-dark-danger);
     --color-warning: var(--palette-dark-warning);
     --color-info: var(--palette-dark-info);
     --color-text: var(--palette-dark-text);
+    --color-text-rgb: var(--palette-dark-text-rgb);
     --color-text-muted: var(--palette-dark-text-muted);
     --color-surface: var(--palette-dark-surface);
+    --color-surface-rgb: var(--palette-dark-surface-rgb);
     --color-surface-subtle: var(--palette-dark-surface-subtle);
     --color-surface-muted: var(--palette-dark-surface-muted);
     --color-border: var(--palette-dark-border);
@@ -169,14 +191,17 @@
 html[data-theme="dark"] {
   /* Dark Theme Palette */
   --color-primary: var(--palette-dark-primary);
+  --color-primary-rgb: var(--palette-dark-primary-rgb);
   --color-secondary: var(--palette-dark-secondary);
   --color-success: var(--palette-dark-success);
   --color-danger: var(--palette-dark-danger);
   --color-warning: var(--palette-dark-warning);
   --color-info: var(--palette-dark-info);
   --color-text: var(--palette-dark-text);
+  --color-text-rgb: var(--palette-dark-text-rgb);
   --color-text-muted: var(--palette-dark-text-muted);
   --color-surface: var(--palette-dark-surface);
+  --color-surface-rgb: var(--palette-dark-surface-rgb);
   --color-surface-subtle: var(--palette-dark-surface-subtle);
   --color-surface-muted: var(--palette-dark-surface-muted);
   --color-border: var(--palette-dark-border);
@@ -226,3 +251,135 @@ html[data-theme="dark"] {
     scroll-behavior: auto !important;
   }
 }
+
+/* 
+ * =================================================================================
+ * PREMIUM EFFECTS & SMOOTH TRANSITIONS
+ * =================================================================================
+ */
+
+/* Transiciones globales suaves para cambios de tema */
+body, 
+.card, 
+.navbar, 
+.dropdown-menu, 
+dialog, 
+.form-control, 
+.btn, 
+.tab-link,
+.accordion-item,
+.accordion-header,
+footer {
+  transition: 
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Efectos de Glassmorphism */
+.navbar-sticky {
+  background-color: transparent !important;
+}
+
+.navbar-sticky::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.dropdown-menu, 
+dialog {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    align-items: stretch !important;
+  }
+  
+  .navbar-nav {
+    align-items: flex-start !important;
+    padding-left: 0.5rem;
+  }
+}
+
+/* Hover de tarjetas tipo elevación premium */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilo premium del botón de tema */
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  background-color: var(--color-surface-subtle);
+  transform: rotate(15deg);
+}
+
+#theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+/* Alternancia de iconos SVG de sol/luna según el tema */
+html[data-theme="dark"] #theme-toggle .sun-icon {
+  display: block;
+}
+html[data-theme="dark"] #theme-toggle .moon-icon {
+  display: none;
+}
+html[data-theme="light"] #theme-toggle .sun-icon {
+  display: none;
+}
+html[data-theme="light"] #theme-toggle .moon-icon {
+  display: block;
+}
+
+/* Caso por defecto cuando no hay data-theme (se rige por prefers-color-scheme) */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) #theme-toggle .sun-icon {
+    display: block;
+  }
+  html:not([data-theme="light"]) #theme-toggle .moon-icon {
+    display: none;
+  }
+}
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) #theme-toggle .sun-icon {
+    display: none;
+  }
+  html:not([data-theme="dark"]) #theme-toggle .moon-icon {
+    display: block;
+  }
+}
+

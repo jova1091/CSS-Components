@@ -48,7 +48,17 @@
           </li>
         </ul>
         <div class="d-flex align-items-center">
-          <button id="theme-toggle" class="btn btn-secondary btn-sm">Toggle Theme</button>
+          <!-- Theme Toggler (Premium) -->
+          <button id="theme-toggle" class="btn btn-secondary btn-sm" aria-label="Cambiar tema (Claro / Oscuro)">
+            <!-- Icono Luna (Moon) para Tema Claro -->
+            <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3c.132 0 .263 0 .393.007a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z"/>
+            </svg>
+            <!-- Icono Sol (Sun) para Tema Oscuro -->
+            <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM5.636 4.222a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 1 1-1.414 1.414L5.636 5.636a1 1 0 0 1 0-1.414zm11.314 11.314a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 0 1-1.414 1.414l-1.414-1.414a1 1 0 0 1 0-1.414zM2 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm16 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM5.636 19.778a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 1 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0zm11.314-11.314a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 0 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0z"/>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -1115,6 +1125,28 @@ body {
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
           </dialog>
+        </div>
+      </article>
+    </section>
+    <section id="toasts" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Toasts (Notificaciones dinámicas)</h2>
+          <p>El componente Toast permite lanzar notificaciones flotantes temporales y accesibles en la esquina superior derecha de la pantalla. Admite cuatro variantes visuales:</p>
+          
+          <div class="my-3">
+            <button id="btn-toast-success" class="btn btn-success">Lanzar Éxito</button>
+            <button id="btn-toast-info" class="btn btn-info">Lanzar Info</button>
+            <button id="btn-toast-warning" class="btn btn-warning">Lanzar Advertencia</button>
+            <button id="btn-toast-danger" class="btn btn-danger">Lanzar Error</button>
+          </div>
+
+          <pre><code>// Ejemplo de uso en JavaScript
+import Toasts from "./components/toasts.js";
+
+// Parámetros: título, mensaje, tipo ('success'|'info'|'warning'|'danger'), duración (ms)
+Toasts.show("Notificación", "Operación completada con éxito.", "success", 4000);</code></pre>
         </div>
       </article>
     </section>
