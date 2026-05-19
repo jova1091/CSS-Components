@@ -6,6 +6,29 @@ function initNavbar() {
 
   if (!navToggle || !navMenu) return;
 
+  // Función para alternar el atributo inert en los hermanos directos del body
+  // para evitar que el foco se escape del menu Offcanvas
+  const setSiblingsInert = (isInert) => {
+    const navbar = navToggle.closest(".navbar");
+    if (!navbar) return;
+
+    Array.from(document.body.children).forEach((child) => {
+      // Ignorar el propio navbar, scripts y styles
+      if (
+        child !== navbar &&
+        !child.contains(navbar) &&
+        child.tagName !== "SCRIPT" &&
+        child.tagName !== "STYLE"
+      ) {
+        if (isInert) {
+          child.setAttribute("inert", "");
+        } else {
+          child.removeAttribute("inert");
+        }
+      }
+    });
+  };
+
   // Función para abrir el menú
   const openMenu = () => {
     navMenu.hidden = false; // Quitamos hidden para permitir renderizado
@@ -13,10 +36,18 @@ function initNavbar() {
     navToggle.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden"; // Bloquear scroll
 
+    // Aplicamos inert al resto de la página
+    setSiblingsInert(true);
+
     // Pequeño delay para permitir que el navegador procese el cambio de 'hidden' antes de la transición
     requestAnimationFrame(() => {
       navMenu.classList.add("show");
       if (navBackdrop) navBackdrop.classList.add("show");
+      
+      // Enfocar el botón de cerrar al abrir la barra lateral
+      if (navCloseBtn) {
+        navCloseBtn.focus();
+      }
     });
   };
 
@@ -26,6 +57,12 @@ function initNavbar() {
     navMenu.classList.remove("show");
     if (navBackdrop) navBackdrop.classList.remove("show");
     document.body.style.overflow = ""; // Restaurar scroll
+
+    // Restauramos la interacción con el resto de la página
+    setSiblingsInert(false);
+
+    // Devolvemos el foco al botón que abrió el menú
+    navToggle.focus();
 
     // Esperamos a que termine la transición CSS para aplicar hidden e inert
     navMenu.addEventListener(
@@ -40,7 +77,7 @@ function initNavbar() {
     );
   };
 
-  // Event Listener del botón
+  // Event Listener del botón toggler
   navToggle.addEventListener("click", () => {
     const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
     if (isExpanded) {
@@ -54,6 +91,13 @@ function initNavbar() {
   if (navCloseBtn) navCloseBtn.addEventListener("click", closeMenu);
   if (navBackdrop) navBackdrop.addEventListener("click", closeMenu);
 
+  // Manejo de la tecla Escape para cerrar el Offcanvas
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("show")) {
+      closeMenu();
+    }
+  });
+
   // Manejo de Responsive (Desktop vs Mobile)
   const mediaQuery = window.matchMedia("(min-width: 769px)");
 
@@ -63,6 +107,7 @@ function initNavbar() {
       navMenu.removeAttribute("inert");
       if (navBackdrop) navBackdrop.classList.remove("show");
       document.body.style.overflow = "";
+      setSiblingsInert(false);
     } else {
       if (navToggle.getAttribute("aria-expanded") === "false") {
         navMenu.hidden = true;
@@ -76,3 +121,4 @@ function initNavbar() {
 }
 
 export default initNavbar;
+

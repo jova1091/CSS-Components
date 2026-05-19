@@ -1,6 +1,7 @@
 /**
  * Initializes accessible tab components on the page.
  * Follows the ARIA Authoring Practices Guide for Tabs.
+ * Supports horizontal (default) and vertical orientations.
  * @see https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/
  */
 export default function initTabs() {
@@ -20,16 +21,22 @@ export default function initTabs() {
 
     // Event listener for keyboard navigation
     tabList.addEventListener("keydown", (e) => {
-      const currentTab = e.target;
+      const currentTab = e.target.closest('[role="tab"]');
+      if (!currentTab || !tabs.includes(currentTab)) return;
+
+      const isVertical = tabList.getAttribute("aria-orientation") === "vertical";
+      const nextKey = isVertical ? "ArrowDown" : "ArrowRight";
+      const prevKey = isVertical ? "ArrowUp" : "ArrowLeft";
+
       let newIndex;
 
       switch (e.key) {
-        case "ArrowRight":
+        case nextKey:
           e.preventDefault();
           newIndex = (tabs.indexOf(currentTab) + 1) % tabs.length;
           tabs[newIndex].focus();
           break;
-        case "ArrowLeft":
+        case prevKey:
           e.preventDefault();
           newIndex = (tabs.indexOf(currentTab) - 1 + tabs.length) % tabs.length;
           tabs[newIndex].focus();
@@ -82,3 +89,4 @@ function getAssociatedPanels(tabs) {
     return document.getElementById(panelId);
   });
 }
+
