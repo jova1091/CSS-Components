@@ -1487,6 +1487,134 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         </div>
       </article>
     </section>
+
+    <!-- Sección de Barras de Progreso -->
+    <section id="progress" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Barras de Progreso</h2>
+          <p>Muestra el progreso de una tarea con soporte para etiquetas internas, variantes de color y rayas animadas.</p>
+          
+          <div class="my-4">
+            <h4 class="mb-2">Básica y Alturas</h4>
+            <div class="progress mb-3">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress mb-3" style="height: 0.5rem;">
+              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress mb-3" style="height: 1.5rem;">
+              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% Completado</div>
+            </div>
+          </div>
+
+          <div class="my-4">
+            <h4 class="mb-2">Variantes Semánticas</h4>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Éxito (40%)</div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-info" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">Información (60%)</div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Advertencia (80%)</div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Error (90%)</div>
+            </div>
+          </div>
+
+          <div class="my-4">
+            <h4 class="mb-2">Rayas y Animación</h4>
+            <div class="progress mb-2">
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Procesando...</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Sección de Spinners -->
+    <section id="spinners" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Spinners (Cargadores de Espera)</h2>
+          <p>Elementos de carga giratorios y pulsantes de alto rendimiento para indicar esperas de datos.</p>
+          
+          <div class="my-4">
+            <h4 class="mb-2">Spinner Border (Giratorio)</h4>
+            <div class="d-flex align-items-center" style="gap: 1rem; flex-wrap: wrap;">
+              <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-secondary" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-success" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-danger" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-info" role="status"><span class="visually-hidden">Cargando...</span></div>
+            </div>
+          </div>
+
+          <div class="my-4">
+            <h4 class="mb-2">Spinner Grow (Pulsante)</h4>
+            <div class="d-flex align-items-center" style="gap: 1rem; flex-wrap: wrap;">
+              <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-secondary" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-success" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-danger" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-warning" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-info" role="status"><span class="visually-hidden">Cargando...</span></div>
+            </div>
+          </div>
+
+          <div class="my-4">
+            <h4 class="mb-2">Tamaños y Uso</h4>
+            <div class="d-flex align-items-center" style="gap: 1.5rem; flex-wrap: wrap;">
+              <div class="spinner-border spinner-sm text-primary" role="status"></div>
+              <div class="spinner-border text-primary" role="status"></div>
+              <div class="spinner-border spinner-lg text-primary" role="status"></div>
+              
+              <button class="btn btn-primary d-flex align-items-center" style="gap: 0.5rem;" disabled>
+                <div class="spinner-border spinner-sm" role="status"></div>
+                Cargando datos...
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Sección de Paginación -->
+    <section id="pagination" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Paginación Accesible</h2>
+          <p>Navegación entre páginas con estados interactivos, activos y deshabilitados estructurados semánticamente.</p>
+          
+          <div class="my-4">
+            <nav aria-label="Navegación de artículos">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Siguiente</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
   <footer class="container-full">
     <div class="row">

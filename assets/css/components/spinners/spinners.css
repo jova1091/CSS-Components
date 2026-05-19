@@ -1,0 +1,96 @@
+:root {
+  --spinner-width: 2rem;
+  --spinner-height: 2rem;
+  --spinner-vertical-align: -0.125em;
+  --spinner-border-width: 0.22em;
+  --spinner-animation-duration: 0.75s;
+}
+
+.spinner-border,
+.spinner-grow {
+  display: inline-block;
+  width: var(--spinner-width);
+  height: var(--spinner-height);
+  vertical-align: var(--spinner-vertical-align);
+  border-radius: 50%;
+  animation: var(--spinner-animation-duration) linear infinite;
+}
+
+.spinner-border {
+  border: var(--spinner-border-width) solid currentColor;
+  border-right-color: transparent;
+  animation-name: spinner-border-rotate;
+}
+
+.spinner-grow {
+  background-color: currentColor;
+  opacity: 0;
+  animation-name: spinner-grow-pulse;
+}
+
+/* Tamaños */
+.spinner-sm {
+  --spinner-width: 1rem;
+  --spinner-height: 1rem;
+  --spinner-border-width: 0.12em;
+}
+
+.spinner-lg {
+  --spinner-width: 3rem;
+  --spinner-height: 3rem;
+  --spinner-border-width: 0.32em;
+}
+
+/* Variantes de Color Semánticas */
+.spinner-border.text-primary,
+.spinner-grow.text-primary {
+  color: var(--color-primary);
+}
+.spinner-border.text-secondary,
+.spinner-grow.text-secondary {
+  color: var(--color-secondary);
+}
+.spinner-border.text-success,
+.spinner-grow.text-success {
+  color: var(--color-success);
+}
+.spinner-border.text-danger,
+.spinner-grow.text-danger {
+  color: var(--color-danger);
+}
+.spinner-border.text-warning,
+.spinner-grow.text-warning {
+  color: var(--color-warning);
+}
+.spinner-border.text-info,
+.spinner-grow.text-info {
+  color: var(--color-info);
+}
+.spinner-border.text-light,
+.spinner-grow.text-light {
+  color: var(--color-surface-muted);
+}
+.spinner-border.text-dark,
+.spinner-grow.text-dark {
+  color: var(--color-text);
+}
+
+/* Animaciones */
+@keyframes spinner-border-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-grow-pulse {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

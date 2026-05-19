@@ -56,7 +56,10 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Form Validation (estados de validación y advertencia con animación de sacudida y pulso de foco)
   - Modals (Nativo con `<dialog>`, responsivo y fullscreen)
   - Navbar (responsive, off-canvas, sticky, con múltiples alineaciones y soporte de glassmorphism)
+  - Pagination (paginación accesible con estados interactivos)
+  - Progress Bars (barras de progreso semánticas, con rayas y animadas)
   - Skeleton Loaders (cargadores de esqueleto animados con shimmer)
+  - Spinners (cargadores de espera circulares y pulsantes)
   - Tabs (accesible con navegación por teclado)
   - Toasts (notificaciones dinámicas, accesibles y animadas con `aria-live` automático)
   - Tooltips Dinámicos (accesibles con posicionamiento inteligente)
@@ -72,6 +75,7 @@ Nuestra biblioteca no es solo un conjunto de estilos CSS; está diseñada con fo
    - Efectos de desenfoque de fondo (`backdrop-filter`) integrados en Navbar, Dropdowns y Modales.
    - Transiciones globales fluidas para cambios de tema en todas las propiedades clave (`background-color`, `color`, `transform`, `box-shadow`, etc.).
    - Selector de tema (Claro/Oscuro) en la barra de navegación usando iconos dinámicos SVG.
+
 2. **Accesibilidad en Accordions (A11y):**
    - Soporte nativo para `<details>` y `<summary>` con navegación por teclado (`ArrowUp`, `ArrowDown`, `Home`, `End`).
    - Mecanismo de exclusividad automática en JS para asegurar que solo haya un acordeón abierto a la vez (fallback de `<details name="...">`).

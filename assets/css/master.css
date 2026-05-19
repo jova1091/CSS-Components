@@ -21,6 +21,9 @@
 @import url("/assets/css/components/toasts/toasts.css") layer(components.toasts);
 @import url("/assets/css/components/skeletons/skeletons.css") layer(components.skeletons);
 @import url("/assets/css/components/tooltips/tooltips.css") layer(components.tooltips);
+@import url("/assets/css/components/progress/progress.css") layer(components.progress);
+@import url("/assets/css/components/spinners/spinners.css") layer(components.spinners);
+@import url("/assets/css/components/pagination/pagination.css") layer(components.pagination);
 
 
 /* Corrección de accesibilidad y renderizado HTML5 */
