@@ -26,6 +26,7 @@
 @import url("/assets/css/components/pagination/pagination.css") layer(components.pagination);
 @import url("/assets/css/components/popovers/popovers.css") layer(components.popovers);
 @import url("/assets/css/components/list-groups/list-groups.css") layer(components.listGroups);
+@import url("/assets/css/components/carousel/carousel.css") layer(components.carousel);
 
 
 /* Corrección de accesibilidad y renderizado HTML5 */

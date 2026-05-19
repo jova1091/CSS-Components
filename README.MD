@@ -51,6 +51,7 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Buttons (con variantes, tamaños y estados)
   - Button Group
   - Cards (con variantes vertical, horizontal y de ticket)
+  - Carousel (carrusel de diapositivas responsivo y accesible con autoplay seguro)
   - Dropdowns
   - Forms (Inputs, Textarea, Select, Checkbox, Radio, File, Floating Labels, Switches)
   - Form Validation (estados de validación y advertencia con animación de sacudida y pulso de foco)
@@ -109,3 +110,9 @@ Nuestra biblioteca no es solo un conjunto de estilos CSS; está diseñada con fo
    - Ventanas emergentes de popover estructuradas con título y cuerpo, posicionadas dinámicamente.
    - Activación por clic, con cierre automático al pulsar fuera o presionar la tecla `Escape`.
    - Grupos de listas con soporte para hover interactivo, elementos activos/deshabilitados y diseño estructurado para contenido complejo con insignias.
+
+9. **Carrusel de Diapositivas Responsivo:**
+   - Desplazamientos fluidos mediante CSS Scroll Snapping nativo de alto rendimiento.
+   - Controles de navegación manual (previo/siguiente) e indicadores de posición interactivos sincronizados.
+   - Autoplay seguro con pausa automática al pasar el cursor (`mouseenter`/`touchstart`) para cumplir con normativas de accesibilidad (A11y).
+   - Optimización de redimensionado mediante debounce de eventos resize en JS.
