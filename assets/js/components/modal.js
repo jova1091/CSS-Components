@@ -3,6 +3,30 @@
  * Handles triggers, close buttons, backdrop clicks, and focus return.
  */
 export default function initModals() {
+  const closeModal = (dialog) => {
+    if (!dialog || !dialog.open) return;
+    
+    dialog.classList.add("closing");
+    
+    const handleTransitionEnd = (e) => {
+      if (e.target === dialog) {
+        dialog.close();
+        dialog.classList.remove("closing");
+        dialog.removeEventListener("transitionend", handleTransitionEnd);
+      }
+    };
+    
+    dialog.addEventListener("transitionend", handleTransitionEnd);
+    
+    // Fallback de seguridad
+    setTimeout(() => {
+      if (dialog.classList.contains("closing")) {
+        dialog.close();
+        dialog.classList.remove("closing");
+      }
+    }, 400);
+  };
+
   // 1. Abrir Modal y registrar el elemento trigger
   document.querySelectorAll('[data-toggle="modal"]').forEach((trigger) => {
     trigger.addEventListener("click", () => {
@@ -21,7 +45,7 @@ export default function initModals() {
     btn.addEventListener("click", () => {
       const dialog = btn.closest("dialog");
       if (dialog) {
-        dialog.close(); // Método nativo
+        closeModal(dialog);
       }
     });
   });
@@ -31,18 +55,21 @@ export default function initModals() {
   document.querySelectorAll("dialog").forEach((dialog) => {
     // Cerrar al hacer clic fuera del rect del diálogo (en el backdrop)
     dialog.addEventListener("click", (e) => {
+      if (dialog.classList.contains("closing")) return;
+
       const rect = dialog.getBoundingClientRect();
       const isInDialog =
         rect.top <= e.clientY && e.clientY <= rect.top + rect.height && rect.left <= e.clientX && e.clientX <= rect.left + rect.width;
 
       if (!isInDialog) {
-        dialog.close();
+        closeModal(dialog);
       }
     });
 
     // Evento nativo close: Se ejecuta independientemente de cómo se cierre
     // (botón de cerrar, escape o click en backdrop)
     dialog.addEventListener("close", () => {
+      dialog.classList.remove("closing");
       if (dialog._triggerEl) {
         dialog._triggerEl.focus();
         delete dialog._triggerEl;

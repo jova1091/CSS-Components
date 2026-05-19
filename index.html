@@ -688,6 +688,72 @@ body {
           </form>
         </div>
       </article>
+
+      <!-- Sección de Etiquetas Flotantes -->
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Etiquetas Flotantes (Floating Labels)</h2>
+          <p>
+            Crea formularios elegantes donde las etiquetas flotan suavemente hacia arriba al hacer foco o al escribir contenido.
+          </p>
+        </div>
+        <div class="col-8 offset-2">
+          <form id="floating-labels-demo">
+            <div class="form-float">
+              <input type="text" class="form-control" id="floatName" placeholder=" " required />
+              <label for="floatName">Nombre completo</label>
+            </div>
+            
+            <div class="form-float">
+              <input type="email" class="form-control" id="floatEmail" placeholder=" " required />
+              <label for="floatEmail">Dirección de correo electrónico</label>
+            </div>
+
+            <div class="form-float">
+              <textarea class="form-control" id="floatMessage" placeholder=" " rows="3" required></textarea>
+              <label for="floatMessage">Mensaje o comentarios</label>
+            </div>
+          </form>
+        </div>
+      </article>
+
+      <!-- Sección de Switches y Animación de Error -->
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Interruptores y Micro-interacciones</h2>
+          <p>
+            Interruptores (Switches) accesibles y responsivos, y botones interactivos para demostrar las animaciones de validación (efecto de sacudida o shake).
+          </p>
+        </div>
+        <div class="col-8 offset-2">
+          <div class="mb-4">
+            <p class="form-label mb-2">Interruptores (Switches)</p>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchDefault" />
+              <label class="form-check-label" for="switchDefault">Interruptor por defecto</label>
+            </div>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchChecked" checked />
+              <label class="form-check-label" for="switchChecked">Interruptor activado</label>
+            </div>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchDisabled" disabled />
+              <label class="form-check-label" for="switchDisabled">Interruptor deshabilitado</label>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <p class="form-label mb-2">Demostración de sacudida ante error (Shake Animation)</p>
+            <div class="d-flex align-items-center gap-2" style="gap: 0.5rem;">
+              <input type="text" class="form-control" id="shakeDemoInput" style="max-width: 250px;" placeholder="Haz clic en Probar ->" />
+              <button type="button" id="btn-trigger-shake" class="btn btn-danger">Probar Shake</button>
+            </div>
+            <div class="form-text">Al hacer clic, el campo se marca como inválido y se sacude para llamar la atención.</div>
+          </div>
+        </div>
+      </article>
     </section>
     <section id="images" class="container">
       <article class="row">
@@ -1342,6 +1408,82 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
   &lt;/div&gt;
 &lt;/nav&gt;
           </code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- Sección de Skeletons -->
+    <section id="skeletons" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Skeleton Loaders (Cargadores de esqueleto)</h2>
+          <p>Los cargadores de esqueleto simulan la estructura del contenido mientras se carga de forma asíncrona. Incluyen una animación de brillo ("shimmer").</p>
+          
+          <div class="row my-4">
+            <!-- Ejemplo de Card con Skeletons -->
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card p-3">
+                <div class="skeleton skeleton-rect mb-3" style="height: 180px;"></div>
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text" style="width: 50%;"></div>
+              </div>
+            </div>
+            
+            <!-- Ejemplo de Perfil con Skeletons -->
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card p-3">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="skeleton skeleton-avatar mr-3"></div>
+                  <div class="flex-grow-1">
+                    <div class="skeleton skeleton-title" style="width: 80%; margin-bottom: 8px;"></div>
+                    <div class="skeleton skeleton-text" style="width: 50%;"></div>
+                  </div>
+                </div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text"></div>
+              </div>
+            </div>
+
+            <!-- Tabla simulada con Skeletons -->
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card p-3">
+                <div class="skeleton skeleton-title" style="width: 40%; margin-bottom: 20px;"></div>
+                <div class="border-bottom pb-2 mb-2 d-flex justify-content-between">
+                  <div class="skeleton skeleton-text" style="width: 30%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 20%;"></div>
+                </div>
+                <div class="border-bottom pb-2 mb-2 d-flex justify-content-between">
+                  <div class="skeleton skeleton-text" style="width: 40%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 15%;"></div>
+                </div>
+                <div class="border-bottom pb-2 mb-2 d-flex justify-content-between">
+                  <div class="skeleton skeleton-text" style="width: 35%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 25%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Sección de Tooltips -->
+    <section id="tooltips" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Tooltips Dinámicos</h2>
+          <p>Muestra información descriptiva al pasar el cursor o al enfocar elementos con el teclado. Soporta posicionamiento dinámico automático.</p>
+          
+          <div class="my-3 button-showcase">
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Mensaje en la parte superior">Tooltip Arriba</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Mensaje en la parte inferior">Tooltip Abajo</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Mensaje a la izquierda">Tooltip Izquierda</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Mensaje a la derecha">Tooltip Derecha</button>
+          </div>
         </div>
       </article>
     </section>

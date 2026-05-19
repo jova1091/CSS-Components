@@ -48,3 +48,24 @@
 .tab-content {
   padding: var(--tab-content-padding);
 }
+
+/* Animación para el cambio de pestañas */
+[role="tabpanel"] {
+  outline: none;
+}
+
+[role="tabpanel"]:not([hidden]) {
+  display: block;
+  animation: fadeInTab 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

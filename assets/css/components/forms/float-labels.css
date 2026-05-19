@@ -1,0 +1,54 @@
+.form-float {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-float .form-control {
+  height: 3.5rem;
+  padding: 1.625rem 0.75rem 0.625rem;
+}
+
+.form-float textarea.form-control {
+  height: auto;
+  min-height: 5rem;
+  padding-top: 1.625rem;
+}
+
+.form-float label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+}
+
+/* Alinear para textarea */
+.form-float textarea.form-control ~ label {
+  align-items: flex-start;
+  height: auto;
+  padding-top: 0.75rem;
+}
+
+/* Transición cuando hay foco o texto */
+.form-float .form-control:focus ~ label,
+.form-float .form-control:not(:placeholder-shown) ~ label,
+.form-float .form-control.has-value ~ label {
+  opacity: 0.75;
+  transform: scale(0.8) translateY(-0.65rem) translateX(0.05rem);
+  height: auto;
+}
+
+/* Soporte especial para selectores de fecha/hora que tienen placeholders implícitos */
+.form-float .form-control[type="date"] ~ label,
+.form-float .form-control[type="time"] ~ label {
+  opacity: 0.75;
+  transform: scale(0.8) translateY(-0.65rem) translateX(0.05rem);
+  height: auto;
+}

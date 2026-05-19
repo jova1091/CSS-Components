@@ -10,6 +10,7 @@
 @import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
 @import url("/assets/css/components/buttons/btn-group.css") layer(components.buttons);
 @import url("/assets/css/components/forms/forms.css") layer(components.forms);
+@import url("/assets/css/components/forms/float-labels.css") layer(components.forms);
 @import url("/assets/css/components/cards/cards.css") layer(components.cards);
 @import url("/assets/css/components/breadcrumb/breadcrumb.css") layer(components.breadcrumb);
 @import url("/assets/css/components/alerts/alerts.css") layer(components.alerts);
@@ -18,6 +19,8 @@
 @import url("/assets/css/components/tabs/tabs.css") layer(components.tabs);
 @import url("/assets/css/components/modal/modal.css") layer(components.modal);
 @import url("/assets/css/components/toasts/toasts.css") layer(components.toasts);
+@import url("/assets/css/components/skeletons/skeletons.css") layer(components.skeletons);
+@import url("/assets/css/components/tooltips/tooltips.css") layer(components.tooltips);
 
 
 /* Corrección de accesibilidad y renderizado HTML5 */

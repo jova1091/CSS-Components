@@ -33,6 +33,17 @@ dialog[open] {
   visibility: visible;
 }
 
+/* Estado en proceso de cierre (JS) */
+dialog.closing {
+  opacity: 0 !important;
+  transform: scale(var(--modal-scale-start)) !important;
+  visibility: hidden !important;
+}
+
+dialog.closing::backdrop {
+  opacity: 0 !important;
+}
+
 /* Backdrop (Fondo) */
 dialog::backdrop {
   background-color: var(--modal-backdrop-bg);

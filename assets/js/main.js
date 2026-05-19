@@ -3,6 +3,8 @@ import initDropdowns from "./components/dropdown.js";
 import initTabs from "./components/tabs.js";
 import initModals from "./components/modal.js";
 import initAccordions from "./components/accordion.js";
+import initTooltips from "./components/tooltips.js";
+import initFloatLabels from "./components/float-labels.js";
 import Toasts from "./components/toasts.js";
 
 // Simple Theme Toggler
@@ -32,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initTabs();
   initModals();
   initAccordions();
+  initTooltips();
+  initFloatLabels();
 
   // Inicializar disparadores de Toasts del Showcase
   const btnSuccess = document.getElementById("btn-toast-success");
@@ -57,6 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnDanger) {
     btnDanger.addEventListener("click", () => {
       Toasts.show("Error de Servidor", "No se ha podido procesar la solicitud.", "danger");
+    });
+  }
+
+  // Demostración de sacudida ante error (Shake Animation)
+  const btnTriggerShake = document.getElementById("btn-trigger-shake");
+  const shakeDemoInput = document.getElementById("shakeDemoInput");
+  if (btnTriggerShake && shakeDemoInput) {
+    btnTriggerShake.addEventListener("click", () => {
+      // Quitar clase si ya existe para poder reiniciar la animación
+      shakeDemoInput.classList.remove("is-invalid");
+      // Forzar reflow para reiniciar la animación CSS
+      void shakeDemoInput.offsetWidth;
+      // Añadir la clase para activar la sacudida
+      shakeDemoInput.classList.add("is-invalid");
+      
+      // Remover después de que termine la animación
+      setTimeout(() => {
+        shakeDemoInput.classList.remove("is-invalid");
+      }, 1500);
     });
   }
 });

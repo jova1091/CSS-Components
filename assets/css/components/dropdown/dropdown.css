@@ -26,7 +26,15 @@
   top: 100%;
   left: 0;
   z-index: var(--dropdown-z-index);
-  display: none; /* Oculto por defecto */
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95) translateY(-5px);
+  transform-origin: top left;
+  transition: 
+    opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+    visibility 0.15s;
   min-width: var(--dropdown-min-width);
   padding: var(--dropdown-padding-y) 0;
   margin: var(--dropdown-spacer) 0 0; /* Pequeño margen superior */
@@ -43,7 +51,9 @@
 
 /* Clase para mostrar el menú (activada por JS) */
 .dropdown-menu.show {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
 }
 
 .dropdown-item {

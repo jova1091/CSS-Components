@@ -44,7 +44,7 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Imágenes (`.img-thumbnail`, `.rounded-circle`)
   - Figuras
 - **Componentes:**
-  - Accordion (Nativo con `<details>`)
+  - Accordion (Nativo con `<details>`, mejorado con navegación por teclado y exclusividad opcional)
   - Alerts (con variantes de color y opción de cierre)
   - Badges (Etiquetas)
   - Breadcrumbs
@@ -52,11 +52,49 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Button Group
   - Cards (con variantes vertical, horizontal y de ticket)
   - Dropdowns
-  - Forms (Inputs, Textarea, Select, Checkbox, Radio, File)
-  - Form Validation (estados de validación y advertencia)
+  - Forms (Inputs, Textarea, Select, Checkbox, Radio, File, Floating Labels, Switches)
+  - Form Validation (estados de validación y advertencia con animación de sacudida y pulso de foco)
   - Modals (Nativo con `<dialog>`, responsivo y fullscreen)
-  - Navbar (responsive, off-canvas, sticky, con múltiples alineaciones)
+  - Navbar (responsive, off-canvas, sticky, con múltiples alineaciones y soporte de glassmorphism)
+  - Skeleton Loaders (cargadores de esqueleto animados con shimmer)
   - Tabs (accesible con navegación por teclado)
+  - Toasts (notificaciones dinámicas, accesibles y animadas con `aria-live` automático)
+  - Tooltips Dinámicos (accesibles con posicionamiento inteligente)
 - **Utilidades:**
   - Espaciadores (clases `m-*`, `p-*` para márgenes y paddings)
   - Helpers (clases de display, alineación, etc.)
+
+## ✨ Características y Accesibilidad (A11y)
+
+Nuestra biblioteca no es solo un conjunto de estilos CSS; está diseñada con foco en la experiencia del usuario y accesibilidad nativa:
+
+1. **Diseño y Glassmorphism:**
+   - Efectos de desenfoque de fondo (`backdrop-filter`) integrados en Navbar, Dropdowns y Modales.
+   - Transiciones globales fluidas para cambios de tema en todas las propiedades clave (`background-color`, `color`, `transform`, `box-shadow`, etc.).
+   - Selector de tema (Claro/Oscuro) en la barra de navegación usando iconos dinámicos SVG.
+2. **Accesibilidad en Accordions (A11y):**
+   - Soporte nativo para `<details>` y `<summary>` con navegación por teclado (`ArrowUp`, `ArrowDown`, `Home`, `End`).
+   - Mecanismo de exclusividad automática en JS para asegurar que solo haya un acordeón abierto a la vez (fallback de `<details name="...">`).
+
+3. **Sistema Dinámico de Toasts:**
+   - Gestión inteligente mediante JS (`toast.success()`, `toast.info()`, etc.).
+   - Accesibilidad nativa con asignación automática de `role="alert"` / `aria-live="assertive"` para notificaciones de peligro (`danger`) y `role="status"` / `aria-live="polite"` para las informativas.
+   - Entrada dinámica con animación de muelle (scale + slide) y descarte suave.
+
+4. **Navbar Móvil Offcanvas Robusta:**
+   - Animación de entrada y salida lateral fluida en dispositivos móviles controlando las transiciones de `visibility` y `transform`.
+   - Corrección del error de _containing block_ generado por `backdrop-filter` en la navbar pegajosa mediante la delegación del filtro a un pseudo-elemento `::before`, manteniendo la barra lateral fija respecto al viewport global.
+   - Alineación izquierda elegante en pantallas pequeñas para una interfaz más nativa y ergonómica.
+
+5. **Cargadores de Esqueleto (Skeleton Loaders):**
+   - Estructura responsiva para simular carga en tarjetas (rectángulo), perfiles (avatar + texto) y tablas.
+   - Animación de brillo ("shimmer") fluida y optimizada mediante gradientes lineales animados por CSS.
+
+6. **Tooltips Accesibles y Dinámicos:**
+   - Activación automática por ratón (`mouseenter`/`mouseleave`) y foco de teclado (`focus`/`blur`) para lectores de pantalla.
+   - Posicionamiento dinámico automático e inteligente en las cuatro direcciones cardinales con flechas indicadoras.
+
+7. **Etiquetas Flotantes y Validación Interactiva:**
+   - Implementación moderna de etiquetas flotantes híbrida (CSS puro + fallback de JS para selectores).
+   - Animaciones avanzadas de foco (pulse ring) y de error (sacudida o shake en elementos inválidos).
+   - Switches táctiles y responsivos con transiciones y micro-interacciones al hacer clic.

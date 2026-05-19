@@ -33,6 +33,21 @@ function initDropdowns() {
     const menu = container.querySelector(".dropdown-menu");
     if (!toggle || !menu) return;
 
+    // Asegurar atributos ARIA programáticamente
+    if (!toggle.getAttribute("aria-haspopup")) {
+      toggle.setAttribute("aria-haspopup", "true");
+    }
+    if (!toggle.getAttribute("aria-expanded")) {
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    let menuId = menu.getAttribute("id");
+    if (!menuId) {
+      menuId = `dropdown-menu-${Math.random().toString(36).substr(2, 9)}`;
+      menu.setAttribute("id", menuId);
+    }
+    toggle.setAttribute("aria-controls", menuId);
+
     // Abrir/Cerrar al hacer clic en el botón trigger
     toggle.addEventListener("click", (e) => {
       e.preventDefault(); // Evitar navegación si es un enlace
@@ -125,7 +140,7 @@ function initDropdowns() {
 
   // Cerrar dropdowns al hacer clic fuera del contenedor dropdown
   document.addEventListener("click", (e) => {
-    if (!e.target.closest(".dropdown")) {
+    if (!e.target.closest(".dropdown, .nav-item.dropdown")) {
       closeAllDropdowns();
     }
   });

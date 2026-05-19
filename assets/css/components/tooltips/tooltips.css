@@ -1,0 +1,125 @@
+@import url("root.css") layer(components.tooltips.vars);
+
+.tooltip-container {
+  position: absolute;
+  z-index: var(--tooltip-z-index);
+  display: block;
+  font-family: inherit;
+  font-size: var(--tooltip-font-size);
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  
+  /* Estado inicial oculto */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+}
+
+.tooltip-container.show {
+  opacity: 1;
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  color: var(--tooltip-color);
+  text-align: center;
+  background-color: var(--tooltip-bg);
+  border-radius: var(--tooltip-border-radius);
+  box-shadow: var(--tooltip-box-shadow);
+}
+
+/* Flechas */
+.tooltip-arrow {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+}
+
+.tooltip-arrow::before {
+  position: absolute;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  width: 0;
+  height: 0;
+}
+
+/* Direcciones y micro-desplazamientos de animación */
+.tooltip-top {
+  transform: translateY(4px);
+}
+.tooltip-top.show {
+  transform: translateY(0);
+}
+.tooltip-top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+.tooltip-top .tooltip-arrow::before {
+  top: -8px;
+  border-width: 8px 8px 0;
+  border-top-color: var(--tooltip-bg);
+}
+
+.tooltip-bottom {
+  transform: translateY(-4px);
+}
+.tooltip-bottom.show {
+  transform: translateY(0);
+}
+.tooltip-bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+}
+.tooltip-bottom .tooltip-arrow::before {
+  bottom: -8px;
+  border-width: 0 8px 8px;
+  border-bottom-color: var(--tooltip-bg);
+}
+
+.tooltip-left {
+  transform: translateX(4px);
+}
+.tooltip-left.show {
+  transform: translateX(0);
+}
+.tooltip-left .tooltip-arrow {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%);
+}
+.tooltip-left .tooltip-arrow::before {
+  left: -8px;
+  border-width: 8px 0 8px 8px;
+  border-left-color: var(--tooltip-bg);
+}
+
+.tooltip-right {
+  transform: translateX(-4px);
+}
+.tooltip-right.show {
+  transform: translateX(0);
+}
+.tooltip-right .tooltip-arrow {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%);
+}
+.tooltip-right .tooltip-arrow::before {
+  right: -8px;
+  border-width: 8px 8px 8px 0;
+  border-right-color: var(--tooltip-bg);
+}
