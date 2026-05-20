@@ -2,13 +2,13 @@
 
 /* Estilos base del body */
 body {
-  margin: 0;
+  margin: var(--body-margin);
   font-family: var(--base-font-family);
   font-size: var(--base-font-size);
   font-weight: var(--base-font-weight);
   line-height: var(--base-line-height);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: var(--body-webkit-font-smoothing);
+  -moz-osx-font-smoothing: var(--body-moz-osx-font-smoothing);
   background-color: var(--body-bg);
   color: var(--body-color);
 }
@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
+  margin-top: var(--heading-margin-top);
 }
 
 h1 {
@@ -41,10 +41,9 @@ h1 {
   background: var(--h1-background);
   text-shadow: var(--h1-text-shadow);
   box-shadow: var(--h1-box-shadow);
-  border-top: var(--h1-border-top);
-  border-right: var(--h1-border-right);
-  border-bottom: var(--h1-border-bottom);
-  border-left: var(--h1-border-left);
+  border-width: var(--h1-border-width);
+  border-style: var(--h1-border-style);
+  border-color: var(--h1-border-color);
   border-radius: var(--h1-border-radius);
   transition: var(--h1-transition);
 }
@@ -80,10 +79,9 @@ h2 {
   background: var(--h2-background);
   text-shadow: var(--h2-text-shadow);
   box-shadow: var(--h2-box-shadow);
-  border-top: var(--h2-border-top);
-  border-right: var(--h2-border-right);
-  border-bottom: var(--h2-border-bottom);
-  border-left: var(--h2-border-left);
+  border-width: var(--h2-border-width);
+  border-style: var(--h2-border-style);
+  border-color: var(--h2-border-color);
   border-radius: var(--h2-border-radius);
   transition: var(--h2-transition);
 }
@@ -119,10 +117,9 @@ h3 {
   background: var(--h3-background);
   text-shadow: var(--h3-text-shadow);
   box-shadow: var(--h3-box-shadow);
-  border-top: var(--h3-border-top);
-  border-right: var(--h3-border-right);
-  border-bottom: var(--h3-border-bottom);
-  border-left: var(--h3-border-left);
+  border-width: var(--h3-border-width);
+  border-style: var(--h3-border-style);
+  border-color: var(--h3-border-color);
   border-radius: var(--h3-border-radius);
   transition: var(--h3-transition);
 }
@@ -158,10 +155,9 @@ h4 {
   background: var(--h4-background);
   text-shadow: var(--h4-text-shadow);
   box-shadow: var(--h4-box-shadow);
-  border-top: var(--h4-border-top);
-  border-right: var(--h4-border-right);
-  border-bottom: var(--h4-border-bottom);
-  border-left: var(--h4-border-left);
+  border-width: var(--h4-border-width);
+  border-style: var(--h4-border-style);
+  border-color: var(--h4-border-color);
   border-radius: var(--h4-border-radius);
   transition: var(--h4-transition);
 }
@@ -197,10 +193,9 @@ h5 {
   background: var(--h5-background);
   text-shadow: var(--h5-text-shadow);
   box-shadow: var(--h5-box-shadow);
-  border-top: var(--h5-border-top);
-  border-right: var(--h5-border-right);
-  border-bottom: var(--h5-border-bottom);
-  border-left: var(--h5-border-left);
+  border-width: var(--h5-border-width);
+  border-style: var(--h5-border-style);
+  border-color: var(--h5-border-color);
   border-radius: var(--h5-border-radius);
   transition: var(--h5-transition);
 }
@@ -236,10 +231,9 @@ h6 {
   background: var(--h6-background);
   text-shadow: var(--h6-text-shadow);
   box-shadow: var(--h6-box-shadow);
-  border-top: var(--h6-border-top);
-  border-right: var(--h6-border-right);
-  border-bottom: var(--h6-border-bottom);
-  border-left: var(--h6-border-left);
+  border-width: var(--h6-border-width);
+  border-style: var(--h6-border-style);
+  border-color: var(--h6-border-color);
   border-radius: var(--h6-border-radius);
   transition: var(--h6-transition);
 }
@@ -326,7 +320,7 @@ a:hover {
 /* Listas */
 ul,
 ol {
-  margin-top: 0;
+  margin-top: var(--list-margin-top);
   margin-bottom: var(--list-margin-bottom);
   padding-left: var(--list-padding-left);
 }
@@ -346,7 +340,7 @@ li {
 /* Nested lists should have no bottom margin */
 li > ul,
 li > ol {
-  margin-bottom: 0;
+  margin-bottom: var(--list-nested-margin-bottom);
 }
 
 /* Nested lists get different markers for better hierarchy */
@@ -388,10 +382,9 @@ ol ol ol {
   padding-left: var(--display-padding-left);
   text-shadow: var(--display-text-shadow);
   box-shadow: var(--display-box-shadow);
-  border-top: var(--display-border-top);
-  border-right: var(--display-border-right);
-  border-bottom: var(--display-border-bottom);
-  border-left: var(--display-border-left);
+  border-width: var(--display-border-width);
+  border-style: var(--display-border-style);
+  border-color: var(--display-border-color);
   border-radius: var(--display-border-radius);
   transition: var(--display-transition);
 }
@@ -447,10 +440,9 @@ blockquote {
   font-weight: var(--blockquote-font-weight);
   line-height: var(--blockquote-line-height);
   color: var(--blockquote-color);
-  border-top: var(--blockquote-border-top);
-  border-right: var(--blockquote-border-right);
-  border-bottom: var(--blockquote-border-bottom);
-  border-left: var(--blockquote-border-left);
+  border-width: var(--blockquote-border-width);
+  border-style: var(--blockquote-border-style);
+  border-color: var(--blockquote-border-color);
   border-radius: var(--blockquote-border-radius);
 }
 
@@ -472,9 +464,9 @@ hr {
   margin-top: var(--hr-margin-top);
   margin-bottom: var(--hr-margin-bottom);
   color: var(--hr-color);
-  border: 0;
-  border-top-width: var(--hr-border-top-width);
-  border-top-style: var(--hr-border-top-style);
+  border-width: var(--hr-border-width);
+  border-style: var(--hr-border-style);
+  border-color: var(--hr-border-color);
   opacity: var(--hr-opacity);
 }
 
@@ -511,10 +503,9 @@ pre {
   line-height: var(--pre-line-height);
   color: var(--pre-color);
   background-color: var(--pre-bg);
-  border-top: var(--pre-border-top);
-  border-right: var(--pre-border-right);
-  border-bottom: var(--pre-border-bottom);
-  border-left: var(--pre-border-left);
+  border-width: var(--pre-border-width);
+  border-style: var(--pre-border-style);
+  border-color: var(--pre-border-color);
   border-radius: var(--pre-border-radius);
   overflow: auto; /* Para manejar el desbordamiento de código largo */
 }

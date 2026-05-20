@@ -1,4 +1,9 @@
 :root {
+  /* Skeleton Layout Variables */
+  --skeleton-position: relative;
+  --skeleton-overflow: hidden;
+  --skeleton-display: block;
+
   --skeleton-bg: var(--color-border);
   --skeleton-shimmer-bg: linear-gradient(
     90deg,
@@ -9,6 +14,38 @@
   );
   --skeleton-border-radius: 0.25rem;
   --skeleton-animation-duration: 1.5s;
+
+  /* Shimmer effect absolute layout */
+  --skeleton-after-position: absolute;
+  --skeleton-after-top: 0;
+  --skeleton-after-right: 0;
+  --skeleton-after-bottom: 0;
+  --skeleton-after-left: 0;
+  --skeleton-after-transform-start: translateX(-100%);
+  --skeleton-after-transform-end: translateX(100%);
+  --skeleton-after-content: "";
+
+  /* Circular Skeleton (Avatar) */
+  --skeleton-circle-border-radius: 50%;
+  --skeleton-circle-width: 48px;
+  --skeleton-circle-height: 48px;
+  --skeleton-circle-flex-shrink: 0;
+
+  /* Title Skeleton */
+  --skeleton-title-width: 60%;
+  --skeleton-title-height: 1.25rem;
+  --skeleton-title-margin-bottom: 0.75rem;
+
+  /* Text Skeleton */
+  --skeleton-text-width: 100%;
+  --skeleton-text-height: 0.875rem;
+  --skeleton-text-margin-bottom: 0.5rem;
+  --skeleton-text-last-width: 80%;
+  --skeleton-text-last-margin-bottom: 0;
+
+  /* Rectangle Skeleton */
+  --skeleton-rect-width: 100%;
+  --skeleton-rect-height: 150px;
 }
 
 [data-theme="dark"] {

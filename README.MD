@@ -12,8 +12,11 @@
 
 ## 🎨 Personalización y Temas
 
-La personalización es el punto fuerte de este sistema.
+La personalización es el principio fundamental de este sistema.
+Absolutamente todas las propiedades estructurales, visuales y de comportamiento de los componentes (incluyendo `position`, `display`, `width`, `height`, `flex`, `overflow`, `cursor`, `list-style`, colores, rellenos, márgenes, radios de borde, sombras, tamaños de fuente, z-index, transiciones y animaciones) están parametrizadas mediante variables CSS personalizables que se definen en el archivo `root.css` de cada componente.
+
 La arquitectura permite dos niveles de personalización:
+
 
 ### 1. A Nivel de Componente (Recomendado para ajustes específicos)
 
@@ -21,11 +24,22 @@ Este es el método ideal para modificar un componente de forma aislada sin afect
 
 1. Navega a la carpeta del componente que deseas cambiar (ej. `assets/css/components/buttons/`).
 2. Abre el archivo `root.css` que se encuentra allí.
-3. Modifica los valores de las variables. Por ejemplo, para cambiar el radio de los bordes de todos los botones, cambiarías `--btn-border-radius`.
+3. Modifica los valores de las variables. Por ejemplo:
+   - En **Buttons**: cambia el radio de los bordes con `--btn-border-radius`.
+   - En **Pagination**: ajusta la separación con `--pagination-margin-x` o el z-index con `--pagination-hover-zindex`.
+   - En **Popovers**: ajusta el tamaño de la flecha con `--popover-arrow-size` o el offset con `--popover-arrow-offset`.
+   - En **Carousel**: personaliza la altura de las diapositivas con `--carousel-height` y `--carousel-height-mobile`.
 
-Estos archivos contienen todos los "diales" y "perillas" de diseño para cada componente.
+Estos archivos contienen todos los diales y perillas de diseño para personalizar al 100% cada elemento.
 
-### 2. A Nivel Global (Para Temas y Sobrescrituras Generales)
+### 2. A Nivel Base, Grid y Utilidades (Arquitectura Profunda)
+
+La parametrización va más allá de los componentes visuales e incluye los cimientos mismos de la interfaz:
+- **Base:** Etiquetas estructurales como `body`, `h1`-`h6`, `img`, `figure` e incluso `<hr>` y `blockquote` están gobernadas por variables en sus propios archivos `root.css`. Esto incluye tipografía, márgenes, bordes estáticos y renderizado webkit.
+- **Grid:** Las propiedades geométricas de los contenedores (`max-width`, `margin`), y las propiedades flex/grid base son personalizables desde `grid/root.css`.
+- **Utilities:** Las clases utilitarias (`helpers.css` y `spacers.css`) como radios de borde (`.rounded-circle`), anchos invisibles (`.visually-hidden`) y demás también exponen variables. Esto garantiza un control absoluto en cada capa atómica.
+
+### 3. A Nivel Global (Para Temas y Sobrescrituras Generales)
 
 Si necesitas aplicar un cambio que afecte a todo el sitio (como cambiar el color primario) o sobrescribir múltiples componentes a la vez, usa `assets/css/master.css`.
 

@@ -1,37 +1,26 @@
-:root {
-  --carousel-bg: var(--color-surface);
-  --carousel-border-radius: 0.75rem;
-  --carousel-border-color: var(--color-border);
-  --carousel-indicator-width: 8px;
-  --carousel-indicator-active-width: 24px;
-  --carousel-control-bg: rgba(0, 0, 0, 0.3);
-  --carousel-control-hover-bg: rgba(0, 0, 0, 0.5);
-  --carousel-control-color: #ffffff;
-}
+@import url("root.css") layer(components.carousel.vars);
 
-[data-theme="dark"] {
-  --carousel-bg: var(--palette-dark-surface);
-  --carousel-border-color: var(--palette-dark-border);
-}
 
 .carousel {
-  position: relative;
-  width: 100%;
+  position: var(--carousel-position);
+  width: var(--carousel-width);
   border-radius: var(--carousel-border-radius);
-  border: 1px solid var(--carousel-border-color);
-  overflow: hidden;
+  border-width: var(--carousel-border-width);
+  border-style: var(--carousel-border-style);
+  border-color: var(--carousel-border-color);
+  overflow: var(--carousel-overflow);
   background-color: var(--carousel-bg);
 }
 
 .carousel-inner {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 400px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  position: var(--carousel-inner-position);
+  display: var(--carousel-inner-display);
+  width: var(--carousel-inner-width);
+  height: var(--carousel-height);
+  overflow-x: var(--carousel-inner-overflow-x);
+  overflow-y: var(--carousel-inner-overflow-y);
+  scroll-snap-type: var(--carousel-inner-scroll-snap-type);
+  scroll-behavior: var(--carousel-inner-scroll-behavior);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Oculta barra en Firefox */
 }
@@ -41,74 +30,74 @@
 }
 
 .carousel-item {
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  position: var(--carousel-item-position);
+  flex: var(--carousel-item-flex);
+  width: var(--carousel-item-width);
+  height: var(--carousel-item-height);
+  scroll-snap-align: var(--carousel-item-scroll-snap-align);
+  scroll-snap-stop: var(--carousel-item-scroll-snap-stop);
 }
 
 .carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: var(--carousel-img-width);
+  height: var(--carousel-img-height);
+  object-fit: var(--carousel-img-object-fit);
+  display: var(--carousel-img-display);
 }
 
 /* Títulos y Leyendas de Diapositiva */
 .carousel-caption {
-  position: absolute;
-  right: 15%;
-  bottom: 2rem;
-  left: 15%;
-  padding: 1.25rem;
-  color: #ffffff;
-  text-align: center;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
-  border-radius: 0.5rem;
-  backdrop-filter: blur(2px);
+  position: var(--carousel-caption-position);
+  right: var(--carousel-caption-right);
+  bottom: var(--carousel-caption-bottom);
+  left: var(--carousel-caption-left);
+  padding: var(--carousel-caption-padding);
+  color: var(--carousel-caption-color);
+  text-align: var(--carousel-caption-text-align);
+  background: var(--carousel-caption-bg);
+  border-radius: var(--carousel-caption-border-radius);
+  backdrop-filter: var(--carousel-caption-backdrop-filter);
 }
 
 .carousel-caption h5 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
+  margin-top: var(--carousel-caption-title-margin-top);
+  margin-bottom: var(--carousel-caption-title-margin-bottom);
+  font-size: var(--carousel-caption-title-font-size);
+  font-weight: var(--carousel-caption-title-font-weight);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .carousel-caption p {
-  margin-bottom: 0;
-  font-size: 1rem;
+  margin-bottom: var(--carousel-caption-text-margin-bottom);
+  font-size: var(--carousel-caption-text-font-size);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 /* Botones de Control (Previo/Siguiente) */
 .carousel-control-prev,
 .carousel-control-next {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 12%;
-  padding: 0;
+  position: var(--carousel-control-position);
+  top: var(--carousel-control-top);
+  bottom: var(--carousel-control-bottom);
+  z-index: var(--carousel-control-zindex);
+  display: var(--carousel-control-display);
+  align-items: var(--carousel-control-align-items);
+  justify-content: var(--carousel-control-justify-content);
+  width: var(--carousel-control-width);
+  padding: var(--carousel-control-padding);
   color: var(--carousel-control-color);
-  background: none;
-  border: 0;
-  opacity: 0.6;
-  transition: opacity 0.15s ease;
-  cursor: pointer;
+  background: var(--carousel-control-background);
+  border: var(--carousel-control-border);
+  opacity: var(--carousel-control-opacity);
+  transition: var(--carousel-transition-control);
+  cursor: var(--carousel-control-cursor);
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover,
 .carousel-control-prev:focus,
 .carousel-control-next:focus {
-  opacity: 1;
+  opacity: var(--carousel-control-hover-opacity);
   outline: 0;
 }
 
@@ -122,14 +111,14 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
+  display: var(--carousel-control-icon-display);
+  align-items: var(--carousel-control-icon-align-items);
+  justify-content: var(--carousel-control-icon-justify-content);
+  width: var(--carousel-control-icon-size);
+  height: var(--carousel-control-icon-size);
   background-color: var(--carousel-control-bg);
   border-radius: 50%;
-  transition: background-color 0.15s ease-in-out;
+  transition: var(--carousel-transition-icon);
 }
 
 .carousel-control-prev-icon:hover,
@@ -139,44 +128,44 @@
 
 .carousel-control-prev-icon svg,
 .carousel-control-next-icon svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--carousel-control-arrow-width);
+  height: var(--carousel-control-arrow-height);
   fill: currentColor;
 }
 
 /* Indicadores de Posición (Puntos) */
 .carousel-indicators {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin-right: 15%;
-  margin-left: 15%;
-  margin-bottom: 1rem;
-  list-style: none;
-  gap: 0.5rem;
+  position: var(--carousel-indicators-position);
+  right: var(--carousel-indicators-right);
+  bottom: var(--carousel-indicators-bottom);
+  left: var(--carousel-indicators-left);
+  z-index: var(--carousel-indicators-zindex);
+  display: var(--carousel-indicators-display);
+  justify-content: var(--carousel-indicators-justify-content);
+  padding: var(--carousel-indicators-padding);
+  margin-right: var(--carousel-indicators-margin-right);
+  margin-left: var(--carousel-indicators-margin-left);
+  margin-bottom: var(--carousel-indicators-margin-bottom);
+  list-style: var(--carousel-indicators-list-style);
+  gap: var(--carousel-indicators-gap);
 }
 
 .carousel-indicators [data-slide-to] {
-  box-sizing: content-box;
-  flex: 0 1 auto;
+  box-sizing: var(--carousel-indicator-box-sizing);
+  flex: var(--carousel-indicator-flex);
   width: var(--carousel-indicator-width);
   height: var(--carousel-indicator-width);
-  padding: 0;
-  cursor: pointer;
-  background-color: #ffffff;
-  border: 0;
-  opacity: 0.5;
+  padding: var(--carousel-indicator-padding);
+  cursor: var(--carousel-indicator-cursor);
+  background-color: var(--carousel-indicator-bg);
+  border: var(--carousel-indicator-border);
+  opacity: var(--carousel-indicator-opacity);
   border-radius: 50%;
-  transition: opacity 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+  transition: var(--carousel-transition-indicator);
 }
 
 .carousel-indicators .active {
-  opacity: 1;
+  opacity: var(--carousel-indicator-active-opacity);
   width: var(--carousel-indicator-active-width);
   border-radius: 4px;
 }
@@ -184,12 +173,12 @@
 /* Soporte responsivo para alturas */
 @media (max-width: 768px) {
   .carousel-inner {
-    height: 280px;
+    height: var(--carousel-height-mobile);
   }
   .carousel-caption h5 {
-    font-size: 1.15rem;
+    font-size: var(--carousel-caption-title-font-size-mobile);
   }
   .carousel-caption p {
-    font-size: 0.85rem;
+    font-size: var(--carousel-caption-text-font-size-mobile);
   }
 }

@@ -1,7 +1,7 @@
 @import url("root.css") layer(components.forms.vars);
 
 .form-label {
-  display: inline-block;
+  display: var(--form-label-display);
   margin-bottom: var(--form-label-margin-bottom);
   font-size: var(--form-label-font-size);
   font-weight: var(--form-label-font-weight);
@@ -20,7 +20,7 @@
   line-height: var(--form-control-line-height);
   color: var(--form-control-color);
   background-color: var(--form-control-bg);
-  background-clip: padding-box;
+  background-clip: var(--form-control-background-clip);
   border-top: var(--form-control-border-top-width) var(--form-control-border-style) var(--form-control-border-color);
   border-right: var(--form-control-border-right-width) var(--form-control-border-style) var(--form-control-border-color);
   border-bottom: var(--form-control-border-bottom-width) var(--form-control-border-style) var(--form-control-border-color);
@@ -31,15 +31,15 @@
   border-bottom-left-radius: var(--form-control-border-bottom-left-radius);
   box-shadow: var(--form-control-box-shadow);
   transition: var(--form-control-transition);
-  -webkit-appearance: none;
-  appearance: none;
+  -webkit-appearance: var(--form-control-webkit-appearance);
+  appearance: var(--form-control-appearance);
 }
 
 .form-control:focus {
   color: var(--form-control-focus-color);
   background-color: var(--form-control-focus-bg);
   border-color: var(--form-control-focus-border-color);
-  outline: 0;
+  outline: var(--form-control-focus-outline);
   box-shadow: var(--form-control-focus-box-shadow);
   animation: form-focus-pulse 0.2s ease-out;
 }
@@ -53,13 +53,13 @@
 .form-control[readonly] {
   background-color: var(--form-control-readonly-bg);
   /* Evita que el usuario pueda cambiar el valor, pero permite seleccionarlo */
-  opacity: 1;
+  opacity: var(--form-control-readonly-opacity);
 }
 
 /* Placeholder styles */
 .form-control::placeholder {
   color: var(--form-control-placeholder-color);
-  opacity: 1;
+  opacity: var(--form-control-placeholder-opacity);
 }
 
 .form-text {
@@ -73,7 +73,7 @@ select.form-control {
   /* Aumentamos el padding derecho para dejar espacio al ícono de flecha */
   --form-control-padding-right: calc(var(--btn-padding-right) + var(--form-select-indicator-padding)); /* padding original + espacio para el ícono */
   background-image: var(--form-select-indicator);
-  background-repeat: no-repeat;
+  background-repeat: var(--form-select-background-repeat);
   background-position: var(--form-select-bg-position);
   background-size: var(--form-select-bg-size);
 }
@@ -93,7 +93,7 @@ select.form-control option:checked {
 /* File input specific styles */
 .form-control[type="file"] {
   /* Sobrescribimos las propiedades del .form-control con variables específicas para el input de archivo */
-  overflow: hidden; /* For better appearance */
+  overflow: var(--file-input-overflow); /* For better appearance */
   padding-top: var(--file-input-padding-top);
   padding-right: var(--file-input-padding-right);
   padding-bottom: var(--file-input-padding-bottom);
@@ -136,9 +136,9 @@ select.form-control option:checked {
   padding-right: var(--file-selector-button-padding-right);
   padding-bottom: var(--file-selector-button-padding-bottom);
   padding-left: var(--file-selector-button-padding-left);
-  margin-inline-end: var(--btn-padding-right); /* Espacio entre el botón y el texto del archivo */
+  margin-inline-end: var(--file-selector-button-margin-inline-end); /* Espacio entre el botón y el texto del archivo */
   transition: var(--btn-transition);
-  cursor: pointer;
+  cursor: var(--file-selector-button-cursor);
 }
 
 .form-control[type="file"]::file-selector-button:hover {
@@ -179,19 +179,19 @@ select.form-control option:checked {
 }
 
 .form-check-input {
-  float: left;
+  float: var(--form-check-input-float);
   width: var(--form-check-input-width);
   height: var(--form-check-input-height);
   margin-top: var(--form-check-input-margin-top);
   margin-left: var(--form-check-input-margin-left);
-  vertical-align: top;
+  vertical-align: var(--form-check-input-vertical-align);
   background-color: var(--form-check-input-bg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background-repeat: var(--form-check-input-background-repeat);
+  background-position: var(--form-check-input-background-position);
+  background-size: var(--form-check-input-background-size);
   border: var(--form-check-input-border);
-  -webkit-appearance: none;
-  appearance: none;
+  -webkit-appearance: var(--form-check-input-webkit-appearance);
+  appearance: var(--form-check-input-appearance);
   cursor: var(--form-check-input-cursor);
   transition:
     background-color 0.15s ease-in-out,
@@ -202,7 +202,7 @@ select.form-control option:checked {
 
 .form-check-input:focus {
   border-color: var(--form-check-input-focus-border);
-  outline: 0;
+  outline: var(--form-check-input-focus-outline);
   box-shadow: var(--form-check-input-focus-box-shadow);
 }
 
@@ -213,7 +213,7 @@ select.form-control option:checked {
 
 /* Estilos para Checkbox/Radio deshabilitados */
 .form-check-input:disabled {
-  pointer-events: none;
+  pointer-events: var(--form-check-input-disabled-pointer-events);
   opacity: var(--form-check-input-disabled-opacity);
 }
 
@@ -255,10 +255,10 @@ select.form-control option:checked {
  */
 
 .valid-feedback,
-.invalid-feedback {
-  /* Se añade .warning-feedback al selector */
-  display: none;
-  width: 100%;
+.invalid-feedback,
+.warning-feedback {
+  display: var(--form-feedback-display-closed);
+  width: var(--form-feedback-width);
   margin-top: var(--form-feedback-margin-top);
   font-size: var(--form-feedback-font-size);
 }
@@ -279,15 +279,16 @@ select.form-control option:checked {
 .form-control.is-invalid,
 .form-control.is-warning {
   padding-right: var(--form-validation-icon-padding);
-  background-repeat: no-repeat;
+  background-repeat: var(--form-validation-background-repeat);
   background-position: var(--form-validation-bg-position);
   background-size: var(--form-validation-bg-size);
 }
+
 /* Muestra el mensaje de feedback cuando el campo tiene la clase correspondiente */
 .is-valid ~ .valid-feedback,
 .is-invalid ~ .invalid-feedback,
 .is-warning ~ .warning-feedback {
-  display: block;
+  display: var(--form-feedback-display-open);
 }
 
 /* Estilos para campos válidos */
@@ -298,6 +299,7 @@ select.form-control option:checked {
 
 .form-control.is-valid:focus {
   border-color: var(--form-validation-valid-border-color);
+  outline: var(--form-validation-focus-outline);
   box-shadow: var(--form-validation-valid-focus-box-shadow);
 }
 
@@ -309,6 +311,7 @@ select.form-control option:checked {
 
 .form-control.is-invalid:focus {
   border-color: var(--form-validation-invalid-border-color);
+  outline: var(--form-validation-focus-outline);
   box-shadow: var(--form-validation-invalid-focus-box-shadow);
 }
 
@@ -320,6 +323,7 @@ select.form-control option:checked {
 
 .form-control.is-warning:focus {
   border-color: var(--form-validation-warning-border-color);
+  outline: var(--form-validation-focus-outline);
   box-shadow: var(--form-validation-warning-focus-box-shadow);
 }
 
@@ -379,26 +383,22 @@ select.form-control.is-warning {
 
 /* Micro-interacción activa para controles form-check */
 .form-check-input:active {
-  transform: scale(0.9);
-  filter: brightness(90%);
+  transform: var(--form-check-input-active-transform);
+  filter: var(--form-check-input-active-filter);
 }
 
 /* Interruptores (Switches) */
 .form-switch {
-  padding-left: 2.5rem;
+  padding-left: var(--form-switch-padding-left);
 }
 
 .form-switch .form-check-input {
-  width: 2em;
-  margin-left: -2.5rem;
+  width: var(--form-switch-input-width);
+  margin-left: var(--form-switch-input-margin-left);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%2833, 37, 41, 0.25%29'/%3e%3c/svg%3e");
-  background-position: left center;
-  border-radius: 2em;
-  transition: 
-    background-position 0.15s ease-in-out, 
-    background-color 0.15s ease-in-out, 
-    border-color 0.15s ease-in-out, 
-    box-shadow 0.15s ease-in-out;
+  background-position: var(--form-switch-input-background-position-unchecked);
+  border-radius: var(--form-switch-input-border-radius);
+  transition: var(--form-switch-input-transition);
 }
 
 /* Ajuste del circulo del switch en modo oscuro */
@@ -411,7 +411,6 @@ select.form-control.is-warning {
 }
 
 .form-switch .form-check-input:checked {
-  background-position: right center;
+  background-position: var(--form-switch-input-background-position-checked);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e");
 }
-

@@ -1,4 +1,11 @@
 :root {
+  --modal-position: fixed;
+  --modal-inset: 0;
+  --modal-display: block;
+  --modal-dialog-padding: 0;
+  --modal-dialog-margin: auto;
+  --modal-max-width: 100%;
+
   --modal-z-index: 1050;
   --modal-width: 32rem; /* aprox 500px */
   --modal-margin-x: 2rem; /* Margen horizontal para el cálculo de ancho responsive */
@@ -11,18 +18,58 @@
   --modal-bg: var(--color-surface);
   --modal-color: var(--color-text);
   --modal-border-width: 1px;
+  --modal-border-style: solid;
   --modal-border-color: var(--color-border);
   --modal-border-radius: 0.5rem;
   --modal-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
+  /* Open / Closed states */
+  --modal-open-opacity: 1;
+  --modal-open-visibility: visible;
+  --modal-closing-opacity: 0 !important;
+  --modal-closing-visibility: hidden !important;
+  --modal-closing-backdrop-opacity: 0 !important;
+
   /* Backdrop (Fondo oscuro) */
   --modal-backdrop-bg: rgba(0, 0, 0, 0.5);
   --modal-backdrop-filter: blur(2px);
+  --modal-backdrop-opacity-closed: 0;
+  --modal-backdrop-opacity-open: 1;
 
   /* Spacing */
   --modal-padding: 1.5rem;
   --modal-header-padding: 1rem 1.5rem;
+  --modal-header-border-width: var(--modal-border-width);
+  --modal-header-border-style: solid;
+  --modal-header-border-color: var(--modal-border-color);
   --modal-footer-padding: 1rem 1.5rem;
+  --modal-footer-border-width: var(--modal-border-width);
+  --modal-footer-border-style: solid;
+  --modal-footer-border-color: var(--modal-border-color);
+  --modal-footer-gap: 0.5rem;
+
+  /* Header elements */
+  --modal-header-display: flex;
+  --modal-header-align-items: center;
+  --modal-header-justify-content: space-between;
+  --modal-header-btn-close-position: static;
+  --modal-header-btn-close-margin-left: auto;
+
+  --modal-title-margin: 0;
+  --modal-title-font-size: 1.25rem;
+  --modal-title-font-weight: 500;
+
+  /* Footer elements */
+  --modal-footer-display: flex;
+  --modal-footer-align-items: center;
+  --modal-footer-justify-content: flex-end;
+
+  /* Fullscreen override layout */
+  --modal-fullscreen-width-override: 100%;
+  --modal-fullscreen-max-width-override: 100%;
+  --modal-fullscreen-max-height-override: 100%;
+  --modal-fullscreen-margin-override: 0;
+  --modal-fullscreen-body-overflow-y: auto;
 
   /* Animation */
   --modal-transition-duration: 0.3s;

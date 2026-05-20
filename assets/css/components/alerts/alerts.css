@@ -1,12 +1,12 @@
 @import url("root.css") layer(components.alerts.vars);
 
 .alert {
-  position: relative;
+  position: var(--alert-position);
   padding: var(--alert-padding-y) var(--alert-padding-x);
   margin-bottom: var(--alert-margin-bottom);
   color: var(--alert-color);
   background-color: var(--alert-bg);
-  border: var(--alert-border-width) solid var(--alert-border-color);
+  border: var(--alert-border-width) var(--alert-border-style) var(--alert-border-color);
   border-radius: var(--alert-border-radius);
 
   /* 
@@ -14,9 +14,9 @@
    * Usamos max-height y opacity para animar la desaparición.
    * overflow: hidden es crucial para que el contenido no se desborde al colapsar.
    */
-  opacity: 1;
+  opacity: var(--alert-opacity-open);
   max-height: var(--alert-max-height);
-  overflow: hidden;
+  overflow: var(--alert-overflow);
   transition:
     opacity var(--alert-fade-duration) var(--alert-transition-timing),
     max-height var(--alert-collapse-duration) var(--alert-transition-timing),
@@ -91,7 +91,7 @@
 }
 
 .btn-close {
-  box-sizing: content-box;
+  box-sizing: var(--btn-close-box-sizing);
   width: var(--btn-close-width);
   height: var(--btn-close-height);
   color: var(--btn-close-color);
@@ -102,10 +102,10 @@
   cursor: pointer;
 
   /* Posicionamiento absoluto dentro de la alerta */
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
+  position: var(--btn-close-position);
+  top: var(--btn-close-top);
+  right: var(--btn-close-right);
+  z-index: var(--btn-close-zindex);
   padding: var(--btn-close-padding);
 }
 
@@ -115,7 +115,7 @@
 
 /* Logic for CSS-only dismiss (Checkbox Hack) */
 .alert-checkbox {
-  display: none; /* Ocultamos el checkbox real */
+  display: var(--alert-checkbox-display); /* Ocultamos el checkbox real */
 }
 
 /* Cuando el checkbox está marcado, ocultamos la alerta adyacente */

@@ -10,4 +10,14 @@
   --breadcrumb-divider: "/"; /* Carácter separador por defecto */
   --breadcrumb-border-radius: 0.375rem;
   --breadcrumb-font-size: 1rem;
+
+  --breadcrumb-display: flex;
+  --breadcrumb-flex-wrap: wrap;
+  --breadcrumb-list-style: none;
+  --breadcrumb-item-display: flex;
+  --breadcrumb-item-align-items: center;
+  --breadcrumb-divider-display: inline-block;
+  --breadcrumb-active-pointer-events: none;
+  --breadcrumb-active-cursor: default;
+  --breadcrumb-active-text-decoration: none;
 }

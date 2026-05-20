@@ -1,61 +1,44 @@
-:root {
-  --popover-bg: var(--color-surface);
-  --popover-border-color: var(--color-border);
-  --popover-border-radius: 0.5rem;
-  --popover-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  --popover-font-size: 0.875rem;
-  --popover-max-width: 276px;
-  --popover-header-bg: var(--color-surface-subtle);
-  --popover-header-padding-y: 0.5rem;
-  --popover-header-padding-x: 0.75rem;
-  --popover-body-padding-y: 0.75rem;
-  --popover-body-padding-x: 0.75rem;
-  --popover-arrow-width: 0.8rem;
-  --popover-arrow-height: 0.4rem;
-  --popover-transition-duration: 0.15s;
-}
+@import url("root.css") layer(components.popovers.vars);
 
-[data-theme="dark"] {
-  --popover-bg: var(--palette-dark-surface);
-  --popover-border-color: var(--palette-dark-border);
-  --popover-header-bg: var(--palette-dark-surface-subtle);
-  --popover-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
-}
 
 .popover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1060;
-  display: block;
+  position: var(--popover-position);
+  top: var(--popover-top);
+  left: var(--popover-left);
+  z-index: var(--popover-zindex);
+  display: var(--popover-display);
   max-width: var(--popover-max-width);
-  font-family: inherit;
+  font-family: var(--popover-font-family);
   font-size: var(--popover-font-size);
   background-color: var(--popover-bg);
-  background-clip: padding-box;
-  border: 1px solid var(--popover-border-color);
+  background-clip: var(--popover-background-clip);
+  border-width: var(--popover-border-width);
+  border-style: var(--popover-border-style);
+  border-color: var(--popover-border-color);
   border-radius: var(--popover-border-radius);
   box-shadow: var(--popover-box-shadow);
-  opacity: 0;
-  transform: scale(0.95);
-  pointer-events: none;
-  transition: opacity var(--popover-transition-duration) ease-in-out, transform var(--popover-transition-duration) ease-in-out;
+  opacity: var(--popover-opacity-closed);
+  transform: var(--popover-transform-scale);
+  pointer-events: var(--popover-pointer-events-closed);
+  transition: var(--popover-transition);
 }
 
 .popover.show {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
+  opacity: var(--popover-opacity-open);
+  transform: var(--popover-transform-scale-open);
+  pointer-events: var(--popover-pointer-events-open);
 }
 
 .popover-header {
   padding: var(--popover-header-padding-y) var(--popover-header-padding-x);
-  margin-bottom: 0;
-  font-size: 1rem;
-  font-weight: 600;
+  margin-bottom: var(--popover-header-margin-bottom);
+  font-size: var(--popover-header-font-size);
+  font-weight: var(--popover-header-font-weight);
   color: var(--color-text);
   background-color: var(--popover-header-bg);
-  border-bottom: 1px solid var(--popover-border-color);
+  border-bottom-width: var(--popover-header-border-bottom-width);
+  border-bottom-style: var(--popover-header-border-bottom-style);
+  border-bottom-color: var(--popover-border-color);
   border-top-left-radius: calc(var(--popover-border-radius) - 1px);
   border-top-right-radius: calc(var(--popover-border-radius) - 1px);
 }
@@ -63,99 +46,99 @@
 .popover-body {
   padding: var(--popover-body-padding-y) var(--popover-body-padding-x);
   color: var(--color-text-muted);
-  word-wrap: break-word;
+  word-wrap: var(--popover-body-word-wrap);
 }
 
 /* Flecha Indicadora del Popover */
 .popover-arrow {
-  position: absolute;
-  display: block;
-  width: 1rem;
-  height: 1rem;
+  position: var(--popover-arrow-position);
+  display: var(--popover-arrow-display);
+  width: var(--popover-arrow-size);
+  height: var(--popover-arrow-size);
 }
 
 .popover-arrow::before,
 .popover-arrow::after {
-  position: absolute;
-  display: block;
-  content: "";
-  border-color: transparent;
-  border-style: solid;
+  position: var(--popover-arrow-child-position);
+  display: var(--popover-arrow-child-display);
+  content: var(--popover-arrow-child-content);
+  border-color: var(--popover-arrow-child-border-color);
+  border-style: var(--popover-arrow-child-border-style);
 }
 
 /* Direcciones del Popover */
 .popover[data-placement="top"] {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--popover-margin);
 }
 .popover[data-placement="top"] .popover-arrow {
-  bottom: -1rem;
+  bottom: var(--popover-arrow-offset);
   left: 50%;
   transform: translateX(-50%);
 }
 .popover[data-placement="top"] .popover-arrow::before {
   top: 0;
-  border-width: 0.5rem 0.5rem 0;
+  border-width: var(--popover-arrow-border-width) var(--popover-arrow-border-width) 0;
   border-top-color: var(--popover-border-color);
 }
 .popover[data-placement="top"] .popover-arrow::after {
-  top: -1px;
-  border-width: 0.5rem 0.5rem 0;
+  top: var(--popover-arrow-offset-active);
+  border-width: var(--popover-arrow-border-width) var(--popover-arrow-border-width) 0;
   border-top-color: var(--popover-bg);
 }
 
 .popover[data-placement="bottom"] {
-  margin-top: 0.5rem;
+  margin-top: var(--popover-margin);
 }
 .popover[data-placement="bottom"] .popover-arrow {
-  top: -1rem;
+  top: var(--popover-arrow-offset);
   left: 50%;
   transform: translateX(-50%);
 }
 .popover[data-placement="bottom"] .popover-arrow::before {
   bottom: 0;
-  border-width: 0 0.5rem 0.5rem;
+  border-width: 0 var(--popover-arrow-border-width) var(--popover-arrow-border-width);
   border-bottom-color: var(--popover-border-color);
 }
 .popover[data-placement="bottom"] .popover-arrow::after {
-  bottom: -1px;
-  border-width: 0 0.5rem 0.5rem;
+  bottom: var(--popover-arrow-offset-active);
+  border-width: 0 var(--popover-arrow-border-width) var(--popover-arrow-border-width);
   border-bottom-color: var(--popover-bg);
 }
 
 .popover[data-placement="left"] {
-  margin-right: 0.5rem;
+  margin-right: var(--popover-margin);
 }
 .popover[data-placement="left"] .popover-arrow {
-  right: -1rem;
+  right: var(--popover-arrow-offset);
   top: 50%;
   transform: translateY(-50%);
 }
 .popover[data-placement="left"] .popover-arrow::before {
   left: 0;
-  border-width: 0.5rem 0 0.5rem 0.5rem;
+  border-width: var(--popover-arrow-border-width) 0 var(--popover-arrow-border-width) var(--popover-arrow-border-width);
   border-left-color: var(--popover-border-color);
 }
 .popover[data-placement="left"] .popover-arrow::after {
-  left: -1px;
-  border-width: 0.5rem 0 0.5rem 0.5rem;
+  left: var(--popover-arrow-offset-active);
+  border-width: var(--popover-arrow-border-width) 0 var(--popover-arrow-border-width) var(--popover-arrow-border-width);
   border-left-color: var(--popover-bg);
 }
 
 .popover[data-placement="right"] {
-  margin-left: 0.5rem;
+  margin-left: var(--popover-margin);
 }
 .popover[data-placement="right"] .popover-arrow {
-  left: -1rem;
+  left: var(--popover-arrow-offset);
   top: 50%;
   transform: translateY(-50%);
 }
 .popover[data-placement="right"] .popover-arrow::before {
   right: 0;
-  border-width: 0.5rem 0.5rem 0.5rem 0;
+  border-width: var(--popover-arrow-border-width) var(--popover-arrow-border-width) var(--popover-arrow-border-width) 0;
   border-right-color: var(--popover-border-color);
 }
 .popover[data-placement="right"] .popover-arrow::after {
-  right: -1px;
-  border-width: 0.5rem 0.5rem 0.5rem 0;
+  right: var(--popover-arrow-offset-active);
+  border-width: var(--popover-arrow-border-width) var(--popover-arrow-border-width) var(--popover-arrow-border-width) 0;
   border-right-color: var(--popover-bg);
 }

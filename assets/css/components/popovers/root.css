@@ -1,0 +1,60 @@
+:root {
+  --popover-position: absolute;
+  --popover-top: 0;
+  --popover-left: 0;
+  --popover-zindex: 1060;
+  --popover-display: block;
+  --popover-max-width: 276px;
+  --popover-font-family: inherit;
+  --popover-font-size: 0.875rem;
+  --popover-bg: var(--color-surface);
+  --popover-background-clip: padding-box;
+  --popover-border-style: solid;
+  --popover-border-width: 1px;
+  --popover-border-color: var(--color-border);
+  --popover-border-radius: 0.5rem;
+  --popover-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --popover-opacity-closed: 0;
+  --popover-opacity-open: 1;
+  --popover-transform-scale: scale(0.95);
+  --popover-transform-scale-open: scale(1);
+  --popover-pointer-events-closed: none;
+  --popover-pointer-events-open: auto;
+  --popover-transition: opacity var(--popover-transition-duration) ease-in-out, transform var(--popover-transition-duration) ease-in-out;
+  --popover-transition-duration: 0.15s;
+
+  --popover-header-padding-y: 0.5rem;
+  --popover-header-padding-x: 0.75rem;
+  --popover-header-margin-bottom: 0;
+  --popover-header-font-size: 1rem;
+  --popover-header-font-weight: 600;
+  --popover-header-bg: var(--color-surface-subtle);
+  --popover-header-border-bottom-style: solid;
+  --popover-header-border-bottom-width: 1px;
+
+  --popover-body-padding-y: 0.75rem;
+  --popover-body-padding-x: 0.75rem;
+  --popover-body-word-wrap: break-word;
+
+  --popover-arrow-position: absolute;
+  --popover-arrow-display: block;
+  --popover-arrow-size: 1rem;
+
+  --popover-arrow-child-position: absolute;
+  --popover-arrow-child-display: block;
+  --popover-arrow-child-content: "";
+  --popover-arrow-child-border-style: solid;
+  --popover-arrow-child-border-color: transparent;
+
+  --popover-arrow-border-width: 0.5rem;
+  --popover-arrow-offset: -1rem;
+  --popover-arrow-offset-active: -1px;
+  --popover-margin: 0.5rem;
+}
+
+[data-theme="dark"] {
+  --popover-bg: var(--palette-dark-surface);
+  --popover-border-color: var(--palette-dark-border);
+  --popover-header-bg: var(--palette-dark-surface-subtle);
+  --popover-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+}

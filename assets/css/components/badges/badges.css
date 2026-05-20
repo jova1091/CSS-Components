@@ -1,24 +1,26 @@
 @import url("root.css") layer(components.badges.vars);
 
 .badge {
-  display: inline-block;
+  display: var(--badge-display);
   padding: var(--badge-padding-y) var(--badge-padding-x);
   font-size: var(--badge-font-size);
   font-weight: var(--badge-font-weight);
   line-height: var(--badge-line-height);
   color: var(--badge-color);
   text-align: var(--badge-text-align);
-  white-space: nowrap;
+  white-space: var(--badge-white-space);
   vertical-align: var(--badge-vertical-align);
   border-radius: var(--badge-border-radius);
-  border: var(--badge-border-width) solid transparent;
+  border-width: var(--badge-border-width);
+  border-style: var(--badge-border-style);
+  border-color: var(--badge-border-color);
   transition: var(--badge-transition);
-  position: relative;
+  position: var(--badge-position);
   top: var(--badge-top-offset);
 }
 
 .badge:empty {
-  display: none;
+  display: var(--badge-empty-display);
 }
 
 /* Badges inside headings */
@@ -33,8 +35,8 @@ h6 .badge {
 
 /* Posicionamiento relativo para badges dentro de botones */
 .btn .badge {
-  position: relative;
-  top: -1px;
+  position: var(--badge-btn-position);
+  top: var(--badge-btn-top-offset);
 }
 
 /* Variants */

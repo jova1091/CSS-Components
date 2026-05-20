@@ -1,57 +1,57 @@
 @import url("root.css") layer(components.skeletons.vars);
 
 .skeleton {
-  position: relative;
-  overflow: hidden;
+  position: var(--skeleton-position);
+  overflow: var(--skeleton-overflow);
   background-color: var(--skeleton-bg);
   border-radius: var(--skeleton-border-radius);
-  display: block;
+  display: var(--skeleton-display);
 }
 
 .skeleton::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateX(-100%);
+  position: var(--skeleton-after-position);
+  top: var(--skeleton-after-top);
+  right: var(--skeleton-after-right);
+  bottom: var(--skeleton-after-bottom);
+  left: var(--skeleton-after-left);
+  transform: var(--skeleton-after-transform-start);
   background-image: var(--skeleton-shimmer-bg);
   animation: skeleton-shimmer var(--skeleton-animation-duration) infinite;
-  content: "";
+  content: var(--skeleton-after-content);
 }
 
 .skeleton-avatar,
 .skeleton-circle {
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
+  border-radius: var(--skeleton-circle-border-radius);
+  width: var(--skeleton-circle-width);
+  height: var(--skeleton-circle-height);
+  flex-shrink: var(--skeleton-circle-flex-shrink);
 }
 
 .skeleton-title {
-  width: 60%;
-  height: 1.25rem;
-  margin-bottom: 0.75rem;
+  width: var(--skeleton-title-width);
+  height: var(--skeleton-title-height);
+  margin-bottom: var(--skeleton-title-margin-bottom);
 }
 
 .skeleton-text {
-  width: 100%;
-  height: 0.875rem;
-  margin-bottom: 0.5rem;
+  width: var(--skeleton-text-width);
+  height: var(--skeleton-text-height);
+  margin-bottom: var(--skeleton-text-margin-bottom);
 }
 
 .skeleton-text:last-child {
-  width: 80%;
-  margin-bottom: 0;
+  width: var(--skeleton-text-last-width);
+  margin-bottom: var(--skeleton-text-last-margin-bottom);
 }
 
 .skeleton-rect {
-  width: 100%;
-  height: 150px;
+  width: var(--skeleton-rect-width);
+  height: var(--skeleton-rect-height);
 }
 
 @keyframes skeleton-shimmer {
   100% {
-    transform: translateX(100%);
+    transform: var(--skeleton-after-transform-end);
   }
 }

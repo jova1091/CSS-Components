@@ -1,24 +1,24 @@
 @import url("root.css") layer(components.modal.vars);
 
 dialog {
-  position: fixed;
-  inset: 0;
+  position: var(--modal-position);
+  inset: var(--modal-inset);
   z-index: var(--modal-z-index);
-  display: block; /* Reset para controlar visibilidad con opacity/visibility */
-  padding: 0;
-  margin: auto; /* Centrado nativo del dialog */
+  display: var(--modal-display); /* Reset para controlar visibilidad con opacity/visibility */
+  padding: var(--modal-dialog-padding);
+  margin: var(--modal-dialog-margin); /* Centrado nativo del dialog */
   width: min(100% - var(--modal-margin-x), var(--modal-width));
-  max-width: 100%;
+  max-width: var(--modal-max-width);
   color: var(--modal-color);
   background-color: var(--modal-bg);
-  border: var(--modal-border-width) solid var(--modal-border-color);
+  border: var(--modal-border-width) var(--modal-border-style) var(--modal-border-color);
   border-radius: var(--modal-border-radius);
   box-shadow: var(--modal-box-shadow);
 
   /* Estado inicial (Cerrado) para animación */
-  opacity: 0;
+  opacity: var(--modal-scale-start-opacity, 0);
   transform: scale(var(--modal-scale-start));
-  visibility: hidden;
+  visibility: var(--modal-scale-start-visibility, hidden);
   transition:
     opacity var(--modal-transition-duration) var(--modal-transition-timing),
     transform var(--modal-transition-duration) var(--modal-transition-timing),
@@ -28,27 +28,27 @@ dialog {
 
 /* Estado Abierto [open] */
 dialog[open] {
-  opacity: 1;
+  opacity: var(--modal-open-opacity);
   transform: scale(var(--modal-scale-end));
-  visibility: visible;
+  visibility: var(--modal-open-visibility);
 }
 
 /* Estado en proceso de cierre (JS) */
 dialog.closing {
-  opacity: 0 !important;
-  transform: scale(var(--modal-scale-start)) !important;
-  visibility: hidden !important;
+  opacity: var(--modal-closing-opacity);
+  transform: scale(var(--modal-scale-start)) var(--modal-closing-important, !important);
+  visibility: var(--modal-closing-visibility);
 }
 
 dialog.closing::backdrop {
-  opacity: 0 !important;
+  opacity: var(--modal-closing-backdrop-opacity);
 }
 
 /* Backdrop (Fondo) */
 dialog::backdrop {
   background-color: var(--modal-backdrop-bg);
   backdrop-filter: var(--modal-backdrop-filter);
-  opacity: 0;
+  opacity: var(--modal-backdrop-opacity-closed);
   transition:
     opacity var(--modal-transition-duration) var(--modal-transition-timing),
     display var(--modal-transition-duration) allow-discrete,
@@ -56,7 +56,7 @@ dialog::backdrop {
 }
 
 dialog[open]::backdrop {
-  opacity: 1;
+  opacity: var(--modal-backdrop-opacity-open);
 }
 
 /* Soporte para animación de entrada en navegadores modernos */
@@ -72,20 +72,20 @@ dialog[open]::backdrop {
 
 /* Estructura Interna */
 .modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: var(--modal-header-display);
+  align-items: var(--modal-header-align-items);
+  justify-content: var(--modal-header-justify-content);
   padding: var(--modal-header-padding);
-  border-bottom: var(--modal-header-border-width) solid var(--modal-header-border-color);
+  border-bottom: var(--modal-header-border-width) var(--modal-header-border-style) var(--modal-header-border-color);
 }
 
 .modal-header .btn-close {
-  position: static; /* Reset de la posición absoluta que tiene en alerts */
-  margin-left: auto;
+  position: var(--modal-header-btn-close-position); /* Reset de la posición absoluta que tiene en alerts */
+  margin-left: var(--modal-header-btn-close-margin-left);
 }
 
 .modal-title {
-  margin: 0;
+  margin: var(--modal-title-margin);
   font-size: var(--modal-title-font-size);
   font-weight: var(--modal-title-font-weight);
 }
@@ -95,11 +95,11 @@ dialog[open]::backdrop {
 }
 
 .modal-footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  display: var(--modal-footer-display);
+  align-items: var(--modal-footer-align-items);
+  justify-content: var(--modal-footer-justify-content);
   padding: var(--modal-footer-padding);
-  border-top: var(--modal-footer-border-width) solid var(--modal-footer-border-color);
+  border-top: var(--modal-footer-border-width) var(--modal-footer-border-style) var(--modal-footer-border-color);
   gap: var(--modal-footer-gap);
 }
 
@@ -127,13 +127,13 @@ dialog[open]::backdrop {
   --modal-border-radius: var(--modal-fullscreen-border-radius);
   --modal-border-width: 0;
 
-  width: 100%;
+  width: var(--modal-fullscreen-width-override);
   height: var(--modal-fullscreen-height);
-  max-width: 100%;
-  max-height: 100%;
-  margin: 0; /* Eliminamos el centrado automático */
+  max-width: var(--modal-fullscreen-max-width-override);
+  max-height: var(--modal-fullscreen-max-height-override);
+  margin: var(--modal-fullscreen-margin-override); /* Eliminamos el centrado automático */
 }
 
 .modal-fullscreen .modal-body {
-  overflow-y: auto; /* Aseguramos scroll si el contenido es largo */
+  overflow-y: var(--modal-fullscreen-body-overflow-y); /* Aseguramos scroll si el contenido es largo */
 }

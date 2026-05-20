@@ -1,31 +1,31 @@
 @import url("root.css") layer(components.tabs.vars);
 
 .tab-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: var(--tab-list-display);
+  flex-wrap: var(--tab-list-flex-wrap);
   padding-left: 0;
   margin-bottom: 0;
-  list-style: none;
-  border-bottom: var(--tabs-border-width) solid var(--tabs-border-color);
+  list-style: var(--tab-list-style);
+  border-bottom: var(--tabs-border-width) var(--tabs-border-style) var(--tabs-border-color);
 }
 
 .tab-item {
-  margin-bottom: calc(-1 * var(--tabs-border-width)); /* Levanta el item para que su borde se fusione con el borde de la lista */
+  margin-bottom: var(--tab-item-margin-bottom); /* Levanta el item para que su borde se fusione con el borde de la lista */
 }
 
 .tab-link {
-  display: block;
+  display: var(--tab-link-display);
   padding: var(--tab-link-padding-y) var(--tab-link-padding-x);
   color: var(--tab-link-color);
-  background-color: transparent;
-  border: var(--tab-link-border-width) solid transparent;
+  background-color: var(--tab-link-bg);
+  border: var(--tab-link-border-width) var(--tab-link-border-style) var(--tab-link-border-color-transparent);
   border-top-left-radius: var(--tab-link-border-radius);
   border-top-right-radius: var(--tab-link-border-radius);
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: var(--tab-link-text-decoration);
   transition: var(--tab-link-transition);
-  -webkit-appearance: none;
-  appearance: none;
+  -webkit-appearance: var(--tab-link-webkit-appearance);
+  appearance: var(--tab-link-appearance);
 }
 
 .tab-link:hover,
@@ -41,7 +41,7 @@
 }
 
 .tab-link:focus-visible {
-  outline: var(--tab-link-focus-outline-width) solid var(--color-focus-ring);
+  outline: var(--tab-link-focus-outline-width) var(--tab-link-focus-outline-style) var(--color-focus-ring);
   outline-offset: var(--tab-link-focus-outline-offset);
 }
 
@@ -51,21 +51,21 @@
 
 /* Animación para el cambio de pestañas */
 [role="tabpanel"] {
-  outline: none;
+  outline: var(--tab-panel-outline);
 }
 
 [role="tabpanel"]:not([hidden]) {
-  display: block;
-  animation: fadeInTab 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: var(--tab-panel-display);
+  animation: var(--tab-panel-animation);
 }
 
 @keyframes fadeInTab {
   from {
-    opacity: 0;
-    transform: translateY(4px);
+    opacity: var(--tab-fade-in-from-opacity);
+    transform: var(--tab-fade-in-from-transform);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: var(--tab-fade-in-to-opacity);
+    transform: var(--tab-fade-in-to-transform);
   }
 }

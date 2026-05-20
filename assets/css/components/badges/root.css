@@ -28,4 +28,13 @@
   --badge-bg-info: #0dcaf0;
   --badge-bg-light: #f8f9fa;
   --badge-bg-dark: #212529;
+
+  --badge-display: inline-block;
+  --badge-white-space: nowrap;
+  --badge-border-style: solid;
+  --badge-border-color: transparent;
+  --badge-position: relative;
+  --badge-empty-display: none;
+  --badge-btn-position: relative;
+  --badge-btn-top-offset: -1px;
 }

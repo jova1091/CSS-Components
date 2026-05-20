@@ -3,6 +3,9 @@
   --grid-cols: 12;
   --grid-col-x-gap: 20px;
   --grid-col-y-gap: 20px;
+  --grid-container-margin: 0 auto;
+  --grid-container-max-width: 1366px;
+  --grid-container-width-full: 100%;
 
   /* Breakpoints (based on Google DevTools) */
   --breakpoint-xs: 425px;

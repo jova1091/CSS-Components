@@ -1,44 +1,43 @@
-:root {
-  --spinner-width: 2rem;
-  --spinner-height: 2rem;
-  --spinner-vertical-align: -0.125em;
-  --spinner-border-width: 0.22em;
-  --spinner-animation-duration: 0.75s;
-}
+@import url("root.css") layer(components.spinners.vars);
+
 
 .spinner-border,
 .spinner-grow {
-  display: inline-block;
+  display: var(--spinner-display);
   width: var(--spinner-width);
   height: var(--spinner-height);
   vertical-align: var(--spinner-vertical-align);
-  border-radius: 50%;
-  animation: var(--spinner-animation-duration) linear infinite;
+  border-radius: var(--spinner-border-radius);
+  animation-duration: var(--spinner-animation-duration);
+  animation-timing-function: var(--spinner-animation-timing-function);
+  animation-iteration-count: var(--spinner-animation-iteration-count);
 }
 
 .spinner-border {
-  border: var(--spinner-border-width) solid currentColor;
-  border-right-color: transparent;
+  border-width: var(--spinner-border-width);
+  border-style: var(--spinner-border-style);
+  border-color: var(--spinner-border-color);
+  border-right-color: var(--spinner-border-right-color);
   animation-name: spinner-border-rotate;
 }
 
 .spinner-grow {
-  background-color: currentColor;
-  opacity: 0;
+  background-color: var(--spinner-grow-bg);
+  opacity: var(--spinner-grow-opacity-start);
   animation-name: spinner-grow-pulse;
 }
 
 /* Tamaños */
 .spinner-sm {
-  --spinner-width: 1rem;
-  --spinner-height: 1rem;
-  --spinner-border-width: 0.12em;
+  --spinner-width: var(--spinner-sm-width);
+  --spinner-height: var(--spinner-sm-height);
+  --spinner-border-width: var(--spinner-sm-border-width);
 }
 
 .spinner-lg {
-  --spinner-width: 3rem;
-  --spinner-height: 3rem;
-  --spinner-border-width: 0.32em;
+  --spinner-width: var(--spinner-lg-width);
+  --spinner-height: var(--spinner-lg-height);
+  --spinner-border-width: var(--spinner-lg-border-width);
 }
 
 /* Variantes de Color Semánticas */
@@ -87,10 +86,10 @@
     transform: scale(0);
   }
   50% {
-    opacity: 1;
+    opacity: var(--spinner-grow-opacity-mid);
   }
   100% {
     transform: scale(1);
-    opacity: 0;
+    opacity: var(--spinner-grow-opacity-start);
   }
 }

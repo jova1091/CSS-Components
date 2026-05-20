@@ -1,25 +1,25 @@
 @import url("root.css") layer(components.cards.vars);
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
+  position: var(--card-position);
+  display: var(--card-display);
+  flex-direction: var(--card-flex-direction);
+  min-width: var(--card-min-width);
   height: var(--card-height);
-  word-wrap: break-word;
+  word-wrap: var(--card-word-wrap);
   background-color: var(--card-bg);
-  background-clip: border-box;
-  border: var(--card-border-width) solid var(--card-border-color);
+  background-clip: var(--card-background-clip);
+  border: var(--card-border-width) var(--card-border-style) var(--card-border-color);
   border-radius: var(--card-border-radius);
   box-shadow: var(--card-box-shadow);
 }
 
 .card-body {
-  flex: 1 1 auto;
+  flex: var(--card-body-flex);
   padding: var(--card-spacer-y) var(--card-spacer-x);
   color: var(--card-color);
-  display: flex;
-  flex-direction: column;
+  display: var(--card-body-display);
+  flex-direction: var(--card-body-flex-direction);
 }
 
 .card-title {
@@ -27,47 +27,49 @@
 }
 
 .card-subtitle {
-  margin-top: calc(-0.5 * var(--card-title-spacer-y));
-  margin-bottom: 0;
+  margin-top: var(--card-subtitle-margin-top);
+  margin-bottom: var(--card-subtitle-margin-bottom);
 }
 
 .card-text:last-child {
-  margin-bottom: 0;
+  margin-bottom: var(--card-text-last-child-margin-bottom);
 }
 
 .card-link + .card-link {
-  margin-left: var(--card-spacer-x);
+  margin-left: var(--card-link-sibling-margin-left);
 }
 
 .card-header {
   padding: var(--card-cap-padding-y) var(--card-cap-padding-x);
-  margin-bottom: 0;
+  margin-bottom: var(--card-header-margin-bottom);
   color: var(--card-cap-color);
   background-color: var(--card-cap-bg);
-  border-bottom: var(--card-border-width) solid var(--card-border-color);
+  border-bottom: var(--card-border-width) var(--card-header-border-bottom-style) var(--card-border-color);
 }
 
 .card-header:first-child {
-  border-radius: var(--card-inner-border-radius) var(--card-inner-border-radius) 0 0;
+  border-top-left-radius: var(--card-inner-border-radius);
+  border-top-right-radius: var(--card-inner-border-radius);
 }
 
 .card-footer {
   padding: var(--card-cap-padding-y) var(--card-cap-padding-x);
   color: var(--card-cap-color);
   background-color: var(--card-cap-bg);
-  border-top: var(--card-border-width) solid var(--card-border-color);
+  border-top: var(--card-border-width) var(--card-footer-border-top-style) var(--card-border-color);
 }
 
 .card-footer:last-child {
-  border-radius: 0 0 var(--card-inner-border-radius) var(--card-inner-border-radius);
+  border-bottom-right-radius: var(--card-inner-border-radius);
+  border-bottom-left-radius: var(--card-inner-border-radius);
 }
 
 .card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  position: var(--card-img-overlay-position);
+  top: var(--card-img-overlay-top);
+  right: var(--card-img-overlay-right);
+  bottom: var(--card-img-overlay-bottom);
+  left: var(--card-img-overlay-left);
   padding: var(--card-img-overlay-padding);
   border-radius: var(--card-inner-border-radius);
 }
@@ -75,8 +77,8 @@
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  width: 100%;
-  object-fit: cover; /* Evita que la imagen se deforme */
+  width: var(--card-img-width);
+  object-fit: var(--card-img-object-fit); /* Evita que la imagen se deforme */
   aspect-ratio: var(--card-img-aspect-ratio); /* Fuerza una altura consistente */
 }
 
@@ -102,8 +104,8 @@
  */
 
 .card-img-left {
-  width: 100%;
-  object-fit: cover;
+  width: var(--card-img-left-width);
+  object-fit: var(--card-img-left-object-fit);
   aspect-ratio: var(--card-img-aspect-ratio); /* Mantiene proporción en móvil */
   border-top-left-radius: var(--card-inner-border-radius);
   border-top-right-radius: var(--card-inner-border-radius);
@@ -111,64 +113,70 @@
 
 .card-actions {
   padding: var(--card-spacer-y) var(--card-spacer-x);
-  background-color: var(--card-cap-bg);
-  border-top: var(--card-border-width) solid var(--card-border-color);
+  background-color: var(--card-actions-bg);
+  border-top: var(--card-border-width) var(--card-actions-border-top-style) var(--card-border-color);
   border-radius: 0 0 var(--card-inner-border-radius) var(--card-inner-border-radius);
 }
 
 /* Desktop / Tablet (>= 425px breakpoint XS) */
 @media (min-width: 426px) {
   .card-horizontal {
-    flex-direction: row;
+    flex-direction: var(--card-horizontal-flex-direction);
   }
 
   .card-img-left {
-    width: var(--card-horizontal-img-width);
-    height: 100%;
-    aspect-ratio: auto; /* Reseteamos para que llene la altura */
-    flex-shrink: 0;
+    width: var(--card-horizontal-img-width-desktop);
+    height: var(--card-horizontal-img-height-desktop);
+    aspect-ratio: var(--card-horizontal-img-aspect-ratio-desktop); /* Reseteamos para que llene la altura */
+    flex-shrink: var(--card-horizontal-img-flex-shrink-desktop);
     border-top-right-radius: 0;
     border-bottom-left-radius: var(--card-inner-border-radius);
   }
 
   /* Ticket Style Layout */
   .card-horizontal > .card-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: var(--card-horizontal-header-display);
+    flex-direction: var(--card-horizontal-header-flex-direction);
+    justify-content: var(--card-horizontal-header-justify-content);
+    align-items: var(--card-horizontal-header-align-items);
     min-width: var(--card-horizontal-ticket-min-width);
-    text-align: center;
-    border-bottom: 0;
-    border-right: var(--card-border-width) solid var(--card-border-color);
-    border-radius: var(--card-inner-border-radius) 0 0 var(--card-inner-border-radius);
+    text-align: var(--card-horizontal-header-text-align);
+    border-bottom: var(--card-horizontal-header-border-bottom);
+    border-right: var(--card-border-width) var(--card-horizontal-header-border-right-style) var(--card-border-color);
+    border-top-left-radius: var(--card-inner-border-radius);
+    border-bottom-left-radius: var(--card-inner-border-radius);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .card-horizontal > .card-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: var(--card-horizontal-footer-display);
+    flex-direction: var(--card-horizontal-footer-flex-direction);
+    justify-content: var(--card-horizontal-footer-justify-content);
+    align-items: var(--card-horizontal-footer-align-items);
     min-width: var(--card-horizontal-ticket-min-width);
-    border-top: 0;
-    border-left: var(--card-border-width) solid var(--card-border-color);
-    border-radius: 0 var(--card-inner-border-radius) var(--card-inner-border-radius) 0;
+    border-top: var(--card-horizontal-footer-border-top);
+    border-left: var(--card-border-width) var(--card-horizontal-footer-border-left-style) var(--card-border-color);
+    border-top-right-radius: var(--card-inner-border-radius);
+    border-bottom-right-radius: var(--card-inner-border-radius);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   /* Actions Column Layout */
   .card-actions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-top: 0;
-    border-left: var(--card-border-width) solid var(--card-border-color);
+    display: var(--card-horizontal-actions-display);
+    flex-direction: var(--card-horizontal-actions-flex-direction);
+    justify-content: var(--card-horizontal-actions-justify-content);
+    border-top: var(--card-horizontal-actions-border-top);
+    border-left: var(--card-border-width) var(--card-horizontal-actions-border-left-style) var(--card-border-color);
     border-radius: 0 var(--card-inner-border-radius) var(--card-inner-border-radius) 0;
-    flex-shrink: 0;
-    white-space: nowrap;
+    flex-shrink: var(--card-horizontal-actions-flex-shrink);
+    white-space: var(--card-horizontal-actions-white-space);
   }
 
   .card-actions .card-link + .card-link {
-    margin-left: 0;
+    margin-left: var(--card-horizontal-actions-sibling-margin-left);
     margin-top: var(--card-actions-link-margin-top);
   }
 }

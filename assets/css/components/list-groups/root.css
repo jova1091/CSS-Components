@@ -1,0 +1,50 @@
+:root {
+  --list-group-display: flex;
+  --list-group-flex-direction: column;
+  --list-group-padding-left: 0;
+  --list-group-margin-bottom: 0;
+  --list-group-overflow: hidden;
+  --list-group-bg: var(--color-surface);
+  --list-group-border-color: var(--color-border);
+  --list-group-border-width: 1px;
+  --list-group-border-style: solid;
+  --list-group-border-radius: 0.375rem;
+  
+  --list-group-item-position: relative;
+  --list-group-item-display: flex;
+  --list-group-item-align-items: center;
+  --list-group-item-justify-content: space-between;
+  --list-group-item-padding-y: 0.75rem;
+  --list-group-item-padding-x: 1rem;
+  --list-group-item-text-decoration: none;
+  
+  --list-group-action-width: 100%;
+  --list-group-action-text-align: inherit;
+  --list-group-action-cursor: pointer;
+  --list-group-hover-bg: var(--color-surface-subtle);
+  
+  --list-group-active-color: #ffffff;
+  --list-group-active-bg: var(--color-primary);
+  --list-group-active-border-color: var(--color-primary);
+  --list-group-active-opacity: 0.85;
+  
+  --list-group-disabled-color: var(--color-text-muted);
+  --list-group-disabled-bg: var(--color-surface-muted);
+  --list-group-disabled-opacity: 0.6;
+  
+  --list-group-heading-font-weight: 600;
+  --list-group-text-font-size: 0.875rem;
+  
+  --list-group-transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+[data-theme="dark"] {
+  --list-group-bg: var(--palette-dark-surface);
+  --list-group-border-color: var(--palette-dark-border);
+  --list-group-hover-bg: var(--palette-dark-surface-subtle);
+  --list-group-active-color: var(--palette-dark-surface);
+  --list-group-active-bg: var(--palette-dark-primary);
+  --list-group-active-border-color: var(--palette-dark-primary);
+  --list-group-disabled-color: var(--palette-dark-text-muted);
+  --list-group-disabled-bg: var(--palette-dark-surface-muted);
+}

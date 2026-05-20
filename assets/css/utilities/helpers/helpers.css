@@ -6,6 +6,7 @@
  * Clases de utilidad para alineación, colores de fondo y otros estilos
  * que no pertenecen a un componente específico.
  */
+@import url("root.css") layer(utilities.helpers.vars);
 
 .bg-light {
   background-color: var(--bg-light-color);
@@ -34,8 +35,8 @@
 .button-showcase {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: var(--button-showcase-gap);
+  margin-bottom: var(--button-showcase-margin-bottom);
 }
 
 .mt-auto {
@@ -53,19 +54,19 @@
 
 /* Border Radius Utilities */
 .rounded {
-  border-radius: 0.25rem !important;
+  border-radius: var(--rounded-sm-radius) !important;
 }
 
 .rounded-circle {
-  border-radius: 50% !important;
+  border-radius: var(--rounded-circle-radius) !important;
 }
 
 .rounded-0 {
-  border-radius: 0 !important;
+  border-radius: var(--rounded-0-radius) !important;
 }
 
 .rounded-pill {
-  border-radius: 50rem !important;
+  border-radius: var(--rounded-pill-radius) !important;
 }
 
 /* Flex Utilities */
@@ -116,14 +117,14 @@
  */
 .visually-hidden {
   position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
+  width: var(--visually-hidden-width) !important;
+  height: var(--visually-hidden-height) !important;
+  padding: var(--visually-hidden-padding) !important;
+  margin: var(--visually-hidden-margin) !important;
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
-  border: 0 !important;
+  border-width: var(--visually-hidden-border-width) !important;
 }
 
 /* 
@@ -135,13 +136,13 @@
   top: -9999px;
   left: 1rem;
   z-index: 9999;
-  padding: 0.5rem 1rem;
-  background-color: var(--color-primary);
-  color: #fff;
+  padding: var(--skip-link-padding-y) var(--skip-link-padding-x);
+  background-color: var(--skip-link-bg);
+  color: var(--skip-link-color);
   text-decoration: none;
-  border-radius: 0.25rem;
+  border-radius: var(--skip-link-border-radius);
 }
 
 .skip-link:focus {
-  top: 1rem;
+  top: var(--skip-link-focus-top);
 }

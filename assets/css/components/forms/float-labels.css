@@ -1,54 +1,54 @@
 .form-float {
-  position: relative;
-  margin-bottom: 1rem;
+  position: var(--form-float-position);
+  margin-bottom: var(--form-float-margin-bottom);
 }
 
 .form-float .form-control {
-  height: 3.5rem;
-  padding: 1.625rem 0.75rem 0.625rem;
+  height: var(--form-float-control-height);
+  padding: var(--form-float-control-padding);
 }
 
 .form-float textarea.form-control {
-  height: auto;
-  min-height: 5rem;
-  padding-top: 1.625rem;
+  height: var(--form-float-textarea-height);
+  min-height: var(--form-float-textarea-min-height);
+  padding-top: var(--form-float-textarea-padding-top);
 }
 
 .form-float label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  padding: 1rem 0.75rem;
-  pointer-events: none;
-  border: 1px solid transparent;
-  transform-origin: 0 0;
-  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
-  color: var(--color-text-muted);
-  display: flex;
-  align-items: center;
+  position: var(--form-float-label-position);
+  top: var(--form-float-label-top);
+  left: var(--form-float-label-left);
+  height: var(--form-float-label-height);
+  padding: var(--form-float-label-padding);
+  pointer-events: var(--form-float-label-pointer-events);
+  border: var(--form-float-label-border-width) var(--form-float-label-border-style) var(--form-float-label-border-color);
+  transform-origin: var(--form-float-label-transform-origin);
+  transition: var(--form-float-label-transition);
+  color: var(--form-float-label-color);
+  display: var(--form-float-label-display);
+  align-items: var(--form-float-label-align-items);
 }
 
 /* Alinear para textarea */
 .form-float textarea.form-control ~ label {
-  align-items: flex-start;
-  height: auto;
-  padding-top: 0.75rem;
+  align-items: var(--form-float-textarea-label-align-items);
+  height: var(--form-float-textarea-label-height);
+  padding-top: var(--form-float-textarea-label-padding-top);
 }
 
 /* Transición cuando hay foco o texto */
 .form-float .form-control:focus ~ label,
 .form-float .form-control:not(:placeholder-shown) ~ label,
 .form-float .form-control.has-value ~ label {
-  opacity: 0.75;
-  transform: scale(0.8) translateY(-0.65rem) translateX(0.05rem);
-  height: auto;
+  opacity: var(--form-float-label-active-opacity);
+  transform: var(--form-float-label-active-transform);
+  height: var(--form-float-label-active-height);
 }
 
 /* Soporte especial para selectores de fecha/hora que tienen placeholders implícitos */
 .form-float .form-control[type="date"] ~ label,
 .form-float .form-control[type="time"] ~ label {
-  opacity: 0.75;
-  transform: scale(0.8) translateY(-0.65rem) translateX(0.05rem);
-  height: auto;
+  opacity: var(--form-float-label-active-opacity);
+  transform: var(--form-float-label-active-transform);
+  height: var(--form-float-label-active-height);
 }

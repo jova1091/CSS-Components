@@ -100,4 +100,44 @@
   --btn-link-color: var(--color-primary);
   --btn-link-hover-color: var(--color-primary); /* Usamos filter en el :hover para oscurecerlo */
   --btn-link-hover-decoration: underline;
+
+  --btn-display: inline-block;
+  --btn-text-align: center;
+  --btn-text-decoration: none;
+  --btn-vertical-align: middle;
+  --btn-cursor: pointer;
+  --btn-user-select: none;
+  --btn-focus-outline: 0;
+  --btn-disabled-pointer-events: none;
+  --btn-disabled-box-shadow: none;
+  --btn-outline-bg: transparent;
+  --btn-outline-hover-filter: none;
+  --btn-block-display: block;
+  --btn-block-width: 100%;
+  --btn-link-text-decoration: none;
+  --btn-link-bg: transparent;
+  --btn-link-border-color: transparent;
+  --btn-link-hover-filter: brightness(75%);
+  --btn-link-focus-filter: none;
+  --btn-icon-display: inline-flex;
+  --btn-icon-align-items: center;
+  --btn-icon-gap: 0.5em;
+  --btn-icon-svg-width: 1em;
+  --btn-icon-svg-height: 1em;
+
+  --btn-group-fieldset-border: none;
+  --btn-group-fieldset-padding: 0;
+  --btn-group-fieldset-margin: 0;
+  --btn-group-position: relative;
+  --btn-group-display: inline-flex;
+  --btn-group-vertical-align: middle;
+  --btn-group-item-position: relative;
+  --btn-group-item-flex: 1 1 auto;
+  --btn-group-horizontal-overlap: -1px;
+  --btn-group-item-focus-zindex: 1;
+  --btn-group-vertical-direction: column;
+  --btn-group-vertical-align-items: flex-start;
+  --btn-group-vertical-justify-content: center;
+  --btn-group-vertical-item-width: 100%;
+  --btn-group-vertical-overlap: -1px;
 }

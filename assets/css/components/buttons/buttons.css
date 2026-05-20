@@ -12,16 +12,16 @@
   --btn-bg: var(--btn-primary-bg);
   --btn-border-color: var(--btn-primary-border-color);
 
-  display: inline-block;
+  display: var(--btn-display);
   font-family: var(--btn-font-family);
   font-weight: var(--btn-font-weight);
   line-height: var(--btn-line-height);
   color: var(--btn-color);
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
+  text-align: var(--btn-text-align);
+  text-decoration: var(--btn-text-decoration);
+  vertical-align: var(--btn-vertical-align);
+  cursor: var(--btn-cursor);
+  user-select: var(--btn-user-select);
   background-color: var(--btn-bg);
   border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
   padding: var(--btn-padding-top) var(--btn-padding-right) var(--btn-padding-bottom) var(--btn-padding-left);
@@ -37,16 +37,16 @@
 }
 
 .btn:focus-visible {
-  outline: 0;
+  outline: var(--btn-focus-outline);
   box-shadow: var(--btn-focus-box-shadow);
   filter: var(--btn-hover-filter); /* Apply brightness on focus too */
 }
 
 .btn:disabled,
 .btn.disabled {
-  pointer-events: none;
+  pointer-events: var(--btn-disabled-pointer-events);
   opacity: var(--btn-disabled-opacity);
-  box-shadow: none;
+  box-shadow: var(--btn-disabled-box-shadow);
 }
 
 /*
@@ -98,14 +98,14 @@
  */
 
 [class*="btn-outline-"] {
-  --btn-bg: transparent;
+  --btn-bg: var(--btn-outline-bg);
 }
 
 /* On hover, fill the outline button with its corresponding color */
 [class*="btn-outline-"]:hover {
   --btn-color: var(--btn-primary-color); /* Assuming most variants use white text */
   --btn-bg: var(--btn-border-color); /* The background becomes the color of the border */
-  filter: none; /* We override the default filter to avoid double-darkening */
+  filter: var(--btn-outline-hover-filter); /* We override the default filter to avoid double-darkening */
 }
 
 /* Special case for warning, which has dark text */
@@ -169,36 +169,36 @@
  */
 
 .btn-block {
-  display: block;
-  width: 100%;
+  display: var(--btn-block-display);
+  width: var(--btn-block-width);
 }
 
 .btn-link {
-  --btn-bg: transparent;
-  --btn-border-color: transparent;
+  --btn-bg: var(--btn-link-bg);
+  --btn-border-color: var(--btn-link-border-color);
   --btn-color: var(--btn-link-color);
-  text-decoration: none; /* Quitamos el subrayado por defecto */
+  text-decoration: var(--btn-link-text-decoration); /* Quitamos el subrayado por defecto */
 }
 
 .btn-link:hover {
   /* Aplicamos un filtro de brillo solo a este tipo de botón */
-  filter: brightness(75%);
+  filter: var(--btn-link-hover-filter);
   color: var(--btn-link-hover-color);
   text-decoration: var(--btn-link-hover-decoration);
 }
 
 .btn-link:focus-visible {
-  filter: none; /* Anulamos también el filtro en el foco */
+  filter: var(--btn-link-focus-filter); /* Anulamos también el filtro en el foco */
   box-shadow: var(--btn-focus-box-shadow);
 }
 
 .btn-icon {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
+  display: var(--btn-icon-display);
+  align-items: var(--btn-icon-align-items);
+  gap: var(--btn-icon-gap);
 }
 
 .btn-icon svg {
-  width: 1em;
-  height: 1em;
+  width: var(--btn-icon-svg-width);
+  height: var(--btn-icon-svg-height);
 }

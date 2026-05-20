@@ -1,38 +1,38 @@
 @import url("root.css") layer(components.tooltips.vars);
 
 .tooltip-container {
-  position: absolute;
+  position: var(--tooltip-container-position);
   z-index: var(--tooltip-z-index);
-  display: block;
-  font-family: inherit;
+  display: var(--tooltip-container-display);
+  font-family: var(--tooltip-container-font-family);
   font-size: var(--tooltip-font-size);
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-break: normal;
-  word-spacing: normal;
-  white-space: normal;
-  line-break: auto;
+  font-weight: var(--tooltip-container-font-weight);
+  line-height: var(--tooltip-container-line-height);
+  text-align: var(--tooltip-container-text-align);
+  text-decoration: var(--tooltip-container-text-decoration);
+  text-shadow: var(--tooltip-container-text-shadow);
+  text-transform: var(--tooltip-container-text-transform);
+  letter-spacing: var(--tooltip-container-letter-spacing);
+  word-break: var(--tooltip-container-word-break);
+  word-spacing: var(--tooltip-container-word-spacing);
+  white-space: var(--tooltip-container-white-space);
+  line-break: var(--tooltip-container-line-break);
   
   /* Estado inicial oculto */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  opacity: var(--tooltip-container-opacity-closed);
+  pointer-events: var(--tooltip-container-pointer-events-closed);
+  transition: var(--tooltip-container-transition);
 }
 
 .tooltip-container.show {
-  opacity: 1;
+  opacity: var(--tooltip-container-opacity-open);
 }
 
 .tooltip-inner {
-  max-width: 200px;
+  max-width: var(--tooltip-inner-max-width);
   padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
   color: var(--tooltip-color);
-  text-align: center;
+  text-align: var(--tooltip-inner-text-align);
   background-color: var(--tooltip-bg);
   border-radius: var(--tooltip-border-radius);
   box-shadow: var(--tooltip-box-shadow);
@@ -40,86 +40,86 @@
 
 /* Flechas */
 .tooltip-arrow {
-  position: absolute;
-  display: block;
-  width: 8px;
-  height: 8px;
+  position: var(--tooltip-arrow-position);
+  display: var(--tooltip-arrow-display);
+  width: var(--tooltip-arrow-width);
+  height: var(--tooltip-arrow-height);
 }
 
 .tooltip-arrow::before {
-  position: absolute;
-  content: "";
-  border-color: transparent;
-  border-style: solid;
-  width: 0;
-  height: 0;
+  position: var(--tooltip-arrow-before-position);
+  content: var(--tooltip-arrow-before-content);
+  border-color: var(--tooltip-arrow-before-border-color);
+  border-style: var(--tooltip-arrow-before-border-style);
+  width: var(--tooltip-arrow-before-width);
+  height: var(--tooltip-arrow-before-height);
 }
 
 /* Direcciones y micro-desplazamientos de animación */
 .tooltip-top {
-  transform: translateY(4px);
+  transform: var(--tooltip-top-transform-closed);
 }
 .tooltip-top.show {
-  transform: translateY(0);
+  transform: var(--tooltip-top-transform-open);
 }
 .tooltip-top .tooltip-arrow {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
+  bottom: var(--tooltip-top-arrow-bottom);
+  left: var(--tooltip-top-arrow-left);
+  transform: var(--tooltip-top-arrow-transform);
 }
 .tooltip-top .tooltip-arrow::before {
-  top: -8px;
-  border-width: 8px 8px 0;
+  top: var(--tooltip-top-arrow-before-top);
+  border-width: var(--tooltip-top-arrow-before-border-width);
   border-top-color: var(--tooltip-bg);
 }
 
 .tooltip-bottom {
-  transform: translateY(-4px);
+  transform: var(--tooltip-bottom-transform-closed);
 }
 .tooltip-bottom.show {
-  transform: translateY(0);
+  transform: var(--tooltip-bottom-transform-open);
 }
 .tooltip-bottom .tooltip-arrow {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(-100%);
+  top: var(--tooltip-bottom-arrow-top);
+  left: var(--tooltip-bottom-arrow-left);
+  transform: var(--tooltip-bottom-arrow-transform);
 }
 .tooltip-bottom .tooltip-arrow::before {
-  bottom: -8px;
-  border-width: 0 8px 8px;
+  bottom: var(--tooltip-bottom-arrow-before-bottom);
+  border-width: var(--tooltip-bottom-arrow-before-border-width);
   border-bottom-color: var(--tooltip-bg);
 }
 
 .tooltip-left {
-  transform: translateX(4px);
+  transform: var(--tooltip-left-transform-closed);
 }
 .tooltip-left.show {
-  transform: translateX(0);
+  transform: var(--tooltip-left-transform-open);
 }
 .tooltip-left .tooltip-arrow {
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%) translateX(100%);
+  right: var(--tooltip-left-arrow-right);
+  top: var(--tooltip-left-arrow-top);
+  transform: var(--tooltip-left-arrow-transform);
 }
 .tooltip-left .tooltip-arrow::before {
-  left: -8px;
-  border-width: 8px 0 8px 8px;
+  left: var(--tooltip-left-arrow-before-left);
+  border-width: var(--tooltip-left-arrow-before-border-width);
   border-left-color: var(--tooltip-bg);
 }
 
 .tooltip-right {
-  transform: translateX(-4px);
+  transform: var(--tooltip-right-transform-closed);
 }
 .tooltip-right.show {
-  transform: translateX(0);
+  transform: var(--tooltip-right-transform-open);
 }
 .tooltip-right .tooltip-arrow {
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%) translateX(-100%);
+  left: var(--tooltip-right-arrow-left);
+  top: var(--tooltip-right-arrow-top);
+  transform: var(--tooltip-right-arrow-transform);
 }
 .tooltip-right .tooltip-arrow::before {
-  right: -8px;
-  border-width: 8px 8px 8px 0;
+  right: var(--tooltip-right-arrow-before-right);
+  border-width: var(--tooltip-right-arrow-before-border-width);
   border-right-color: var(--tooltip-bg);
 }

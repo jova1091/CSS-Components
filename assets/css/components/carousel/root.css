@@ -1,0 +1,115 @@
+:root {
+  --carousel-position: relative;
+  --carousel-width: 100%;
+  --carousel-bg: var(--color-surface);
+  --carousel-border-radius: 0.75rem;
+  --carousel-border-style: solid;
+  --carousel-border-width: 1px;
+  --carousel-border-color: var(--color-border);
+  --carousel-overflow: hidden;
+
+  --carousel-inner-position: relative;
+  --carousel-inner-display: flex;
+  --carousel-inner-width: 100%;
+  --carousel-height: 400px;
+  --carousel-inner-overflow-x: auto;
+  --carousel-inner-overflow-y: hidden;
+  --carousel-inner-scroll-snap-type: x mandatory;
+  --carousel-inner-scroll-behavior: smooth;
+
+  --carousel-item-position: relative;
+  --carousel-item-flex: 0 0 100%;
+  --carousel-item-width: 100%;
+  --carousel-item-height: 100%;
+  --carousel-item-scroll-snap-align: start;
+  --carousel-item-scroll-snap-stop: always;
+
+  --carousel-img-width: 100%;
+  --carousel-img-height: 100%;
+  --carousel-img-object-fit: cover;
+  --carousel-img-display: block;
+
+  --carousel-caption-position: absolute;
+  --carousel-caption-right: 15%;
+  --carousel-caption-bottom: 2rem;
+  --carousel-caption-left: 15%;
+  --carousel-caption-padding: 1.25rem;
+  --carousel-caption-color: #ffffff;
+  --carousel-caption-text-align: center;
+  --carousel-caption-bg: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  --carousel-caption-border-radius: 0.5rem;
+  --carousel-caption-backdrop-filter: blur(2px);
+
+  --carousel-caption-title-margin-top: 0;
+  --carousel-caption-title-margin-bottom: 0.5rem;
+  --carousel-caption-title-font-size: 1.5rem;
+  --carousel-caption-title-font-weight: 600;
+  
+  --carousel-caption-text-margin-bottom: 0;
+  --carousel-caption-text-font-size: 1rem;
+
+  --carousel-control-position: absolute;
+  --carousel-control-top: 0;
+  --carousel-control-bottom: 0;
+  --carousel-control-zindex: 1;
+  --carousel-control-display: flex;
+  --carousel-control-align-items: center;
+  --carousel-control-justify-content: center;
+  --carousel-control-width: 12%;
+  --carousel-control-padding: 0;
+  --carousel-control-color: #ffffff;
+  --carousel-control-background: none;
+  --carousel-control-border: 0;
+  --carousel-control-opacity: 0.6;
+  --carousel-control-hover-opacity: 1;
+  --carousel-control-cursor: pointer;
+
+  --carousel-control-icon-display: flex;
+  --carousel-control-icon-align-items: center;
+  --carousel-control-icon-justify-content: center;
+  --carousel-control-icon-size: 2.75rem;
+  --carousel-control-bg: rgba(0, 0, 0, 0.3);
+  --carousel-control-hover-bg: rgba(0, 0, 0, 0.5);
+  
+  --carousel-control-arrow-width: var(--carousel-control-arrow-size);
+  --carousel-control-arrow-height: var(--carousel-control-arrow-size);
+  --carousel-control-arrow-size: 1.25rem;
+
+  --carousel-indicators-position: absolute;
+  --carousel-indicators-right: 0;
+  --carousel-indicators-bottom: 1rem;
+  --carousel-indicators-left: 0;
+  --carousel-indicators-zindex: 2;
+  --carousel-indicators-display: flex;
+  --carousel-indicators-justify-content: center;
+  --carousel-indicators-padding: 0;
+  --carousel-indicators-margin-right: 15%;
+  --carousel-indicators-margin-left: 15%;
+  --carousel-indicators-margin-bottom: 1rem;
+  --carousel-indicators-list-style: none;
+  --carousel-indicators-gap: 0.5rem;
+
+  --carousel-indicator-box-sizing: content-box;
+  --carousel-indicator-flex: 0 1 auto;
+  --carousel-indicator-width: 8px;
+  --carousel-indicator-active-width: 24px;
+  --carousel-indicator-padding: 0;
+  --carousel-indicator-cursor: pointer;
+  --carousel-indicator-bg: #ffffff;
+  --carousel-indicator-border: 0;
+  --carousel-indicator-opacity: 0.5;
+  --carousel-indicator-active-opacity: 1;
+  
+  --carousel-transition-control: opacity 0.15s ease;
+  --carousel-transition-icon: background-color 0.15s ease-in-out;
+  --carousel-transition-indicator: opacity 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+
+  --carousel-height-mobile: 280px;
+  --carousel-caption-title-font-size-mobile: 1.15rem;
+  --carousel-caption-text-font-size-mobile: 0.85rem;
+}
+
+[data-theme="dark"] {
+  --carousel-bg: var(--palette-dark-surface);
+  --carousel-border-color: var(--palette-dark-border);
+}

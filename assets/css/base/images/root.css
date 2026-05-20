@@ -1,0 +1,33 @@
+:root {
+  /* Generic img */
+  --img-max-width: 100%;
+  --img-height: auto;
+  --img-vertical-align: middle;
+
+  /* Image Thumbnail */
+  --img-thumbnail-padding: 0.25rem;
+  --img-thumbnail-bg: var(--color-surface);
+  --img-thumbnail-border-width: 1px;
+  --img-thumbnail-border-style: solid;
+  --img-thumbnail-border-color: var(--color-border);
+  --img-thumbnail-border-radius: 0.25rem;
+  --img-thumbnail-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+  --img-thumbnail-max-width: 100%;
+  --img-thumbnail-height: auto;
+  
+  /* Picture Element */
+  --picture-display: block;
+  --picture-max-width: 100%;
+
+  /* Figure */
+  --figure-margin-top: 0;
+  --figure-margin-right: 0;
+  --figure-margin-bottom: 1rem;
+  --figure-margin-left: 0;
+  
+  /* Figcaption */
+  --figcaption-font-size: 0.875em;
+  --figcaption-color: var(--color-text-muted);
+  --figcaption-text-align: center;
+  --figcaption-margin-top: 0.5rem;
+}

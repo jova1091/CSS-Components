@@ -1,5 +1,6 @@
 :root {
   /* Form Label */
+  --form-label-display: inline-block;
   --form-label-margin-bottom: 0.5rem;
   --form-label-font-size: 1rem;
   --form-label-font-weight: 600;
@@ -17,6 +18,10 @@
   --form-control-line-height: var(--base-line-height);
   --form-control-color: var(--body-color);
   --form-control-bg: var(--body-bg);
+  --form-control-background-clip: padding-box;
+  --form-control-webkit-appearance: none;
+  --form-control-appearance: none;
+
   --form-control-border-top-width: 1px;
   --form-control-border-right-width: 1px;
   --form-control-border-bottom-width: 1px;
@@ -34,10 +39,8 @@
   --form-control-focus-color: var(--form-control-color);
   --form-control-focus-bg: var(--form-control-bg);
   --form-control-focus-border-color: var(--color-primary);
+  --form-control-focus-outline: 0;
   --form-control-focus-box-shadow: 0 0 0 0.25rem var(--color-focus-ring);
-
-  /* Form Control Placeholder */
-  --form-control-placeholder-color: var(--color-text-muted);
 
   /* Form Control Disabled State */
   --form-control-disabled-bg: var(--color-surface-muted);
@@ -45,6 +48,11 @@
 
   /* Form Control Readonly State */
   --form-control-readonly-bg: var(--color-surface-muted);
+  --form-control-readonly-opacity: 1;
+
+  /* Form Control Placeholder */
+  --form-control-placeholder-color: var(--color-text-muted);
+  --form-control-placeholder-opacity: 1;
 
   /* Form Help Text */
   --form-text-font-size: 0.875em;
@@ -52,6 +60,7 @@
   --form-text-margin-top: 0.25rem;
 
   /* Form Select */
+  --form-select-background-repeat: no-repeat;
   --form-select-indicator-color: var(--form-control-color);
   --form-select-indicator: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   --form-select-bg-size: 16px 12px;
@@ -59,69 +68,14 @@
   --form-select-indicator-padding: 1.75rem; /* Espacio reservado para la flecha */
 
   /* Form Option (inside <select>) */
-  /*
-   * NOTA: La personalización de <option> es muy limitada en los navegadores.
-   * Propiedades como padding, border, o font-family a menudo no se aplican.
-   * Las propiedades más fiables son `color` y `background-color`.
-   */
   --form-option-color: var(--form-control-color);
   --form-option-bg: var(--form-control-bg);
   /* Estilos para la opción seleccionada (soportado en algunos navegadores) */
   --form-option-checked-color: var(--btn-primary-color);
   --form-option-checked-bg: var(--btn-primary-bg);
 
-  /* Form Check (checkboxes, radios) */
-  --form-check-display: block;
-  --form-check-min-height: 1.5rem;
-  --form-check-padding-left: 1.5em; /* Padding para dejar espacio al input */
-  --form-check-margin-top: 0;
-  --form-check-margin-bottom: 0.125rem;
-
-  /* Form Check Input */
-  --form-check-input-width: 1em;
-  --form-check-input-height: 1em;
-  --form-check-input-margin-top: 0.25em;
-  --form-check-input-margin-left: -1.5em;
-  --form-check-input-border-width: 1px;
-  --form-check-input-bg: var(--form-control-bg);
-  --form-check-input-border: var(--form-check-input-border-width) solid rgba(0, 0, 0, 0.25);
-  --form-check-input-border-top-left-radius: 0.25em;
-  --form-check-input-border-top-right-radius: 0.25em;
-  --form-check-input-border-bottom-right-radius: 0.25em;
-  --form-check-input-border-bottom-left-radius: 0.25em;
-  --form-check-input-focus-border: var(--form-control-focus-border-color);
-  --form-check-input-focus-box-shadow: var(--form-control-focus-box-shadow);
-  --form-check-input-cursor: pointer;
-  --form-check-label-cursor: pointer;
-
-  /* Form Check Disabled State */
-  --form-check-input-disabled-opacity: 0.5;
-  --form-check-label-disabled-opacity: 0.5;
-
-  /* Form Check Input (Checked state) */
-  --form-check-input-checked-color: #fff;
-  --form-check-input-checked-bg-color: var(--btn-primary-bg);
-  --form-check-input-checked-border-color: var(--btn-primary-bg);
-  --form-check-input-checked-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
-  --form-check-radio-checked-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
-
-  /* Form Check Input (Radio specific) */
-  --form-check-radio-border-top-left-radius: 50%;
-  --form-check-radio-border-top-right-radius: 50%;
-  --form-check-radio-border-bottom-right-radius: 50%;
-  --form-check-radio-border-bottom-left-radius: 50%;
-
   /* File Input Specifics */
-  /*
-   * Por defecto, el padding del input de archivo se ajusta para que el botón
-   * se alinee con el borde del contenedor, creando una apariencia más limpia
-   * y moderna, similar a un botón con texto al lado.
-   *
-   * Estos valores se pueden sobreescribir fácilmente en `master.css` si se
-   * desea un estilo de input más tradicional. Por ejemplo:
-   * --file-input-padding-top: var(--form-control-padding-top);
-   * --file-input-padding-bottom: var(--form-control-padding-bottom);
-   */
+  --file-input-overflow: hidden;
   --file-input-padding-top: 0;
   --file-input-padding-right: var(--form-control-padding-right);
   --file-input-padding-bottom: 0;
@@ -144,6 +98,72 @@
   --file-selector-button-padding-right: var(--btn-padding-right);
   --file-selector-button-padding-bottom: var(--btn-padding-bottom);
   --file-selector-button-padding-left: var(--btn-padding-left);
+  --file-selector-button-margin-inline-end: var(--btn-padding-right);
+  --file-selector-button-cursor: pointer;
+
+  /* Form Check (checkboxes, radios) */
+  --form-check-display: block;
+  --form-check-min-height: 1.5rem;
+  --form-check-padding-left: 1.5em; /* Padding para dejar espacio al input */
+  --form-check-margin-top: 0;
+  --form-check-margin-bottom: 0.125rem;
+
+  /* Form Check Input */
+  --form-check-input-float: left;
+  --form-check-input-width: 1em;
+  --form-check-input-height: 1em;
+  --form-check-input-margin-top: 0.25em;
+  --form-check-input-margin-left: -1.5em;
+  --form-check-input-vertical-align: top;
+  --form-check-input-border-width: 1px;
+  --form-check-input-bg: var(--form-control-bg);
+  --form-check-input-background-repeat: no-repeat;
+  --form-check-input-background-position: center;
+  --form-check-input-background-size: contain;
+  --form-check-input-border-style: solid;
+  --form-check-input-border-color: rgba(0, 0, 0, 0.25);
+  --form-check-input-border: var(--form-check-input-border-width) var(--form-check-input-border-style) var(--form-check-input-border-color);
+  --form-check-input-webkit-appearance: none;
+  --form-check-input-appearance: none;
+  --form-check-input-border-top-left-radius: 0.25em;
+  --form-check-input-border-top-right-radius: 0.25em;
+  --form-check-input-border-bottom-right-radius: 0.25em;
+  --form-check-input-border-bottom-left-radius: 0.25em;
+  --form-check-input-focus-border: var(--form-control-focus-border-color);
+  --form-check-input-focus-outline: 0;
+  --form-check-input-focus-box-shadow: var(--form-control-focus-box-shadow);
+  --form-check-input-cursor: pointer;
+  --form-check-label-cursor: pointer;
+
+  /* Form Check Disabled State */
+  --form-check-input-disabled-pointer-events: none;
+  --form-check-input-disabled-opacity: 0.5;
+  --form-check-label-disabled-opacity: 0.5;
+
+  /* Form Check Input (Checked state) */
+  --form-check-input-checked-color: #fff;
+  --form-check-input-checked-bg-color: var(--btn-primary-bg);
+  --form-check-input-checked-border-color: var(--btn-primary-bg);
+  --form-check-input-checked-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+  --form-check-radio-checked-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+
+  /* Form Check Input (Radio specific) */
+  --form-check-radio-border-top-left-radius: 50%;
+  --form-check-radio-border-top-right-radius: 50%;
+  --form-check-radio-border-bottom-right-radius: 50%;
+  --form-check-radio-border-bottom-left-radius: 50%;
+
+  --form-check-input-active-transform: scale(0.9);
+  --form-check-input-active-filter: brightness(90%);
+
+  /* Form Switch */
+  --form-switch-padding-left: 2.5rem;
+  --form-switch-input-width: 2em;
+  --form-switch-input-margin-left: -2.5rem;
+  --form-switch-input-background-position-unchecked: left center;
+  --form-switch-input-border-radius: 2em;
+  --form-switch-input-transition: background-position 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  --form-switch-input-background-position-checked: right center;
 
   /*
    * =================================================================================
@@ -152,29 +172,71 @@
    */
   --form-validation-valid-color: #198754;
   --form-validation-invalid-color: #dc3545;
+  --form-validation-warning-color: #ffc107; /* Color de advertencia de Bootstrap */
 
   --form-validation-valid-border-color: var(--form-validation-valid-color);
   --form-validation-invalid-border-color: var(--form-validation-invalid-color);
+  --form-validation-warning-border-color: var(--form-validation-warning-color);
 
   --form-validation-valid-focus-box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
   --form-validation-invalid-focus-box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+  --form-validation-warning-focus-box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
 
   --form-validation-icon-padding: 3rem; /* Espacio extra en el padding-right para el ícono */
   --form-validation-bg-position: right 1rem center;
   --form-validation-bg-size: 1rem 1rem;
-  /* Usamos máscaras para permitir la personalización del color del icono a través de background-color */
+  --form-validation-background-repeat: no-repeat;
+  --form-validation-focus-outline: 0;
+
   --form-validation-valid-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='6' fill='%23198754'/%3e%3cpath stroke='%23fff' stroke-width='1.5' stroke-linecap='round' d='M3.5 6.5l2 2 3.5-3.5'/%3e%3c/svg%3e");
   --form-validation-invalid-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='6' fill='%23dc3545'/%3e%3cpath stroke='%23fff' stroke-width='1.5' stroke-linecap='round' d='M3.5 3.5l5 5M8.5 3.5l-5 5'/%3e%3c/svg%3e");
   --form-validation-warning-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3e%3cpath fill='%23ffc107' d='M11.4 10.5H.6c-.5 0-.8-.6-.5-1L5.5.5c.3-.5 1-.5 1.3 0l5.1 9c.3.5 0 1-.5 1z'/%3e%3crect x='5.5' y='3.5' width='1' height='3' rx='.5' fill='%23fff'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23fff'/%3e%3c/svg%3e");
 
   /* Validation Feedback Text */
+  --form-feedback-display-closed: none;
+  --form-feedback-display-open: block;
+  --form-feedback-width: 100%;
   --form-feedback-margin-top: 0.25rem;
   --form-feedback-font-size: 0.875em;
   --form-feedback-valid-color: var(--form-validation-valid-color);
   --form-feedback-invalid-color: var(--form-validation-invalid-color);
-
-  --form-validation-warning-color: #ffc107; /* Color de advertencia de Bootstrap */
-  --form-validation-warning-border-color: var(--form-validation-warning-color);
-  --form-validation-warning-focus-box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
   --form-feedback-warning-color: #664d03; /* Color de texto oscuro para contraste */
+
+  /*
+   * =================================================================================
+   * FLOAT LABELS VARIABLES
+   * =================================================================================
+   */
+  --form-float-position: relative;
+  --form-float-margin-bottom: 1rem;
+
+  --form-float-control-height: 3.5rem;
+  --form-float-control-padding: 1.625rem 0.75rem 0.625rem;
+
+  --form-float-textarea-height: auto;
+  --form-float-textarea-min-height: 5rem;
+  --form-float-textarea-padding-top: 1.625rem;
+
+  --form-float-label-position: absolute;
+  --form-float-label-top: 0;
+  --form-float-label-left: 0;
+  --form-float-label-height: 100%;
+  --form-float-label-padding: 1rem 0.75rem;
+  --form-float-label-pointer-events: none;
+  --form-float-label-border-width: 1px;
+  --form-float-label-border-style: solid;
+  --form-float-label-border-color: transparent;
+  --form-float-label-transform-origin: 0 0;
+  --form-float-label-transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+  --form-float-label-color: var(--color-text-muted);
+  --form-float-label-display: flex;
+  --form-float-label-align-items: center;
+
+  --form-float-textarea-label-align-items: flex-start;
+  --form-float-textarea-label-height: auto;
+  --form-float-textarea-label-padding-top: 0.75rem;
+
+  --form-float-label-active-opacity: 0.75;
+  --form-float-label-active-transform: scale(0.8) translateY(-0.65rem) translateX(0.05rem);
+  --form-float-label-active-height: auto;
 }

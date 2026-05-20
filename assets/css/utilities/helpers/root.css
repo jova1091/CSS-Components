@@ -1,0 +1,23 @@
+:root {
+  /* Helper classes */
+  --button-showcase-gap: 0.5rem;
+  --button-showcase-margin-bottom: 1rem;
+  
+  --rounded-sm-radius: 0.25rem;
+  --rounded-circle-radius: 50%;
+  --rounded-0-radius: 0;
+  --rounded-pill-radius: 50rem;
+  
+  --visually-hidden-width: 1px;
+  --visually-hidden-height: 1px;
+  --visually-hidden-padding: 0;
+  --visually-hidden-margin: -1px;
+  --visually-hidden-border-width: 0;
+  
+  --skip-link-padding-y: 0.5rem;
+  --skip-link-padding-x: 1rem;
+  --skip-link-color: #fff;
+  --skip-link-bg: var(--color-primary);
+  --skip-link-border-radius: 0.25rem;
+  --skip-link-focus-top: 1rem;
+}

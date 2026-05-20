@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--grid-col-y-gap);
-  max-width: 1366px;
-  margin: 0 auto;
+  max-width: var(--grid-container-max-width);
+  margin: var(--grid-container-margin);
   padding: 0 var(--grid-col-x-gap);
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--grid-col-y-gap);
-  width: 100%;
+  width: var(--grid-container-width-full);
   box-sizing: border-box;
   padding: 0 var(--grid-col-x-gap);
 }
@@ -101,7 +101,7 @@
 /* Laptop */
 @media screen and (max-width: 1024px) {
   .container {
-    max-width: 100%;
+    max-width: var(--grid-container-width-full);
   }
 }
 

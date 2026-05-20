@@ -5,15 +5,15 @@
  */
 
 fieldset.btn-group {
-  border: none;
-  padding: 0;
-  margin: 0;
+  border: var(--btn-group-fieldset-border);
+  padding: var(--btn-group-fieldset-padding);
+  margin: var(--btn-group-fieldset-margin);
 }
 
 .btn-group {
-  position: relative;
-  display: inline-flex;
-  vertical-align: middle;
+  position: var(--btn-group-position);
+  display: var(--btn-group-display);
+  vertical-align: var(--btn-group-vertical-align);
 }
 
 /*
@@ -22,8 +22,8 @@ fieldset.btn-group {
  * 2. Set position to relative to handle z-index on hover.
  */
 .btn-group > .btn {
-  position: relative;
-  flex: 1 1 auto;
+  position: var(--btn-group-item-position);
+  flex: var(--btn-group-item-flex);
   --btn-margin-right: 0;
   --btn-margin-bottom: 0;
 }
@@ -33,7 +33,7 @@ fieldset.btn-group {
  *    This makes the left border of a button overlap the right border of the previous one.
  */
 .btn-group:not(.btn-group-vertical) > .btn:not(:first-child) {
-  margin-left: -1px;
+  margin-left: var(--btn-group-horizontal-overlap);
 }
 
 /*
@@ -41,7 +41,7 @@ fieldset.btn-group {
  */
 .btn-group > .btn:hover,
 .btn-group > .btn:focus-visible {
-  z-index: 1;
+  z-index: var(--btn-group-item-focus-zindex);
 }
 
 /*
@@ -66,18 +66,18 @@ fieldset.btn-group {
  */
 
 .btn-group-vertical {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: var(--btn-group-vertical-direction);
+  align-items: var(--btn-group-vertical-align-items);
+  justify-content: var(--btn-group-vertical-justify-content);
 }
 
 .btn-group-vertical > .btn {
-  width: 100%;
+  width: var(--btn-group-vertical-item-width);
 }
 
 /* Vertical Group Radius */
 .btn-group-vertical > .btn:not(:first-child) {
-  margin-top: -1px;
+  margin-top: var(--btn-group-vertical-overlap);
   --btn-border-top-left-radius: 0;
   --btn-border-top-right-radius: 0;
 }

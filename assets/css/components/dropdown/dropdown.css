@@ -1,95 +1,92 @@
 @import url("root.css") layer(components.dropdown.vars);
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+  position: var(--dropdown-position);
+  display: var(--dropdown-display);
 }
 
 .dropdown-toggle {
-  white-space: nowrap;
+  white-space: var(--dropdown-toggle-white-space);
 }
 
 /* Caret (flecha) */
 .dropdown-toggle::after {
-  display: inline-block;
+  display: var(--dropdown-toggle-after-display);
   margin-left: var(--dropdown-caret-spacing);
   vertical-align: var(--dropdown-caret-vertical-align);
-  content: "";
-  border-top: var(--dropdown-caret-width) solid;
-  border-right: var(--dropdown-caret-width) solid transparent;
+  content: var(--dropdown-toggle-after-content);
+  border-top: var(--dropdown-caret-width) var(--dropdown-caret-border-style);
+  border-right: var(--dropdown-caret-width) var(--dropdown-caret-border-style) var(--dropdown-caret-border-color-transparent);
   border-bottom: 0;
-  border-left: var(--dropdown-caret-width) solid transparent;
+  border-left: var(--dropdown-caret-width) var(--dropdown-caret-border-style) var(--dropdown-caret-border-color-transparent);
 }
 
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
+  position: var(--dropdown-menu-position);
+  top: var(--dropdown-menu-top);
+  left: var(--dropdown-menu-left);
   z-index: var(--dropdown-z-index);
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.95) translateY(-5px);
-  transform-origin: top left;
-  transition: 
-    opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
-    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
-    visibility 0.15s;
+  display: var(--dropdown-menu-display);
+  opacity: var(--dropdown-menu-opacity-closed);
+  visibility: var(--dropdown-menu-visibility-closed);
+  transform: var(--dropdown-menu-transform-closed);
+  transform-origin: var(--dropdown-menu-transform-origin);
+  transition: var(--dropdown-menu-transition);
   min-width: var(--dropdown-min-width);
   padding: var(--dropdown-padding-y) 0;
   margin: var(--dropdown-spacer) 0 0; /* Pequeño margen superior */
   font-size: var(--dropdown-font-size);
   color: var(--dropdown-color);
-  text-align: left;
-  list-style: none;
+  text-align: var(--dropdown-menu-text-align);
+  list-style: var(--dropdown-menu-list-style);
   background-color: var(--dropdown-bg);
-  background-clip: padding-box;
-  border: var(--dropdown-border-width) solid var(--dropdown-border-color);
+  background-clip: var(--dropdown-menu-background-clip);
+  border: var(--dropdown-border-width) var(--dropdown-border-style) var(--dropdown-border-color);
   border-radius: var(--dropdown-border-radius);
   box-shadow: var(--dropdown-box-shadow);
 }
 
 /* Clase para mostrar el menú (activada por JS) */
 .dropdown-menu.show {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1) translateY(0);
+  opacity: var(--dropdown-menu-opacity-open);
+  visibility: var(--dropdown-menu-visibility-open);
+  transform: var(--dropdown-menu-transform-open);
 }
 
 .dropdown-item {
-  display: block;
-  width: 100%;
+  display: var(--dropdown-item-display);
+  width: var(--dropdown-item-width);
   padding: var(--dropdown-item-padding-y) var(--dropdown-item-padding-x);
-  clear: both;
-  font-weight: 400;
+  clear: var(--dropdown-item-clear);
+  font-weight: var(--dropdown-item-font-weight);
   color: var(--dropdown-item-color);
-  text-align: inherit;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
+  text-align: var(--dropdown-item-text-align);
+  text-decoration: var(--dropdown-item-text-decoration);
+  white-space: var(--dropdown-item-white-space);
+  background-color: var(--dropdown-item-bg);
+  border: var(--dropdown-item-border);
+  cursor: var(--dropdown-item-cursor);
 }
 
 .dropdown-item:hover,
 .dropdown-item:focus {
   color: var(--dropdown-item-hover-color);
   background-color: var(--dropdown-item-hover-bg);
-  text-decoration: none;
+  text-decoration: var(--dropdown-item-hover-focus-text-decoration);
 }
 
 .dropdown-divider {
-  height: 0;
+  height: var(--dropdown-divider-height);
   margin: var(--dropdown-divider-margin-y) 0;
-  overflow: hidden;
-  border-top: 1px solid var(--dropdown-divider-bg);
+  overflow: var(--dropdown-divider-overflow);
+  border-top: var(--dropdown-divider-border-top-width) var(--dropdown-divider-border-top-style) var(--dropdown-divider-bg);
 }
 
 .dropdown-header {
-  display: block;
+  display: var(--dropdown-header-display);
   padding: var(--dropdown-header-padding-y) var(--dropdown-header-padding-x);
-  margin-bottom: 0;
+  margin-bottom: var(--dropdown-header-margin-bottom);
   font-size: var(--dropdown-header-font-size);
   color: var(--dropdown-header-color);
-  white-space: nowrap;
+  white-space: var(--dropdown-header-white-space);
 }

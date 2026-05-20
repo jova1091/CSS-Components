@@ -1,0 +1,28 @@
+:root {
+  --spinner-display: inline-block;
+  --spinner-width: 2rem;
+  --spinner-height: 2rem;
+  --spinner-vertical-align: -0.125em;
+  --spinner-border-radius: 50%;
+  
+  --spinner-border-style: solid;
+  --spinner-border-color: currentColor;
+  --spinner-border-right-color: transparent;
+  --spinner-border-width: 0.22em;
+  
+  --spinner-grow-bg: currentColor;
+  --spinner-grow-opacity-start: 0;
+  --spinner-grow-opacity-mid: 1;
+
+  --spinner-animation-duration: 0.75s;
+  --spinner-animation-timing-function: linear;
+  --spinner-animation-iteration-count: infinite;
+
+  --spinner-sm-width: 1rem;
+  --spinner-sm-height: 1rem;
+  --spinner-sm-border-width: 0.12em;
+
+  --spinner-lg-width: 3rem;
+  --spinner-lg-height: 3rem;
+  --spinner-lg-border-width: 0.32em;
+}

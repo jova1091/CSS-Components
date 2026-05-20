@@ -1,19 +1,47 @@
 :root {
+  /* Tab List Layout Variables */
+  --tab-list-display: flex;
+  --tab-list-flex-wrap: wrap;
+  --tab-list-style: none;
+
   --tabs-border-width: 1px;
+  --tabs-border-style: solid;
   --tabs-border-color: var(--color-border);
 
+  /* Tab Item */
+  --tab-item-margin-bottom: calc(-1 * var(--tabs-border-width));
+
+  /* Tab Link */
+  --tab-link-display: block;
   --tab-link-padding-y: 0.5rem;
   --tab-link-padding-x: 1rem;
   --tab-link-color: var(--color-text-muted);
+  --tab-link-bg: transparent;
   --tab-link-hover-color: var(--color-text);
   --tab-link-active-color: var(--color-primary);
   --tab-link-active-border-color: var(--color-primary);
   --tab-link-active-border-bottom-color: var(--color-surface);
   --tab-link-border-width: 2px;
+  --tab-link-border-style: solid;
+  --tab-link-border-color-transparent: transparent;
   --tab-link-border-radius: 0.25rem;
+  --tab-link-text-decoration: none;
+  --tab-link-webkit-appearance: none;
+  --tab-link-appearance: none;
   --tab-link-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   --tab-link-focus-outline-width: 2px;
+  --tab-link-focus-outline-style: solid;
   --tab-link-focus-outline-offset: 2px;
 
+  /* Tab Content & Panels */
   --tab-content-padding: 1rem;
+  --tab-panel-outline: none;
+  --tab-panel-display: block;
+  --tab-panel-animation: fadeInTab 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Animation keyframe variables */
+  --tab-fade-in-from-opacity: 0;
+  --tab-fade-in-from-transform: translateY(4px);
+  --tab-fade-in-to-opacity: 1;
+  --tab-fade-in-to-transform: translateY(0);
 }

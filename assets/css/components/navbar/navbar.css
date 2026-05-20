@@ -1,26 +1,26 @@
 @import url("root.css") layer(components.navbar.vars);
 
 .navbar {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  position: var(--navbar-position);
+  display: var(--navbar-display);
+  flex-wrap: var(--navbar-flex-wrap);
+  align-items: var(--navbar-align-items);
+  justify-content: var(--navbar-justify-content);
   padding-top: var(--navbar-padding-y);
   padding-bottom: var(--navbar-padding-y);
   background-color: var(--navbar-bg);
   color: var(--navbar-color);
-  border-bottom: var(--navbar-border-bottom-width) solid var(--navbar-border-bottom-color);
+  border-bottom: var(--navbar-border-bottom-width) var(--navbar-border-bottom-style) var(--navbar-border-bottom-color);
 }
 
 /* Contenedor interno para alinear elementos */
 .navbar > .container,
 .navbar > .container-full {
-  display: flex;
-  flex-wrap: inherit;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
+  display: var(--navbar-container-display);
+  flex-wrap: var(--navbar-container-flex-wrap);
+  align-items: var(--navbar-container-align-items);
+  justify-content: var(--navbar-container-justify-content);
+  flex-direction: var(--navbar-container-flex-direction);
 }
 
 /* Brand / Logo */
@@ -32,9 +32,9 @@
   font-weight: var(--navbar-brand-font-weight);
   color: var(--navbar-brand-color);
   text-decoration: none;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
+  white-space: var(--navbar-brand-white-space);
+  display: var(--navbar-brand-display);
+  align-items: var(--navbar-brand-align-items);
   gap: var(--navbar-brand-gap);
 }
 
@@ -43,24 +43,24 @@
 }
 
 .navbar-brand img {
-  display: block;
+  display: var(--navbar-brand-img-display);
   max-height: var(--navbar-brand-img-max-height);
-  width: auto;
+  width: var(--navbar-brand-img-width);
 }
 
 /* Nav List */
 .navbar-nav {
-  display: flex;
-  flex-direction: column;
+  display: var(--navbar-nav-display);
+  flex-direction: var(--navbar-nav-flex-direction);
   padding-left: 0;
   margin-bottom: 0;
-  list-style: none;
-  width: 100%;
+  list-style: var(--navbar-nav-list-style);
+  width: var(--navbar-nav-width);
 }
 
 /* Nav Links */
 .nav-link {
-  display: block;
+  display: var(--nav-link-display);
   padding: var(--nav-link-padding-y) var(--nav-link-padding-x);
   color: var(--nav-link-color);
   text-decoration: none;
@@ -77,38 +77,38 @@
 .navbar-toggler {
   padding: var(--navbar-toggler-padding-y) var(--navbar-toggler-padding-x);
   font-size: var(--navbar-toggler-font-size);
-  line-height: 1;
-  background-color: transparent;
-  border: 1px solid var(--navbar-toggler-border-color);
+  line-height: var(--navbar-toggler-line-height);
+  background-color: var(--navbar-toggler-bg);
+  border: var(--navbar-toggler-border-width) var(--navbar-toggler-border-style) var(--navbar-toggler-border-color);
   border-radius: var(--navbar-toggler-border-radius);
   color: var(--navbar-toggler-color);
-  cursor: pointer;
-  display: none; /* Oculto en desktop por defecto */
+  cursor: var(--navbar-toggler-cursor);
+  display: var(--navbar-toggler-display-closed); /* Oculto en desktop por defecto */
 }
 
 .navbar-toggler-icon {
-  display: inline-block;
+  display: var(--navbar-toggler-icon-display);
   width: var(--navbar-toggler-icon-size);
   height: var(--navbar-toggler-icon-size);
-  vertical-align: middle;
+  vertical-align: var(--navbar-toggler-icon-vertical-align);
   background-image: var(--navbar-toggler-icon-bg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  background-repeat: var(--navbar-toggler-icon-background-repeat);
+  background-position: var(--navbar-toggler-icon-background-position);
+  background-size: var(--navbar-toggler-icon-background-size);
 }
 
 .navbar-collapse {
-  flex-basis: 100%;
-  flex-grow: 1;
-  align-items: center;
+  flex-basis: var(--navbar-collapse-flex-basis);
+  flex-grow: var(--navbar-collapse-flex-grow);
+  align-items: var(--navbar-collapse-align-items);
 }
 
 /* Sticky Navbar Variation */
 .navbar-sticky {
-  position: sticky;
-  top: 0;
+  position: var(--navbar-sticky-position);
+  top: var(--navbar-sticky-top);
   z-index: var(--navbar-sticky-z-index);
-  width: 100%;
+  width: var(--navbar-sticky-width);
 }
 
 /* Navbar Alignment Variations (Mobile Default) */
@@ -126,24 +126,22 @@
 
 /* Backdrop (Overlay) */
 .navbar-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100dvw;
-  width: 100vw;
-  height: 100dvh;
-  height: 100vh;
+  position: var(--navbar-backdrop-position);
+  top: var(--navbar-backdrop-top);
+  left: var(--navbar-backdrop-left);
+  width: var(--navbar-backdrop-width);
+  height: var(--navbar-backdrop-height);
   background-color: var(--navbar-backdrop-bg);
   z-index: var(--navbar-backdrop-z-index); /* Justo debajo del sidebar */
-  opacity: 0;
-  visibility: hidden;
+  opacity: var(--navbar-backdrop-opacity-closed);
+  visibility: var(--navbar-backdrop-visibility-closed);
   transition: var(--navbar-backdrop-transition);
 }
 
 /* Estado visible del backdrop */
 .navbar-backdrop.show {
-  opacity: 1;
-  visibility: visible;
+  opacity: var(--navbar-backdrop-opacity-open);
+  visibility: var(--navbar-backdrop-visibility-open);
 }
 
 /* 
@@ -152,37 +150,36 @@
  */
 @media (max-width: 768px) {
   .navbar-toggler {
-    display: inline-block;
+    display: var(--navbar-toggler-display-mobile);
   }
 
   .navbar-collapse {
     /* Configuración Sidebar (Offcanvas) */
-    position: fixed;
-    top: 0;
-    right: 0; /* Alineado a la derecha */
-    left: auto;
-    bottom: 0;
+    position: var(--navbar-collapse-position-mobile);
+    top: var(--navbar-collapse-top-mobile);
+    right: var(--navbar-collapse-right-mobile); /* Alineado a la derecha */
+    left: var(--navbar-collapse-left-mobile);
+    bottom: var(--navbar-collapse-bottom-mobile);
     width: var(--navbar-sidebar-width);
-    height: 100dvh;
-    height: 100vh;
+    height: var(--navbar-collapse-height-mobile);
     background-color: var(--navbar-sidebar-bg);
     z-index: var(--navbar-sidebar-z-index); /* Por encima del contenido */
     padding: var(--navbar-sidebar-padding);
-    overflow-y: auto;
+    overflow-y: var(--navbar-collapse-overflow-y-mobile);
     box-shadow: var(--navbar-sidebar-box-shadow);
 
     /* Estado inicial: Oculto a la derecha */
-    transform: translateX(100%);
-    visibility: hidden;
+    transform: var(--navbar-collapse-transform-closed-mobile);
+    visibility: var(--navbar-collapse-visibility-closed-mobile);
     transition: var(--navbar-sidebar-transition), visibility 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
+    display: var(--navbar-collapse-display-mobile);
+    flex-direction: var(--navbar-collapse-flex-direction-mobile);
   }
 
   /* Estado expandido (activado por JS) */
   .navbar-collapse.show {
-    transform: translateX(0);
-    visibility: visible;
+    transform: var(--navbar-collapse-transform-open-mobile);
+    visibility: var(--navbar-collapse-visibility-open-mobile);
   }
 
   .navbar-nav {
@@ -191,39 +188,39 @@
 
   /* Estilos para el botón de cerrar dentro del sidebar */
   .navbar-collapse .btn-close {
-    position: static; /* Reseteamos la posición absoluta del componente alert */
-    margin-left: auto; /* Lo empujamos a la derecha */
-    display: block;
+    position: var(--navbar-sidebar-close-btn-position-mobile); /* Reseteamos la posición absoluta del componente alert */
+    margin-left: var(--navbar-sidebar-close-btn-margin-left-mobile); /* Lo empujamos a la derecha */
+    display: var(--navbar-sidebar-close-btn-display-mobile);
     margin-bottom: var(--navbar-sidebar-close-btn-margin-bottom);
   }
 
   /* Dropdown dentro del Navbar Móvil */
   .navbar-nav .dropdown-menu {
-    position: static;
-    float: none;
-    width: 100%;
+    position: var(--navbar-dropdown-menu-position-mobile);
+    float: var(--navbar-dropdown-menu-float-mobile);
+    width: var(--navbar-dropdown-menu-width-mobile);
     margin-top: 0;
-    background-color: transparent;
-    border: 0;
-    box-shadow: none;
+    background-color: var(--navbar-dropdown-menu-bg-mobile);
+    border: var(--navbar-dropdown-menu-border-mobile);
+    box-shadow: var(--navbar-dropdown-menu-box-shadow-mobile);
     padding-left: 1rem; /* Indentación para jerarquía */
   }
 }
 
 @media (min-width: 769px) {
   .navbar-toggler {
-    display: none;
+    display: var(--navbar-toggler-display-desktop);
   }
 
   .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
+    display: var(--navbar-collapse-display-desktop);
+    flex-basis: var(--navbar-collapse-flex-basis-desktop);
     max-height: none; /* Resetear max-height en desktop */
   }
 
   .navbar-nav {
-    flex-direction: row;
-    width: auto;
+    flex-direction: var(--navbar-nav-flex-direction-desktop);
+    width: var(--navbar-nav-width-desktop);
     padding-top: 0;
   }
 
@@ -235,7 +232,7 @@
   /* Ocultar botón de cerrar y backdrop en escritorio */
   .navbar-collapse .btn-close,
   .navbar-backdrop {
-    display: none !important;
+    display: var(--navbar-desktop-hide-display);
   }
 
   /* Navbar Alignment Variations (Desktop) */
@@ -256,9 +253,9 @@
 
   /* Centered Brand Variation */
   .navbar-brand-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: var(--navbar-brand-center-position);
+    left: var(--navbar-brand-center-left);
+    transform: var(--navbar-brand-center-transform);
   }
 }
 
@@ -269,61 +266,61 @@
  * Clase de utilidad para mantener el menú lateral en todas las resoluciones.
  */
 .navbar-offcanvas-always .navbar-toggler {
-  display: inline-block !important;
+  display: var(--navbar-offcanvas-toggler-display);
 }
 
 .navbar-offcanvas-always .navbar-collapse {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: auto;
-  bottom: 0;
+  position: var(--navbar-offcanvas-collapse-position);
+  top: var(--navbar-offcanvas-collapse-top);
+  right: var(--navbar-offcanvas-collapse-right);
+  left: var(--navbar-offcanvas-collapse-left);
+  bottom: var(--navbar-offcanvas-collapse-bottom);
   width: var(--navbar-sidebar-width);
-  max-width: 400px; /* Límite de ancho para escritorio */
-  height: 100vh;
+  max-width: var(--navbar-offcanvas-collapse-max-width); /* Límite de ancho para escritorio */
+  height: var(--navbar-offcanvas-collapse-height);
   background-color: var(--navbar-sidebar-bg);
   z-index: var(--navbar-sidebar-z-index);
   padding: var(--navbar-sidebar-padding);
-  overflow-y: auto;
+  overflow-y: var(--navbar-offcanvas-collapse-overflow-y);
   box-shadow: var(--navbar-sidebar-box-shadow);
-  transform: translateX(100%);
+  transform: var(--navbar-offcanvas-collapse-transform-closed);
   transition: var(--navbar-sidebar-transition), visibility 0.3s ease-in-out;
-  display: flex !important;
-  flex-direction: column;
+  display: var(--navbar-offcanvas-collapse-display);
+  flex-direction: var(--navbar-offcanvas-collapse-flex-direction);
   max-height: none !important;
-  visibility: hidden !important;
+  visibility: var(--navbar-offcanvas-collapse-visibility-closed);
 }
 
 .navbar-offcanvas-always .navbar-collapse.show {
-  transform: translateX(0);
-  visibility: visible !important;
+  transform: var(--navbar-offcanvas-collapse-transform-open);
+  visibility: var(--navbar-offcanvas-collapse-visibility-open);
 }
 
 .navbar-offcanvas-always .navbar-nav {
-  flex-direction: column;
-  width: 100%;
+  flex-direction: var(--navbar-offcanvas-nav-flex-direction);
+  width: var(--navbar-offcanvas-nav-width);
   padding-top: 0;
 }
 
 .navbar-offcanvas-always .navbar-collapse .btn-close {
-  display: block !important;
-  position: static;
-  margin-left: auto;
+  display: var(--navbar-offcanvas-close-btn-display);
+  position: var(--navbar-offcanvas-close-btn-position);
+  margin-left: var(--navbar-offcanvas-close-btn-margin-left);
   margin-bottom: var(--navbar-sidebar-close-btn-margin-bottom);
 }
 
 .navbar-offcanvas-always .navbar-backdrop {
-  display: block !important; /* Revertir el display: none de escritorio */
+  display: var(--navbar-offcanvas-backdrop-display); /* Revertir el display: none de escritorio */
 }
 
 /* Dropdown dentro del Navbar Offcanvas Always */
 .navbar-offcanvas-always .navbar-nav .dropdown-menu {
-  position: static;
-  float: none;
-  width: 100%;
+  position: var(--navbar-offcanvas-dropdown-menu-position);
+  float: var(--navbar-offcanvas-dropdown-menu-float);
+  width: var(--navbar-offcanvas-dropdown-menu-width);
   margin-top: 0;
-  background-color: transparent;
-  border: 0;
-  box-shadow: none;
+  background-color: var(--navbar-offcanvas-dropdown-menu-bg);
+  border: var(--navbar-offcanvas-dropdown-menu-border);
+  box-shadow: var(--navbar-offcanvas-dropdown-menu-box-shadow);
   padding-left: 1rem;
 }

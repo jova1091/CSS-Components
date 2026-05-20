@@ -1,8 +1,30 @@
 :root {
+  /* Toast Container Layout Variables */
+  --toast-container-position: fixed;
+  --toast-container-top: 1.5rem;
+  --toast-container-right: 1.5rem;
+  --toast-container-display: flex;
+  --toast-container-flex-direction: column;
+  --toast-container-gap: 0.75rem;
+  --toast-container-pointer-events: none;
+
   /* Toast Global Variables */
+  --toast-display: flex;
+  --toast-align-items: flex-start;
+  --toast-width-override: 100%;
+  --toast-background-clip: padding-box;
+  --toast-backdrop-filter: blur(12px) saturate(180%);
+  --toast-webkit-backdrop-filter: blur(12px) saturate(180%);
+  --toast-pointer-events: auto;
+  --toast-overflow: hidden;
+  --toast-position: relative;
+  --toast-animation-enter: toast-slide-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  --toast-transition: opacity 0.3s ease, transform 0.3s ease, margin-bottom 0.3s ease, height 0.3s ease;
+
   --toast-bg: rgba(var(--color-surface-rgb), 0.85);
   --toast-color: var(--color-text);
   --toast-border-width: 1px;
+  --toast-border-style: solid;
   --toast-border-color: var(--color-border);
   --toast-border-radius: 0.5rem;
   --toast-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
@@ -13,9 +35,52 @@
   --toast-padding-x: 1rem;
   --toast-z-index: 2000; /* Siempre por encima de todo */
 
+  /* Toast Fade Out (Exit) State */
+  --toast-fade-out-opacity: 0 !important;
+  --toast-fade-out-transform: translateX(100px) scale(0.9) !important;
+  --toast-fade-out-pointer-events: none;
+
+  /* Keyframes Animation Variables */
+  --toast-slide-in-from-opacity: 0;
+  --toast-slide-in-from-transform: translateX(100px) scale(0.9);
+  --toast-slide-in-to-opacity: 1;
+  --toast-slide-in-to-transform: translateX(0) scale(1);
+
   /* Toast Types Colors */
+  --toast-type-border-left-width: 4px;
+  --toast-type-border-left-style: solid;
   --toast-success-border: var(--color-success);
   --toast-info-border: var(--color-info);
   --toast-warning-border: var(--color-warning);
   --toast-danger-border: var(--color-danger);
+
+  /* Internal Elements */
+  --toast-icon-flex-shrink: 0;
+  --toast-icon-width: 1.25rem;
+  --toast-icon-height: 1.25rem;
+  --toast-icon-margin-top: 0.125rem;
+  --toast-icon-margin-right: 0.75rem;
+  --toast-icon-fill: currentColor;
+  --toast-icon-display: inline-block;
+
+  --toast-content-flex-grow: 1;
+  --toast-title-margin: 0 0 0.125rem 0;
+  --toast-title-font-weight: 600;
+  --toast-body-margin: 0;
+
+  /* Close Button Inside Toast */
+  --toast-close-flex-shrink: 0;
+  --toast-close-margin-left: 0.75rem;
+  --toast-close-padding: 0.25rem;
+  --toast-close-background: transparent;
+  --toast-close-border: 0;
+  --toast-close-cursor: pointer;
+  --toast-close-opacity: 0.6;
+  --toast-close-transition: opacity 0.2s ease;
+  --toast-close-display: inline-flex;
+  --toast-close-align-items: center;
+  --toast-close-justify-content: center;
+  --toast-close-font-size: 1.25rem;
+  --toast-close-line-height: 1;
+  --toast-close-hover-opacity: 1;
 }

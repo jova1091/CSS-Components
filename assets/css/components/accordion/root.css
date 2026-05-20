@@ -1,22 +1,52 @@
 :root {
+  --accordion-display: flex;
+  --accordion-flex-direction: column;
+  --accordion-gap: 0;
+
   --accordion-bg: var(--color-surface);
   --accordion-color: var(--color-text);
   --accordion-border-color: var(--color-border);
   --accordion-border-width: 1px;
+  --accordion-border-style: solid;
   --accordion-border-radius: 0.375rem;
 
+  --accordion-item-adjacent-border-top: 0;
+  --accordion-item-overflow: hidden;
+
   /* Header (Summary) */
+  --accordion-header-display: flex;
+  --accordion-header-align-items: center;
+  --accordion-header-justify-content: space-between;
   --accordion-btn-padding-y: 1rem;
   --accordion-btn-padding-x: 1.25rem;
+  --accordion-header-font-size: 1rem;
   --accordion-btn-bg: transparent;
   --accordion-btn-color: var(--color-text);
-  --accordion-btn-focus-box-shadow: var(--btn-focus-box-shadow);
+  --accordion-header-cursor: pointer;
+  --accordion-header-list-style: none;
+  --accordion-header-user-select: none;
+  --accordion-header-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  --accordion-webkit-marker-display: none;
+
+  --accordion-header-focus-outline: 0;
+  --accordion-header-focus-box-shadow: inset 0 0 0 2px var(--color-focus-ring);
+  --accordion-header-focus-zindex: 2;
+
+  --accordion-header-icon-content: "";
+  --accordion-header-icon-flex-shrink: 0;
   --accordion-btn-icon-width: 1.25rem;
+  --accordion-header-icon-margin-left: auto;
+  --accordion-header-icon-bg: currentColor;
+  --accordion-header-icon-mask-repeat: no-repeat;
+  --accordion-header-icon-mask-size: contain;
   --accordion-btn-icon-transition: transform 0.2s ease-in-out;
 
   /* Active State */
   --accordion-active-color: var(--color-primary);
   --accordion-active-bg: var(--color-surface-subtle);
+  --accordion-active-box-shadow: inset 0 calc(-1 * var(--accordion-border-width)) 0 var(--accordion-border-color);
+  --accordion-active-icon-transform: rotate(-180deg);
 
   /* Body */
   --accordion-body-padding: 1rem 1.25rem;
