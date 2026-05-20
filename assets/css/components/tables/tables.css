@@ -1,0 +1,236 @@
+@import url("root.css") layer(components.tables);
+
+@layer components.tables {
+  /* Base Table Style */
+  .table {
+    width: var(--table-width);
+    margin-bottom: var(--table-margin-bottom);
+    color: var(--table-color);
+    vertical-align: var(--table-align-vertical);
+    border-color: var(--table-border-color);
+    border-collapse: var(--table-border-collapse);
+    font-size: var(--table-font-size);
+    background-color: var(--table-bg);
+  }
+
+  /* Cells padding and default bottom borders */
+  .table th,
+  .table td {
+    padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+    border-bottom: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+  }
+
+  /* Header cell styles */
+  .table th {
+    font-weight: var(--table-th-font-weight);
+    text-align: var(--table-th-text-align);
+    color: var(--table-th-color);
+    background-color: var(--table-th-bg);
+  }
+
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: var(--table-th-border-bottom-width) var(--table-th-border-bottom-style) var(--table-th-border-bottom-color);
+  }
+
+  /* Caption */
+  .table caption {
+    padding-top: var(--table-caption-padding-y);
+    padding-bottom: var(--table-caption-padding-y);
+    color: var(--table-caption-color);
+    text-align: var(--table-caption-text-align);
+    caption-side: var(--table-caption-side);
+  }
+
+  /* Striped (Zebra) Table */
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--table-striped-bg);
+    color: var(--table-striped-color);
+  }
+
+  /* Hoverable Rows */
+  .table-hover tbody tr {
+    transition: var(--table-hover-transition);
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: var(--table-hover-bg);
+    color: var(--table-hover-color);
+  }
+
+  /* Bordered Table */
+  .table-bordered {
+    border: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+  }
+
+  /* Borderless Table */
+  .table-borderless th,
+  .table-borderless td,
+  .table-borderless thead th {
+    border: 0;
+  }
+
+  /* Compact Table */
+  .table-sm th,
+  .table-sm td {
+    padding: var(--table-sm-cell-padding-y) var(--table-sm-cell-padding-x);
+  }
+
+  /* Responsive Wrapper */
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: var(--table-responsive-overflow-x);
+    -webkit-overflow-scrolling: var(--table-responsive-webkit-overflow-scrolling);
+  }
+
+  /* Prevent responsive tables from breaking layout */
+  .table-responsive > .table {
+    margin-bottom: 0;
+  }
+
+  /* 
+   * Color Variants for Tables
+   */
+
+  /* Primary Variant */
+  .table-primary {
+    --table-bg: var(--table-primary-bg);
+    --table-color: var(--table-primary-color);
+    --table-border-color: var(--table-primary-border-color);
+    --table-striped-bg: var(--table-primary-striped-bg);
+    --table-hover-bg: var(--table-primary-hover-bg);
+  }
+
+  .table-primary,
+  .table-primary > th,
+  .table-primary > td {
+    background-color: var(--table-bg);
+    color: var(--table-color);
+    border-color: var(--table-border-color);
+  }
+
+  /* Secondary Variant */
+  .table-secondary {
+    --table-bg: var(--table-secondary-bg);
+    --table-color: var(--table-secondary-color);
+    --table-border-color: var(--table-secondary-border-color);
+    --table-striped-bg: var(--table-secondary-striped-bg);
+    --table-hover-bg: var(--table-secondary-hover-bg);
+  }
+
+  .table-secondary,
+  .table-secondary > th,
+  .table-secondary > td {
+    background-color: var(--table-bg);
+    color: var(--table-color);
+    border-color: var(--table-border-color);
+  }
+
+  /* Success Variant */
+  .table-success {
+    --table-bg: var(--table-success-bg);
+    --table-color: var(--table-success-color);
+    --table-border-color: var(--table-success-border-color);
+    --table-striped-bg: var(--table-success-striped-bg);
+    --table-hover-bg: var(--table-success-hover-bg);
+  }
+
+  .table-success,
+  .table-success > th,
+  .table-success > td {
+    background-color: var(--table-bg);
+    color: var(--table-color);
+    border-color: var(--table-border-color);
+  }
+
+  /* Danger Variant */
+  .table-danger {
+    --table-bg: var(--table-danger-bg);
+    --table-color: var(--table-danger-color);
+    --table-border-color: var(--table-danger-border-color);
+    --table-striped-bg: var(--table-danger-striped-bg);
+    --table-hover-bg: var(--table-danger-hover-bg);
+  }
+
+  .table-danger,
+  .table-danger > th,
+  .table-danger > td {
+    background-color: var(--table-bg);
+    color: var(--table-color);
+    border-color: var(--table-border-color);
+  }
+
+  /* Warning Variant */
+  .table-warning {
+    --table-bg: var(--table-warning-bg);
+    --table-color: var(--table-warning-color);
+    --table-border-color: var(--table-warning-border-color);
+    --table-striped-bg: var(--table-warning-striped-bg);
+    --table-hover-bg: var(--table-warning-hover-bg);
+  }
+
+  .table-warning,
+  .table-warning > th,
+  .table-warning > td {
+    background-color: var(--table-bg);
+    color: var(--table-color);
+    border-color: var(--table-border-color);
+  }
+
+  /* Info Variant */
+  .table-info {
+    --table-bg: var(--table-info-bg);
+    --table-color: var(--table-info-color);
+    --table-border-color: var(--table-info-border-color);
+    --table-striped-bg: var(--table-info-striped-bg);
+    --table-hover-bg: var(--table-info-hover-bg);
+  }
+
+  .table-info,
+  .table-info > th,
+  .table-info > td {
+    background-color: var(--table-bg);
+    color: var(--table-color);
+    border-color: var(--table-border-color);
+  }
+
+  /* Light Variant */
+  .table-light {
+    --table-bg: var(--table-light-bg);
+    --table-color: var(--table-light-color);
+    --table-border-color: var(--table-light-border-color);
+    --table-striped-bg: var(--table-light-striped-bg);
+    --table-hover-bg: var(--table-light-hover-bg);
+  }
+
+  .table-light,
+  .table-light > th,
+  .table-light > td {
+    background-color: var(--table-bg);
+    color: var(--table-color);
+    border-color: var(--table-border-color);
+  }
+
+  /* Dark Variant */
+  .table-dark {
+    --table-bg: var(--table-dark-bg);
+    --table-color: var(--table-dark-color);
+    --table-border-color: var(--table-dark-border-color);
+    --table-striped-bg: var(--table-dark-striped-bg);
+    --table-hover-bg: var(--table-dark-hover-bg);
+  }
+
+  .table-dark,
+  .table-dark > th,
+  .table-dark > td {
+    background-color: var(--table-bg);
+    color: var(--table-color);
+    border-color: var(--table-border-color);
+  }
+}

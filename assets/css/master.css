@@ -27,6 +27,7 @@
 @import url("/assets/css/components/popovers/popovers.css") layer(components.popovers);
 @import url("/assets/css/components/list-groups/list-groups.css") layer(components.listGroups);
 @import url("/assets/css/components/carousel/carousel.css") layer(components.carousel);
+@import url("/assets/css/components/tables/tables.css") layer(components.tables);
 
 
 /* Corrección de accesibilidad y renderizado HTML5 */

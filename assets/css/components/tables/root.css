@@ -1,0 +1,230 @@
+:root {
+  /* Table Base Variables */
+  --table-width: 100%;
+  --table-margin-bottom: 1rem;
+  --table-color: var(--color-text);
+  --table-bg: transparent;
+  --table-font-size: var(--base-font-size);
+  --table-align-vertical: middle;
+  --table-border-collapse: collapse;
+
+  /* Table Border Variables */
+  --table-border-width: 1px;
+  --table-border-style: solid;
+  --table-border-color: var(--color-border);
+
+  /* Cell Padding Variables */
+  --table-cell-padding-y: 0.75rem;
+  --table-cell-padding-x: 0.75rem;
+
+  /* Header (th) Specific Variables */
+  --table-th-font-weight: 700;
+  --table-th-color: inherit;
+  --table-th-bg: transparent;
+  --table-th-border-bottom-width: 2px;
+  --table-th-border-bottom-style: solid;
+  --table-th-border-bottom-color: var(--color-border);
+  --table-th-text-align: inherit;
+
+  /* Striped (Zebra) Table Variables */
+  --table-striped-bg: rgba(var(--color-text-rgb), 0.04);
+  --table-striped-color: inherit;
+
+  /* Hoverable Table Variables */
+  --table-hover-bg: rgba(var(--color-text-rgb), 0.075);
+  --table-hover-color: inherit;
+  --table-hover-transition: background-color 0.15s ease-in-out;
+
+  /* Compact Table (table-sm) Variables */
+  --table-sm-cell-padding-y: 0.3rem;
+  --table-sm-cell-padding-x: 0.3rem;
+
+  /* Caption Variables */
+  --table-caption-padding-y: 0.75rem;
+  --table-caption-color: var(--color-text-muted);
+  --table-caption-side: bottom;
+  --table-caption-text-align: left;
+
+  /* Responsive Wrapper Variables */
+  --table-responsive-overflow-x: auto;
+  --table-responsive-webkit-overflow-scrolling: touch;
+
+  /* 
+   * Semantic Color Variants (Light Mode Defaults)
+   */
+
+  /* Primary Variant */
+  --table-primary-bg: color-mix(in srgb, var(--color-primary), white 85%);
+  --table-primary-color: var(--color-text);
+  --table-primary-border-color: var(--color-primary);
+  --table-primary-striped-bg: color-mix(in srgb, var(--color-primary), white 80%);
+  --table-primary-hover-bg: color-mix(in srgb, var(--color-primary), white 75%);
+
+  /* Secondary Variant */
+  --table-secondary-bg: var(--color-surface-muted);
+  --table-secondary-color: var(--color-text);
+  --table-secondary-border-color: var(--color-border);
+  --table-secondary-striped-bg: color-mix(in srgb, var(--color-border), white 90%);
+  --table-secondary-hover-bg: color-mix(in srgb, var(--color-border), white 85%);
+
+  /* Success Variant */
+  --table-success-bg: #d1e7dd;
+  --table-success-color: #0f5132;
+  --table-success-border-color: #badbcc;
+  --table-success-striped-bg: #c7dbd2;
+  --table-success-hover-bg: #bcd0c7;
+
+  /* Danger Variant */
+  --table-danger-bg: #f8d7da;
+  --table-danger-color: #842029;
+  --table-danger-border-color: #f5c2c7;
+  --table-danger-striped-bg: #dfc2c4;
+  --table-danger-hover-bg: #d6b5b7;
+
+  /* Warning Variant */
+  --table-warning-bg: #fff3cd;
+  --table-warning-color: #664d03;
+  --table-warning-border-color: #ffecb5;
+  --table-warning-striped-bg: #e6dbb9;
+  --table-warning-hover-bg: #ece1be;
+
+  /* Info Variant */
+  --table-info-bg: #cff4fc;
+  --table-info-color: #055160;
+  --table-info-border-color: #b6effb;
+  --table-info-striped-bg: #badce3;
+  --table-info-hover-bg: #b1d2d9;
+
+  /* Light Variant */
+  --table-light-bg: var(--color-surface-muted);
+  --table-light-color: var(--color-text);
+  --table-light-border-color: var(--color-border);
+  --table-light-striped-bg: rgba(var(--color-text-rgb), 0.02);
+  --table-light-hover-bg: rgba(var(--color-text-rgb), 0.04);
+
+  /* Dark Variant */
+  --table-dark-bg: var(--color-primary);
+  --table-dark-color: var(--color-surface);
+  --table-dark-border-color: var(--color-secondary);
+  --table-dark-striped-bg: rgba(255, 255, 255, 0.05);
+  --table-dark-hover-bg: rgba(255, 255, 255, 0.075);
+}
+
+/* 
+ * Dark Mode Overrides (System Preferences)
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Base Overrides */
+    --table-striped-bg: rgba(255, 255, 255, 0.04);
+    --table-hover-bg: rgba(255, 255, 255, 0.075);
+
+    /* Primary Variant Override for Dark Mode */
+    --table-primary-bg: color-mix(in srgb, var(--color-primary), black 50%);
+    --table-primary-color: var(--color-text);
+    --table-primary-border-color: var(--color-primary);
+    --table-primary-striped-bg: color-mix(in srgb, var(--color-primary), black 40%);
+    --table-primary-hover-bg: color-mix(in srgb, var(--color-primary), black 35%);
+
+    /* Secondary Variant Override */
+    --table-secondary-bg: var(--color-surface-muted);
+    --table-secondary-color: var(--color-text);
+    --table-secondary-border-color: var(--color-border);
+    --table-secondary-striped-bg: rgba(255, 255, 255, 0.03);
+    --table-secondary-hover-bg: rgba(255, 255, 255, 0.05);
+
+    /* Success Variant Override */
+    --table-success-bg: color-mix(in srgb, #2a9d8f, black 60%);
+    --table-success-color: var(--color-text);
+    --table-success-border-color: var(--color-success);
+    --table-success-striped-bg: color-mix(in srgb, #2a9d8f, black 50%);
+    --table-success-hover-bg: color-mix(in srgb, #2a9d8f, black 45%);
+
+    /* Danger Variant Override */
+    --table-danger-bg: color-mix(in srgb, #e63946, black 60%);
+    --table-danger-color: var(--color-text);
+    --table-danger-border-color: var(--color-danger);
+    --table-danger-striped-bg: color-mix(in srgb, #e63946, black 50%);
+    --table-danger-hover-bg: color-mix(in srgb, #e63946, black 45%);
+
+    /* Warning Variant Override */
+    --table-warning-bg: color-mix(in srgb, #f4a261, black 70%);
+    --table-warning-color: var(--color-text);
+    --table-warning-border-color: var(--color-warning);
+    --table-warning-striped-bg: color-mix(in srgb, #f4a261, black 60%);
+    --table-warning-hover-bg: color-mix(in srgb, #f4a261, black 55%);
+
+    /* Info Variant Override */
+    --table-info-bg: color-mix(in srgb, #219ebc, black 60%);
+    --table-info-color: var(--color-text);
+    --table-info-border-color: var(--color-info);
+    --table-info-striped-bg: color-mix(in srgb, #219ebc, black 50%);
+    --table-info-hover-bg: color-mix(in srgb, #219ebc, black 45%);
+
+    /* Light Variant Override (Acts like dark surface subtle) */
+    --table-light-bg: var(--color-surface-subtle);
+    --table-light-color: var(--color-text);
+    --table-light-border-color: var(--color-border);
+    --table-light-striped-bg: rgba(255, 255, 255, 0.02);
+    --table-light-hover-bg: rgba(255, 255, 255, 0.04);
+
+    /* Dark Variant Override (Acts like primary theme color) */
+    --table-dark-bg: var(--color-primary);
+    --table-dark-color: var(--color-text);
+    --table-dark-border-color: var(--color-border);
+  }
+}
+
+/* 
+ * Dark Mode Overrides (Manual Toggle)
+ */
+html[data-theme="dark"] {
+  --table-striped-bg: rgba(255, 255, 255, 0.04);
+  --table-hover-bg: rgba(255, 255, 255, 0.075);
+
+  --table-primary-bg: color-mix(in srgb, var(--color-primary), black 50%);
+  --table-primary-color: var(--color-text);
+  --table-primary-border-color: var(--color-primary);
+  --table-primary-striped-bg: color-mix(in srgb, var(--color-primary), black 40%);
+  --table-primary-hover-bg: color-mix(in srgb, var(--color-primary), black 35%);
+
+  --table-secondary-bg: var(--color-surface-muted);
+  --table-secondary-color: var(--color-text);
+  --table-secondary-border-color: var(--color-border);
+  --table-secondary-striped-bg: rgba(255, 255, 255, 0.03);
+  --table-secondary-hover-bg: rgba(255, 255, 255, 0.05);
+
+  --table-success-bg: color-mix(in srgb, #2a9d8f, black 60%);
+  --table-success-color: var(--color-text);
+  --table-success-border-color: var(--color-success);
+  --table-success-striped-bg: color-mix(in srgb, #2a9d8f, black 50%);
+  --table-success-hover-bg: color-mix(in srgb, #2a9d8f, black 45%);
+
+  --table-danger-bg: color-mix(in srgb, #e63946, black 60%);
+  --table-danger-color: var(--color-text);
+  --table-danger-border-color: var(--color-danger);
+  --table-danger-striped-bg: color-mix(in srgb, #e63946, black 50%);
+  --table-danger-hover-bg: color-mix(in srgb, #e63946, black 45%);
+
+  --table-warning-bg: color-mix(in srgb, #f4a261, black 70%);
+  --table-warning-color: var(--color-text);
+  --table-warning-border-color: var(--color-warning);
+  --table-warning-striped-bg: color-mix(in srgb, #f4a261, black 60%);
+  --table-warning-hover-bg: color-mix(in srgb, #f4a261, black 55%);
+
+  --table-info-bg: color-mix(in srgb, #219ebc, black 60%);
+  --table-info-color: var(--color-text);
+  --table-info-border-color: var(--color-info);
+  --table-info-striped-bg: color-mix(in srgb, #219ebc, black 50%);
+  --table-info-hover-bg: color-mix(in srgb, #219ebc, black 45%);
+
+  --table-light-bg: var(--color-surface-subtle);
+  --table-light-color: var(--color-text);
+  --table-light-border-color: var(--color-border);
+  --table-light-striped-bg: rgba(255, 255, 255, 0.02);
+  --table-light-hover-bg: rgba(255, 255, 255, 0.04);
+
+  --table-dark-bg: var(--color-primary);
+  --table-dark-color: var(--color-text);
+  --table-dark-border-color: var(--color-border);
+}

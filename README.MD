@@ -80,6 +80,7 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Tabs (accesible con navegación por teclado)
   - Toasts (notificaciones dinámicas, accesibles y animadas con `aria-live` automático)
   - Tooltips Dinámicos (accesibles con posicionamiento inteligente)
+  - Tablas (diseño responsivo, celdas compactas, zebra striping, hover y variantes semánticas)
 - **Utilidades:**
   - Espaciadores (clases `m-*`, `p-*` para márgenes y paddings)
   - Helpers (clases de display, alineación, etc.)
