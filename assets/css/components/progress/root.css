@@ -14,7 +14,7 @@
   --progress-bar-color: #ffffff;
   --progress-bar-text-align: center;
   --progress-bar-white-space: nowrap;
-  --progress-bar-bg: var(--color-primary);
+  --progress-bar-bg: var(--color-primary, #1b263b);
   --progress-bar-transition: width 0.6s ease;
   
   --progress-bar-warning-color: #212529;

@@ -6,7 +6,7 @@
 
   --tabs-border-width: 1px;
   --tabs-border-style: solid;
-  --tabs-border-color: var(--color-border);
+  --tabs-border-color: var(--color-border, #1b263b);
 
   /* Tab Item */
   --tab-item-margin-bottom: calc(-1 * var(--tabs-border-width));
@@ -15,12 +15,12 @@
   --tab-link-display: block;
   --tab-link-padding-y: 0.5rem;
   --tab-link-padding-x: 1rem;
-  --tab-link-color: var(--color-text-muted);
+  --tab-link-color: var(--color-text-muted, #415a77);
   --tab-link-bg: transparent;
-  --tab-link-hover-color: var(--color-text);
-  --tab-link-active-color: var(--color-primary);
-  --tab-link-active-border-color: var(--color-primary);
-  --tab-link-active-border-bottom-color: var(--color-surface);
+  --tab-link-hover-color: var(--color-text, #0d1b2a);
+  --tab-link-active-color: var(--color-primary, #1b263b);
+  --tab-link-active-border-color: var(--color-primary, #1b263b);
+  --tab-link-active-border-bottom-color: var(--color-surface, #e0e1dd);
   --tab-link-border-width: 2px;
   --tab-link-border-style: solid;
   --tab-link-border-color-transparent: transparent;

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Components</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/css/master.css">
 </head>
 
@@ -31,7 +32,8 @@
           <li><a class="nav-link" href="#cards">Cards</a></li>
           <!-- Dropdown in Navbar -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">Más</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Más</a>
             <ul class="dropdown-menu">
               <li>
                 <h6 class="dropdown-header">Componentes</h6>
@@ -53,11 +55,12 @@
           <button id="theme-toggle" class="btn btn-secondary btn-sm" aria-label="Cambiar tema (Claro / Oscuro)">
             <!-- Icono Luna (Moon) para Tema Claro -->
             <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 3c.132 0 .263 0 .393.007a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z"/>
+              <path d="M12 3c.132 0 .263 0 .393.007a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z" />
             </svg>
             <!-- Icono Sol (Sun) para Tema Oscuro -->
             <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM5.636 4.222a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 1 1-1.414 1.414L5.636 5.636a1 1 0 0 1 0-1.414zm11.314 11.314a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 0 1-1.414 1.414l-1.414-1.414a1 1 0 0 1 0-1.414zM2 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm16 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM5.636 19.778a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 1 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0zm11.314-11.314a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 0 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0z"/>
+              <path
+                d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM5.636 4.222a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 1 1-1.414 1.414L5.636 5.636a1 1 0 0 1 0-1.414zm11.314 11.314a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 0 1-1.414 1.414l-1.414-1.414a1 1 0 0 1 0-1.414zM2 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm16 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM5.636 19.778a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 1 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0zm11.314-11.314a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 0 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0z" />
             </svg>
           </button>
         </div>
@@ -137,11 +140,14 @@
           <div class="bg-light p-3 rounded mt-2">
             <h6 class="text-uppercase text-center text-muted">Demostración de Utilidades de Texto Situacionales</h6>
             <p class="text-center mt-2">Este texto está centrado usando <code>.text-center</code>.</p>
-            <p class="text-uppercase text-center mt-1">Este texto está en mayúsculas y centrado usando <code>.text-uppercase</code> y <code>.text-center</code>.</p>
+            <p class="text-uppercase text-center mt-1">Este texto está en mayúsculas y centrado usando
+              <code>.text-uppercase</code> y <code>.text-center</code>.</p>
             <div class="row justify-content-center mt-2">
               <div class="col-6 text-center">
-                <p class="text-truncate text-muted" title="Este es un texto muy largo diseñado para demostrar cómo la clase .text-truncate lo corta con puntos suspensivos en una sola línea.">
-                  Texto truncado: Este es un texto muy largo diseñado para demostrar cómo la clase .text-truncate lo corta con puntos suspensivos en una sola línea.
+                <p class="text-truncate text-muted"
+                  title="Este es un texto muy largo diseñado para demostrar cómo la clase .text-truncate lo corta con puntos suspensivos en una sola línea.">
+                  Texto truncado: Este es un texto muy largo diseñado para demostrar cómo la clase .text-truncate lo
+                  corta con puntos suspensivos en una sola línea.
                 </p>
               </div>
             </div>
@@ -708,7 +714,8 @@ body {
           <hr class="my-5" />
           <h2>Etiquetas Flotantes (Floating Labels)</h2>
           <p>
-            Crea formularios elegantes donde las etiquetas flotan suavemente hacia arriba al hacer foco o al escribir contenido.
+            Crea formularios elegantes donde las etiquetas flotan suavemente hacia arriba al hacer foco o al escribir
+            contenido.
           </p>
         </div>
         <div class="col-8 offset-2">
@@ -717,7 +724,7 @@ body {
               <input type="text" class="form-control" id="floatName" placeholder=" " required />
               <label for="floatName">Nombre completo</label>
             </div>
-            
+
             <div class="form-float">
               <input type="email" class="form-control" id="floatEmail" placeholder=" " required />
               <label for="floatEmail">Dirección de correo electrónico</label>
@@ -737,7 +744,8 @@ body {
           <hr class="my-5" />
           <h2>Interruptores y Micro-interacciones</h2>
           <p>
-            Interruptores (Switches) accesibles y responsivos, y botones interactivos para demostrar las animaciones de validación (efecto de sacudida o shake).
+            Interruptores (Switches) accesibles y responsivos, y botones interactivos para demostrar las animaciones de
+            validación (efecto de sacudida o shake).
           </p>
         </div>
         <div class="col-8 offset-2">
@@ -760,10 +768,12 @@ body {
           <div class="mb-4">
             <p class="form-label mb-2">Demostración de sacudida ante error (Shake Animation)</p>
             <div class="d-flex align-items-center gap-2" style="gap: 0.5rem;">
-              <input type="text" class="form-control" id="shakeDemoInput" style="max-width: 250px;" placeholder="Haz clic en Probar ->" />
+              <input type="text" class="form-control" id="shakeDemoInput" style="max-width: 250px;"
+                placeholder="Haz clic en Probar ->" />
               <button type="button" id="btn-trigger-shake" class="btn btn-danger">Probar Shake</button>
             </div>
-            <div class="form-text">Al hacer clic, el campo se marca como inválido y se sacude para llamar la atención.</div>
+            <div class="form-text">Al hacer clic, el campo se marca como inválido y se sacude para llamar la atención.
+            </div>
           </div>
         </div>
       </article>
@@ -1212,8 +1222,9 @@ body {
         <div class="col-12">
           <hr class="my-5" />
           <h2>Toasts (Notificaciones dinámicas)</h2>
-          <p>El componente Toast permite lanzar notificaciones flotantes temporales y accesibles en la esquina superior derecha de la pantalla. Admite cuatro variantes visuales:</p>
-          
+          <p>El componente Toast permite lanzar notificaciones flotantes temporales y accesibles en la esquina superior
+            derecha de la pantalla. Admite cuatro variantes visuales:</p>
+
           <div class="my-3">
             <button id="btn-toast-success" class="btn btn-success">Lanzar Éxito</button>
             <button id="btn-toast-info" class="btn btn-info">Lanzar Info</button>
@@ -1383,7 +1394,8 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
                 <ul class="navbar-nav navbar-nav-start flex-row">
                   <li><a class="nav-link" href="#">Link 1</a></li>
                   <li class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true"
+                      aria-expanded="false">Dropdown</a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Action</a></li>
                       <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -1431,8 +1443,9 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <div class="col-12">
           <hr class="my-5" />
           <h2>Skeleton Loaders (Cargadores de esqueleto)</h2>
-          <p>Los cargadores de esqueleto simulan la estructura del contenido mientras se carga de forma asíncrona. Incluyen una animación de brillo ("shimmer").</p>
-          
+          <p>Los cargadores de esqueleto simulan la estructura del contenido mientras se carga de forma asíncrona.
+            Incluyen una animación de brillo ("shimmer").</p>
+
           <div class="row my-4">
             <!-- Ejemplo de Card con Skeletons -->
             <div class="col-12 col-md-4 mb-4">
@@ -1444,7 +1457,7 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
                 <div class="skeleton skeleton-text" style="width: 50%;"></div>
               </div>
             </div>
-            
+
             <!-- Ejemplo de Perfil con Skeletons -->
             <div class="col-12 col-md-4 mb-4">
               <div class="card p-3">
@@ -1489,13 +1502,18 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <div class="col-12">
           <hr class="my-5" />
           <h2>Tooltips Dinámicos</h2>
-          <p>Muestra información descriptiva al pasar el cursor o al enfocar elementos con el teclado. Soporta posicionamiento dinámico automático.</p>
-          
+          <p>Muestra información descriptiva al pasar el cursor o al enfocar elementos con el teclado. Soporta
+            posicionamiento dinámico automático.</p>
+
           <div class="my-3 button-showcase">
-            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Mensaje en la parte superior">Tooltip Arriba</button>
-            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Mensaje en la parte inferior">Tooltip Abajo</button>
-            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Mensaje a la izquierda">Tooltip Izquierda</button>
-            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Mensaje a la derecha">Tooltip Derecha</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+              title="Mensaje en la parte superior">Tooltip Arriba</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+              title="Mensaje en la parte inferior">Tooltip Abajo</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left"
+              title="Mensaje a la izquierda">Tooltip Izquierda</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="right"
+              title="Mensaje a la derecha">Tooltip Derecha</button>
           </div>
         </div>
       </article>
@@ -1507,44 +1525,54 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <div class="col-12">
           <hr class="my-5" />
           <h2>Barras de Progreso</h2>
-          <p>Muestra el progreso de una tarea con soporte para etiquetas internas, variantes de color y rayas animadas.</p>
-          
+          <p>Muestra el progreso de una tarea con soporte para etiquetas internas, variantes de color y rayas animadas.
+          </p>
+
           <div class="my-4">
             <h4 class="mb-2">Básica y Alturas</h4>
             <div class="progress mb-3">
-              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
             </div>
             <div class="progress mb-3" style="height: 0.5rem;">
-              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+                aria-valuemax="100"></div>
             </div>
             <div class="progress mb-3" style="height: 1.5rem;">
-              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% Completado</div>
+              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
+                aria-valuemax="100">75% Completado</div>
             </div>
           </div>
 
           <div class="my-4">
             <h4 class="mb-2">Variantes Semánticas</h4>
             <div class="progress mb-2">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Éxito (40%)</div>
+              <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40"
+                aria-valuemin="0" aria-valuemax="100">Éxito (40%)</div>
             </div>
             <div class="progress mb-2">
-              <div class="progress-bar bg-info" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">Información (60%)</div>
+              <div class="progress-bar bg-info" role="progressbar" style="width: 60%;" aria-valuenow="60"
+                aria-valuemin="0" aria-valuemax="100">Información (60%)</div>
             </div>
             <div class="progress mb-2">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Advertencia (80%)</div>
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                aria-valuemin="0" aria-valuemax="100">Advertencia (80%)</div>
             </div>
             <div class="progress mb-2">
-              <div class="progress-bar bg-danger" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Error (90%)</div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 90%;" aria-valuenow="90"
+                aria-valuemin="0" aria-valuemax="100">Error (90%)</div>
             </div>
           </div>
 
           <div class="my-4">
             <h4 class="mb-2">Rayas y Animación</h4>
             <div class="progress mb-2">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="progress mb-2">
-              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Procesando...</div>
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Procesando...</div>
             </div>
           </div>
         </div>
@@ -1558,15 +1586,20 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
           <hr class="my-5" />
           <h2>Spinners (Cargadores de Espera)</h2>
           <p>Elementos de carga giratorios y pulsantes de alto rendimiento para indicar esperas de datos.</p>
-          
+
           <div class="my-4">
             <h4 class="mb-2">Spinner Border (Giratorio)</h4>
             <div class="d-flex align-items-center" style="gap: 1rem; flex-wrap: wrap;">
-              <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>
-              <div class="spinner-border text-secondary" role="status"><span class="visually-hidden">Cargando...</span></div>
-              <div class="spinner-border text-success" role="status"><span class="visually-hidden">Cargando...</span></div>
-              <div class="spinner-border text-danger" role="status"><span class="visually-hidden">Cargando...</span></div>
-              <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
+              <div class="spinner-border text-secondary" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
+              <div class="spinner-border text-success" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
+              <div class="spinner-border text-danger" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
+              <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
               <div class="spinner-border text-info" role="status"><span class="visually-hidden">Cargando...</span></div>
             </div>
           </div>
@@ -1574,11 +1607,15 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
           <div class="my-4">
             <h4 class="mb-2">Spinner Grow (Pulsante)</h4>
             <div class="d-flex align-items-center" style="gap: 1rem; flex-wrap: wrap;">
-              <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>
-              <div class="spinner-grow text-secondary" role="status"><span class="visually-hidden">Cargando...</span></div>
-              <div class="spinner-grow text-success" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
+              <div class="spinner-grow text-secondary" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
+              <div class="spinner-grow text-success" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
               <div class="spinner-grow text-danger" role="status"><span class="visually-hidden">Cargando...</span></div>
-              <div class="spinner-grow text-warning" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-warning" role="status"><span class="visually-hidden">Cargando...</span>
+              </div>
               <div class="spinner-grow text-info" role="status"><span class="visually-hidden">Cargando...</span></div>
             </div>
           </div>
@@ -1589,7 +1626,7 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
               <div class="spinner-border spinner-sm text-primary" role="status"></div>
               <div class="spinner-border text-primary" role="status"></div>
               <div class="spinner-border spinner-lg text-primary" role="status"></div>
-              
+
               <button class="btn btn-primary d-flex align-items-center" style="gap: 0.5rem;" disabled>
                 <div class="spinner-border spinner-sm" role="status"></div>
                 Cargando datos...
@@ -1606,8 +1643,9 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <div class="col-12">
           <hr class="my-5" />
           <h2>Paginación Accesible</h2>
-          <p>Navegación entre páginas con estados interactivos, activos y deshabilitados estructurados semánticamente.</p>
-          
+          <p>Navegación entre páginas con estados interactivos, activos y deshabilitados estructurados semánticamente.
+          </p>
+
           <div class="my-4">
             <nav aria-label="Navegación de artículos">
               <ul class="pagination">
@@ -1635,13 +1673,23 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <div class="col-12">
           <hr class="my-5" />
           <h2>Popovers Interactivos</h2>
-          <p>Muestra contenedores de información enriquecida (título y cuerpo) al hacer clic en un elemento. Soporta posicionamiento inteligente en las cuatro direcciones.</p>
-          
+          <p>Muestra contenedores de información enriquecida (título y cuerpo) al hacer clic en un elemento. Soporta
+            posicionamiento inteligente en las cuatro direcciones.</p>
+
           <div class="my-3 button-showcase">
-            <button class="btn btn-secondary" data-toggle="popover" data-placement="top" data-title="Popover Superior" data-content="Este es un popover que se posiciona de forma automática en la parte superior del botón disparador.">Popover Arriba</button>
-            <button class="btn btn-secondary" data-toggle="popover" data-placement="bottom" data-title="Popover Inferior" data-content="Aquí puedes colocar descripciones más largas u otros datos relevantes que ayuden al usuario.">Popover Abajo</button>
-            <button class="btn btn-secondary" data-toggle="popover" data-placement="left" data-title="Popover Izquierdo" data-content="El popover aparecerá alineado hacia el lado izquierdo de este botón.">Popover Izquierda</button>
-            <button class="btn btn-secondary" data-toggle="popover" data-placement="right" data-title="Popover Derecho" data-content="Perfecto para añadir ayuda contextual sin obstruir el contenido principal de la pantalla.">Popover Derecha</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="top" data-title="Popover Superior"
+              data-content="Este es un popover que se posiciona de forma automática en la parte superior del botón disparador.">Popover
+              Arriba</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="bottom"
+              data-title="Popover Inferior"
+              data-content="Aquí puedes colocar descripciones más largas u otros datos relevantes que ayuden al usuario.">Popover
+              Abajo</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="left" data-title="Popover Izquierdo"
+              data-content="El popover aparecerá alineado hacia el lado izquierdo de este botón.">Popover
+              Izquierda</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="right" data-title="Popover Derecho"
+              data-content="Perfecto para añadir ayuda contextual sin obstruir el contenido principal de la pantalla.">Popover
+              Derecha</button>
           </div>
         </div>
       </article>
@@ -1653,22 +1701,26 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <div class="col-12">
           <hr class="my-5" />
           <h2>Grupos de Listas (List Groups)</h2>
-          <p>Muestra series de contenido de forma organizada. Soporta elementos interactivos, estados activos, deshabilitados y contenido complejo con insignias.</p>
-          
+          <p>Muestra series de contenido de forma organizada. Soporta elementos interactivos, estados activos,
+            deshabilitados y contenido complejo con insignias.</p>
+
           <div class="row my-4">
             <div class="col-12 col-md-6 mb-4">
               <h4>Grupo de Lista Básico e Interactivo</h4>
               <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action active">
                   Elemento Activo
-                  <span class="badge bg-secondary" style="font-size: 0.75rem; border: none; padding: 0.2rem 0.5rem;">Nuevo</span>
+                  <span class="badge bg-secondary"
+                    style="font-size: 0.75rem; border: none; padding: 0.2rem 0.5rem;">Nuevo</span>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">
                   Elemento Estándar
-                  <span class="badge bg-info" style="font-size: 0.75rem; border: none; padding: 0.2rem 0.5rem;">Info</span>
+                  <span class="badge bg-info"
+                    style="font-size: 0.75rem; border: none; padding: 0.2rem 0.5rem;">Info</span>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">Elemento sin badge</a>
-                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Elemento Deshabilitado</a>
+                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1"
+                  aria-disabled="true">Elemento Deshabilitado</a>
               </div>
             </div>
 
@@ -1678,13 +1730,15 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
                 <div class="list-group-item">
                   <div class="list-group-item-content">
                     <h5 class="list-group-item-heading">Notificación de Sistema</h5>
-                    <p class="list-group-item-text">La sincronización con el servidor de la nube se ha completado correctamente hace unos minutos.</p>
+                    <p class="list-group-item-text">La sincronización con el servidor de la nube se ha completado
+                      correctamente hace unos minutos.</p>
                   </div>
                 </div>
                 <div class="list-group-item">
                   <div class="list-group-item-content">
                     <h5 class="list-group-item-heading">Actualización Requerida</h5>
-                    <p class="list-group-item-text">Una nueva versión del sistema de componentes de CSS está disponible para descarga inmediata.</p>
+                    <p class="list-group-item-text">Una nueva versión del sistema de componentes de CSS está disponible
+                      para descarga inmediata.</p>
                   </div>
                 </div>
               </div>
@@ -1700,13 +1754,15 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <div class="col-12">
           <hr class="my-5" />
           <h2>Carrusel de Diapositivas Responsivo</h2>
-          <p>Un carrusel interactivo y accesible basado en CSS Scroll Snapping nativo. Soporta navegación por botones, indicadores táctiles y reproducción automática (autoplay) segura que se pausa al pasar el cursor.</p>
-          
+          <p>Un carrusel interactivo y accesible basado en CSS Scroll Snapping nativo. Soporta navegación por botones,
+            indicadores táctiles y reproducción automática (autoplay) segura que se pausa al pasar el cursor.</p>
+
           <div class="my-4" style="max-width: 800px; margin: 0 auto;">
             <div id="demoCarousel" class="carousel" data-ride="carousel" data-interval="5000">
               <!-- Indicadores -->
               <div class="carousel-indicators">
-                <button type="button" data-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+                <button type="button" data-slide-to="0" class="active" aria-current="true"
+                  aria-label="Diapositiva 1"></button>
                 <button type="button" data-slide-to="1" aria-label="Diapositiva 2"></button>
                 <button type="button" data-slide-to="2" aria-label="Diapositiva 3"></button>
               </div>
@@ -1739,12 +1795,16 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
               <!-- Controles de navegación -->
               <button class="carousel-control-prev" type="button" aria-label="Diapositiva anterior">
                 <span class="carousel-control-prev-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                  <svg viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                  </svg>
                 </span>
               </button>
               <button class="carousel-control-next" type="button" aria-label="Siguiente diapositiva">
                 <span class="carousel-control-next-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                  <svg viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                  </svg>
                 </span>
               </button>
             </div>
@@ -1757,7 +1817,9 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
       <header class="row">
         <div class="col-12">
           <h2>Tablas Parametrizadas</h2>
-          <p>Un sistema de tablas moderno, accesible y completamente configurable a través de variables CSS locales. Admite rayas, hover, bordes personalizados, tamaños compactos, contenedores responsivos y variaciones semánticas de color.</p>
+          <p>Un sistema de tablas moderno, accesible y completamente configurable a través de variables CSS locales.
+            Admite rayas, hover, bordes personalizados, tamaños compactos, contenedores responsivos y variaciones
+            semánticas de color.</p>
         </div>
       </header>
 
@@ -1765,7 +1827,8 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <!-- Tabla Estándar, Striped y Hover -->
         <div class="col-6">
           <h3>Tabla Estándar (Rayas y Hover)</h3>
-          <p>Usa las clases <code>.table</code>, <code>.table-striped</code> y <code>.table-hover</code> juntas o por separado.</p>
+          <p>Usa las clases <code>.table</code>, <code>.table-striped</code> y <code>.table-hover</code> juntas o por
+            separado.</p>
           <div class="table-responsive">
             <table class="table table-striped table-hover">
               <caption>Lista de transacciones recientes</caption>
@@ -1804,7 +1867,8 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <!-- Tabla Compacta y Con Bordes -->
         <div class="col-6">
           <h3>Tabla Compacta y Bordeadas</h3>
-          <p>Usa <code>.table-bordered</code> para agregar bordes a todas las celdas, o <code>.table-sm</code> para celdas más compactas.</p>
+          <p>Usa <code>.table-bordered</code> para agregar bordes a todas las celdas, o <code>.table-sm</code> para
+            celdas más compactas.</p>
           <div class="table-responsive">
             <table class="table table-bordered table-sm">
               <thead>
@@ -1840,7 +1904,8 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         <!-- Variantes de Color Semánticos -->
         <div class="col-12">
           <h3>Variantes de Color Semánticos</h3>
-          <p>Aplica clases temáticas como <code>.table-primary</code> o <code>.table-dark</code> directamente a la tabla para colorear todo su contenido, o a filas (<code>tr</code>) o celdas individuales.</p>
+          <p>Aplica clases temáticas como <code>.table-primary</code> o <code>.table-dark</code> directamente a la tabla
+            para colorear todo su contenido, o a filas (<code>tr</code>) o celdas individuales.</p>
           <div class="table-responsive">
             <table class="table table-bordered">
               <thead>
@@ -1892,7 +1957,52 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
         </div>
       </article>
     </section>
+
+    <!-- ============================================================
+    DEMO: LAZY LOADING (Carga bajo demanda)
+    ============================================================ -->
+    <section id="lazy-load-demo" class="container">
+      <div class="row">
+        <article class="col-12">
+          <h2>Carga bajo demanda</h2>
+          <p>Haz clic en el botón para cargar el componente <strong>Spinners</strong> de forma dinámica sin recargar la
+            página.</p>
+          <button id="btn-load-spinners" class="btn btn-primary">
+            Cargar Spinners
+          </button>
+          <div id="spinner-container" class="d-flex align-items-center gap-2"
+            style="min-height: 60px; margin-top: 1rem;"></div>
+        </article>
+      </div>
+      <div class="row" style="margin-top: 2rem;">
+        <article class="col-12">
+          <h3>Carga declarativa con <code>data-component</code></h3>
+          <p>Este tooltip se carga automáticamente gracias al atributo <code>data-component="tooltips"</code>:</p>
+          <div data-component="tooltips">
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="¡Cargado bajo demanda!">
+              Tooltip diferido
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
+
+  <script type="module">
+    import ComponentLoader from "/assets/js/component-loader.js";
+    document.getElementById( "btn-load-spinners" )?.addEventListener( "click", async () => {
+      const container = document.getElementById( "spinner-container" );
+      container.innerHTML = "";
+      await ComponentLoader.load( "spinners", container );
+      container.innerHTML = `
+        <div class="spinner-border" role="status"><span class="visually-hidden">Cargando...</span></div>
+        <div class="spinner-grow" role="status"><span class="visually-hidden">Cargando...</span></div>
+        <div class="spinner-border text-success" role="status"><span class="visually-hidden">Cargando...</span></div>
+      `;
+    } );
+    ComponentLoader.startObserver();
+  </script>
+
   <footer class="container-full">
     <div class="row">
       <div class="col-12 p-4">

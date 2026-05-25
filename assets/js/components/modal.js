@@ -1,13 +1,9 @@
-/**
- * Initializes native <dialog> modals.
- * Handles triggers, close buttons, backdrop clicks, and focus return.
- */
-export default function initModals() {
+export function init(container = document) {
   const closeModal = (dialog) => {
     if (!dialog || !dialog.open) return;
-    
+
     dialog.classList.add("closing");
-    
+
     const handleTransitionEnd = (e) => {
       if (e.target === dialog) {
         dialog.close();
@@ -15,10 +11,9 @@ export default function initModals() {
         dialog.removeEventListener("transitionend", handleTransitionEnd);
       }
     };
-    
+
     dialog.addEventListener("transitionend", handleTransitionEnd);
-    
-    // Fallback de seguridad
+
     setTimeout(() => {
       if (dialog.classList.contains("closing")) {
         dialog.close();
@@ -27,21 +22,18 @@ export default function initModals() {
     }, 400);
   };
 
-  // 1. Abrir Modal y registrar el elemento trigger
-  document.querySelectorAll('[data-toggle="modal"]').forEach((trigger) => {
+  container.querySelectorAll('[data-toggle="modal"]').forEach((trigger) => {
     trigger.addEventListener("click", () => {
       const targetId = trigger.getAttribute("data-target");
       const dialog = document.querySelector(targetId);
       if (dialog) {
-        // Guardamos el elemento que activó el modal para devolverle el foco
         dialog._triggerEl = trigger;
-        dialog.showModal(); // Método nativo (activa backdrop y focus trap)
+        dialog.showModal();
       }
     });
   });
 
-  // 2. Cerrar Modal (Botones dentro del modal)
-  document.querySelectorAll('[data-dismiss="modal"]').forEach((btn) => {
+  container.querySelectorAll('[data-dismiss="modal"]').forEach((btn) => {
     btn.addEventListener("click", () => {
       const dialog = btn.closest("dialog");
       if (dialog) {
@@ -50,10 +42,7 @@ export default function initModals() {
     });
   });
 
-  // 3. Cerrar al hacer clic en el Backdrop (Click Outside)
-  // Y registrar el listener del evento 'close' para restaurar el foco de forma segura
   document.querySelectorAll("dialog").forEach((dialog) => {
-    // Cerrar al hacer clic fuera del rect del diálogo (en el backdrop)
     dialog.addEventListener("click", (e) => {
       if (dialog.classList.contains("closing")) return;
 
@@ -66,8 +55,6 @@ export default function initModals() {
       }
     });
 
-    // Evento nativo close: Se ejecuta independientemente de cómo se cierre
-    // (botón de cerrar, escape o click en backdrop)
     dialog.addEventListener("close", () => {
       dialog.classList.remove("closing");
       if (dialog._triggerEl) {
@@ -78,3 +65,4 @@ export default function initModals() {
   });
 }
 
+export default init;

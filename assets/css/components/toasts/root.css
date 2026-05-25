@@ -21,11 +21,11 @@
   --toast-animation-enter: toast-slide-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   --toast-transition: opacity 0.3s ease, transform 0.3s ease, margin-bottom 0.3s ease, height 0.3s ease;
 
-  --toast-bg: rgba(var(--color-surface-rgb), 0.85);
-  --toast-color: var(--color-text);
+  --toast-bg: rgba(var(--color-surface-rgb, 224, 225, 221), 0.85);
+  --toast-color: var(--color-text, #0d1b2a);
   --toast-border-width: 1px;
   --toast-border-style: solid;
-  --toast-border-color: var(--color-border);
+  --toast-border-color: var(--color-border, #1b263b);
   --toast-border-radius: 0.5rem;
   --toast-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   --toast-width: 350px;
@@ -49,10 +49,10 @@
   /* Toast Types Colors */
   --toast-type-border-left-width: 4px;
   --toast-type-border-left-style: solid;
-  --toast-success-border: var(--color-success);
-  --toast-info-border: var(--color-info);
-  --toast-warning-border: var(--color-warning);
-  --toast-danger-border: var(--color-danger);
+  --toast-success-border: var(--color-success, #2a9d8f);
+  --toast-info-border: var(--color-info, #219ebc);
+  --toast-warning-border: var(--color-warning, #f4a261);
+  --toast-danger-border: var(--color-danger, #e63946);
 
   /* Internal Elements */
   --toast-icon-flex-shrink: 0;

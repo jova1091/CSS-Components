@@ -1,12 +1,8 @@
-/**
- * Initializes float labels behavior for form controls.
- * Ensures select elements and prefilled values trigger label transitions.
- */
-export default function initFloatLabels() {
-  const formFloats = document.querySelectorAll(".form-float");
+export function init(container = document) {
+  const formFloats = container.querySelectorAll(".form-float");
 
-  formFloats.forEach((container) => {
-    const input = container.querySelector(".form-control");
+  formFloats.forEach((formFloat) => {
+    const input = formFloat.querySelector(".form-control");
     if (!input) return;
 
     const checkValue = () => {
@@ -17,12 +13,12 @@ export default function initFloatLabels() {
       }
     };
 
-    // Validar valor inicial (autocompletado o precargado)
     checkValue();
 
-    // Escuchar eventos
     input.addEventListener("input", checkValue);
     input.addEventListener("change", checkValue);
     input.addEventListener("blur", checkValue);
   });
 }
+
+export default init;

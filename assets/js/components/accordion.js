@@ -1,16 +1,9 @@
-/**
- * Initializes accessible Accordion components.
- * Follows the WAI-ARIA Accordion Pattern for keyboard navigation.
- * Provides a JS fallback for the exclusive details toggling (name attribute).
- * @see https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
- */
-function initAccordions() {
-  const accordions = document.querySelectorAll(".accordion");
+export function init(container = document) {
+  const accordions = container.querySelectorAll(".accordion");
 
   accordions.forEach((accordion) => {
     const summaries = Array.from(accordion.querySelectorAll(".accordion-header"));
-    
-    // 1. Navegación por Teclado en los headers (<summary>)
+
     summaries.forEach((summary) => {
       summary.addEventListener("keydown", (e) => {
         const currentIndex = summaries.indexOf(summary);
@@ -39,8 +32,6 @@ function initAccordions() {
       });
     });
 
-    // 2. Fallback de Exclusividad (comportamiento de acordéon exclusivo)
-    // Escucha el evento toggle usando captura ya que no burbujea por defecto
     accordion.addEventListener(
       "toggle",
       (e) => {
@@ -50,17 +41,16 @@ function initAccordions() {
         const name = details.getAttribute("name");
         if (!name) return;
 
-        // Buscar otros <details> con el mismo 'name' en este acordeón y cerrarlos
         const otherDetails = accordion.querySelectorAll(`details[name="${name}"]`);
         otherDetails.forEach((other) => {
           if (other !== details && other.open) {
-            other.open = false; // Cierra el acordeón alternativo
+            other.open = false;
           }
         });
       },
-      true // useCapture = true
+      true
     );
   });
 }
 
-export default initAccordions;
+export default init;

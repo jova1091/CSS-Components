@@ -85,6 +85,79 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Espaciadores (clases `m-*`, `p-*` para márgenes y paddings)
   - Helpers (clases de display, alineación, etc.)
 
+## 📦 Uso Independiente de Componentes
+
+Cada componente puede cargarse de forma independiente sin necesidad de incluir `master.css`. Esto permite usar solo los componentes que necesitas en tu proyecto.
+
+### 1. Solo CSS (Estilos básicos sin interacción)
+
+```html
+<link rel="stylesheet" href="/assets/css/components/buttons/buttons.css" />
+<button class="btn btn-primary">Botón Primary</button>
+```
+
+El `@import url("root.css")` dentro de cada `buttons.css` carga automáticamente sus variables con valores por defecto. No necesitas nada más.
+
+### 2. CSS + JS (Carga estática con import)
+
+```html
+<script type="module">
+  import { init } from "/assets/js/components/dropdown.js";
+  init();
+</script>
+```
+
+### 3. ComponentLoader API (Carga dinámica programática)
+
+```js
+import ComponentLoader from "/assets/js/component-loader.js";
+
+// Cargar un componente en todo el documento
+await ComponentLoader.load("tooltips");
+
+// Cargar e inicializar solo dentro de un contenedor
+const container = document.getElementById("mi-seccion");
+await ComponentLoader.load("dropdown", container);
+```
+
+### 4. Atributo declarativo `data-component`
+
+El componente se carga automáticamente al insertarse en el DOM:
+
+```html
+<div data-component="tooltips">
+  <span data-toggle="tooltip" title="Tooltip dinámico">Hover aquí</span>
+</div>
+```
+
+Para activar este comportamiento, llama a `ComponentLoader.startObserver()` una vez:
+
+```js
+import ComponentLoader from "/assets/js/component-loader.js";
+ComponentLoader.startObserver();
+```
+
+### 5. Carga bajo demanda (Lazy Loading)
+
+```js
+import ComponentLoader from "/assets/js/component-loader.js";
+
+document.getElementById("mi-boton").addEventListener("click", async () => {
+  await ComponentLoader.load("spinners", document.getElementById("contenedor"));
+  // Ahora puedes insertar HTML del componente
+});
+```
+
+### 6. Componentes disponibles en el registry
+
+| Nombre | CSS | JS |
+|---|---|---|
+| accordion, alerts, badges, breadcrumb, buttons, btn-group, cards | ✅ | Solo interactive |
+| carousel, dropdown, float-labels, modal, navbar, popovers, tabs, toasts, tooltips | ✅ | ✅ |
+| spacers, helpers, forms, list-groups, pagination, progress, skeletons, spinners, tables | ✅ | — |
+
+---
+
 ## ✨ Características y Accesibilidad (A11y)
 
 Nuestra biblioteca no es solo un conjunto de estilos CSS; está diseñada con foco en la experiencia del usuario y accesibilidad nativa:

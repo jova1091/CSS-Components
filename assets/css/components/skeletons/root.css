@@ -4,7 +4,7 @@
   --skeleton-overflow: hidden;
   --skeleton-display: block;
 
-  --skeleton-bg: var(--color-border);
+  --skeleton-bg: var(--color-border, #1b263b);
   --skeleton-shimmer-bg: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,

@@ -15,9 +15,9 @@
   --form-control-font-family: inherit;
   --form-control-font-size: 1rem;
   --form-control-font-weight: 400;
-  --form-control-line-height: var(--base-line-height);
-  --form-control-color: var(--body-color);
-  --form-control-bg: var(--body-bg);
+  --form-control-line-height: var(--base-line-height, 1.5);
+  --form-control-color: var(--body-color, var(--color-text, #0d1b2a));
+  --form-control-bg: var(--body-bg, var(--color-surface, #e0e1dd));
   --form-control-background-clip: padding-box;
   --form-control-webkit-appearance: none;
   --form-control-appearance: none;
@@ -38,25 +38,25 @@
   /* Form Control Focus State */
   --form-control-focus-color: var(--form-control-color);
   --form-control-focus-bg: var(--form-control-bg);
-  --form-control-focus-border-color: var(--color-primary);
+  --form-control-focus-border-color: var(--color-primary, #1b263b);
   --form-control-focus-outline: 0;
-  --form-control-focus-box-shadow: 0 0 0 0.25rem var(--color-focus-ring);
+  --form-control-focus-box-shadow: 0 0 0 0.25rem var(--color-focus-ring, rgba(65, 90, 119, 0.5));
 
   /* Form Control Disabled State */
-  --form-control-disabled-bg: var(--color-surface-muted);
+  --form-control-disabled-bg: var(--color-surface-muted, #e9ecef);
   --form-control-disabled-opacity: 1;
 
   /* Form Control Readonly State */
-  --form-control-readonly-bg: var(--color-surface-muted);
+  --form-control-readonly-bg: var(--color-surface-muted, #e9ecef);
   --form-control-readonly-opacity: 1;
 
   /* Form Control Placeholder */
-  --form-control-placeholder-color: var(--color-text-muted);
+  --form-control-placeholder-color: var(--color-text-muted, #415a77);
   --form-control-placeholder-opacity: 1;
 
   /* Form Help Text */
   --form-text-font-size: 0.875em;
-  --form-text-color: var(--color-text-muted);
+  --form-text-color: var(--color-text-muted, #415a77);
   --form-text-margin-top: 0.25rem;
 
   /* Form Select */
@@ -228,7 +228,7 @@
   --form-float-label-border-color: transparent;
   --form-float-label-transform-origin: 0 0;
   --form-float-label-transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
-  --form-float-label-color: var(--color-text-muted);
+  --form-float-label-color: var(--color-text-muted, #415a77);
   --form-float-label-display: flex;
   --form-float-label-align-items: center;
 

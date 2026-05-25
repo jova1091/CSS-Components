@@ -12,9 +12,9 @@
   --alert-link-text-decoration: underline;
 
   /* Default Colors (Base) */
-  --alert-bg: var(--color-surface);
-  --alert-color: var(--color-text);
-  --alert-border-color: var(--color-border);
+  --alert-bg: var(--color-surface, #e0e1dd);
+  --alert-color: var(--color-text, #0d1b2a);
+  --alert-border-color: var(--color-border, #1b263b);
 
   /* State Colors (Base) */
   --color-success: #198754;
@@ -28,14 +28,14 @@
    */
 
   /* Primary */
-  --alert-primary-bg: color-mix(in srgb, var(--color-primary), white 85%);
-  --alert-primary-color: var(--color-primary);
-  --alert-primary-border-color: var(--color-primary);
+  --alert-primary-bg: color-mix(in srgb, var(--color-primary, #1b263b), white 85%);
+  --alert-primary-color: var(--color-primary, #1b263b);
+  --alert-primary-border-color: var(--color-primary, #1b263b);
 
   /* Secondary */
-  --alert-secondary-bg: var(--color-surface-muted);
-  --alert-secondary-color: var(--color-text);
-  --alert-secondary-border-color: var(--color-border);
+  --alert-secondary-bg: var(--color-surface-muted, #e9ecef);
+  --alert-secondary-color: var(--color-text, #0d1b2a);
+  --alert-secondary-border-color: var(--color-border, #1b263b);
 
   /* Success */
   --alert-success-bg: #d1e7dd;
@@ -97,28 +97,28 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     /* Primary */
-    --alert-primary-bg: color-mix(in srgb, var(--color-primary), black 60%);
-    --alert-primary-color: var(--color-text);
+    --alert-primary-bg: color-mix(in srgb, var(--color-primary, #1b263b), black 60%);
+    --alert-primary-color: var(--color-text, #0d1b2a);
 
     /* Success */
-    --alert-success-bg: color-mix(in srgb, var(--color-success), black 60%);
-    --alert-success-color: var(--color-text);
-    --alert-success-border-color: var(--color-success);
+    --alert-success-bg: color-mix(in srgb, var(--color-success, #2a9d8f), black 60%);
+    --alert-success-color: var(--color-text, #0d1b2a);
+    --alert-success-border-color: var(--color-success, #2a9d8f);
 
     /* Danger */
-    --alert-danger-bg: color-mix(in srgb, var(--color-danger), black 60%);
-    --alert-danger-color: var(--color-text);
-    --alert-danger-border-color: var(--color-danger);
+    --alert-danger-bg: color-mix(in srgb, var(--color-danger, #e63946), black 60%);
+    --alert-danger-color: var(--color-text, #0d1b2a);
+    --alert-danger-border-color: var(--color-danger, #e63946);
 
     /* Warning */
-    --alert-warning-bg: color-mix(in srgb, var(--color-warning), black 70%);
-    --alert-warning-color: var(--color-text);
-    --alert-warning-border-color: var(--color-warning);
+    --alert-warning-bg: color-mix(in srgb, var(--color-warning, #f4a261), black 70%);
+    --alert-warning-color: var(--color-text, #0d1b2a);
+    --alert-warning-border-color: var(--color-warning, #f4a261);
 
     /* Info */
-    --alert-info-bg: color-mix(in srgb, var(--color-info), black 60%);
-    --alert-info-color: var(--color-text);
-    --alert-info-border-color: var(--color-info);
+    --alert-info-bg: color-mix(in srgb, var(--color-info, #219ebc), black 60%);
+    --alert-info-color: var(--color-text, #0d1b2a);
+    --alert-info-border-color: var(--color-info, #219ebc);
 
     /* Close Button Dark Mode (White Icon) */
     --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e0e1dd'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
@@ -127,24 +127,24 @@
 
 /* Manual Dark Mode Toggle */
 html[data-theme="dark"] {
-  --alert-primary-bg: color-mix(in srgb, var(--color-primary), black 60%);
-  --alert-primary-color: var(--color-text);
+  --alert-primary-bg: color-mix(in srgb, var(--color-primary, #1b263b), black 60%);
+  --alert-primary-color: var(--color-text, #0d1b2a);
 
-  --alert-success-bg: color-mix(in srgb, var(--color-success), black 60%);
-  --alert-success-color: var(--color-text);
-  --alert-success-border-color: var(--color-success);
+  --alert-success-bg: color-mix(in srgb, var(--color-success, #2a9d8f), black 60%);
+  --alert-success-color: var(--color-text, #0d1b2a);
+  --alert-success-border-color: var(--color-success, #2a9d8f);
 
-  --alert-danger-bg: color-mix(in srgb, var(--color-danger), black 60%);
-  --alert-danger-color: var(--color-text);
-  --alert-danger-border-color: var(--color-danger);
+  --alert-danger-bg: color-mix(in srgb, var(--color-danger, #e63946), black 60%);
+  --alert-danger-color: var(--color-text, #0d1b2a);
+  --alert-danger-border-color: var(--color-danger, #e63946);
 
-  --alert-warning-bg: color-mix(in srgb, var(--color-warning), black 70%);
-  --alert-warning-color: var(--color-text);
-  --alert-warning-border-color: var(--color-warning);
+  --alert-warning-bg: color-mix(in srgb, var(--color-warning, #f4a261), black 70%);
+  --alert-warning-color: var(--color-text, #0d1b2a);
+  --alert-warning-border-color: var(--color-warning, #f4a261);
 
-  --alert-info-bg: color-mix(in srgb, var(--color-info), black 60%);
-  --alert-info-color: var(--color-text);
-  --alert-info-border-color: var(--color-info);
+  --alert-info-bg: color-mix(in srgb, var(--color-info, #219ebc), black 60%);
+  --alert-info-color: var(--color-text, #0d1b2a);
+  --alert-info-border-color: var(--color-info, #219ebc);
 
   /* Close Button Dark Mode (Manual Toggle) */
   --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e0e1dd'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");

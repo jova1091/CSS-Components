@@ -20,8 +20,8 @@
 
   /* Background Colors */
   /* Usamos las variables globales donde existen, y definimos las de estado */
-  --badge-bg-primary: var(--color-primary);
-  --badge-bg-secondary: var(--color-text-muted);
+  --badge-bg-primary: var(--color-primary, #1b263b);
+  --badge-bg-secondary: var(--color-text-muted, #415a77);
   --badge-bg-success: #198754;
   --badge-bg-danger: #dc3545;
   --badge-bg-warning: #ffc107;

@@ -4,9 +4,9 @@
   --breadcrumb-padding-x: 1rem;
   --breadcrumb-item-padding: 0.5rem;
   --breadcrumb-margin-bottom: 1rem;
-  --breadcrumb-bg: var(--color-surface-muted);
-  --breadcrumb-divider-color: var(--color-text-muted);
-  --breadcrumb-active-color: var(--color-text-muted);
+  --breadcrumb-bg: var(--color-surface-muted, #e9ecef);
+  --breadcrumb-divider-color: var(--color-text-muted, #415a77);
+  --breadcrumb-active-color: var(--color-text-muted, #415a77);
   --breadcrumb-divider: "/"; /* Carácter separador por defecto */
   --breadcrumb-border-radius: 0.375rem;
   --breadcrumb-font-size: 1rem;

@@ -1,13 +1,7 @@
-/**
- * Initializes accessible dropdown components.
- * Follows the WAI-ARIA Menu Button Pattern.
- * @see https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/
- */
-function initDropdowns() {
-  const dropdownContainers = document.querySelectorAll(".dropdown, .nav-item.dropdown");
+export function init(container = document) {
+  const dropdownContainers = container.querySelectorAll(".dropdown, .nav-item.dropdown");
 
   const openDropdown = (toggle, menu) => {
-    // Cerrar otros dropdowns abiertos
     closeAllDropdowns(menu);
     menu.classList.add("show");
     toggle.setAttribute("aria-expanded", "true");
@@ -28,12 +22,11 @@ function initDropdowns() {
     });
   };
 
-  dropdownContainers.forEach((container) => {
-    const toggle = container.querySelector(".dropdown-toggle");
-    const menu = container.querySelector(".dropdown-menu");
+  dropdownContainers.forEach((dropdownContainer) => {
+    const toggle = dropdownContainer.querySelector(".dropdown-toggle");
+    const menu = dropdownContainer.querySelector(".dropdown-menu");
     if (!toggle || !menu) return;
 
-    // Asegurar atributos ARIA programáticamente
     if (!toggle.getAttribute("aria-haspopup")) {
       toggle.setAttribute("aria-haspopup", "true");
     }
@@ -48,9 +41,8 @@ function initDropdowns() {
     }
     toggle.setAttribute("aria-controls", menuId);
 
-    // Abrir/Cerrar al hacer clic en el botón trigger
     toggle.addEventListener("click", (e) => {
-      e.preventDefault(); // Evitar navegación si es un enlace
+      e.preventDefault();
       const isOpen = menu.classList.contains("show");
       if (isOpen) {
         closeDropdown(toggle, menu);
@@ -59,7 +51,6 @@ function initDropdowns() {
       }
     });
 
-    // Cerrar el menú al seleccionar una opción
     menu.addEventListener("click", (e) => {
       const item = e.target.closest(".dropdown-item");
       if (item) {
@@ -67,13 +58,11 @@ function initDropdowns() {
       }
     });
 
-    // Navegación por teclado
-    container.addEventListener("keydown", (e) => {
+    dropdownContainer.addEventListener("keydown", (e) => {
       const items = Array.from(menu.querySelectorAll(".dropdown-item:not([disabled])"));
       const isOpen = menu.classList.contains("show");
       const activeEl = document.activeElement;
 
-      // Eventos cuando el foco está en el botón trigger
       if (activeEl === toggle) {
         switch (e.key) {
           case "ArrowDown":
@@ -100,9 +89,7 @@ function initDropdowns() {
             }
             break;
         }
-      }
-      // Eventos cuando el foco está dentro de los elementos del menú
-      else if (items.includes(activeEl)) {
+      } else if (items.includes(activeEl)) {
         const currentIndex = items.indexOf(activeEl);
 
         switch (e.key) {
@@ -130,7 +117,6 @@ function initDropdowns() {
             toggle.focus();
             break;
           case "Tab":
-            // Cerrar menú al tabular fuera y permitir comportamiento nativo
             closeDropdown(toggle, menu);
             break;
         }
@@ -138,7 +124,6 @@ function initDropdowns() {
     });
   });
 
-  // Cerrar dropdowns al hacer clic fuera del contenedor dropdown
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".dropdown, .nav-item.dropdown")) {
       closeAllDropdowns();
@@ -146,5 +131,4 @@ function initDropdowns() {
   });
 }
 
-export default initDropdowns;
-
+export default init;

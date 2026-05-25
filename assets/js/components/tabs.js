@@ -1,25 +1,16 @@
-/**
- * Initializes accessible tab components on the page.
- * Follows the ARIA Authoring Practices Guide for Tabs.
- * Supports horizontal (default) and vertical orientations.
- * @see https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/
- */
-export default function initTabs() {
-  const tabLists = document.querySelectorAll('[role="tablist"]');
+export function init(container = document) {
+  const tabLists = container.querySelectorAll('[role="tablist"]');
 
   tabLists.forEach((tabList) => {
     const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
     const panels = getAssociatedPanels(tabs);
 
-    // Event listener for clicks on tabs
     tabList.addEventListener("click", (e) => {
       const clickedTab = e.target.closest('[role="tab"]');
       if (!clickedTab) return;
-
       activateTab(clickedTab, tabs, panels);
     });
 
-    // Event listener for keyboard navigation
     tabList.addEventListener("keydown", (e) => {
       const currentTab = e.target.closest('[role="tab"]');
       if (!currentTab || !tabs.includes(currentTab)) return;
@@ -59,12 +50,6 @@ export default function initTabs() {
   });
 }
 
-/**
- * Activates a specific tab and its corresponding panel.
- * @param {HTMLElement} tabToActivate - The tab element to make active.
- * @param {HTMLElement[]} allTabs - An array of all tab elements in the group.
- * @param {HTMLElement[]} allPanels - An array of all panel elements in the group.
- */
 function activateTab(tabToActivate, allTabs, allPanels) {
   allTabs.forEach((tab) => {
     const isSelected = tab === tabToActivate;
@@ -78,11 +63,6 @@ function activateTab(tabToActivate, allTabs, allPanels) {
   });
 }
 
-/**
- * Finds all panels associated with a list of tabs.
- * @param {HTMLElement[]} tabs - An array of tab elements.
- * @returns {HTMLElement[]} An array of the corresponding panel elements.
- */
 function getAssociatedPanels(tabs) {
   return tabs.map((tab) => {
     const panelId = tab.getAttribute("aria-controls");
@@ -90,3 +70,4 @@ function getAssociatedPanels(tabs) {
   });
 }
 
+export default init;

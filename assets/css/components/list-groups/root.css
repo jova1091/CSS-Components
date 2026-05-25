@@ -4,8 +4,8 @@
   --list-group-padding-left: 0;
   --list-group-margin-bottom: 0;
   --list-group-overflow: hidden;
-  --list-group-bg: var(--color-surface);
-  --list-group-border-color: var(--color-border);
+  --list-group-bg: var(--color-surface, #e0e1dd);
+  --list-group-border-color: var(--color-border, #1b263b);
   --list-group-border-width: 1px;
   --list-group-border-style: solid;
   --list-group-border-radius: 0.375rem;
@@ -21,15 +21,15 @@
   --list-group-action-width: 100%;
   --list-group-action-text-align: inherit;
   --list-group-action-cursor: pointer;
-  --list-group-hover-bg: var(--color-surface-subtle);
+  --list-group-hover-bg: var(--color-surface-subtle, #dedbd2);
   
   --list-group-active-color: #ffffff;
-  --list-group-active-bg: var(--color-primary);
-  --list-group-active-border-color: var(--color-primary);
+  --list-group-active-bg: var(--color-primary, #1b263b);
+  --list-group-active-border-color: var(--color-primary, #1b263b);
   --list-group-active-opacity: 0.85;
   
-  --list-group-disabled-color: var(--color-text-muted);
-  --list-group-disabled-bg: var(--color-surface-muted);
+  --list-group-disabled-color: var(--color-text-muted, #415a77);
+  --list-group-disabled-bg: var(--color-surface-muted, #e9ecef);
   --list-group-disabled-opacity: 0.6;
   
   --list-group-heading-font-weight: 600;
@@ -39,12 +39,12 @@
 }
 
 [data-theme="dark"] {
-  --list-group-bg: var(--palette-dark-surface);
-  --list-group-border-color: var(--palette-dark-border);
-  --list-group-hover-bg: var(--palette-dark-surface-subtle);
-  --list-group-active-color: var(--palette-dark-surface);
-  --list-group-active-bg: var(--palette-dark-primary);
-  --list-group-active-border-color: var(--palette-dark-primary);
-  --list-group-disabled-color: var(--palette-dark-text-muted);
-  --list-group-disabled-bg: var(--palette-dark-surface-muted);
+  --list-group-bg: var(--palette-dark-surface, #0d1b2a);
+  --list-group-border-color: var(--palette-dark-border, #415a77);
+  --list-group-hover-bg: var(--palette-dark-surface-subtle, #1b263b);
+  --list-group-active-color: var(--palette-dark-surface, #0d1b2a);
+  --list-group-active-bg: var(--palette-dark-primary, #778da9);
+  --list-group-active-border-color: var(--palette-dark-primary, #778da9);
+  --list-group-disabled-color: var(--palette-dark-text-muted, #778da9);
+  --list-group-disabled-bg: var(--palette-dark-surface-muted, #1b263b);
 }

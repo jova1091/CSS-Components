@@ -7,11 +7,11 @@
   --popover-max-width: 276px;
   --popover-font-family: inherit;
   --popover-font-size: 0.875rem;
-  --popover-bg: var(--color-surface);
+  --popover-bg: var(--color-surface, #e0e1dd);
   --popover-background-clip: padding-box;
   --popover-border-style: solid;
   --popover-border-width: 1px;
-  --popover-border-color: var(--color-border);
+  --popover-border-color: var(--color-border, #1b263b);
   --popover-border-radius: 0.5rem;
   --popover-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --popover-opacity-closed: 0;
@@ -28,7 +28,7 @@
   --popover-header-margin-bottom: 0;
   --popover-header-font-size: 1rem;
   --popover-header-font-weight: 600;
-  --popover-header-bg: var(--color-surface-subtle);
+  --popover-header-bg: var(--color-surface-subtle, #dedbd2);
   --popover-header-border-bottom-style: solid;
   --popover-header-border-bottom-width: 1px;
 
@@ -53,8 +53,8 @@
 }
 
 [data-theme="dark"] {
-  --popover-bg: var(--palette-dark-surface);
-  --popover-border-color: var(--palette-dark-border);
-  --popover-header-bg: var(--palette-dark-surface-subtle);
+  --popover-bg: var(--palette-dark-surface, #0d1b2a);
+  --popover-border-color: var(--palette-dark-border, #415a77);
+  --popover-header-bg: var(--palette-dark-surface-subtle, #1b263b);
   --popover-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
 }

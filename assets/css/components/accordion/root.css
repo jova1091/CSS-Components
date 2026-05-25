@@ -3,9 +3,9 @@
   --accordion-flex-direction: column;
   --accordion-gap: 0;
 
-  --accordion-bg: var(--color-surface);
-  --accordion-color: var(--color-text);
-  --accordion-border-color: var(--color-border);
+  --accordion-bg: var(--color-surface, #e0e1dd);
+  --accordion-color: var(--color-text, #0d1b2a);
+  --accordion-border-color: var(--color-border, #1b263b);
   --accordion-border-width: 1px;
   --accordion-border-style: solid;
   --accordion-border-radius: 0.375rem;
@@ -21,7 +21,7 @@
   --accordion-btn-padding-x: 1.25rem;
   --accordion-header-font-size: 1rem;
   --accordion-btn-bg: transparent;
-  --accordion-btn-color: var(--color-text);
+  --accordion-btn-color: var(--color-text, #0d1b2a);
   --accordion-header-cursor: pointer;
   --accordion-header-list-style: none;
   --accordion-header-user-select: none;
@@ -30,7 +30,7 @@
   --accordion-webkit-marker-display: none;
 
   --accordion-header-focus-outline: 0;
-  --accordion-header-focus-box-shadow: inset 0 0 0 2px var(--color-focus-ring);
+  --accordion-header-focus-box-shadow: inset 0 0 0 2px var(--color-focus-ring, rgba(65, 90, 119, 0.5));
   --accordion-header-focus-zindex: 2;
 
   --accordion-header-icon-content: "";
@@ -43,8 +43,8 @@
   --accordion-btn-icon-transition: transform 0.2s ease-in-out;
 
   /* Active State */
-  --accordion-active-color: var(--color-primary);
-  --accordion-active-bg: var(--color-surface-subtle);
+  --accordion-active-color: var(--color-primary, #1b263b);
+  --accordion-active-bg: var(--color-surface-subtle, #dedbd2);
   --accordion-active-box-shadow: inset 0 calc(-1 * var(--accordion-border-width)) 0 var(--accordion-border-color);
   --accordion-active-icon-transform: rotate(-180deg);
 

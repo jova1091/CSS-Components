@@ -8,11 +8,11 @@
   --navbar-padding-y: 0.5rem;
   --navbar-padding-x: 1rem;
   --navbar-min-height: 3.5rem;
-  --navbar-bg: var(--color-surface);
-  --navbar-color: var(--color-text);
+  --navbar-bg: var(--color-surface, #e0e1dd);
+  --navbar-color: var(--color-text, #0d1b2a);
   --navbar-border-bottom-width: 1px;
   --navbar-border-bottom-style: solid;
-  --navbar-border-bottom-color: var(--color-border);
+  --navbar-border-bottom-color: var(--color-border, #1b263b);
 
   /* Navbar Container */
   --navbar-container-display: flex;
@@ -24,8 +24,8 @@
   /* Navbar Brand */
   --navbar-brand-font-size: 1.25rem;
   --navbar-brand-font-weight: 700;
-  --navbar-brand-color: var(--color-primary);
-  --navbar-brand-hover-color: var(--color-primary);
+  --navbar-brand-color: var(--color-primary, #1b263b);
+  --navbar-brand-hover-color: var(--color-primary, #1b263b);
   --navbar-brand-margin-right: 1rem;
   --navbar-brand-padding-y: 0.3125rem;
   --navbar-brand-gap: 0.5rem;
@@ -46,8 +46,8 @@
   --nav-link-padding-y: 0.5rem;
   --nav-link-padding-x: 0.75rem;
   --nav-link-font-weight: 500;
-  --nav-link-color: var(--color-text);
-  --nav-link-hover-color: var(--color-primary);
+  --nav-link-color: var(--color-text, #0d1b2a);
+  --nav-link-hover-color: var(--color-primary, #1b263b);
   --nav-link-transition: color 0.15s ease-in-out;
 
   /* Toggler (Mobile Menu Button) */
@@ -59,8 +59,8 @@
   --navbar-toggler-border-width: 1px;
   --navbar-toggler-border-style: solid;
   --navbar-toggler-border-radius: 0.25rem;
-  --navbar-toggler-color: var(--color-text-muted);
-  --navbar-toggler-border-color: var(--color-border);
+  --navbar-toggler-color: var(--color-text-muted, #415a77);
+  --navbar-toggler-border-color: var(--color-border, #1b263b);
   --navbar-toggler-cursor: pointer;
   --navbar-toggler-display-closed: none;
 

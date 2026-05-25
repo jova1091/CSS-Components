@@ -17,7 +17,7 @@
   --skip-link-padding-y: 0.5rem;
   --skip-link-padding-x: 1rem;
   --skip-link-color: #fff;
-  --skip-link-bg: var(--color-primary);
+  --skip-link-bg: var(--color-primary, #1b263b);
   --skip-link-border-radius: 0.25rem;
   --skip-link-focus-top: 1rem;
 }

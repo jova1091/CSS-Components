@@ -10,44 +10,44 @@
   --pagination-padding-y: 0.375rem;
   --pagination-padding-x: 0.75rem;
   --pagination-font-size: 0.875rem;
-  --pagination-color: var(--color-secondary);
+  --pagination-color: var(--color-secondary, #415a77);
   --pagination-link-text-decoration: none;
-  --pagination-bg: var(--color-surface);
+  --pagination-bg: var(--color-surface, #e0e1dd);
   --pagination-border-width: 1px;
   --pagination-border-style: solid;
-  --pagination-border-color: var(--color-secondary);
+  --pagination-border-color: var(--color-secondary, #415a77);
   
-  --pagination-hover-color: var(--color-primary);
-  --pagination-hover-bg: var(--color-surface-subtle);
-  --pagination-hover-border-color: var(--color-secondary);
+  --pagination-hover-color: var(--color-primary, #1b263b);
+  --pagination-hover-bg: var(--color-surface-subtle, #dedbd2);
+  --pagination-hover-border-color: var(--color-secondary, #415a77);
   --pagination-hover-zindex: 2;
   
   --pagination-focus-zindex: 3;
   --pagination-focus-outline: 0;
-  --pagination-focus-box-shadow: 0 0 0 0.25rem var(--color-focus-ring);
+  --pagination-focus-box-shadow: 0 0 0 0.25rem var(--color-focus-ring, rgba(65, 90, 119, 0.5));
   
   --pagination-active-color: #ffffff;
-  --pagination-active-bg: var(--color-primary);
-  --pagination-active-border-color: var(--color-primary);
+  --pagination-active-bg: var(--color-primary, #1b263b);
+  --pagination-active-border-color: var(--color-primary, #1b263b);
   --pagination-active-zindex: 4;
   
-  --pagination-disabled-color: var(--color-text-muted);
+  --pagination-disabled-color: var(--color-text-muted, #415a77);
   --pagination-disabled-pointer-events: none;
-  --pagination-disabled-bg: var(--color-surface-muted);
-  --pagination-disabled-border-color: var(--color-surface-muted);
+  --pagination-disabled-bg: var(--color-surface-muted, #e9ecef);
+  --pagination-disabled-border-color: var(--color-surface-muted, #e9ecef);
   --pagination-disabled-opacity: 0.5;
   
   --pagination-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 [data-theme="dark"] {
-  --pagination-color: var(--palette-dark-primary);
-  --pagination-bg: var(--palette-dark-surface-subtle);
-  --pagination-border-color: var(--palette-dark-border);
+  --pagination-color: var(--palette-dark-primary, #778da9);
+  --pagination-bg: var(--palette-dark-surface-subtle, #1b263b);
+  --pagination-border-color: var(--palette-dark-border, #415a77);
   --pagination-hover-color: #ffffff;
-  --pagination-hover-bg: var(--palette-dark-surface);
-  --pagination-hover-border-color: var(--palette-dark-border);
-  --pagination-active-color: var(--palette-dark-surface);
-  --pagination-active-bg: var(--palette-dark-primary);
-  --pagination-active-border-color: var(--palette-dark-primary);
+  --pagination-hover-bg: var(--palette-dark-surface, #0d1b2a);
+  --pagination-hover-border-color: var(--palette-dark-border, #415a77);
+  --pagination-active-color: var(--palette-dark-surface, #0d1b2a);
+  --pagination-active-bg: var(--palette-dark-primary, #778da9);
+  --pagination-active-border-color: var(--palette-dark-primary, #778da9);
 }

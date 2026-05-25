@@ -8,7 +8,7 @@
   --card-background-clip: border-box;
   --card-height: 100%;
   --card-color: inherit;
-  --card-bg: var(--color-surface); /* Fondo base de la tarjeta */
+  --card-bg: var(--color-surface, #e0e1dd); /* Fondo base de la tarjeta */
 
   --card-spacer-y: 1rem;
   --card-spacer-x: 1rem;
@@ -16,7 +16,7 @@
 
   --card-border-width: 1px;
   --card-border-style: solid;
-  --card-border-color: var(--color-border);
+  --card-border-color: var(--color-border, #1b263b);
   --card-border-radius: 0.375rem;
   --card-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --card-inner-border-radius: calc(var(--card-border-radius) - var(--card-border-width));
@@ -32,7 +32,7 @@
 
   --card-cap-padding-y: 0.5rem;
   --card-cap-padding-x: 1rem;
-  --card-cap-bg: var(--color-surface-muted); /* Usamos surface-muted para headers/footers */
+  --card-cap-bg: var(--color-surface-muted, #e9ecef); /* Usamos surface-muted para headers/footers */
   --card-cap-color: inherit;
 
   --card-header-margin-bottom: 0;

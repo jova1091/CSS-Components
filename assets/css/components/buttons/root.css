@@ -5,7 +5,7 @@
    * =================================================================================
    *
    * Estas variables controlan la apariencia de los botones.
-   * Se asignan a las variables globales del tema (ej. var(--color-primary))
+   * Se asignan a las variables globales del tema (ej. var(--color-primary, #1b263b))
    * para que los botones se adapten automáticamente al modo claro/oscuro.
    */
 
@@ -29,7 +29,7 @@
 
   /* Hover & Focus State (using filter for theme adaptability) */
   --btn-hover-filter: brightness(85%);
-  --btn-focus-box-shadow: 0 0 0 0.25rem var(--color-focus-ring);
+  --btn-focus-box-shadow: 0 0 0 0.25rem var(--color-focus-ring, rgba(65, 90, 119, 0.5));
 
   /* Disabled State */
   --btn-disabled-opacity: 0.65;
@@ -42,33 +42,33 @@
 
   /* Default/Primary Button */
   --btn-primary-color: #fff;
-  --btn-primary-bg: var(--color-primary);
-  --btn-primary-border-color: var(--color-primary);
+  --btn-primary-bg: var(--color-primary, #1b263b);
+  --btn-primary-border-color: var(--color-primary, #1b263b);
 
   /* Secondary Button */
   --btn-secondary-color: #fff;
-  --btn-secondary-bg: var(--color-secondary);
-  --btn-secondary-border-color: var(--color-secondary);
+  --btn-secondary-bg: var(--color-secondary, #415a77);
+  --btn-secondary-border-color: var(--color-secondary, #415a77);
 
   /* Success Button */
   --btn-success-color: #fff;
-  --btn-success-bg: var(--color-success);
-  --btn-success-border-color: var(--color-success);
+  --btn-success-bg: var(--color-success, #2a9d8f);
+  --btn-success-border-color: var(--color-success, #2a9d8f);
 
   /* Danger Button */
   --btn-danger-color: #fff;
-  --btn-danger-bg: var(--color-danger);
-  --btn-danger-border-color: var(--color-danger);
+  --btn-danger-bg: var(--color-danger, #e63946);
+  --btn-danger-border-color: var(--color-danger, #e63946);
 
   /* Warning Button */
   --btn-warning-color: #000;
-  --btn-warning-bg: var(--color-warning);
-  --btn-warning-border-color: var(--color-warning);
+  --btn-warning-bg: var(--color-warning, #f4a261);
+  --btn-warning-border-color: var(--color-warning, #f4a261);
 
   /* Info Button */
   --btn-info-color: #fff;
-  --btn-info-bg: var(--color-info);
-  --btn-info-border-color: var(--color-info);
+  --btn-info-bg: var(--color-info, #219ebc);
+  --btn-info-border-color: var(--color-info, #219ebc);
 
   /*
    * =================================================================================
@@ -97,8 +97,8 @@
    * LINK BUTTON VARIABLES
    * =================================================================================
    */
-  --btn-link-color: var(--color-primary);
-  --btn-link-hover-color: var(--color-primary); /* Usamos filter en el :hover para oscurecerlo */
+  --btn-link-color: var(--color-primary, #1b263b);
+  --btn-link-hover-color: var(--color-primary, #1b263b); /* Usamos filter en el :hover para oscurecerlo */
   --btn-link-hover-decoration: underline;
 
   --btn-display: inline-block;
