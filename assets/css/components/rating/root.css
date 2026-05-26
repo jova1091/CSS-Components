@@ -1,0 +1,21 @@
+:root {
+  /* Sizing */
+  --rating-size: 1.5rem;
+  --rating-size-sm: 1rem;
+  --rating-size-lg: 2.25rem;
+  --rating-gap: 0.125rem;
+
+  /* Colors */
+  --rating-color: #f4c430;
+  --rating-color-empty: var(--color-border, #1b263b);
+  --rating-color-hover: #f4c430;
+  --rating-color-disabled: var(--color-text-muted, #415a77);
+
+  /* Star */
+  --rating-star-scale: 1;
+  --rating-star-transition: transform 0.15s ease, color 0.15s ease;
+
+  /* Focus */
+  --rating-focus-outline: 2px solid var(--color-focus-ring, rgba(65, 90, 119, 0.5));
+  --rating-focus-outline-offset: 2px;
+}

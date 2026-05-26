@@ -20,6 +20,7 @@ const COMPONENT_REGISTRY = {
   pagination:   { css: 'components/pagination/pagination.css',  js: null },
   popovers:     { css: 'components/popovers/popovers.css',      js: 'components/popovers.js' },
   progress:     { css: 'components/progress/progress.css',      js: null },
+  rating:       { css: 'components/rating/rating.css',          js: 'components/rating.js' },
   skeletons:    { css: 'components/skeletons/skeletons.css',    js: null },
   spacers:      { css: 'utilities/spacers/spacers.css',         js: null },
   spinners:     { css: 'components/spinners/spinners.css',      js: null },

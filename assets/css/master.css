@@ -25,6 +25,7 @@
 @import url("/assets/css/components/skeletons/skeletons.css") layer(components.skeletons);
 @import url("/assets/css/components/tooltips/tooltips.css") layer(components.tooltips);
 @import url("/assets/css/components/progress/progress.css") layer(components.progress);
+@import url("/assets/css/components/rating/rating.css") layer(components.rating);
 @import url("/assets/css/components/spinners/spinners.css") layer(components.spinners);
 @import url("/assets/css/components/pagination/pagination.css") layer(components.pagination);
 @import url("/assets/css/components/popovers/popovers.css") layer(components.popovers);

@@ -46,6 +46,7 @@
               </li>
               <li><a class="dropdown-item" href="#drawers">Drawer</a></li>
               <li><a class="dropdown-item" href="#chips-demo">Chips</a></li>
+              <li><a class="dropdown-item" href="#rating-demo">Rating</a></li>
               <li><a class="dropdown-item" href="#dropdowns">Dropdowns</a></li>
               <li><a class="dropdown-item" href="#tabs">Pestañas</a></li>
               <li><a class="dropdown-item" href="#modals">Modales</a></li>
@@ -2170,6 +2171,72 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
     </section>
 
     <!-- ============================================================
+    RATING (Star Rating)
+    ============================================================ -->
+    <section id="rating-demo" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Rating (Estrellas)</h2>
+          <p>Valoración interactiva con estrellas. Soporta teclado, hover preview y modo solo lectura.</p>
+        </div>
+
+        <!-- Interactive -->
+        <div class="col-12">
+          <h3>Interactivo</h3>
+          <div class="rating" role="radiogroup" aria-label="Valoración" style="margin-bottom: 0.5rem;">
+            <span class="rating-star" data-value="1" role="radio" aria-label="1 estrella" aria-checked="false" tabindex="0">&#9734;</span>
+            <span class="rating-star" data-value="2" role="radio" aria-label="2 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+            <span class="rating-star" data-value="3" role="radio" aria-label="3 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+            <span class="rating-star" data-value="4" role="radio" aria-label="4 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+            <span class="rating-star" data-value="5" role="radio" aria-label="5 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.875rem;">Haz clic para valorar. Usa flechas izquierda/derecha para navegar.</p>
+        </div>
+
+        <!-- Read-only -->
+        <div class="col-12 mt-4">
+          <h3>Solo lectura</h3>
+          <div class="rating rating--readonly" aria-label="Valoración: 4 de 5 estrellas">
+            <span class="rating-star rating-star--filled" data-value="1">&#9733;</span>
+            <span class="rating-star rating-star--filled" data-value="2">&#9733;</span>
+            <span class="rating-star rating-star--filled" data-value="3">&#9733;</span>
+            <span class="rating-star rating-star--filled" data-value="4">&#9733;</span>
+            <span class="rating-star" data-value="5">&#9734;</span>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <div class="col-12 mt-4">
+          <h3>Tamaños</h3>
+          <div class="d-flex align-items-center" style="gap: 1.5rem;">
+            <div class="rating rating--sm" aria-label="Pequeño" style="margin-bottom: 0.5rem;">
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star">&#9734;</span>
+              <span class="rating-star">&#9734;</span>
+            </div>
+            <div class="rating" aria-label="Mediano" style="margin-bottom: 0.5rem;">
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9734;</span>
+              <span class="rating-star">&#9734;</span>
+            </div>
+            <div class="rating rating--lg" aria-label="Grande" style="margin-bottom: 0.5rem;">
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star">&#9734;</span>
+              <span class="rating-star">&#9734;</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============================================================
     DRAWER (Offcanvas / Panel lateral)
     ============================================================ -->
     <section id="drawers" class="container">
@@ -2315,6 +2382,21 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
               <span class="chip chip--success">
                 CSS + JS automático
               </span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="row" style="margin-top: 2rem;">
+        <article class="col-12">
+          <h3>Carga declarativa de Rating</h3>
+          <p>Rating cargado con <code>data-component="rating"</code>:</p>
+          <div data-component="rating">
+            <div class="rating" role="radiogroup" aria-label="Valoración diferida">
+              <span class="rating-star" data-value="1" role="radio" aria-label="1 estrella" aria-checked="false" tabindex="0">&#9734;</span>
+              <span class="rating-star" data-value="2" role="radio" aria-label="2 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+              <span class="rating-star" data-value="3" role="radio" aria-label="3 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+              <span class="rating-star" data-value="4" role="radio" aria-label="4 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+              <span class="rating-star" data-value="5" role="radio" aria-label="5 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
             </div>
           </div>
         </article>

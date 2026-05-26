@@ -1,0 +1,98 @@
+@import url("root.css") layer(components.rating.vars);
+
+/*
+ * =====================================================
+ * RATING — Star Rating
+ * =====================================================
+ *
+ *   <div class="rating" role="radiogroup" aria-label="Valoración">
+ *     <span class="rating-star" data-value="1" role="radio"
+ *           aria-label="1 estrella" tabindex="0">&#9734;</span>
+ *     <span class="rating-star" data-value="2" role="radio"
+ *           aria-label="2 estrellas" tabindex="-1">&#9734;</span>
+ *     ...
+ *   </div>
+ */
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rating-gap);
+}
+
+/*
+ * =====================================================
+ * STAR
+ * =====================================================
+ */
+
+.rating-star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--rating-size);
+  line-height: 1;
+  color: var(--rating-color-empty);
+  cursor: pointer;
+  transition: var(--rating-star-transition);
+  user-select: none;
+}
+
+.rating-star:hover {
+  transform: scale(1.15);
+}
+
+.rating-star:focus-visible {
+  outline: var(--rating-focus-outline);
+  outline-offset: var(--rating-focus-outline-offset);
+  border-radius: 2px;
+}
+
+/* Filled state */
+.rating-star--filled {
+  color: var(--rating-color);
+}
+
+/* Hover preview */
+.rating-star--hover {
+  color: var(--rating-color-hover);
+}
+
+/*
+ * =====================================================
+ * SIZES
+ * =====================================================
+ */
+
+.rating--sm .rating-star {
+  font-size: var(--rating-size-sm);
+}
+
+.rating--lg .rating-star {
+  font-size: var(--rating-size-lg);
+}
+
+/*
+ * =====================================================
+ * READ-ONLY
+ * =====================================================
+ */
+
+.rating--readonly .rating-star,
+.rating--disabled .rating-star {
+  cursor: default;
+}
+
+.rating--readonly .rating-star:hover {
+  transform: none;
+}
+
+.rating--disabled .rating-star {
+  color: var(--rating-color-disabled);
+  opacity: 0.5;
+}
+
+.rating--disabled .rating-star--filled {
+  color: var(--rating-color);
+  opacity: 0.5;
+}
