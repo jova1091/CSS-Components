@@ -33,6 +33,7 @@
 @import url("/assets/css/components/list-groups/list-groups.css") layer(components.listGroups);
 @import url("/assets/css/components/carousel/carousel.css") layer(components.carousel);
 @import url("/assets/css/components/tables/tables.css") layer(components.tables);
+@import url("/assets/css/components/timeline/timeline.css") layer(components.timeline);
 
 
 

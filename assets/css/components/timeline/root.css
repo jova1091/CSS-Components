@@ -1,0 +1,46 @@
+:root {
+  /* Line */
+  --tl-line-color: var(--color-border, #1b263b);
+  --tl-line-width: 2px;
+
+  /* Marker (dot) */
+  --tl-marker-size: 14px;
+  --tl-marker-bg: var(--color-primary, #1b263b);
+  --tl-marker-border-width: 3px;
+  --tl-marker-border-color: var(--color-surface, #e0e1dd);
+
+  /* Spacing */
+  --tl-marker-gap: 1.5rem;
+  --tl-item-gap: 2rem;
+
+  /* Date */
+  --tl-date-color: var(--color-text-muted, #415a77);
+  --tl-date-font-size: 0.8rem;
+  --tl-date-font-weight: 600;
+  --tl-date-text-transform: uppercase;
+
+  /* Title */
+  --tl-title-font-size: 1rem;
+  --tl-title-font-weight: 600;
+  --tl-title-margin: 0.25rem 0 0;
+
+  /* Description */
+  --tl-desc-font-size: 0.875rem;
+  --tl-desc-color: var(--color-text, #0d1b2a);
+  --tl-desc-margin: 0.5rem 0 0;
+
+  /* Icon marker */
+  --tl-icon-size: 2rem;
+  --tl-icon-font-size: 1rem;
+
+  /* Colors for variants */
+  --tl-primary-color: var(--color-primary, #1b263b);
+  --tl-secondary-color: var(--color-secondary, #415a77);
+  --tl-success-color: var(--color-success, #2a9d8f);
+  --tl-danger-color: var(--color-danger, #e63946);
+  --tl-warning-color: var(--color-warning, #f4a261);
+  --tl-info-color: var(--color-info, #219ebc);
+
+  /* Responsive */
+  --tl-breakpoint: 768px;
+}

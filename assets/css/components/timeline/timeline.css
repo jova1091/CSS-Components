@@ -1,0 +1,230 @@
+@import url("root.css") layer(components.timeline.vars);
+
+/*
+ * =====================================================
+ * TIMELINE
+ * =====================================================
+ *
+ *   <div class="timeline">
+ *     <div class="timeline-item">
+ *       <div class="timeline-marker"></div>
+ *       <div class="timeline-content">
+ *         <time class="timeline-date">Ene 2024</time>
+ *         <h4 class="timeline-title">Título</h4>
+ *         <p class="timeline-desc">Descripción</p>
+ *       </div>
+ *     </div>
+ *     ...
+ *   </div>
+ */
+
+.timeline {
+  position: relative;
+  padding: 0;
+}
+
+/*
+ * =====================================================
+ * VERTICAL LINE
+ * =====================================================
+ */
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--tl-marker-size) / 2);
+  width: var(--tl-line-width);
+  background-color: var(--tl-line-color);
+}
+
+/*
+ * =====================================================
+ * ITEM
+ * =====================================================
+ */
+
+.timeline-item {
+  position: relative;
+  padding-left: calc(var(--tl-marker-size) + var(--tl-marker-gap));
+  padding-bottom: var(--tl-item-gap);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/*
+ * =====================================================
+ * MARKER (dot)
+ * =====================================================
+ */
+
+.timeline-marker {
+  position: absolute;
+  left: calc(var(--tl-marker-size) / 2 - var(--tl-marker-size) / 2);
+  top: 0.25rem;
+  width: var(--tl-marker-size);
+  height: var(--tl-marker-size);
+  border-radius: 50%;
+  background-color: var(--tl-marker-bg);
+  border: var(--tl-marker-border-width) solid var(--tl-marker-border-color);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* Icon marker */
+.timeline-marker--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tl-icon-size);
+  height: var(--tl-icon-size);
+  font-size: var(--tl-icon-font-size);
+  left: calc(var(--tl-marker-size) / 2 - var(--tl-icon-size) / 2);
+  top: 0;
+}
+
+/*
+ * =====================================================
+ * CONTENT
+ * =====================================================
+ */
+
+.timeline-content {
+  min-width: 0;
+}
+
+.timeline-date {
+  display: block;
+  font-size: var(--tl-date-font-size);
+  font-weight: var(--tl-date-font-weight);
+  color: var(--tl-date-color);
+  text-transform: var(--tl-date-text-transform);
+  letter-spacing: 0.05em;
+}
+
+.timeline-title {
+  font-size: var(--tl-title-font-size);
+  font-weight: var(--tl-title-font-weight);
+  margin: var(--tl-title-margin);
+}
+
+.timeline-desc {
+  font-size: var(--tl-desc-font-size);
+  color: var(--tl-desc-color);
+  margin: var(--tl-desc-margin);
+}
+
+/*
+ * =====================================================
+ * COLOR VARIANTS
+ * =====================================================
+ */
+
+.timeline-item--primary .timeline-marker {
+  background-color: var(--tl-primary-color);
+}
+
+.timeline-item--secondary .timeline-marker {
+  background-color: var(--tl-secondary-color);
+}
+
+.timeline-item--success .timeline-marker {
+  background-color: var(--tl-success-color);
+}
+
+.timeline-item--danger .timeline-marker {
+  background-color: var(--tl-danger-color);
+}
+
+.timeline-item--warning .timeline-marker {
+  background-color: var(--tl-warning-color);
+}
+
+.timeline-item--info .timeline-marker {
+  background-color: var(--tl-info-color);
+}
+
+/*
+ * =====================================================
+ * ALTERNATING LAYOUT
+ * =====================================================
+ */
+
+@media (min-width: 769px) {
+  .timeline--alternating .timeline-item {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Odd items — content on the left, marker on the right */
+  .timeline--alternating .timeline-item:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: calc(var(--tl-marker-size) / 2 + var(--tl-marker-gap));
+    text-align: right;
+  }
+
+  .timeline--alternating .timeline-item:nth-child(odd) .timeline-marker {
+    left: auto;
+    right: calc(var(--tl-marker-size) / -2);
+  }
+
+  .timeline--alternating .timeline-item:nth-child(odd) .timeline-marker--icon {
+    right: calc(var(--tl-icon-size) / -2);
+    left: auto;
+  }
+
+  /* Even items — content on the right, marker on the left */
+  .timeline--alternating .timeline-item:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: calc(var(--tl-marker-size) / 2 + var(--tl-marker-gap));
+    text-align: left;
+  }
+
+  .timeline--alternating .timeline-item:nth-child(even) .timeline-marker {
+    left: calc(var(--tl-marker-size) / -2);
+    right: auto;
+  }
+
+  .timeline--alternating .timeline-item:nth-child(even) .timeline-marker--icon {
+    left: calc(var(--tl-icon-size) / -2);
+    right: auto;
+  }
+
+  /* Center line */
+  .timeline--alternating::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/*
+ * =====================================================
+ * RESPONSIVE
+ * =====================================================
+ */
+
+@media (max-width: 768px) {
+  .timeline--alternating .timeline-item {
+    width: 100%;
+    padding-left: calc(var(--tl-marker-size) + var(--tl-marker-gap));
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline--alternating .timeline-item:nth-child(odd) .timeline-marker,
+  .timeline--alternating .timeline-item:nth-child(even) .timeline-marker {
+    left: 0;
+    right: auto;
+  }
+
+  .timeline--alternating::before {
+    left: calc(var(--tl-marker-size) / 2);
+    transform: none;
+  }
+}
