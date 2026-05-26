@@ -5,7 +5,8 @@
  * STEPPER — Multi-step progress indicator
  * =====================================================
  *
- * Horizontal:
+ * Horizontal por defecto, pasa a vertical en móvil.
+ *
  *   <div class="stepper" data-step="1">
  *     <div class="step step--active" data-step="1">
  *       <div class="step-indicator">1</div>
@@ -14,12 +15,8 @@
  *         <div class="step-description">Descripción</div>
  *       </div>
  *     </div>
- *     <div class="step" data-step="2">...</div>
  *     ...
  *   </div>
- *
- * Vertical:
- *   <div class="stepper stepper--vertical">...</div>
  */
 
 .stepper {
@@ -102,14 +99,12 @@
   font-size: var(--step-title-font-size);
   font-weight: var(--step-title-font-weight);
   margin: 0;
-  white-space: nowrap;
 }
 
 .step-description {
   font-size: var(--step-description-font-size);
   color: var(--step-description-color);
   margin: 0;
-  white-space: nowrap;
 }
 
 /*
@@ -165,7 +160,7 @@
   position: absolute;
   left: calc(var(--step-size) / 2);
   top: var(--step-size);
-  bottom: 0;
+  bottom: var(--step-vertical-gap);
   width: var(--step-line-height);
   height: auto;
   flex: none;
@@ -178,6 +173,53 @@
 
 .stepper--vertical .step-body {
   padding-top: calc((var(--step-size) - 1lh) / 2);
+}
+
+/*
+ * =====================================================
+ * RESPONSIVE: Horizontal → Vertical en móvil
+ * =====================================================
+ */
+
+@media (max-width: 768px) {
+  .stepper {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .stepper .step {
+    flex: none;
+    align-items: flex-start;
+    padding-bottom: var(--step-vertical-gap);
+  }
+
+  .stepper .step:last-child {
+    padding-bottom: 0;
+  }
+
+  .stepper .step::after {
+    position: absolute;
+    left: calc(var(--step-size) / 2);
+    top: var(--step-size);
+    bottom: var(--step-vertical-gap);
+    width: var(--step-line-height);
+    height: auto;
+    flex: none;
+    transform: translateX(-50%);
+  }
+
+  .stepper .step:last-child::after {
+    display: none;
+  }
+
+  .stepper .step-body {
+    padding-top: calc((var(--step-size) - 1lh) / 2);
+  }
+
+  .stepper .step-title,
+  .stepper .step-description {
+    white-space: normal;
+  }
 }
 
 /*
