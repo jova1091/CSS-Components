@@ -5,6 +5,7 @@
 @import url("/assets/css/base/images/images.css") layer(base.images);
 @import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
 @import url("/assets/css/utilities/helpers/helpers.css") layer(utilities.helpers);
+@import url("/assets/css/components/drawer/drawer.css") layer(components.drawer);
 @import url("/assets/css/components/dropdown/dropdown.css") layer(components.dropdown);
 @import url("/assets/css/components/navbar/navbar.css") layer(components.navbar);
 @import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
@@ -30,10 +31,6 @@
 @import url("/assets/css/components/tables/tables.css") layer(components.tables);
 
 
-/* Corrección de accesibilidad y renderizado HTML5 */
-[hidden] {
-  display: none !important;
-}
 
 /*
  * =================================================================================

@@ -1,0 +1,170 @@
+@import url("root.css") layer(components.drawer.vars);
+
+/*
+ * =====================================================
+ * DRAWER — Panel lateral deslizable
+ * =====================================================
+ *
+ * .drawer es el contenedor position: fixed que envuelve
+ * el overlay (backdrop) y el panel deslizable.
+ *
+ * Estructura esperada:
+ *   .drawer
+ *     .drawer-overlay
+ *     .drawer-panel
+ *       .drawer-header (opcional)
+ *       .drawer-body
+ *       .drawer-footer (opcional)
+ */
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--drawer-z-index);
+  pointer-events: none;
+  visibility: hidden;
+  display: block;
+  transition:
+    visibility var(--drawer-transition-duration) var(--drawer-transition-timing);
+}
+
+.drawer.drawer--open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/*
+ * =====================================================
+ * OVERLAY (Backdrop)
+ * =====================================================
+ */
+
+.drawer-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--drawer-overlay-bg);
+  opacity: var(--drawer-overlay-opacity-closed);
+  transition:
+    opacity var(--drawer-transition-duration) var(--drawer-transition-timing);
+}
+
+.drawer.drawer--open .drawer-overlay {
+  opacity: var(--drawer-overlay-opacity-open);
+}
+
+/*
+ * =====================================================
+ * PANEL
+ * =====================================================
+ */
+
+.drawer-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--drawer-bg);
+  color: var(--drawer-color);
+  box-shadow: var(--drawer-box-shadow);
+  transition:
+    transform var(--drawer-transition-duration) var(--drawer-transition-timing);
+
+  /* Posición por defecto: start (left) */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--drawer-width);
+  transform: translateX(-100%);
+}
+
+.drawer.drawer--open .drawer-panel {
+  transform: translateX(0);
+}
+
+/*
+ * =====================================================
+ * POSITIONS
+ * =====================================================
+ */
+
+/* End (right) */
+.drawer--end .drawer-panel {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+
+.drawer--end.drawer--open .drawer-panel {
+  transform: translateX(0);
+}
+
+/* Top */
+.drawer--top .drawer-panel {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  width: 100%;
+  height: auto;
+  max-height: var(--drawer-height);
+  transform: translateY(-100%);
+}
+
+.drawer--top.drawer--open .drawer-panel {
+  transform: translateY(0);
+}
+
+/* Bottom */
+.drawer--bottom .drawer-panel {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  max-height: var(--drawer-height);
+  transform: translateY(100%);
+}
+
+.drawer--bottom.drawer--open .drawer-panel {
+  transform: translateY(0);
+}
+
+/*
+ * =====================================================
+ * INTERNAL STRUCTURE
+ * =====================================================
+ */
+
+.drawer-header {
+  display: var(--drawer-header-display);
+  align-items: var(--drawer-header-align-items);
+  justify-content: var(--drawer-header-justify-content);
+  padding: var(--drawer-header-padding);
+  border-bottom: var(--drawer-header-border-width) var(--drawer-header-border-style) var(--drawer-header-border-color);
+}
+
+.drawer-title {
+  margin: var(--drawer-title-margin);
+  font-size: var(--drawer-title-font-size);
+  font-weight: var(--drawer-title-font-weight);
+}
+
+.drawer-body {
+  flex: 1;
+  padding: var(--drawer-body-padding);
+  overflow-y: auto;
+}
+
+.drawer-footer {
+  display: var(--drawer-footer-display);
+  align-items: var(--drawer-footer-align-items);
+  justify-content: var(--drawer-footer-justify-content);
+  padding: var(--drawer-footer-padding);
+  border-top: var(--drawer-footer-border-width) var(--drawer-footer-border-style) var(--drawer-footer-border-color);
+  gap: var(--drawer-footer-gap);
+}
+
+/* Body scroll lock */
+body.drawer-open {
+  overflow: hidden;
+}

@@ -7,6 +7,7 @@ const COMPONENT_REGISTRY = {
   'btn-group':  { css: 'components/buttons/btn-group.css',      js: null },
   cards:        { css: 'components/cards/cards.css',            js: null },
   carousel:     { css: 'components/carousel/carousel.css',      js: 'components/carousel.js' },
+  drawer:       { css: 'components/drawer/drawer.css',          js: 'components/drawer.js' },
   dropdown:     { css: 'components/dropdown/dropdown.css',      js: 'components/dropdown.js' },
   'float-labels': { css: 'components/forms/float-labels.css',   js: 'components/float-labels.js' },
   forms:        { css: 'components/forms/forms.css',            js: null },

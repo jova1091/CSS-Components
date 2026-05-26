@@ -43,6 +43,7 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
+              <li><a class="dropdown-item" href="#drawers">Drawer</a></li>
               <li><a class="dropdown-item" href="#dropdowns">Dropdowns</a></li>
               <li><a class="dropdown-item" href="#tabs">Pestañas</a></li>
               <li><a class="dropdown-item" href="#modals">Modales</a></li>
@@ -1956,6 +1957,108 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
           </div>
         </div>
       </article>
+    </section>
+
+    <!-- ============================================================
+    DRAWER (Offcanvas / Panel lateral)
+    ============================================================ -->
+    <section id="drawers" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Drawer (Offcanvas)</h2>
+          <p>Panel lateral deslizable. Soporta cuatro posiciones y se cierra con overlay, botón o tecla Escape.</p>
+        </div>
+        <div class="col-12 d-flex flex-wrap" style="gap: 0.5rem;">
+          <button type="button" class="btn btn-primary" data-drawer-toggle data-target="#drawerStart">
+            Drawer Start (Izquierda)
+          </button>
+          <button type="button" class="btn btn-secondary" data-drawer-toggle data-target="#drawerEnd">
+            Drawer End (Derecha)
+          </button>
+          <button type="button" class="btn btn-info" data-drawer-toggle data-target="#drawerTop">
+            Drawer Top
+          </button>
+          <button type="button" class="btn btn-warning" data-drawer-toggle data-target="#drawerBottom">
+            Drawer Bottom
+          </button>
+        </div>
+      </article>
+
+      <!-- Drawer Start -->
+      <div class="drawer" id="drawerStart" role="dialog" aria-modal="true" aria-labelledby="drawerStartTitle" hidden>
+        <div class="drawer-overlay" tabindex="-1"></div>
+        <div class="drawer-panel">
+          <div class="drawer-header">
+            <h3 class="drawer-title" id="drawerStartTitle">Drawer Start</h3>
+            <button type="button" class="btn-close" data-drawer-dismiss aria-label="Cerrar"></button>
+          </div>
+          <div class="drawer-body">
+            <p>Panel que se desliza desde el borde izquierdo. Útil para navegación secundaria, filtros o menús
+              contextuales.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.</p>
+          </div>
+          <div class="drawer-footer">
+            <button type="button" class="btn btn-secondary" data-drawer-dismiss>Cancelar</button>
+            <button type="button" class="btn btn-primary">Aplicar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drawer End -->
+      <div class="drawer drawer--end" id="drawerEnd" role="dialog" aria-modal="true" aria-labelledby="drawerEndTitle" hidden>
+        <div class="drawer-overlay" tabindex="-1"></div>
+        <div class="drawer-panel">
+          <div class="drawer-header">
+            <h3 class="drawer-title" id="drawerEndTitle">Drawer End</h3>
+            <button type="button" class="btn-close" data-drawer-dismiss aria-label="Cerrar"></button>
+          </div>
+          <div class="drawer-body">
+            <p>Panel desde el borde derecho. Ideal para paneles de detalle, carritos de compra o formularios
+              contextuales.</p>
+            <p>Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+              cupiditate non provident.</p>
+          </div>
+          <div class="drawer-footer">
+            <button type="button" class="btn btn-secondary" data-drawer-dismiss>Cerrar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drawer Top -->
+      <div class="drawer drawer--top" id="drawerTop" role="dialog" aria-modal="true" aria-labelledby="drawerTopTitle" hidden>
+        <div class="drawer-overlay" tabindex="-1"></div>
+        <div class="drawer-panel">
+          <div class="drawer-header">
+            <h3 class="drawer-title" id="drawerTopTitle">Drawer Top</h3>
+            <button type="button" class="btn-close" data-drawer-dismiss aria-label="Cerrar"></button>
+          </div>
+          <div class="drawer-body">
+            <p>Panel desde el borde superior. Útil para notificaciones, avisos o barras de configuración rápida.</p>
+          </div>
+          <div class="drawer-footer">
+            <button type="button" class="btn btn-secondary" data-drawer-dismiss>Cerrar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drawer Bottom -->
+      <div class="drawer drawer--bottom" id="drawerBottom" role="dialog" aria-modal="true" aria-labelledby="drawerBottomTitle" hidden>
+        <div class="drawer-overlay" tabindex="-1"></div>
+        <div class="drawer-panel">
+          <div class="drawer-header">
+            <h3 class="drawer-title" id="drawerBottomTitle">Drawer Bottom</h3>
+            <button type="button" class="btn-close" data-drawer-dismiss aria-label="Cerrar"></button>
+          </div>
+          <div class="drawer-body">
+            <p>Panel desde el borde inferior. Ideal para sheets de acción, menús contextuales móviles o selectores.</p>
+          </div>
+          <div class="drawer-footer">
+            <button type="button" class="btn btn-secondary" data-drawer-dismiss>Cerrar</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================================
