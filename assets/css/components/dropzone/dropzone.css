@@ -1,0 +1,172 @@
+@import url("root.css") layer(components.dropzone.vars);
+
+/*
+ * =====================================================
+ * DROPZONE / SUBIDA DE ARCHIVOS
+ * =====================================================
+ *
+ *   <div class="dropzone" data-dropzone>
+ *     <div class="dropzone-body">
+ *       <div class="dropzone-icon">...</div>
+ *       <p class="dropzone-text">Arrastra archivos aquí</p>
+ *       <p class="dropzone-hint">o haz clic para seleccionar</p>
+ *     </div>
+ *     <input type="file" class="dropzone-input" multiple hidden />
+ *     <ul class="dropzone-files" aria-live="polite"></ul>
+ *   </div>
+ */
+
+.dropzone {
+  position: relative;
+  padding: var(--dropzone-padding);
+  border: var(--dropzone-border-width) var(--dropzone-border-style) var(--dropzone-border-color);
+  border-radius: var(--dropzone-border-radius);
+  background-color: var(--dropzone-bg);
+  cursor: pointer;
+  transition:
+    border-color var(--dropzone-transition-speed) ease,
+    background-color var(--dropzone-transition-speed) ease;
+}
+
+.dropzone:hover {
+  border-color: var(--dropzone-border-color-hover);
+}
+
+.dropzone--dragover {
+  border-color: var(--dropzone-border-color-dragover);
+  background-color: var(--dropzone-bg-dragover);
+}
+
+/*
+ * =====================================================
+ * CUERPO (icono + texto)
+ * =====================================================
+ */
+
+.dropzone-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+/*
+ * =====================================================
+ * ICONO
+ * =====================================================
+ */
+
+.dropzone-icon {
+  width: var(--dropzone-icon-size);
+  height: var(--dropzone-icon-size);
+  color: var(--dropzone-icon-color);
+  transition: color var(--dropzone-transition-speed) ease;
+}
+
+.dropzone--dragover .dropzone-icon {
+  color: var(--dropzone-border-color-dragover);
+}
+
+.dropzone-text {
+  margin: 0;
+  font-size: var(--dropzone-text-font-size);
+  color: var(--dropzone-text-color);
+}
+
+.dropzone-hint {
+  margin: 0;
+  font-size: var(--dropzone-hint-font-size);
+  color: var(--dropzone-hint-color);
+}
+
+/*
+ * =====================================================
+ * INPUT DE ARCHIVO
+ * =====================================================
+ */
+
+.dropzone-input {
+  display: none;
+}
+
+/*
+ * =====================================================
+ * LISTA DE ARCHIVOS
+ * =====================================================
+ */
+
+.dropzone-files {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.dropzone-file {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--dropzone-file-padding);
+  background-color: var(--dropzone-file-bg);
+  border-radius: var(--dropzone-file-border-radius);
+  font-size: var(--dropzone-file-font-size);
+}
+
+.dropzone-file-name {
+  flex: 1;
+  color: var(--dropzone-file-name-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropzone-file-size {
+  color: var(--dropzone-file-size-color);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dropzone-file-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25em;
+  height: 1.25em;
+  padding: 0;
+  font-size: inherit;
+  line-height: 1;
+  color: var(--dropzone-file-remove-color);
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
+  opacity: 0.7;
+}
+
+.dropzone-file-remove:hover {
+  opacity: 1;
+}
+
+.dropzone-file-remove:focus-visible {
+  outline: 2px solid var(--dropzone-file-remove-color);
+  outline-offset: 2px;
+}
+
+/*
+ * =====================================================
+ * ESTADO DE ERROR
+ * =====================================================
+ */
+
+.dropzone--error {
+  border-color: var(--color-danger, #e63946);
+}
+
+.dropzone--error .dropzone-hint {
+  color: var(--color-danger, #e63946);
+}

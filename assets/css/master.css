@@ -7,6 +7,7 @@
 @import url("/assets/css/utilities/helpers/helpers.css") layer(utilities.helpers);
 @import url("/assets/css/components/drawer/drawer.css") layer(components.drawer);
 @import url("/assets/css/components/dropdown/dropdown.css") layer(components.dropdown);
+@import url("/assets/css/components/dropzone/dropzone.css") layer(components.dropzone);
 @import url("/assets/css/components/navbar/navbar.css") layer(components.navbar);
 @import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
 @import url("/assets/css/components/buttons/btn-group.css") layer(components.buttons);

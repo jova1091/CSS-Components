@@ -11,6 +11,7 @@ const COMPONENT_REGISTRY = {
   chips:        { css: 'components/chips/chips.css',            js: 'components/chips.js' },
   drawer:       { css: 'components/drawer/drawer.css',          js: 'components/drawer.js' },
   dropdown:     { css: 'components/dropdown/dropdown.css',      js: 'components/dropdown.js' },
+  dropzone:     { css: 'components/dropzone/dropzone.css',      js: 'components/dropzone.js' },
   'float-labels': { css: 'components/forms/float-labels.css',   js: 'components/float-labels.js' },
   forms:        { css: 'components/forms/forms.css',            js: null },
   helpers:      { css: 'utilities/helpers/helpers.css',         js: null },

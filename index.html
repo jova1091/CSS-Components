@@ -45,6 +45,7 @@
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="#drawers">Drawer</a></li>
+              <li><a class="dropdown-item" href="#dropzone">Dropzone</a></li>
               <li><a class="dropdown-item" href="#chips-demo">Chips</a></li>
               <li><a class="dropdown-item" href="#rating-demo">Rating</a></li>
               <li><a class="dropdown-item" href="#stepper-demo">Stepper</a></li>
@@ -2587,6 +2588,56 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ============================================================
+    DROPZONE (Subida de Archivos)
+    ============================================================ -->
+    <section id="dropzone" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Dropzone / Subida de Archivos</h2>
+          <p>Zona de arrastrar y soltar archivos con soporte para múltiples archivos, vista previa de lista y
+            eliminación individual. Compatible con teclado y lectores de pantalla.</p>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="dropzone" data-dropzone role="application" aria-label="Zona de subida de archivos">
+            <div class="dropzone-body">
+              <svg class="dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <p class="dropzone-text">Arrastra archivos aquí</p>
+              <p class="dropzone-hint">o haz clic para seleccionar</p>
+            </div>
+            <input type="file" class="dropzone-input" multiple hidden />
+            <ul class="dropzone-files" aria-live="polite"></ul>
+          </div>
+        </div>
+
+        <div class="col-12 mt-4">
+          <h3>Carga declarativa con <code>data-component</code></h3>
+          <p>Este dropzone se carga automáticamente gracias al atributo <code>data-component="dropzone"</code>:</p>
+          <div class="col-12 col-md-8 col-lg-6" style="padding-left: 0;">
+            <div class="dropzone" data-component="dropzone" data-dropzone role="application" aria-label="Subida diferida">
+              <div class="dropzone-body">
+                <svg class="dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="17 8 12 3 7 8"/>
+                  <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                <p class="dropzone-text">Arrastra archivos aquí</p>
+                <p class="dropzone-hint">o haz clic para seleccionar</p>
+              </div>
+              <input type="file" class="dropzone-input" multiple hidden />
+              <ul class="dropzone-files" aria-live="polite"></ul>
+            </div>
+          </div>
+        </div>
+      </article>
     </section>
 
     <!-- ============================================================

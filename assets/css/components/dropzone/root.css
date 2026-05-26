@@ -1,0 +1,34 @@
+:root {
+  /* Área dropzone */
+  --dropzone-padding: 2rem;
+  --dropzone-border-width: 2px;
+  --dropzone-border-style: dashed;
+  --dropzone-border-color: var(--color-border, #1b263b);
+  --dropzone-border-color-hover: var(--color-primary, #1b263b);
+  --dropzone-border-color-dragover: var(--color-primary, #1b263b);
+  --dropzone-bg: transparent;
+  --dropzone-bg-dragover: color-mix(in srgb, var(--color-primary, #1b263b) 5%, transparent);
+  --dropzone-border-radius: 0.5rem;
+
+  /* Icono */
+  --dropzone-icon-size: 2.5rem;
+  --dropzone-icon-color: var(--color-text-muted, #415a77);
+
+  /* Texto */
+  --dropzone-text-color: var(--color-text-muted, #415a77);
+  --dropzone-text-font-size: 0.9rem;
+  --dropzone-hint-font-size: 0.8rem;
+  --dropzone-hint-color: var(--color-text-muted, #415a77);
+
+  /* Elementos de la lista */
+  --dropzone-file-bg: var(--color-surface-subtle, #dedbd2);
+  --dropzone-file-border-radius: 0.375rem;
+  --dropzone-file-padding: 0.5rem 0.75rem;
+  --dropzone-file-font-size: 0.875rem;
+  --dropzone-file-name-color: var(--color-text, #0d1b2a);
+  --dropzone-file-size-color: var(--color-text-muted, #415a77);
+  --dropzone-file-remove-color: var(--color-danger, #e63946);
+
+  /* Transición */
+  --dropzone-transition-speed: 0.2s;
+}
