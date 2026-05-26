@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Components — Formularios</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/pages/forms.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+  <main id="main">
+    <section id="forms" class="container">
+      <article class="row">
+        <div class="col-12">
+          <h2>Formularios</h2>
+          <p>Clases <code>.form-label</code>, <code>.form-control</code> y <code>.form-text</code>.</p>
+        </div>
+        <div class="col-8 offset-2">
+          <form>
+            <div class="mb-4">
+              <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nombre@ejemplo.com" />
+              <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
+            </div>
+            <div class="mb-4">
+              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" />
+            </div>
+            <div class="mb-4">
+              <label for="exampleTextarea" class="form-label">Comentarios</label>
+              <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+            <div class="mb-4">
+              <label for="exampleSelect" class="form-label">Selecciona una opción</label>
+              <select class="form-control" id="exampleSelect">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+                <option value="3">Opción 3</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="formFile" class="form-label">Input de Archivo</label>
+              <input class="form-control" type="file" id="formFile" />
+            </div>
+            <div class="mb-4">
+              <label for="formFileSecondary" class="form-label">Input de Archivo (Estilo Secundario)</label>
+              <input class="form-control btn-secondary" type="file" id="formFileSecondary" />
+            </div>
+            <div class="mb-4">
+              <p class="form-label mb-2">Opciones de Checkbox</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <label class="form-check-label" for="flexCheckDefault">Checkbox por defecto</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                <label class="form-check-label" for="flexCheckChecked">Checkbox marcado</label>
+              </div>
+            </div>
+            <div class="mb-4">
+              <p class="form-label mb-2">Opciones de Radio</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                <label class="form-check-label" for="flexRadioDefault1">Opción de radio 1</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+                <label class="form-check-label" for="flexRadioDefault2">Opción de radio 2 (marcada)</label>
+              </div>
+            </div>
+            <button type="submit" class="btn">Enviar</button>
+            <button type="reset" class="btn btn-secondary">Limpiar</button>
+          </form>
+        </div>
+      </article>
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Estados de Formularios</h2>
+          <p>Ejemplos de campos en estados <code>readonly</code> y <code>disabled</code>.</p>
+        </div>
+        <div class="col-8 offset-2">
+          <form>
+            <div class="mb-4">
+              <label for="readonlyInput" class="form-label">Campo de solo lectura (Readonly)</label>
+              <input type="text" class="form-control" id="readonlyInput" value="Valor de solo lectura" readonly />
+            </div>
+            <div class="mb-4">
+              <label for="disabledInput" class="form-label">Campo deshabilitado (Disabled)</label>
+              <input type="text" class="form-control" id="disabledInput" placeholder="Campo deshabilitado" disabled />
+            </div>
+            <div class="mb-4">
+              <label for="disabledSelect" class="form-label">Select deshabilitado</label>
+              <select id="disabledSelect" class="form-control" disabled>
+                <option>Opción deshabilitada</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="disabledCheckbox" disabled />
+                <label class="form-check-label" for="disabledCheckbox">Checkbox deshabilitado</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="disabledRadio" disabled />
+                <label class="form-check-label" for="disabledRadio">Radio deshabilitado</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </article>
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Validación de Formularios</h2>
+        </div>
+        <div class="col-8 offset-2">
+          <form>
+            <div class="mb-4">
+              <label for="validationValidInput" class="form-label">Campo Válido</label>
+              <input type="text" class="form-control is-valid" id="validationValidInput" value="¡Correcto!" required />
+              <div class="valid-feedback">¡Se ve bien!</div>
+            </div>
+            <div class="mb-4">
+              <label for="validationInvalidInput" class="form-label">Campo Inválido</label>
+              <input type="text" class="form-control is-invalid" id="validationInvalidInput" required />
+              <div class="invalid-feedback">Por favor, proporciona un valor válido.</div>
+            </div>
+            <div class="mb-4">
+              <label for="validationInvalidSelect" class="form-label">Select Inválido</label>
+              <select class="form-control is-invalid" id="validationInvalidSelect" required>
+                <option selected disabled value="">Elegir...</option>
+                <option>Opción 1</option>
+              </select>
+              <div class="invalid-feedback">Por favor, selecciona una opción válida.</div>
+            </div>
+            <div class="form-check is-invalid mb-4">
+              <input type="checkbox" class="form-check-input is-invalid" id="invalidCheck" required />
+              <label class="form-check-label" for="invalidCheck">Acepta los términos</label>
+              <div class="invalid-feedback">Debes aceptar antes de enviar.</div>
+            </div>
+            <div class="mb-4">
+              <label for="validationWarningInput" class="form-label">Campo con Advertencia</label>
+              <input type="text" class="form-control is-warning" id="validationWarningInput" value="Contraseña débil" required />
+              <div class="warning-feedback">La contraseña debería tener más de 8 caracteres.</div>
+            </div>
+          </form>
+        </div>
+      </article>
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Etiquetas Flotantes (Floating Labels)</h2>
+        </div>
+        <div class="col-8 offset-2">
+          <form id="floating-labels-demo">
+            <div class="form-float">
+              <input type="text" class="form-control" id="floatName" placeholder=" " required />
+              <label for="floatName">Nombre completo</label>
+            </div>
+            <div class="form-float">
+              <input type="email" class="form-control" id="floatEmail" placeholder=" " required />
+              <label for="floatEmail">Dirección de correo electrónico</label>
+            </div>
+            <div class="form-float">
+              <textarea class="form-control" id="floatMessage" placeholder=" " rows="3" required></textarea>
+              <label for="floatMessage">Mensaje o comentarios</label>
+            </div>
+          </form>
+        </div>
+      </article>
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Interruptores y Micro-interacciones</h2>
+        </div>
+        <div class="col-8 offset-2">
+          <div class="mb-4">
+            <p class="form-label mb-2">Interruptores (Switches)</p>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchDefault" />
+              <label class="form-check-label" for="switchDefault">Interruptor por defecto</label>
+            </div>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchChecked" checked />
+              <label class="form-check-label" for="switchChecked">Interruptor activado</label>
+            </div>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchDisabled" disabled />
+              <label class="form-check-label" for="switchDisabled">Interruptor deshabilitado</label>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p class="form-label mb-2">Demostración de sacudida ante error (Shake Animation)</p>
+              <div class="d-flex align-items-center gap-2">
+              <input type="text" class="form-control form-control-sm" id="shakeDemoInput" placeholder="Haz clic en Probar ->" />
+              <button type="button" id="btn-trigger-shake" class="btn btn-danger">Probar Shake</button>
+            </div>
+            <div class="form-text">Al hacer clic, el campo se marca como inválido y se sacude.</div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module">
+    import injectNav, { injectFooter } from "/assets/js/nav-injector.js";
+    await injectNav();
+    await injectFooter();
+    const mod = await import("/assets/js/pages/forms.js");
+    // Bind shake demo
+    const btnTriggerShake = document.getElementById("btn-trigger-shake");
+    const shakeDemoInput = document.getElementById("shakeDemoInput");
+    if (btnTriggerShake && shakeDemoInput) {
+      btnTriggerShake.addEventListener("click", () => {
+        shakeDemoInput.classList.remove("is-invalid");
+        void shakeDemoInput.offsetWidth;
+        shakeDemoInput.classList.add("is-invalid");
+        setTimeout(() => { shakeDemoInput.classList.remove("is-invalid"); }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

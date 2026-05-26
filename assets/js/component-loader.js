@@ -63,6 +63,10 @@ export class ComponentLoader {
 
   static startObserver() {
     if (observer) return;
+    // Scan existing [data-component] elements
+    document.querySelectorAll('[data-component]').forEach((el) => {
+      this.load(el.getAttribute('data-component'), el);
+    });
     observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {

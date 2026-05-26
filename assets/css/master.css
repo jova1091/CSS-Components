@@ -5,38 +5,34 @@
 @import url("/assets/css/base/images/images.css") layer(base.images);
 @import url("/assets/css/utilities/spacers/spacers.css") layer(utilities.spacers);
 @import url("/assets/css/utilities/helpers/helpers.css") layer(utilities.helpers);
-@import url("/assets/css/components/drawer/drawer.css") layer(components.drawer);
-@import url("/assets/css/components/dropdown/dropdown.css") layer(components.dropdown);
-@import url("/assets/css/components/dropzone/dropzone.css") layer(components.dropzone);
-@import url("/assets/css/components/navbar/navbar.css") layer(components.navbar);
-@import url("/assets/css/components/buttons/buttons.css") layer(components.buttons);
-@import url("/assets/css/components/buttons/btn-group.css") layer(components.buttons);
-@import url("/assets/css/components/forms/forms.css") layer(components.forms);
-@import url("/assets/css/components/forms/float-labels.css") layer(components.forms);
-@import url("/assets/css/components/cards/cards.css") layer(components.cards);
-@import url("/assets/css/components/chips/chips.css") layer(components.chips);
-@import url("/assets/css/components/breadcrumb/breadcrumb.css") layer(components.breadcrumb);
-@import url("/assets/css/components/alerts/alerts.css") layer(components.alerts);
-@import url("/assets/css/components/avatar/avatar.css") layer(components.avatar);
-@import url("/assets/css/components/badges/badges.css") layer(components.badges);
-@import url("/assets/css/components/accordion/accordion.css") layer(components.accordion);
-@import url("/assets/css/components/tabs/tabs.css") layer(components.tabs);
-@import url("/assets/css/components/modal/modal.css") layer(components.modal);
-@import url("/assets/css/components/toasts/toasts.css") layer(components.toasts);
-@import url("/assets/css/components/skeletons/skeletons.css") layer(components.skeletons);
-@import url("/assets/css/components/stepper/stepper.css") layer(components.stepper);
-@import url("/assets/css/components/tooltips/tooltips.css") layer(components.tooltips);
-@import url("/assets/css/components/progress/progress.css") layer(components.progress);
-@import url("/assets/css/components/rating/rating.css") layer(components.rating);
-@import url("/assets/css/components/spinners/spinners.css") layer(components.spinners);
-@import url("/assets/css/components/pagination/pagination.css") layer(components.pagination);
-@import url("/assets/css/components/popovers/popovers.css") layer(components.popovers);
-@import url("/assets/css/components/list-groups/list-groups.css") layer(components.listGroups);
-@import url("/assets/css/components/carousel/carousel.css") layer(components.carousel);
-@import url("/assets/css/components/tables/tables.css") layer(components.tables);
-@import url("/assets/css/components/timeline/timeline.css") layer(components.timeline);
 
+/* Global navigation infrastructure — needed on every page */
+@import url("/assets/css/components/navbar/navbar.css") layer(components);
+@import url("/assets/css/components/dropdown/dropdown.css") layer(components);
+@import url("/assets/css/components/buttons/buttons.css") layer(components);
+@import url("/assets/css/components/alerts/alerts.css") layer(components);
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: var(--vt-fade-out, fade-out 0.2s ease);
+}
+
+::view-transition-new(root) {
+  animation: var(--vt-fade-in, fade-in 0.3s ease);
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 /*
  * =================================================================================
@@ -246,6 +242,57 @@ html[data-theme="dark"] {
 .display-1 {
   --display-padding-bottom: var(--spacer-3); /* Corresponde a min(1em, 3%) */
   --display-border-bottom: 1px solid var(--border-color);
+}
+
+/*
+ * =================================================================================
+ * SUBNAV (Categorías de Componentes)
+ * =================================================================================
+ */
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-surface-subtle);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: var(--navbar-sticky-top, 0);
+  z-index: 1020;
+}
+
+.subnav a {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.subnav a:hover,
+.subnav a:focus {
+  background-color: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+.subnav a[aria-current="page"] {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+html[data-theme="dark"] .subnav a[aria-current="page"] {
+  background-color: var(--palette-dark-primary);
+  color: var(--palette-dark-surface);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .subnav a[aria-current="page"] {
+    background-color: var(--palette-dark-primary);
+    color: var(--palette-dark-surface);
+  }
 }
 
 /* 

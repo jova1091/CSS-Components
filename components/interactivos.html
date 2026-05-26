@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Components — Interactivos</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/pages/interactivos.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+  <main id="main">
+    <section id="rating-demo" class="container">
+      <article class="row">
+        <div class="col-12">
+          <h2>Rating (Estrellas)</h2>
+          <p>Valoración interactiva con estrellas. Soporta teclado, hover preview y modo solo lectura.</p>
+        </div>
+        <div class="col-12">
+          <h3>Interactivo</h3>
+          <div class="rating mb-2" role="radiogroup" aria-label="Valoración">
+            <span class="rating-star" data-value="1" role="radio" aria-label="1 estrella" aria-checked="false" tabindex="0">&#9734;</span>
+            <span class="rating-star" data-value="2" role="radio" aria-label="2 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+            <span class="rating-star" data-value="3" role="radio" aria-label="3 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+            <span class="rating-star" data-value="4" role="radio" aria-label="4 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+            <span class="rating-star" data-value="5" role="radio" aria-label="5 estrellas" aria-checked="false" tabindex="-1">&#9734;</span>
+          </div>
+          <p class="text-muted text-sm">Haz clic para valorar. Usa flechas izquierda/derecha.</p>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Solo lectura</h3>
+          <div class="rating rating--readonly" aria-label="Valoración: 4 de 5 estrellas">
+            <span class="rating-star rating-star--filled" data-value="1">&#9733;</span>
+            <span class="rating-star rating-star--filled" data-value="2">&#9733;</span>
+            <span class="rating-star rating-star--filled" data-value="3">&#9733;</span>
+            <span class="rating-star rating-star--filled" data-value="4">&#9733;</span>
+            <span class="rating-star" data-value="5">&#9734;</span>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Tamaños</h3>
+          <div class="d-flex align-items-center gap-4">
+<div class="rating rating--sm mb-2" aria-label="Pequeño">
+          </div>
+          <div class="rating mb-2" aria-label="Mediano">
+          </div>
+          <div class="rating rating--lg mb-2" aria-label="Grande">
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star rating-star--filled">&#9733;</span>
+              <span class="rating-star">&#9734;</span>
+              <span class="rating-star">&#9734;</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="stepper-demo" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Stepper (Pasos)</h2>
+          <p>Indicador de progreso multi-paso con navegación por clic y contenido intercambiable.</p>
+        </div>
+        <div class="col-12">
+          <h3>Horizontal</h3>
+          <div class="stepper" id="stepperHorizontal" data-step="1">
+            <div class="step" data-step="1">
+              <div class="step-indicator">1</div>
+              <div class="step-body">
+                <div class="step-title">Carrito</div>
+                <div class="step-description">Revisar productos</div>
+              </div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="step-indicator">2</div>
+              <div class="step-body">
+                <div class="step-title">Envío</div>
+                <div class="step-description">Dirección y método</div>
+              </div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-indicator">3</div>
+              <div class="step-body">
+                <div class="step-title">Pago</div>
+                <div class="step-description">Confirmar pago</div>
+              </div>
+            </div>
+            <div class="step" data-step="4">
+              <div class="step-indicator">4</div>
+              <div class="step-body">
+                <div class="step-title">Confirmación</div>
+                <div class="step-description">Pedido completado</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <div class="step-panel" data-step="1"><p><strong>Carrito:</strong> 3 productos por $45.990</p></div>
+            <div class="step-panel" data-step="2"><p><strong>Envío:</strong> Av. Siempre Viva 742, Santiago. Estándar (3-5 días).</p></div>
+            <div class="step-panel" data-step="3"><p><strong>Pago:</strong> Tarjeta terminada en 4242. Total: $49.490.</p></div>
+            <div class="step-panel" data-step="4"><p><strong>¡Pedido confirmado!</strong> Recibirás un correo.</p></div>
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <h3>Vertical</h3>
+          <div class="stepper stepper--vertical" id="stepperVertical" data-step="1">
+            <div class="step" data-step="1">
+              <div class="step-indicator">1</div>
+              <div class="step-body">
+                <div class="step-title">Registro</div>
+                <div class="step-description">Crear cuenta</div>
+              </div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="step-indicator">2</div>
+              <div class="step-body">
+                <div class="step-title">Verificación</div>
+                <div class="step-description">Confirmar email</div>
+              </div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-indicator">3</div>
+              <div class="step-body">
+                <div class="step-title">Perfil</div>
+                <div class="step-description">Completar datos</div>
+              </div>
+            </div>
+            <div class="step" data-step="4">
+              <div class="step-indicator">4</div>
+              <div class="step-body">
+                <div class="step-title">Listo</div>
+                <div class="step-description">Comenzar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <h3>Estados</h3>
+          <div class="stepper" id="stepperStates">
+            <div class="step step--completed" data-step="1">
+              <div class="step-indicator">✓</div>
+              <div class="step-body"><div class="step-title">Completado</div></div>
+            </div>
+            <div class="step step--active" data-step="2">
+              <div class="step-indicator">2</div>
+              <div class="step-body"><div class="step-title">Activo</div></div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-indicator">3</div>
+              <div class="step-body"><div class="step-title">Pendiente</div></div>
+            </div>
+            <div class="step step--error" data-step="4">
+              <div class="step-indicator">!</div>
+              <div class="step-body"><div class="step-title">Error</div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="dropzone" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Dropzone / Subida de Archivos</h2>
+          <p>Zona de arrastrar y soltar archivos con soporte para múltiples archivos, vista previa de lista y eliminación individual.</p>
+        </div>
+        <div class="col-8">
+          <div class="dropzone" data-dropzone role="application" aria-label="Zona de subida de archivos">
+            <div class="dropzone-body">
+              <svg class="dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <p class="dropzone-text">Arrastra archivos aquí</p>
+              <p class="dropzone-hint">o haz clic para seleccionar</p>
+            </div>
+            <input type="file" class="dropzone-input" multiple hidden />
+            <ul class="dropzone-files" aria-live="polite"></ul>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Carga declarativa con <code>data-component</code></h3>
+          <div class="col-8 pl-0">
+            <div class="dropzone" data-component="dropzone" data-dropzone role="application" aria-label="Subida diferida">
+              <div class="dropzone-body">
+                <svg class="dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="17 8 12 3 7 8"/>
+                  <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                <p class="dropzone-text">Arrastra archivos aquí</p>
+                <p class="dropzone-hint">o haz clic para seleccionar</p>
+              </div>
+              <input type="file" class="dropzone-input" multiple hidden />
+              <ul class="dropzone-files" aria-live="polite"></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module">
+    import injectNav, { injectFooter } from "/assets/js/nav-injector.js";
+    await injectNav();
+    await injectFooter();
+    import("/assets/js/pages/interactivos.js");
+  </script>
+</body>
+</html>

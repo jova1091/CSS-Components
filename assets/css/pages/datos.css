@@ -1,0 +1,7 @@
+@import url("/assets/css/master.css") layer(base);
+@import url("/assets/css/components/tables/tables.css") layer(components);
+@import url("/assets/css/components/list-groups/list-groups.css") layer(components);
+@import url("/assets/css/components/badges/badges.css") layer(components);
+@import url("/assets/css/components/avatar/avatar.css") layer(components);
+@import url("/assets/css/components/timeline/timeline.css") layer(components);
+@import url("/assets/css/components/chips/chips.css") layer(components);

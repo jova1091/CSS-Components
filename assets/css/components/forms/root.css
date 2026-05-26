@@ -22,6 +22,17 @@
   --form-control-webkit-appearance: none;
   --form-control-appearance: none;
 
+  /* Size Variants */
+  --form-control-sm-padding-y: 0.25rem;
+  --form-control-sm-padding-x: 0.5rem;
+  --form-control-sm-font-size: 0.8125rem;
+  --form-control-sm-line-height: 1.5;
+
+  --form-control-lg-padding-y: 0.5rem;
+  --form-control-lg-padding-x: 1rem;
+  --form-control-lg-font-size: 1.125rem;
+  --form-control-lg-line-height: 1.5;
+
   --form-control-border-top-width: 1px;
   --form-control-border-right-width: 1px;
   --form-control-border-bottom-width: 1px;

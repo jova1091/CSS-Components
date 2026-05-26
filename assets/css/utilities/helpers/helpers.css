@@ -16,16 +16,47 @@
   display: flex !important;
 }
 
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+.justify-content-center {
+  justify-content: center !important;
+}
+.justify-content-end {
+  justify-content: flex-end !important;
+}
 .justify-content-between {
   justify-content: space-between !important;
 }
+.justify-content-around {
+  justify-content: space-around !important;
+}
+.justify-content-evenly {
+  justify-content: space-evenly !important;
+}
 
+.align-items-start {
+  align-items: flex-start;
+}
 .align-items-center {
   align-items: center;
 }
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
 
-.align-items-flex-start {
-  align-items: flex-start;
+/* Flex Wrap */
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+.flex-nowrap {
+  flex-wrap: nowrap !important;
 }
 
 .text-right {
@@ -80,6 +111,26 @@
 
 .flex-grow-1 {
   flex-grow: 1 !important;
+}
+
+/* Gap Utilities (Flex & Grid) */
+.gap-0 {
+  gap: var(--spacer-0) !important;
+}
+.gap-1 {
+  gap: var(--spacer-1) !important;
+}
+.gap-2 {
+  gap: var(--spacer-2) !important;
+}
+.gap-3 {
+  gap: var(--spacer-3) !important;
+}
+.gap-4 {
+  gap: var(--spacer-4) !important;
+}
+.gap-5 {
+  gap: var(--spacer-5) !important;
 }
 
 /* Display Utilities */
@@ -179,9 +230,61 @@
   text-transform: capitalize !important;
 }
 
+/* Text Size */
+.text-xs {
+  font-size: var(--text-xs-font-size) !important;
+}
+.text-sm {
+  font-size: var(--text-sm-font-size) !important;
+}
+.text-lg {
+  font-size: var(--text-lg-font-size) !important;
+}
+.text-xl {
+  font-size: var(--text-xl-font-size) !important;
+}
+
 /* Text Truncation (Single Line with Ellipsis) */
 .text-truncate {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
+}
+
+.text-truncate-sm {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  max-width: 300px;
+}
+
+.text-truncate-md {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  max-width: 500px;
+}
+
+.text-truncate-lg {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  max-width: 700px;
+}
+
+/* Hero Section Padding */
+.hero-section {
+  padding-top: 4rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Navbar Demo (showcase backgrounds) */
+.navbar-demo {
+  background-color: var(--color-surface-muted) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+/* SVG Placeholder Background */
+.svg-placeholder {
+  background-color: var(--color-surface-muted);
 }

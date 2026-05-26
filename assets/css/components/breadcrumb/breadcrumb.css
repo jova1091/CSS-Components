@@ -31,3 +31,7 @@
   cursor: var(--breadcrumb-active-cursor);
   text-decoration: var(--breadcrumb-active-text-decoration);
 }
+
+.breadcrumb-divider-arrow {
+  --breadcrumb-divider: ">";
+}

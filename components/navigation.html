@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Components — Navegación</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/pages/navigation.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+  <main id="main">
+    <section id="navbar-docs" class="container">
+      <article class="row">
+        <div class="col-12">
+          <h2>Navbar Documentation</h2>
+          <p>El componente Navbar es responsive y soporta navegación móvil tipo Offcanvas (Sidebar). El comportamiento 'sticky' se activa con la clase <code>.navbar-sticky</code>.</p>
+          <div class="alert alert-info">
+            <strong>Nota:</strong> Los siguientes ejemplos son estáticos para demostración. El Navbar principal del sitio está fijado arriba (Sticky).
+          </div>
+          <h4 class="mt-4">1. Alineación a la Izquierda (Start)</h4>
+          <p>Clase: <code>.navbar-nav-start</code>.</p>
+          <nav class="navbar navbar-demo mb-3 rounded">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-start flex-row">
+                  <li><a class="nav-link" href="#">Link 1</a></li>
+                  <li><a class="nav-link" href="#">Link 2</a></li>
+                </ul>
+                <button class="btn btn-sm btn-primary ml-auto">Action</button>
+              </div>
+            </div>
+          </nav>
+          <h4 class="mt-4">2. Alineación al Centro (Center)</h4>
+          <p>Clase: <code>.navbar-nav-center</code>.</p>
+          <nav class="navbar navbar-demo mb-3 rounded">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-center flex-row">
+                  <li><a class="nav-link" href="#">Link 1</a></li>
+                  <li><a class="nav-link" href="#">Link 2</a></li>
+                </ul>
+                <button class="btn btn-sm btn-primary">Action</button>
+              </div>
+            </div>
+          </nav>
+          <h4 class="mt-4">3. Alineación a la Derecha (End)</h4>
+          <p>Clase: <code>.navbar-nav-end</code>.</p>
+          <nav class="navbar navbar-demo mb-3 rounded">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-end flex-row">
+                  <li><a class="nav-link" href="#">Link 1</a></li>
+                  <li><a class="nav-link" href="#">Link 2</a></li>
+                </ul>
+                <button class="btn btn-sm btn-primary ml-3">Action</button>
+              </div>
+            </div>
+          </nav>
+          <h4 class="mt-4">4. Brand Centrado (Absolute)</h4>
+          <nav class="navbar navbar-demo mb-3 rounded">
+            <div class="container-full position-relative">
+              <a class="navbar-brand navbar-brand-center" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-start flex-row">
+                  <li><a class="nav-link" href="#">Left Link</a></li>
+                </ul>
+                <button class="btn btn-sm btn-primary ml-auto">Right Action</button>
+              </div>
+            </div>
+          </nav>
+          <h4 class="mt-4">5. Offcanvas Siempre Visible (Always Offcanvas)</h4>
+          <p>Clase: <code>.navbar-offcanvas-always</code>.</p>
+          <nav class="navbar navbar-offcanvas-always navbar-demo mb-3 rounded">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </nav>
+          <h4 class="mt-4">6. Brand con Imagen</h4>
+          <nav class="navbar navbar-demo mb-3 rounded">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">
+                <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='30' height='30'%3e%3ccircle cx='15' cy='15' r='15' fill='%778da9'/%3e%3c/svg%3e" alt="Logo">
+              </a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-demo mb-3 rounded">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">
+                <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='30' height='30'%3e%3ccircle cx='15' cy='15' r='15' fill='%778da9'/%3e%3c/svg%3e" alt="Logo">
+                Imagen + Texto
+              </a>
+            </div>
+          </nav>
+          <h4 class="mt-4">7. Navbar con Dropdown</h4>
+          <nav class="navbar navbar-demo mb-3 rounded">
+            <div class="container-full">
+              <a class="navbar-brand" href="#">Brand</a>
+              <div class="d-none d-md-flex align-items-center flex-grow-1">
+                <ul class="navbar-nav navbar-nav-start flex-row">
+                  <li><a class="nav-link" href="#">Link 1</a></li>
+                  <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </section>
+
+    <section id="dropdowns" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Dropdowns</h2>
+          <p>Menús desplegables contextuales para mostrar listas de enlaces y más.</p>
+        </div>
+        <div class="col-12">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+              Dropdown Button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Acción</a></li>
+              <li><a class="dropdown-item" href="#">Otra acción</a></li>
+              <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+            </ul>
+          </div>
+          <div class="dropdown ml-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+              Otro Dropdown
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Item 1</a></li>
+              <li><a class="dropdown-item" href="#">Item 2</a></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="breadcrumbs" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Breadcrumbs</h2>
+          <p>Indica la ubicación de la página actual dentro de una jerarquía de navegación.</p>
+        </div>
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Biblioteca</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Datos</li>
+            </ol>
+          </nav>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-divider-arrow">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Biblioteca</li>
+            </ol>
+          </nav>
+        </div>
+      </article>
+    </section>
+
+    <section id="pagination" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Paginación Accesible</h2>
+          <p>Navegación entre páginas con estados interactivos, activos y deshabilitados.</p>
+          <div class="my-4">
+            <nav aria-label="Navegación de artículos">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Siguiente</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module">
+    import injectNav, { injectFooter } from "/assets/js/nav-injector.js";
+    await injectNav();
+    await injectFooter();
+    import("/assets/js/pages/navigation.js");
+  </script>
+</body>
+</html>

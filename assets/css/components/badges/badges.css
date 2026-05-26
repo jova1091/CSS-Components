@@ -23,6 +23,12 @@
   display: var(--badge-empty-display);
 }
 
+.badge-sm {
+  font-size: var(--badge-sm-font-size);
+  padding: var(--badge-sm-padding-y) var(--badge-sm-padding-x);
+  border-width: var(--badge-sm-border-width);
+}
+
 /* Badges inside headings */
 h1 .badge,
 h2 .badge,

@@ -20,4 +20,10 @@
   --skip-link-bg: var(--color-primary, #1b263b);
   --skip-link-border-radius: 0.25rem;
   --skip-link-focus-top: 1rem;
+
+  /* Text size utilities */
+  --text-xs-font-size: 0.75rem;
+  --text-sm-font-size: 0.875rem;
+  --text-lg-font-size: 1.25rem;
+  --text-xl-font-size: 1.5rem;
 }

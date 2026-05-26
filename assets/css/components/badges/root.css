@@ -37,4 +37,10 @@
   --badge-empty-display: none;
   --badge-btn-position: relative;
   --badge-btn-top-offset: -1px;
+
+  /* Badge SM */
+  --badge-sm-font-size: 0.75rem;
+  --badge-sm-padding-y: 0.2em;
+  --badge-sm-padding-x: 0.5em;
+  --badge-sm-border-width: 0;
 }

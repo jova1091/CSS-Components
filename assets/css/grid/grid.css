@@ -18,6 +18,15 @@
   padding: 0 var(--grid-col-x-gap);
 }
 
+.container-sm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-col-y-gap);
+  max-width: var(--grid-container-sm-max-width);
+  margin: var(--grid-container-margin);
+  padding: 0 var(--grid-col-x-gap);
+}
+
 .row {
   display: grid;
   grid-template-columns: repeat(var(--grid-cols), 1fr);

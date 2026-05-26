@@ -1,0 +1,3 @@
+@import url("/assets/css/master.css") layer(base);
+@import url("/assets/css/components/breadcrumb/breadcrumb.css") layer(components);
+@import url("/assets/css/components/pagination/pagination.css") layer(components);

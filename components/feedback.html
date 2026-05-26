@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Components — Feedback</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/pages/feedback.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+  <main id="main">
+    <section id="alerts" class="container">
+      <article class="row">
+        <div class="col-12">
+          <h2>Alertas</h2>
+          <p>Mensajes de retroalimentación contextual para acciones típicas del usuario.</p>
+        </div>
+        <div class="col-12">
+          <div class="alert alert-primary" role="alert">
+            Una alerta primaria simple con <a href="#" class="alert-link">un enlace de ejemplo</a>.
+          </div>
+          <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">¡Bien hecho!</h4>
+            <p>Aww sí, has leído con éxito este importante mensaje de alerta.</p>
+            <hr>
+            <p class="mb-0">Siempre que lo necesites, asegúrate de usar utilidades de margen.</p>
+          </div>
+          <div class="alert alert-danger" role="alert">Una alerta de peligro simple: ¡cuidado!</div>
+          <div class="alert alert-warning" role="alert">Una alerta de advertencia simple: revisa esto.</div>
+          <input type="checkbox" id="alert-dismiss-example" class="alert-checkbox">
+          <div class="alert alert-info alert-dismissible" role="alert">
+            <strong>¡Info!</strong> Esta alerta se puede cerrar haciendo clic en la X, sin usar JavaScript.
+            <label for="alert-dismiss-example" class="btn-close" aria-label="Cerrar"></label>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="toasts" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Toasts (Notificaciones dinámicas)</h2>
+          <p>El componente Toast permite lanzar notificaciones flotantes temporales y accesibles en la esquina superior derecha. Admite cuatro variantes visuales:</p>
+          <div class="my-3">
+            <button id="btn-toast-success" class="btn btn-success">Lanzar Éxito</button>
+            <button id="btn-toast-info" class="btn btn-info">Lanzar Info</button>
+            <button id="btn-toast-warning" class="btn btn-warning">Lanzar Advertencia</button>
+            <button id="btn-toast-danger" class="btn btn-danger">Lanzar Error</button>
+          </div>
+          <pre><code>import Toasts from "./components/toasts.js";
+Toasts.show("Notificación", "Operación completada con éxito.", "success", 4000);</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!--
+      NOTA: Las barras de progreso (progress-bar) usan style="width: X%" inline
+      porque cada instancia representa un valor diferente. Estas son intrínsecas
+      al componente y no se pueden reemplazar con clases. Si se desea, se puede
+      agregar un data-attribute o variable CSS --progress-width en el componente.
+
+      Los skeletons usan style="width/heights" variados para simular contenido real.
+      Se podrían tipificar con clases .skeleton-w-25, .skeleton-h-sm, etc.
+    -->
+    <section id="spinners" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Spinners (Cargadores de Espera)</h2>
+          <p>Elementos de carga giratorios y pulsantes de alto rendimiento.</p>
+          <div class="my-4">
+            <h4 class="mb-2">Spinner Border (Giratorio)</h4>
+            <div class="d-flex align-items-center flex-wrap gap-3">
+              <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-secondary" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-success" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-danger" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-border text-info" role="status"><span class="visually-hidden">Cargando...</span></div>
+            </div>
+          </div>
+          <div class="my-4">
+            <h4 class="mb-2">Spinner Grow (Pulsante)</h4>
+            <div class="d-flex align-items-center flex-wrap gap-3">
+              <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-secondary" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-success" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-danger" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-warning" role="status"><span class="visually-hidden">Cargando...</span></div>
+              <div class="spinner-grow text-info" role="status"><span class="visually-hidden">Cargando...</span></div>
+            </div>
+          </div>
+          <div class="my-4">
+            <h4 class="mb-2">Tamaños y Uso</h4>
+            <div class="d-flex align-items-center flex-wrap gap-4">
+              <div class="spinner-border spinner-sm text-primary" role="status"></div>
+              <div class="spinner-border text-primary" role="status"></div>
+              <div class="spinner-border spinner-lg text-primary" role="status"></div>
+                <button class="btn btn-primary d-flex align-items-center gap-2" disabled>
+                <div class="spinner-border spinner-sm" role="status"></div>
+                Cargando datos...
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="progress" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Barras de Progreso</h2>
+          <p>Muestra el progreso de una tarea con etiquetas internas, variantes de color y rayas animadas.</p>
+          <div class="my-4">
+            <h4 class="mb-2">Básica y Alturas</h4>
+            <div class="progress mb-3">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress mb-3" style="height: 0.5rem;">
+              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress mb-3" style="height: 1.5rem;">
+              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% Completado</div>
+            </div>
+          </div>
+          <div class="my-4">
+            <h4 class="mb-2">Variantes Semánticas</h4>
+            <div class="progress mb-2"><div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Éxito (40%)</div></div>
+            <div class="progress mb-2"><div class="progress-bar bg-info" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">Información (60%)</div></div>
+            <div class="progress mb-2"><div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Advertencia (80%)</div></div>
+            <div class="progress mb-2"><div class="progress-bar bg-danger" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Error (90%)</div></div>
+          </div>
+          <div class="my-4">
+            <h4 class="mb-2">Rayas y Animación</h4>
+            <div class="progress mb-2"><div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>
+            <div class="progress mb-2"><div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Procesando...</div></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="skeletons" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Skeleton Loaders</h2>
+          <p>Simulan la estructura del contenido mientras se carga de forma asíncrona. Incluyen animación de brillo ("shimmer").</p>
+          <div class="row my-4">
+            <div class="col-4 mb-4">
+              <div class="card p-3">
+                <div class="skeleton skeleton-rect mb-3" style="height: 180px;"></div>
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text" style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="col-4 mb-4">
+              <div class="card p-3">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="skeleton skeleton-avatar mr-3"></div>
+                  <div class="flex-grow-1">
+                    <div class="skeleton skeleton-title" style="width: 80%; margin-bottom: 8px;"></div>
+                    <div class="skeleton skeleton-text" style="width: 50%;"></div>
+                  </div>
+                </div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text"></div>
+              </div>
+            </div>
+            <div class="col-4 mb-4">
+              <div class="card p-3">
+                <div class="skeleton skeleton-title" style="width: 40%; margin-bottom: 20px;"></div>
+                <div class="border-bottom pb-2 mb-2 d-flex justify-content-between">
+                  <div class="skeleton skeleton-text" style="width: 30%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 20%;"></div>
+                </div>
+                <div class="border-bottom pb-2 mb-2 d-flex justify-content-between">
+                  <div class="skeleton skeleton-text" style="width: 40%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 15%;"></div>
+                </div>
+                <div class="border-bottom pb-2 mb-2 d-flex justify-content-between">
+                  <div class="skeleton skeleton-text" style="width: 35%;"></div>
+                  <div class="skeleton skeleton-text" style="width: 25%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="tooltips" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Tooltips Dinámicos</h2>
+          <p>Muestra información descriptiva al pasar el cursor o al enfocar elementos con el teclado. Soporta posicionamiento dinámico automático.</p>
+          <div class="my-3 button-showcase">
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Mensaje en la parte superior">Tooltip Arriba</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Mensaje en la parte inferior">Tooltip Abajo</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Mensaje a la izquierda">Tooltip Izquierda</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Mensaje a la derecha">Tooltip Derecha</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="popovers" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Popovers Interactivos</h2>
+          <p>Muestra contenedores de información enriquecida (título y cuerpo) al hacer clic. Soporta posicionamiento inteligente en las cuatro direcciones.</p>
+          <div class="my-3 button-showcase">
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="top" data-title="Popover Superior" data-content="Popover posicionado en la parte superior.">Popover Arriba</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="bottom" data-title="Popover Inferior" data-content="Descripciones más largas que ayudan al usuario.">Popover Abajo</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="left" data-title="Popover Izquierdo" data-content="Aparece alineado al lado izquierdo.">Popover Izquierda</button>
+            <button class="btn btn-secondary" data-toggle="popover" data-placement="right" data-title="Popover Derecho" data-content="Ayuda contextual sin obstruir el contenido principal.">Popover Derecha</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module">
+    import injectNav, { injectFooter } from "/assets/js/nav-injector.js";
+    await injectNav();
+    await injectFooter();
+    await import("/assets/js/pages/feedback.js");
+
+    const { Toasts } = await import("/assets/js/components/toasts.js");
+    const bind = (id, title, msg, type) =>
+      document.getElementById(id)?.addEventListener("click", () => Toasts.show(title, msg, type));
+    bind("btn-toast-success", "Éxito", "Operación completada correctamente.", "success");
+    bind("btn-toast-info", "Información", "Este es un mensaje informativo.", "info");
+    bind("btn-toast-warning", "Advertencia", "Revise los datos ingresados.", "warning");
+    bind("btn-toast-danger", "Error", "No se pudo completar la operación.", "danger");
+  </script>
+</body>
+</html>

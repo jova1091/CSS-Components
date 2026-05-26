@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Components — Datos</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/pages/datos.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+  <main id="main">
+    <section id="tables" class="container">
+      <header class="row">
+        <div class="col-12">
+          <h2>Tablas Parametrizadas</h2>
+          <p>Sistema de tablas moderno, accesible y configurable vía variables CSS locales. Admite rayas, hover, bordes, tamaños compactos y variantes semánticas.</p>
+        </div>
+      </header>
+      <article class="row">
+        <div class="col-6">
+          <h3>Estándar (Rayas y Hover)</h3>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <caption>Lista de transacciones recientes</caption>
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Usuario</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Monto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">1</th><td>Adrian Vega</td><td>Completado</td><td>$120.00 USD</td></tr>
+                <tr><th scope="row">2</th><td>Valeria Gomez</td><td>Pendiente</td><td>$45.50 USD</td></tr>
+                <tr><th scope="row">3</th><td>David Ruiz</td><td>Cancelado</td><td>$0.00 USD</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-6">
+          <h3>Compacta y Bordeadas</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Proyecto</th>
+                  <th scope="col">Progreso</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-success"><th scope="row">PRJ-01</th><td>Componentes CSS</td><td>100%</td></tr>
+                <tr class="table-warning"><th scope="row">PRJ-02</th><td>Tablas Refactor</td><td>85%</td></tr>
+                <tr class="table-danger"><th scope="row">PRJ-03</th><td>Framework JS</td><td>10%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <article class="row">
+        <div class="col-12">
+          <h3>Variantes de Color Semánticos</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Clase</th>
+                  <th scope="col">Ejemplo</th>
+                  <th scope="col">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-primary"><th scope="row">.table-primary</th><td>Fondo Primary</td><td>Texto con contraste adaptado</td></tr>
+                <tr class="table-secondary"><th scope="row">.table-secondary</th><td>Fondo Secondary</td><td>Tema neutro</td></tr>
+                <tr class="table-success"><th scope="row">.table-success</th><td>Fondo Success</td><td>Completado exitosamente</td></tr>
+                <tr class="table-info"><th scope="row">.table-info</th><td>Fondo Info</td><td>Detalles informativos</td></tr>
+                <tr class="table-warning"><th scope="row">.table-warning</th><td>Fondo Warning</td><td>Advertencia</td></tr>
+                <tr class="table-danger"><th scope="row">.table-danger</th><td>Fondo Danger</td><td>Error crítico</td></tr>
+                <tr class="table-dark"><th scope="row">.table-dark</th><td>Fondo Dark</td><td>Diseño oscuro</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="list-groups" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>List Groups</h2>
+          <p>Series de contenido organizado. Soporta elementos interactivos, estados y badges.</p>
+          <div class="row my-4">
+            <div class="col-6 mb-4">
+              <h4>Básico e Interactivo</h4>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">
+                  Elemento Activo <span class="badge badge-sm bg-secondary">Nuevo</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  Elemento Estándar <span class="badge badge-sm bg-info">Info</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">Elemento sin badge</a>
+                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Deshabilitado</a>
+              </div>
+            </div>
+            <div class="col-6 mb-4">
+              <h4>Contenido Complejo</h4>
+              <div class="list-group">
+                <div class="list-group-item">
+                  <div class="list-group-item-content">
+                    <h5 class="list-group-item-heading">Notificación de Sistema</h5>
+                    <p class="list-group-item-text">Sincronización completada correctamente.</p>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="list-group-item-content">
+                    <h5 class="list-group-item-heading">Actualización Requerida</h5>
+                    <p class="list-group-item-text">Nueva versión disponible para descarga.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="badges" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Badges</h2>
+          <p><strong>Pasivos y decorativos.</strong> Muestran contadores, estados, etiquetas "Nuevo" o "Beta". No son interactivos — para eso están los <a href="#chips-demo">Chips</a>.</p>
+        </div>
+        <div class="col-12">
+          <h4>Colores</h4>
+          <span class="badge badge-primary">Primary</span>
+          <span class="badge badge-secondary">Secondary</span>
+          <span class="badge badge-success">Success</span>
+          <span class="badge badge-danger">Danger</span>
+          <span class="badge badge-warning">Warning</span>
+          <span class="badge badge-info">Info</span>
+          <span class="badge badge-light">Light</span>
+          <span class="badge badge-dark">Dark</span>
+          <h4 class="mt-4">Outline</h4>
+          <span class="badge badge-outline-primary">Primary</span>
+          <span class="badge badge-outline-secondary">Secondary</span>
+          <span class="badge badge-outline-success">Success</span>
+          <span class="badge badge-outline-danger">Danger</span>
+          <span class="badge badge-outline-warning">Warning</span>
+          <span class="badge badge-outline-info">Info</span>
+          <span class="badge badge-outline-dark">Dark</span>
+          <h4 class="mt-4">Ejemplos de uso</h4>
+          <h1>Título <span class="badge badge-secondary">Nuevo</span></h1>
+          <p class="mt-3">
+            <button type="button" class="btn btn-primary">Notificaciones <span class="badge badge-light">4</span></button>
+            <button type="button" class="btn btn-success">Mensajes <span class="badge badge-light">12</span></button>
+            <button type="button" class="btn btn-warning">Alertas <span class="badge badge-dark">3</span></button>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section id="avatars" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Avatares</h2>
+          <p>Avatares con imagen o iniciales, múltiples tamaños, formas, indicadores de estado y grupos apilados.</p>
+        </div>
+        <div class="col-12">
+          <h3>Imagen e Iniciales</h3>
+          <div class="d-flex align-items-center gap-3">
+            <div class="avatar" aria-label="Usuario con foto"><img src="https://i.pravatar.cc/80?img=11" alt="Usuario"></div>
+            <div class="avatar" aria-label="Juan Pérez"><span class="avatar-initials">JP</span></div>
+            <div class="avatar" aria-label="María García"><span class="avatar-initials">MG</span></div>
+            <div class="avatar" aria-label="Carlos López"><span class="avatar-initials">CL</span></div>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Tamaños</h3>
+          <div class="d-flex align-items-center gap-2">
+            <div class="avatar avatar--xs" aria-label="XS"><span class="avatar-initials">XS</span></div>
+            <div class="avatar avatar--sm" aria-label="SM"><span class="avatar-initials">SM</span></div>
+            <div class="avatar" aria-label="MD"><span class="avatar-initials">MD</span></div>
+            <div class="avatar avatar--lg" aria-label="LG"><span class="avatar-initials">LG</span></div>
+            <div class="avatar avatar--xl" aria-label="XL"><span class="avatar-initials">XL</span></div>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Formas</h3>
+          <div class="d-flex align-items-center gap-3">
+            <div class="avatar" aria-label="Circle"><span class="avatar-initials">C</span></div>
+            <div class="avatar avatar--rounded" aria-label="Rounded"><span class="avatar-initials">R</span></div>
+            <div class="avatar avatar--square" aria-label="Square"><span class="avatar-initials">S</span></div>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Indicadores de Estado</h3>
+          <div class="d-flex align-items-center gap-4">
+            <div class="avatar" aria-label="En línea"><img src="https://i.pravatar.cc/80?img=12" alt="En línea"><span class="avatar-status avatar-status--online" aria-label="En línea"></span></div>
+            <div class="avatar" aria-label="Ocupado"><img src="https://i.pravatar.cc/80?img=32" alt="Ocupado"><span class="avatar-status avatar-status--busy" aria-label="Ocupado"></span></div>
+            <div class="avatar" aria-label="Ausente"><img src="https://i.pravatar.cc/80?img=45" alt="Ausente"><span class="avatar-status avatar-status--away" aria-label="Ausente"></span></div>
+            <div class="avatar" aria-label="Desconectado"><img src="https://i.pravatar.cc/80?img=60" alt="Desconectado"><span class="avatar-status avatar-status--offline" aria-label="Desconectado"></span></div>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Grupo Apilado</h3>
+          <div class="d-flex align-items-center gap-5">
+            <div class="avatar-group" role="group" aria-label="Participantes">
+              <div class="avatar avatar--sm"><img src="https://i.pravatar.cc/80?img=1" alt="U1"></div>
+              <div class="avatar avatar--sm"><img src="https://i.pravatar.cc/80?img=2" alt="U2"></div>
+              <div class="avatar avatar--sm"><img src="https://i.pravatar.cc/80?img=3" alt="U3"></div>
+            </div>
+            <div class="avatar-group" role="group" aria-label="Con excedente">
+              <div class="avatar avatar--sm"><img src="https://i.pravatar.cc/80?img=4" alt="U1"></div>
+              <div class="avatar avatar--sm"><img src="https://i.pravatar.cc/80?img=5" alt="U2"></div>
+              <div class="avatar avatar--sm"><img src="https://i.pravatar.cc/80?img=6" alt="U3"></div>
+              <div class="avatar avatar--sm avatar-group-count" aria-label="3 más">+3</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="timeline-demo" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Timeline</h2>
+          <p>Línea de tiempo vertical para eventos cronológicos. Soporta diseño alternado y variantes de color.</p>
+        </div>
+        <div class="col-6">
+          <h3>Básica</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date">2024</time>
+                <h4 class="timeline-title">Fundación</h4>
+                <p class="timeline-desc">Se crea la empresa con un equipo de 3 personas.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--primary">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date">2025</time>
+                <h4 class="timeline-title">Expansión</h4>
+                <p class="timeline-desc">Oficinas en 3 países. Equipo de 50 personas.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--success">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date">2026</time>
+                <h4 class="timeline-title">IPO</h4>
+                <p class="timeline-desc">Salida a bolsa con valoración de $2B.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <h3>Con iconos</h3>
+          <div class="timeline">
+            <div class="timeline-item timeline-item--primary">
+              <div class="timeline-marker timeline-marker--icon">&#9993;</div>
+              <div class="timeline-content">
+                <time class="timeline-date">Mar 2026</time>
+                <h4 class="timeline-title">Solicitud enviada</h4>
+                <p class="timeline-desc">Formulario recibido correctamente.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--warning">
+              <div class="timeline-marker timeline-marker--icon">&#9881;</div>
+              <div class="timeline-content">
+                <time class="timeline-date">Abr 2026</time>
+                <h4 class="timeline-title">En revisión</h4>
+                <p class="timeline-desc">Evaluando la documentación.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--success">
+              <div class="timeline-marker timeline-marker--icon">&#10003;</div>
+              <div class="timeline-content">
+                <time class="timeline-date">May 2026</time>
+                <h4 class="timeline-title">Aprobado</h4>
+                <p class="timeline-desc">Solicitud aprobada.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--danger">
+              <div class="timeline-marker timeline-marker--icon">&#10007;</div>
+              <div class="timeline-content">
+                <time class="timeline-date">Jun 2026</time>
+                <h4 class="timeline-title">Rechazado</h4>
+                <p class="timeline-desc">No cumple requisitos mínimos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <h3>Alternada</h3>
+          <div class="timeline timeline--alternating">
+            <div class="timeline-item timeline-item--primary">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date">Ene 2024</time>
+                <h4 class="timeline-title">Ideación</h4>
+                <p class="timeline-desc">Primera lluvia de ideas y definición del producto.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--success">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date">Mar 2024</time>
+                <h4 class="timeline-title">Prototipo</h4>
+                <p class="timeline-desc">MVP funcional con feedback de primeros usuarios.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--warning">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date">Jun 2024</time>
+                <h4 class="timeline-title">Lanzamiento</h4>
+                <p class="timeline-desc">Versión 1.0 disponible para el público.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--info">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date">Sep 2024</time>
+                <h4 class="timeline-title">Crecimiento</h4>
+                <p class="timeline-desc">10.000 usuarios activos mensuales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="chips-demo" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Chips / Tags</h2>
+          <p><strong>Interactivos y representan datos.</strong> Los chips son etiquetas que el usuario puede asignar, filtrar o remover. A diferencia de los <a href="#badges">Badges</a> (pasivos), estos son componentes vivos.</p>
+        </div>
+        <div class="col-12">
+          <h3>Tags de tecnología</h3>
+          <div class="chips-group">
+            <span class="chip chip--primary">React</span>
+            <span class="chip chip--info">Vue</span>
+            <span class="chip chip--success">Node.js</span>
+            <span class="chip chip--warning">TypeScript</span>
+            <span class="chip chip--danger">Rust</span>
+            <span class="chip chip--secondary">Python</span>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Filtros activos</h3>
+          <div class="chips-group">
+            <span class="chip">Todas</span>
+            <span class="chip chip--primary">Activas<button class="chip-close" aria-label="Eliminar filtro">&times;</button></span>
+            <span class="chip chip--outline-secondary">Archivadas<button class="chip-close" aria-label="Eliminar filtro">&times;</button></span>
+            <span class="chip chip--outline-danger">Bloqueadas<button class="chip-close" aria-label="Eliminar filtro">&times;</button></span>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Contactos / Asignaciones</h3>
+          <div class="chips-group">
+            <span class="chip chip--primary">
+              <span class="avatar avatar--xs"><span class="avatar-initials">JP</span></span>
+              Juan Pérez<button class="chip-close" aria-label="Eliminar">&times;</button>
+            </span>
+            <span class="chip chip--success">
+              <span class="avatar avatar--xs"><span class="avatar-initials">MG</span></span>
+              María García<button class="chip-close" aria-label="Eliminar">&times;</button>
+            </span>
+            <span class="chip chip--info">
+              <span class="avatar avatar--xs"><span class="avatar-initials">CL</span></span>
+              Carlos López<button class="chip-close" aria-label="Eliminar">&times;</button>
+            </span>
+            <span class="chip chip--outline-secondary">+ Asignar</span>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <h3>Estilos disponibles</h3>
+          <div class="chips-group mb-3">
+            <span class="chip chip--primary">Filled</span>
+            <span class="chip chip--outline-primary">Outline</span>
+            <span class="chip chip--subtle-primary">Subtle</span>
+          </div>
+          <div class="chips-group">
+            <span class="chip chip--sm">Small</span>
+            <span class="chip">Medium</span>
+            <span class="chip chip--lg">Large</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module">
+    import injectNav, { injectFooter } from "/assets/js/nav-injector.js";
+    await injectNav();
+    await injectFooter();
+    import("/assets/js/pages/datos.js");
+  </script>
+</body>
+</html>

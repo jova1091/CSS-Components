@@ -68,6 +68,24 @@
   color: var(--form-text-color);
 }
 
+.form-control-sm {
+  padding-top: var(--form-control-sm-padding-y);
+  padding-right: var(--form-control-sm-padding-x);
+  padding-bottom: var(--form-control-sm-padding-y);
+  padding-left: var(--form-control-sm-padding-x);
+  font-size: var(--form-control-sm-font-size);
+  line-height: var(--form-control-sm-line-height);
+}
+
+.form-control-lg {
+  padding-top: var(--form-control-lg-padding-y);
+  padding-right: var(--form-control-lg-padding-x);
+  padding-bottom: var(--form-control-lg-padding-y);
+  padding-left: var(--form-control-lg-padding-x);
+  font-size: var(--form-control-lg-font-size);
+  line-height: var(--form-control-lg-line-height);
+}
+
 /* Select specific styles */
 select.form-control {
   /* Aumentamos el padding derecho para dejar espacio al ícono de flecha */
