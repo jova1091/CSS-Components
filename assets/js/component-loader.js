@@ -1,6 +1,7 @@
 const COMPONENT_REGISTRY = {
   accordion:    { css: 'components/accordion/accordion.css',    js: 'components/accordion.js' },
   alerts:       { css: 'components/alerts/alerts.css',          js: null },
+  avatar:       { css: 'components/avatar/avatar.css',          js: null },
   badges:       { css: 'components/badges/badges.css',          js: null },
   breadcrumb:   { css: 'components/breadcrumb/breadcrumb.css',  js: null },
   buttons:      { css: 'components/buttons/buttons.css',        js: null },

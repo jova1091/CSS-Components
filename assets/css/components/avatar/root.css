@@ -1,0 +1,44 @@
+:root {
+  /* Sizing */
+  --avatar-size: 40px;
+  --avatar-xs-size: 24px;
+  --avatar-sm-size: 32px;
+  --avatar-lg-size: 56px;
+  --avatar-xl-size: 80px;
+
+  /* Colors */
+  --avatar-bg: var(--color-secondary, #415a77);
+  --avatar-color: #fff;
+  --avatar-border-width: 2px;
+  --avatar-border-color: var(--color-surface, #e0e1dd);
+
+  /* Typography */
+  --avatar-font-weight: 600;
+  --avatar-font-size-xs: 0.625rem;
+  --avatar-font-size-sm: 0.75rem;
+  --avatar-font-size-md: 1rem;
+  --avatar-font-size-lg: 1.25rem;
+  --avatar-font-size-xl: 1.75rem;
+
+  /* Shape */
+  --avatar-border-radius: 50%;
+  --avatar-rounded-radius: 0.375rem;
+  --avatar-square-radius: 0;
+
+  /* Status indicator */
+  --avatar-status-size: 12px;
+  --avatar-status-border-width: 2px;
+  --avatar-status-bg-online: #28a745;
+  --avatar-status-bg-offline: #adb5bd;
+  --avatar-status-bg-busy: #dc3545;
+  --avatar-status-bg-away: #ffc107;
+  --avatar-status-bottom: -2px;
+  --avatar-status-right: -2px;
+
+  /* Group */
+  --avatar-group-gap: -8px;
+  --avatar-group-count-bg: var(--color-primary, #1b263b);
+  --avatar-group-count-color: #fff;
+  --avatar-group-count-font-size: 0.75rem;
+  --avatar-group-count-font-weight: 600;
+}

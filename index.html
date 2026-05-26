@@ -39,6 +39,7 @@
                 <h6 class="dropdown-header">Componentes</h6>
               </li>
               <li><a class="dropdown-item" href="#alerts">Alertas</a></li>
+              <li><a class="dropdown-item" href="#avatars">Avatares</a></li>
               <li><a class="dropdown-item" href="#badges">Badges</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -1002,6 +1003,118 @@ body {
           <div class="alert alert-info alert-dismissible" role="alert">
             <strong>¡Info!</strong> Esta alerta se puede cerrar haciendo clic en la X, sin usar JavaScript.
             <label for="alert-dismiss-example" class="btn-close" aria-label="Cerrar"></label>
+          </div>
+        </div>
+      </article>
+    </section>
+    <!-- ============================================================
+    AVATAR
+    ============================================================ -->
+    <section id="avatars" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Avatares</h2>
+          <p>Avatares con imagen o iniciales, múltiples tamaños, formas, indicadores de estado y grupos apilados.</p>
+        </div>
+
+        <!-- Image & Initials -->
+        <div class="col-12">
+          <h3>Imagen e Iniciales</h3>
+          <div class="d-flex align-items-center" style="gap: 1rem;">
+            <div class="avatar" aria-label="Usuario con foto">
+              <img src="https://i.pravatar.cc/80?img=11" alt="Usuario">
+            </div>
+            <div class="avatar" aria-label="Juan Pérez">
+              <span class="avatar-initials">JP</span>
+            </div>
+            <div class="avatar" aria-label="María García">
+              <span class="avatar-initials">MG</span>
+            </div>
+            <div class="avatar" aria-label="Carlos López">
+              <span class="avatar-initials">CL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <div class="col-12 mt-4">
+          <h3>Tamaños</h3>
+          <div class="d-flex align-items-center" style="gap: 0.75rem;">
+            <div class="avatar avatar--xs" aria-label="XS"><span class="avatar-initials">XS</span></div>
+            <div class="avatar avatar--sm" aria-label="SM"><span class="avatar-initials">SM</span></div>
+            <div class="avatar" aria-label="MD"><span class="avatar-initials">MD</span></div>
+            <div class="avatar avatar--lg" aria-label="LG"><span class="avatar-initials">LG</span></div>
+            <div class="avatar avatar--xl" aria-label="XL"><span class="avatar-initials">XL</span></div>
+          </div>
+        </div>
+
+        <!-- Shapes -->
+        <div class="col-12 mt-4">
+          <h3>Formas</h3>
+          <div class="d-flex align-items-center" style="gap: 1rem;">
+            <div class="avatar" aria-label="Circle (default)">
+              <span class="avatar-initials">C</span>
+            </div>
+            <div class="avatar avatar--rounded" aria-label="Rounded">
+              <span class="avatar-initials">R</span>
+            </div>
+            <div class="avatar avatar--square" aria-label="Square">
+              <span class="avatar-initials">S</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Indicators -->
+        <div class="col-12 mt-4">
+          <h3>Indicadores de Estado</h3>
+          <div class="d-flex align-items-center" style="gap: 1.5rem;">
+            <div class="avatar" aria-label="En línea">
+              <img src="https://i.pravatar.cc/80?img=12" alt="Usuario en línea">
+              <span class="avatar-status avatar-status--online" aria-label="En línea"></span>
+            </div>
+            <div class="avatar" aria-label="Ocupado">
+              <img src="https://i.pravatar.cc/80?img=32" alt="Usuario ocupado">
+              <span class="avatar-status avatar-status--busy" aria-label="Ocupado"></span>
+            </div>
+            <div class="avatar" aria-label="Ausente">
+              <img src="https://i.pravatar.cc/80?img=45" alt="Usuario ausente">
+              <span class="avatar-status avatar-status--away" aria-label="Ausente"></span>
+            </div>
+            <div class="avatar" aria-label="Desconectado">
+              <img src="https://i.pravatar.cc/80?img=60" alt="Usuario desconectado">
+              <span class="avatar-status avatar-status--offline" aria-label="Desconectado"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group -->
+        <div class="col-12 mt-4">
+          <h3>Grupo Apilado</h3>
+          <div class="d-flex align-items-center" style="gap: 2rem;">
+            <div class="avatar-group" role="group" aria-label="Participantes">
+              <div class="avatar avatar--sm" aria-label="Usuario 1">
+                <img src="https://i.pravatar.cc/80?img=1" alt="Usuario 1">
+              </div>
+              <div class="avatar avatar--sm" aria-label="Usuario 2">
+                <img src="https://i.pravatar.cc/80?img=2" alt="Usuario 2">
+              </div>
+              <div class="avatar avatar--sm" aria-label="Usuario 3">
+                <img src="https://i.pravatar.cc/80?img=3" alt="Usuario 3">
+              </div>
+            </div>
+            <div class="avatar-group" role="group" aria-label="Participantes con excedente">
+              <div class="avatar avatar--sm" aria-label="Usuario 1">
+                <img src="https://i.pravatar.cc/80?img=4" alt="Usuario 1">
+              </div>
+              <div class="avatar avatar--sm" aria-label="Usuario 2">
+                <img src="https://i.pravatar.cc/80?img=5" alt="Usuario 2">
+              </div>
+              <div class="avatar avatar--sm" aria-label="Usuario 3">
+                <img src="https://i.pravatar.cc/80?img=6" alt="Usuario 3">
+              </div>
+              <div class="avatar avatar--sm avatar-group-count" aria-label="3 participantes más">+3</div>
+            </div>
           </div>
         </div>
       </article>

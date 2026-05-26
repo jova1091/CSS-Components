@@ -1,0 +1,155 @@
+@import url("root.css") layer(components.avatar.vars);
+
+/*
+ * =====================================================
+ * AVATAR
+ * =====================================================
+ *
+ * Uso básico:
+ *   <div class="avatar" aria-label="Usuario">
+ *     <img src="foto.jpg" alt="Usuario">
+ *   </div>
+ *
+ * Con iniciales:
+ *   <div class="avatar" aria-label="Juan Pérez">
+ *     <span class="avatar-initials">JP</span>
+ *   </div>
+ */
+
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: var(--avatar-border-radius);
+  background-color: var(--avatar-bg);
+  color: var(--avatar-color);
+  font-weight: var(--avatar-font-weight);
+  font-size: var(--avatar-font-size-md);
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+/*
+ * =====================================================
+ * SIZES
+ * =====================================================
+ */
+
+.avatar--xs {
+  width: var(--avatar-xs-size);
+  height: var(--avatar-xs-size);
+  font-size: var(--avatar-font-size-xs);
+}
+
+.avatar--sm {
+  width: var(--avatar-sm-size);
+  height: var(--avatar-sm-size);
+  font-size: var(--avatar-font-size-sm);
+}
+
+.avatar--lg {
+  width: var(--avatar-lg-size);
+  height: var(--avatar-lg-size);
+  font-size: var(--avatar-font-size-lg);
+}
+
+.avatar--xl {
+  width: var(--avatar-xl-size);
+  height: var(--avatar-xl-size);
+  font-size: var(--avatar-font-size-xl);
+}
+
+/*
+ * =====================================================
+ * SHAPES
+ * =====================================================
+ */
+
+.avatar--rounded {
+  border-radius: var(--avatar-rounded-radius);
+}
+
+.avatar--square {
+  border-radius: var(--avatar-square-radius);
+}
+
+/*
+ * =====================================================
+ * STATUS INDICATOR
+ * =====================================================
+ *
+ *   <div class="avatar">
+ *     <img src="foto.jpg" alt="Usuario">
+ *     <span class="avatar-status avatar-status--online" aria-label="En línea"></span>
+ *   </div>
+ */
+
+.avatar-status {
+  position: absolute;
+  bottom: var(--avatar-status-bottom);
+  right: var(--avatar-status-right);
+  width: var(--avatar-status-size);
+  height: var(--avatar-status-size);
+  border-radius: 50%;
+  border: var(--avatar-status-border-width) solid var(--avatar-border-color);
+  background-color: var(--avatar-status-bg-offline);
+}
+
+.avatar-status--online {
+  background-color: var(--avatar-status-bg-online);
+}
+
+.avatar-status--busy {
+  background-color: var(--avatar-status-bg-busy);
+}
+
+.avatar-status--away {
+  background-color: var(--avatar-status-bg-away);
+}
+
+/*
+ * =====================================================
+ * GROUP (Stacked)
+ * =====================================================
+ *
+ *   <div class="avatar-group" role="group" aria-label="Participantes">
+ *     <div class="avatar">...</div>
+ *     <div class="avatar">...</div>
+ *     <div class="avatar avatar-group-count">+3</div>
+ *   </div>
+ */
+
+.avatar-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.avatar-group > .avatar {
+  margin-right: 0;
+}
+
+.avatar-group > .avatar:not(:first-child) {
+  margin-left: var(--avatar-group-gap);
+}
+
+.avatar-group > .avatar {
+  border: var(--avatar-border-width) solid var(--avatar-border-color);
+}
+
+.avatar-group-count {
+  font-size: var(--avatar-group-count-font-size);
+  font-weight: var(--avatar-group-count-font-weight);
+  background-color: var(--avatar-group-count-bg);
+  color: var(--avatar-group-count-color);
+}
