@@ -1,0 +1,198 @@
+@import url("root.css") layer(components.stepper.vars);
+
+/*
+ * =====================================================
+ * STEPPER — Multi-step progress indicator
+ * =====================================================
+ *
+ * Horizontal:
+ *   <div class="stepper" data-step="1">
+ *     <div class="step step--active" data-step="1">
+ *       <div class="step-indicator">1</div>
+ *       <div class="step-body">
+ *         <div class="step-title">Paso 1</div>
+ *         <div class="step-description">Descripción</div>
+ *       </div>
+ *     </div>
+ *     <div class="step" data-step="2">...</div>
+ *     ...
+ *   </div>
+ *
+ * Vertical:
+ *   <div class="stepper stepper--vertical">...</div>
+ */
+
+.stepper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/*
+ * =====================================================
+ * STEP
+ * =====================================================
+ */
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--step-line-gap);
+  flex: 1;
+  position: relative;
+}
+
+.step:last-child {
+  flex: 0 1 auto;
+}
+
+/* Connector line */
+.step::after {
+  content: "";
+  flex: 1;
+  height: var(--step-line-height);
+  background-color: var(--step-line-color);
+  align-self: center;
+  transition:
+    background-color var(--step-transition-duration) var(--step-transition-timing);
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+/*
+ * =====================================================
+ * STEP INDICATOR (circle with number)
+ * =====================================================
+ */
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--step-size);
+  height: var(--step-size);
+  border-radius: 50%;
+  font-size: var(--step-indicator-font-size);
+  font-weight: var(--step-indicator-font-weight);
+  background-color: var(--step-bg);
+  color: var(--step-color);
+  border: var(--step-border-width) var(--step-border-style) var(--step-border-color);
+  flex-shrink: 0;
+  transition:
+    background-color var(--step-transition-duration) var(--step-transition-timing),
+    color var(--step-transition-duration) var(--step-transition-timing),
+    border-color var(--step-transition-duration) var(--step-transition-timing);
+}
+
+/*
+ * =====================================================
+ * STEP BODY
+ * =====================================================
+ */
+
+.step-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.step-title {
+  font-size: var(--step-title-font-size);
+  font-weight: var(--step-title-font-weight);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.step-description {
+  font-size: var(--step-description-font-size);
+  color: var(--step-description-color);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/*
+ * =====================================================
+ * STEP STATES
+ * =====================================================
+ */
+
+.step--active .step-indicator {
+  background-color: var(--step-active-bg);
+  color: var(--step-active-color);
+  border-color: var(--step-active-border-color);
+}
+
+.step--completed .step-indicator {
+  background-color: var(--step-completed-bg);
+  color: var(--step-completed-color);
+  border-color: var(--step-completed-border-color);
+}
+
+.step--completed::after {
+  background-color: var(--step-line-color-completed);
+}
+
+.step--error .step-indicator {
+  background-color: var(--step-error-bg);
+  color: var(--step-error-color);
+  border-color: var(--step-error-border-color);
+}
+
+/*
+ * =====================================================
+ * VERTICAL ORIENTATION
+ * =====================================================
+ */
+
+.stepper--vertical {
+  flex-direction: column;
+  gap: 0;
+}
+
+.stepper--vertical .step {
+  flex: none;
+  align-items: flex-start;
+  padding-bottom: var(--step-vertical-gap);
+}
+
+.stepper--vertical .step:last-child {
+  padding-bottom: 0;
+}
+
+.stepper--vertical .step::after {
+  position: absolute;
+  left: calc(var(--step-size) / 2);
+  top: var(--step-size);
+  bottom: 0;
+  width: var(--step-line-height);
+  height: auto;
+  flex: none;
+  transform: translateX(-50%);
+}
+
+.stepper--vertical .step:last-child::after {
+  display: none;
+}
+
+.stepper--vertical .step-body {
+  padding-top: calc((var(--step-size) - 1lh) / 2);
+}
+
+/*
+ * =====================================================
+ * STEP CONTENT PANEL (intercambiable)
+ * =====================================================
+ *
+ *   <div class="step-panel" data-step="1">...</div>
+ *   <div class="step-panel" data-step="2">...</div>
+ */
+
+.step-panel {
+  display: none;
+}
+
+.step-panel--active {
+  display: block;
+}

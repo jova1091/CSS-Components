@@ -1,0 +1,48 @@
+:root {
+  /* Step indicator */
+  --step-size: 2.25rem;
+  --step-indicator-font-size: 1rem;
+  --step-indicator-font-weight: 600;
+  --step-border-width: 2px;
+  --step-border-style: solid;
+
+  /* Colors — default (pending) */
+  --step-bg: var(--color-surface-subtle, #dedbd2);
+  --step-color: var(--color-text-muted, #415a77);
+  --step-border-color: var(--color-border, #1b263b);
+
+  /* Colors — active */
+  --step-active-bg: var(--color-primary, #1b263b);
+  --step-active-color: #fff;
+  --step-active-border-color: var(--color-primary, #1b263b);
+
+  /* Colors — completed */
+  --step-completed-bg: var(--color-success, #2a9d8f);
+  --step-completed-color: #fff;
+  --step-completed-border-color: var(--color-success, #2a9d8f);
+
+  /* Colors — error */
+  --step-error-bg: var(--color-danger, #e63946);
+  --step-error-color: #fff;
+  --step-error-border-color: var(--color-danger, #e63946);
+
+  /* Connector line */
+  --step-line-color: var(--color-border, #1b263b);
+  --step-line-color-active: var(--color-primary, #1b263b);
+  --step-line-color-completed: var(--color-success, #2a9d8f);
+  --step-line-height: 2px;
+  --step-line-gap: 0.5rem;
+
+  /* Typography */
+  --step-title-font-size: 1rem;
+  --step-title-font-weight: 600;
+  --step-description-font-size: 0.875rem;
+  --step-description-color: var(--color-text-muted, #415a77);
+
+  /* Vertical */
+  --step-vertical-gap: 1.5rem;
+
+  /* Transition */
+  --step-transition-duration: 0.25s;
+  --step-transition-timing: ease;
+}

@@ -24,6 +24,7 @@ const COMPONENT_REGISTRY = {
   skeletons:    { css: 'components/skeletons/skeletons.css',    js: null },
   spacers:      { css: 'utilities/spacers/spacers.css',         js: null },
   spinners:     { css: 'components/spinners/spinners.css',      js: null },
+  stepper:      { css: 'components/stepper/stepper.css',        js: 'components/stepper.js' },
   tables:       { css: 'components/tables/tables.css',          js: null },
   tabs:         { css: 'components/tabs/tabs.css',              js: 'components/tabs.js' },
   toasts:       { css: 'components/toasts/toasts.css',          js: 'components/toasts.js' },

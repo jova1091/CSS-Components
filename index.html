@@ -47,6 +47,7 @@
               <li><a class="dropdown-item" href="#drawers">Drawer</a></li>
               <li><a class="dropdown-item" href="#chips-demo">Chips</a></li>
               <li><a class="dropdown-item" href="#rating-demo">Rating</a></li>
+              <li><a class="dropdown-item" href="#stepper-demo">Stepper</a></li>
               <li><a class="dropdown-item" href="#dropdowns">Dropdowns</a></li>
               <li><a class="dropdown-item" href="#tabs">Pestañas</a></li>
               <li><a class="dropdown-item" href="#modals">Modales</a></li>
@@ -1843,6 +1844,134 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
                 <div class="spinner-border spinner-sm" role="status"></div>
                 Cargando datos...
               </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============================================================
+    STEPPER
+    ============================================================ -->
+    <section id="stepper-demo" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Stepper (Pasos)</h2>
+          <p>Indicador de progreso multi-paso con navegación por clic y contenido intercambiable.</p>
+        </div>
+
+        <!-- Horizontal -->
+        <div class="col-12">
+          <h3>Horizontal</h3>
+          <div class="stepper" id="stepperHorizontal" data-step="1">
+            <div class="step" data-step="1">
+              <div class="step-indicator">1</div>
+              <div class="step-body">
+                <div class="step-title">Carrito</div>
+                <div class="step-description">Revisar productos</div>
+              </div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="step-indicator">2</div>
+              <div class="step-body">
+                <div class="step-title">Envío</div>
+                <div class="step-description">Dirección y método</div>
+              </div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-indicator">3</div>
+              <div class="step-body">
+                <div class="step-title">Pago</div>
+                <div class="step-description">Confirmar pago</div>
+              </div>
+            </div>
+            <div class="step" data-step="4">
+              <div class="step-indicator">4</div>
+              <div class="step-body">
+                <div class="step-title">Confirmación</div>
+                <div class="step-description">Pedido completado</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <div class="step-panel" data-step="1">
+              <p><strong>Carrito:</strong> 3 productos por $45.990</p>
+            </div>
+            <div class="step-panel" data-step="2">
+              <p><strong>Envío:</strong> Dirección: Av. Siempre Viva 742, Santiago. Método: Estándar (3-5 días).</p>
+            </div>
+            <div class="step-panel" data-step="3">
+              <p><strong>Pago:</strong> Tarjeta terminada en 4242. Monto: $45.990 + $3.500 envío.</p>
+            </div>
+            <div class="step-panel" data-step="4">
+              <p><strong>¡Pedido confirmado!</strong> Recibirás un correo con el número de seguimiento.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical -->
+        <div class="col-12 mt-5">
+          <h3>Vertical</h3>
+          <div class="stepper stepper--vertical" id="stepperVertical" data-step="1">
+            <div class="step" data-step="1">
+              <div class="step-indicator">1</div>
+              <div class="step-body">
+                <div class="step-title">Registro</div>
+                <div class="step-description">Crear cuenta</div>
+              </div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="step-indicator">2</div>
+              <div class="step-body">
+                <div class="step-title">Verificación</div>
+                <div class="step-description">Confirmar email</div>
+              </div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-indicator">3</div>
+              <div class="step-body">
+                <div class="step-title">Perfil</div>
+                <div class="step-description">Completar datos</div>
+              </div>
+            </div>
+            <div class="step" data-step="4">
+              <div class="step-indicator">4</div>
+              <div class="step-body">
+                <div class="step-title">Listo</div>
+                <div class="step-description">Comenzar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- States showcase -->
+        <div class="col-12 mt-5">
+          <h3>Estados</h3>
+          <div class="stepper" id="stepperStates">
+            <div class="step step--completed" data-step="1">
+              <div class="step-indicator">✓</div>
+              <div class="step-body">
+                <div class="step-title">Completado</div>
+              </div>
+            </div>
+            <div class="step step--active" data-step="2">
+              <div class="step-indicator">2</div>
+              <div class="step-body">
+                <div class="step-title">Activo</div>
+              </div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-indicator">3</div>
+              <div class="step-body">
+                <div class="step-title">Pendiente</div>
+              </div>
+            </div>
+            <div class="step step--error" data-step="4">
+              <div class="step-indicator">!</div>
+              <div class="step-body">
+                <div class="step-title">Error</div>
+              </div>
             </div>
           </div>
         </div>
