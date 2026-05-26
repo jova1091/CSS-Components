@@ -1,0 +1,239 @@
+@import url("root.css") layer(components.chips.vars);
+
+/*
+ * =====================================================
+ * CHIPS / TAGS
+ * =====================================================
+ *
+ *   <span class="chip">Etiqueta</span>
+ *   <span class="chip chip--primary">Primary</span>
+ *   <span class="chip chip--outline-primary">Outline</span>
+ *   <span class="chip chip--sm">Small</span>
+ *
+ *   <span class="chip chip--removable" data-chip>
+ *     Etiqueta
+ *     <button class="chip-close" aria-label="Eliminar">&times;</button>
+ *   </span>
+ */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--chip-padding-y) var(--chip-padding-x);
+  font-size: var(--chip-font-size);
+  font-weight: var(--chip-font-weight);
+  line-height: 1.4;
+  color: var(--chip-color);
+  background-color: var(--chip-bg);
+  border: var(--chip-border-width) var(--chip-border-style) var(--chip-border-color);
+  border-radius: var(--chip-border-radius);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/*
+ * =====================================================
+ * SIZES
+ * =====================================================
+ */
+
+.chip--sm {
+  padding: 0.15em 0.5em;
+  font-size: var(--chip-font-size-sm);
+}
+
+.chip--lg {
+  padding: 0.35em 1em;
+  font-size: var(--chip-font-size-lg);
+}
+
+/*
+ * =====================================================
+ * VARIANTS — Filled
+ * =====================================================
+ */
+
+.chip--primary {
+  background-color: var(--chip-primary-bg);
+  color: var(--chip-primary-color);
+  border-color: transparent;
+}
+
+.chip--secondary {
+  background-color: var(--chip-secondary-bg);
+  color: var(--chip-secondary-color);
+  border-color: transparent;
+}
+
+.chip--success {
+  background-color: var(--chip-success-bg);
+  color: var(--chip-success-color);
+  border-color: transparent;
+}
+
+.chip--danger {
+  background-color: var(--chip-danger-bg);
+  color: var(--chip-danger-color);
+  border-color: transparent;
+}
+
+.chip--warning {
+  background-color: var(--chip-warning-bg);
+  color: var(--chip-warning-color);
+  border-color: transparent;
+}
+
+.chip--info {
+  background-color: var(--chip-info-bg);
+  color: var(--chip-info-color);
+  border-color: transparent;
+}
+
+/*
+ * =====================================================
+ * VARIANTS — Outline
+ * =====================================================
+ */
+
+.chip--outline-primary {
+  background-color: transparent;
+  color: var(--chip-primary-bg);
+  border-color: var(--chip-primary-bg);
+}
+
+.chip--outline-secondary {
+  background-color: transparent;
+  color: var(--chip-secondary-bg);
+  border-color: var(--chip-secondary-bg);
+}
+
+.chip--outline-success {
+  background-color: transparent;
+  color: var(--chip-success-bg);
+  border-color: var(--chip-success-bg);
+}
+
+.chip--outline-danger {
+  background-color: transparent;
+  color: var(--chip-danger-bg);
+  border-color: var(--chip-danger-bg);
+}
+
+.chip--outline-warning {
+  background-color: transparent;
+  color: var(--chip-warning-bg);
+  border-color: var(--chip-warning-bg);
+}
+
+.chip--outline-info {
+  background-color: transparent;
+  color: var(--chip-info-bg);
+  border-color: var(--chip-info-bg);
+}
+
+/*
+ * =====================================================
+ * VARIANTS — Subtle (light background, darker text)
+ * =====================================================
+ */
+
+.chip--subtle-primary {
+  background-color: color-mix(in srgb, var(--chip-primary-bg) 15%, transparent);
+  color: var(--chip-primary-bg);
+  border-color: transparent;
+}
+
+.chip--subtle-secondary {
+  background-color: color-mix(in srgb, var(--chip-secondary-bg) 15%, transparent);
+  color: var(--chip-secondary-bg);
+  border-color: transparent;
+}
+
+.chip--subtle-success {
+  background-color: color-mix(in srgb, var(--chip-success-bg) 15%, transparent);
+  color: var(--chip-success-bg);
+  border-color: transparent;
+}
+
+.chip--subtle-danger {
+  background-color: color-mix(in srgb, var(--chip-danger-bg) 15%, transparent);
+  color: var(--chip-danger-bg);
+  border-color: transparent;
+}
+
+.chip--subtle-warning {
+  background-color: color-mix(in srgb, var(--chip-warning-bg) 20%, transparent);
+  color: var(--chip-warning-bg);
+  border-color: transparent;
+}
+
+.chip--subtle-info {
+  background-color: color-mix(in srgb, var(--chip-info-bg) 15%, transparent);
+  color: var(--chip-info-bg);
+  border-color: transparent;
+}
+
+/*
+ * =====================================================
+ * CLOSE / DISMISS BUTTON
+ * =====================================================
+ */
+
+.chip-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--chip-close-size);
+  height: var(--chip-close-size);
+  margin-left: var(--chip-close-margin-left);
+  padding: 0;
+  font-size: inherit;
+  line-height: 1;
+  color: var(--chip-close-color);
+  opacity: var(--chip-close-opacity);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: opacity 0.15s ease;
+}
+
+.chip-close:hover {
+  opacity: var(--chip-close-hover-opacity);
+}
+
+.chip-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/*
+ * =====================================================
+ * AVATAR INSIDE CHIP
+ * =====================================================
+ */
+
+.chip .avatar {
+  width: var(--chip-avatar-size);
+  height: var(--chip-avatar-size);
+  margin: var(--chip-avatar-margin);
+  flex-shrink: 0;
+}
+
+/*
+ * =====================================================
+ * CHIPS GROUP
+ * =====================================================
+ *
+ *   <div class="chips-group">
+ *     <span class="chip">...</span>
+ *     <span class="chip">...</span>
+ *   </div>
+ */
+
+.chips-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--chips-gap);
+}

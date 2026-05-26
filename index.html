@@ -45,6 +45,7 @@
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="#drawers">Drawer</a></li>
+              <li><a class="dropdown-item" href="#chips-demo">Chips</a></li>
               <li><a class="dropdown-item" href="#dropdowns">Dropdowns</a></li>
               <li><a class="dropdown-item" href="#tabs">Pestañas</a></li>
               <li><a class="dropdown-item" href="#modals">Modales</a></li>
@@ -1123,11 +1124,11 @@ body {
       <article class="row">
         <div class="col-12">
           <hr class="my-5" />
-          <h2>Badges (Etiquetas)</h2>
-          <p>Documentación y ejemplos de badges, nuestro componente de conteo y etiquetado pequeño.</p>
+          <h2>Badges</h2>
+          <p><strong>Pasivos y decorativos.</strong> Los badges muestran información breve: contadores, estados, etiquetas "Nuevo" o "Beta". Van dentro de botones, headings o como indicador visual. No son interactivos ni removibles — para eso están los <a href="#chips-demo">Chips</a>.</p>
         </div>
         <div class="col-12">
-          <h4>Contextual Variations</h4>
+          <h4>Colores</h4>
           <span class="badge badge-primary">Primary</span>
           <span class="badge badge-secondary">Secondary</span>
           <span class="badge badge-success">Success</span>
@@ -1137,7 +1138,7 @@ body {
           <span class="badge badge-light">Light</span>
           <span class="badge badge-dark">Dark</span>
 
-          <h4 class="mt-4">Outline Badges</h4>
+          <h4 class="mt-4">Outline</h4>
           <span class="badge badge-outline-primary">Primary</span>
           <span class="badge badge-outline-secondary">Secondary</span>
           <span class="badge badge-outline-success">Success</span>
@@ -1146,18 +1147,114 @@ body {
           <span class="badge badge-outline-info">Info</span>
           <span class="badge badge-outline-dark">Dark</span>
 
-          <h4 class="mt-4">Pill Badges</h4>
-          <span class="badge badge-primary rounded-pill">Primary</span>
-          <span class="badge badge-secondary rounded-pill">Secondary</span>
+          <h4 class="mt-4">Ejemplos de uso</h4>
+          <h1>Título <span class="badge badge-secondary">Nuevo</span></h1>
+          <h2>Título <span class="badge badge-secondary">Nuevo</span></h2>
+          <p style="margin-top: 1rem;">
+            <button type="button" class="btn btn-primary">
+              Notificaciones <span class="badge badge-light">4</span>
+            </button>
+            <button type="button" class="btn btn-success" style="margin-left: 0.5rem;">
+              Mensajes <span class="badge badge-light">12</span>
+            </button>
+            <button type="button" class="btn btn-warning" style="margin-left: 0.5rem;">
+              Alertas <span class="badge badge-dark">3</span>
+            </button>
+          </p>
+        </div>
+      </article>
+    </section>
+    <!-- ============================================================
+    CHIPS / TAGS
+    ============================================================ -->
+    <section id="chips-demo" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Chips / Tags</h2>
+          <p><strong>Interactivos y representan datos.</strong> Los chips son etiquetas que el usuario puede asignar, filtrar o remover. A diferencia de los <a href="#badges">Badges</a> (pasivos), estos son componentes vivos: representan tecnologías, contactos, filtros aplicados o categorías.</p>
+        </div>
 
-          <h4 class="mt-4">Inside Headings</h4>
-          <h1>Ejemplo de H1 <span class="badge badge-secondary">Nuevo</span></h1>
-          <h2>Ejemplo de H2 <span class="badge badge-secondary">Nuevo</span></h2>
+        <!-- Tags de tecnología -->
+        <div class="col-12">
+          <h3>Tags de tecnología</h3>
+          <div class="chips-group">
+            <span class="chip chip--primary">React</span>
+            <span class="chip chip--info">Vue</span>
+            <span class="chip chip--success">Node.js</span>
+            <span class="chip chip--warning">TypeScript</span>
+            <span class="chip chip--danger">Rust</span>
+            <span class="chip chip--secondary">Python</span>
+          </div>
+        </div>
 
-          <h4 class="mt-4">Inside Buttons</h4>
-          <button type="button" class="btn btn-primary"> Notificaciones <small><span
-                class="badge badge-light">4</span></small>
-          </button>
+        <!-- Filtros -->
+        <div class="col-12 mt-4">
+          <h3>Filtros activos</h3>
+          <div class="chips-group">
+            <span class="chip">
+              Todas
+            </span>
+            <span class="chip chip--primary">
+              Activas
+              <button class="chip-close" aria-label="Eliminar filtro">&times;</button>
+            </span>
+            <span class="chip chip--outline-secondary">
+              Archivadas
+              <button class="chip-close" aria-label="Eliminar filtro">&times;</button>
+            </span>
+            <span class="chip chip--outline-danger">
+              Bloqueadas
+              <button class="chip-close" aria-label="Eliminar filtro">&times;</button>
+            </span>
+          </div>
+        </div>
+
+        <!-- Contactos con avatar -->
+        <div class="col-12 mt-4">
+          <h3>Contactos / Asignaciones</h3>
+          <div class="chips-group">
+            <span class="chip chip--primary">
+              <span class="avatar avatar--xs" aria-label="JP">
+                <span class="avatar-initials">JP</span>
+              </span>
+              Juan Pérez
+              <button class="chip-close" aria-label="Eliminar">&times;</button>
+            </span>
+            <span class="chip chip--success">
+              <span class="avatar avatar--xs" aria-label="MG">
+                <span class="avatar-initials">MG</span>
+              </span>
+              María García
+              <button class="chip-close" aria-label="Eliminar">&times;</button>
+            </span>
+            <span class="chip chip--info">
+              <span class="avatar avatar--xs" aria-label="CL">
+                <span class="avatar-initials">CL</span>
+              </span>
+              Carlos López
+              <button class="chip-close" aria-label="Eliminar">&times;</button>
+            </span>
+            <span class="chip chip--outline-secondary">
+              + Asignar
+            </span>
+          </div>
+        </div>
+
+        <!-- Variantes de estilo -->
+        <div class="col-12 mt-4">
+          <h3>Estilos disponibles</h3>
+          <p class="text-muted">Filled, Outline y Subtle en todos los colores del sistema.</p>
+          <div class="chips-group" style="margin-bottom: 0.75rem;">
+            <span class="chip chip--primary">Filled</span>
+            <span class="chip chip--outline-primary">Outline</span>
+            <span class="chip chip--subtle-primary">Subtle</span>
+          </div>
+          <div class="chips-group" style="margin-bottom: 0.75rem;">
+            <span class="chip chip--sm">Small</span>
+            <span class="chip">Medium</span>
+            <span class="chip chip--lg">Large</span>
+          </div>
         </div>
       </article>
     </section>
@@ -2198,6 +2295,27 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
             <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="¡Cargado bajo demanda!">
               Tooltip diferido
             </button>
+          </div>
+        </article>
+      </div>
+      <div class="row" style="margin-top: 2rem;">
+        <article class="col-12">
+          <h3>Carga declarativa de Chips</h3>
+          <p>Chips cargados con <code>data-component="chips"</code>:</p>
+          <div data-component="chips">
+            <div class="chips-group">
+              <span class="chip chip--primary">
+                Cargado bajo demanda
+                <button class="chip-close" aria-label="Eliminar">&times;</button>
+              </span>
+              <span class="chip chip--outline-info">
+                Sin recargar
+                <button class="chip-close" aria-label="Eliminar">&times;</button>
+              </span>
+              <span class="chip chip--success">
+                CSS + JS automático
+              </span>
+            </div>
           </div>
         </article>
       </div>

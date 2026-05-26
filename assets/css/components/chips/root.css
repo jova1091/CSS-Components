@@ -1,0 +1,50 @@
+:root {
+  /* Sizing */
+  --chip-padding-y: 0.25em;
+  --chip-padding-x: 0.75em;
+  --chip-font-size: 0.875rem;
+  --chip-font-size-sm: 0.75rem;
+  --chip-font-size-lg: 1rem;
+  --chip-font-weight: 500;
+  --chip-border-radius: 50px;
+
+  /* Border */
+  --chip-border-width: 1px;
+  --chip-border-style: solid;
+
+  /* Default (filled) */
+  --chip-bg: var(--color-surface-subtle, #dedbd2);
+  --chip-color: var(--color-text, #0d1b2a);
+  --chip-border-color: transparent;
+
+  /* Close button */
+  --chip-close-size: 1em;
+  --chip-close-color: currentColor;
+  --chip-close-opacity: 0.6;
+  --chip-close-hover-opacity: 1;
+  --chip-close-margin-left: 0.35em;
+
+  /* Avatar inside chip */
+  --chip-avatar-size: 1.25em;
+  --chip-avatar-margin: -0.15em 0.35em -0.15em -0.35em;
+
+  /* Group */
+  --chips-gap: 0.5rem;
+
+  /* Variant colors (filled) */
+  --chip-primary-bg: var(--color-primary, #1b263b);
+  --chip-primary-color: #fff;
+  --chip-secondary-bg: var(--color-secondary, #415a77);
+  --chip-secondary-color: #fff;
+  --chip-success-bg: #198754;
+  --chip-success-color: #fff;
+  --chip-danger-bg: #dc3545;
+  --chip-danger-color: #fff;
+  --chip-warning-bg: #ffc107;
+  --chip-warning-color: #000;
+  --chip-info-bg: #0dcaf0;
+  --chip-info-color: #000;
+
+  /* Outline variants reuse the same --chip-*-bg as border/color */
+  --chip-outline-border-opacity: 1;
+}
