@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     (function() {
+      var theme = localStorage.getItem("theme");
+      if (theme === "dark" || theme === "light") {
+        document.documentElement.dataset.theme = theme;
+      }
+    })();
+  </script>
+  <script>
+    (function() {
       var root = location.pathname.startsWith('/CSS-Components') ? '/CSS-Components' : '';
       document.write('<base href="' + root + '/">');
       document.write('<link rel="icon" type="image/svg+xml" href="' + root + '/favicon.svg">');
@@ -14,6 +22,44 @@
   <title>CSS Components — Botones</title>
 </head>
 <body>
+  <nav class="navbar navbar-sticky">
+    <div class="container-full">
+      <a class="navbar-brand" href="index.html">CSS Components</a>
+
+      <button class="navbar-toggler" type="button" aria-controls="navbar-menu" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" id="navbar-menu" hidden>
+        <button type="button" class="btn-close" aria-label="Close navigation"></button>
+
+          <ul class="navbar-nav navbar-nav-center">
+            <li><a class="nav-link" href="components/base.html">Base</a></li>
+            <li><a class="nav-link" href="components/buttons.html">Botones</a></li>
+            <li><a class="nav-link" href="components/forms.html">Formularios</a></li>
+            <li><a class="nav-link" href="components/navigation.html">Navegación</a></li>
+            <li><a class="nav-link" href="components/feedback.html">Feedback</a></li>
+            <li><a class="nav-link" href="components/contenedores.html">Contenedores</a></li>
+            <li><a class="nav-link" href="components/datos.html">Datos</a></li>
+            <li><a class="nav-link" href="components/interactivos.html">Interactivos</a></li>
+          </ul>
+        <div class="d-flex align-items-center">
+          <button id="theme-toggle" class="btn btn-secondary btn-sm" aria-label="Cambiar tema (Claro / Oscuro)">
+            <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3c.132 0 .263 0 .393.007a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z" />
+            </svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM5.636 4.222a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 1 1-1.414 1.414L5.636 5.636a1 1 0 0 1 0-1.414zm11.314 11.314a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 0 1-1.414 1.414l-1.414-1.414a1 1 0 0 1 0-1.414zM2 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm16 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM5.636 19.778a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 1 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0zm11.314-11.314a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 0 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="navbar-backdrop"></div>
+    </div>
+  </nav>
+
   <a href="#main" class="skip-link">Saltar al contenido principal</a>
   <main id="main">
     <section id="buttons" class="container">
@@ -152,10 +198,18 @@
     </section>
   </main>
 
+  <footer class="container-full">
+    <div class="row">
+      <div class="col-12 p-4 text-center">
+        Made, moving the hands by JOVA1091
+      </div>
+    </div>
+  </footer>
+
   <script type="module">
-    import injectNav, { injectFooter } from "./assets/js/nav-injector.js";
-    await injectNav();
-    await injectFooter();
+    import { initPage, initNav } from "./assets/js/init-page.js";
+    initPage();
+    await initNav();
     import("./assets/js/pages/buttons.js");
   </script>
 </body>
