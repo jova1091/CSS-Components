@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="/">
   <script>
     (function() {
-      var base = document.querySelector('base');
-      if (location.pathname.startsWith('/CSS-Components')) {
-        base.href = '/CSS-Components/';
-      }
+      var root = location.pathname.startsWith('/CSS-Components') ? '/CSS-Components' : '';
+      document.write('<base href="' + root + '/">');
+      document.write('<link rel="icon" type="image/svg+xml" href="' + root + '/favicon.svg">');
+      document.write('<link rel="stylesheet" href="' + root + '/assets/css/pages/feedback.css">');
     })();
   </script>
   <title>CSS Components — Feedback</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="assets/css/pages/feedback.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Saltar al contenido principal</a>
