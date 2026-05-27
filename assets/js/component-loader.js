@@ -33,8 +33,6 @@ const COMPONENT_REGISTRY = {
   tooltips:     { css: 'components/tooltips/tooltips.css',      js: 'components/tooltips.js' },
 };
 
-const BASE_CSS_PATH = '/assets/css';
-const BASE_JS_PATH = '/assets/js';
 const loadedCSS = new Set();
 const loadedJS = new Set();
 let modulesCache = {};
@@ -93,7 +91,7 @@ export class ComponentLoader {
     return new Promise((resolve, reject) => {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = `${BASE_CSS_PATH}/${relativePath}`;
+      link.href = `assets/css/${relativePath}`;
       link.onload = () => resolve();
       link.onerror = () => reject(new Error(`Failed to load CSS: ${relativePath}`));
       document.head.appendChild(link);
@@ -105,7 +103,7 @@ export class ComponentLoader {
     loadedJS.add(relativePath);
 
     try {
-      const module = await import(`${BASE_JS_PATH}/${relativePath}`);
+      const module = await import(`./${relativePath}`);
       modulesCache[name] = module;
       return module;
     } catch (e) {

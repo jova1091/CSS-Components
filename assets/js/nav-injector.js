@@ -10,7 +10,7 @@ if (localStorage.getItem("theme") === "dark") {
 export async function injectNav() {
   if (document.getElementById("navbar-menu")) return;
 
-  const resp = await fetch("/assets/includes/nav.html");
+  const resp = await fetch("assets/includes/nav.html");
   const html = await resp.text();
   document.body.insertAdjacentHTML("afterbegin", html);
 
@@ -27,7 +27,7 @@ export async function injectNav() {
   // Highlight current page in subnav
   const path = window.location.pathname;
   document.querySelectorAll(".subnav a").forEach((a) => {
-    const href = a.getAttribute("href");
+    const href = a.pathname;
     if (href === path) {
       a.setAttribute("aria-current", "page");
     }
@@ -35,8 +35,8 @@ export async function injectNav() {
 
   // Initialize navbar and dropdown interactivity
   const [{ init: initNavbar }, { init: initDropdown }] = await Promise.all([
-    import("/assets/js/components/navbar.js"),
-    import("/assets/js/components/dropdown.js"),
+    import("./components/navbar.js"),
+    import("./components/dropdown.js"),
   ]);
   initNavbar();
   initDropdown();
@@ -45,7 +45,7 @@ export async function injectNav() {
 export async function injectFooter() {
   if (document.querySelector("footer.container-full")) return;
 
-  const resp = await fetch("/assets/includes/footer.html");
+  const resp = await fetch("assets/includes/footer.html");
   const html = await resp.text();
   document.body.insertAdjacentHTML("beforeend", html);
 }

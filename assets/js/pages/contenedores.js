@@ -1,4 +1,4 @@
-import ComponentLoader from "/assets/js/component-loader.js";
+import ComponentLoader from "../component-loader.js";
 
 ComponentLoader.load("accordion");
 ComponentLoader.load("tabs");

@@ -1,5 +1,5 @@
-import ComponentLoader from "/assets/js/component-loader.js";
-import { Toasts } from "/assets/js/components/toasts.js";
+import ComponentLoader from "../component-loader.js";
+import { Toasts } from "../components/toasts.js";
 
 ComponentLoader.load("tooltips");
 ComponentLoader.load("popovers");

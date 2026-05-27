@@ -13,8 +13,8 @@
     })();
   </script>
   <title>CSS Components — Interactivos</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/assets/css/pages/interactivos.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="assets/css/pages/interactivos.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Saltar al contenido principal</a>
@@ -213,10 +213,10 @@
   </main>
 
   <script type="module">
-    import injectNav, { injectFooter } from "/assets/js/nav-injector.js";
+    import injectNav, { injectFooter } from "./assets/js/nav-injector.js";
     await injectNav();
     await injectFooter();
-    import("/assets/js/pages/interactivos.js");
+    import("./assets/js/pages/interactivos.js");
   </script>
 </body>
 </html>
