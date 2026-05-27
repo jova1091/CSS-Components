@@ -24,15 +24,6 @@ export async function injectNav() {
     });
   }
 
-  // Highlight current page in subnav
-  const path = window.location.pathname;
-  document.querySelectorAll(".subnav a").forEach((a) => {
-    const href = a.pathname;
-    if (href === path) {
-      a.setAttribute("aria-current", "page");
-    }
-  });
-
   // Initialize navbar and dropdown interactivity
   const [{ init: initNavbar }, { init: initDropdown }] = await Promise.all([
     import("./components/navbar.js"),

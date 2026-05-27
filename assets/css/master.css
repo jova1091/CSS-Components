@@ -244,57 +244,6 @@ html[data-theme="dark"] {
   --display-border-bottom: 1px solid var(--border-color);
 }
 
-/*
- * =================================================================================
- * SUBNAV (Categorías de Componentes)
- * =================================================================================
- */
-.subnav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--color-surface-subtle);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: var(--navbar-sticky-top, 0);
-  z-index: 1020;
-}
-
-.subnav a {
-  display: inline-block;
-  padding: 0.3rem 0.75rem;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  text-decoration: none;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.subnav a:hover,
-.subnav a:focus {
-  background-color: var(--color-surface-muted);
-  color: var(--color-text);
-}
-
-.subnav a[aria-current="page"] {
-  background-color: var(--color-primary);
-  color: var(--color-surface);
-}
-
-html[data-theme="dark"] .subnav a[aria-current="page"] {
-  background-color: var(--palette-dark-primary);
-  color: var(--palette-dark-surface);
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) .subnav a[aria-current="page"] {
-    background-color: var(--palette-dark-primary);
-    color: var(--palette-dark-surface);
-  }
-}
-
 /* 
  * =================================================================================
  * ACCESSIBILITY: REDUCED MOTION
