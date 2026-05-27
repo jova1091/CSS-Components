@@ -1,2 +1,2 @@
-@import url("/assets/css/master.css") layer(base);
-@import url("/assets/css/components/cards/cards.css") layer(components);
+@import url("../master.css") layer(base);
+@import url("../components/cards/cards.css") layer(components);

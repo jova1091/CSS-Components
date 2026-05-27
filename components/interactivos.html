@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <script>
+    (function() {
+      var base = document.querySelector('base');
+      var seg = location.pathname.split('/');
+      if (seg.length > 2 && seg[1] === 'CSS-Components') {
+        base.href = '/' + seg[1] + '/';
+      }
+    })();
+  </script>
   <title>CSS Components — Interactivos</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/css/pages/interactivos.css">

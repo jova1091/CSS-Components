@@ -1,3 +1,3 @@
-@import url("/assets/css/master.css") layer(base);
-@import url("/assets/css/components/forms/forms.css") layer(components);
-@import url("/assets/css/components/forms/float-labels.css") layer(components);
+@import url("../master.css") layer(base);
+@import url("../components/forms/forms.css") layer(components);
+@import url("../components/forms/float-labels.css") layer(components);
