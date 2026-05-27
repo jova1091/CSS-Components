@@ -1,0 +1,9 @@
+{
+  "agent": {
+    "workspace_dir": "./.opencode_workspace",
+    "use_git_worktrees": true
+  },
+  "project": {
+    "path": "F:\\DEV\\CSS-Components"
+  }
+}
