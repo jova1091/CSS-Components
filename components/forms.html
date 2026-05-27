@@ -7,9 +7,8 @@
   <script>
     (function() {
       var base = document.querySelector('base');
-      var seg = location.pathname.split('/');
-      if (seg.length > 2 && seg[1] === 'CSS-Components') {
-        base.href = '/' + seg[1] + '/';
+      if (location.pathname.startsWith('/CSS-Components')) {
+        base.href = '/CSS-Components/';
       }
     })();
   </script>
@@ -218,18 +217,7 @@
     import injectNav, { injectFooter } from "/assets/js/nav-injector.js";
     await injectNav();
     await injectFooter();
-    const mod = await import("/assets/js/pages/forms.js");
-    // Bind shake demo
-    const btnTriggerShake = document.getElementById("btn-trigger-shake");
-    const shakeDemoInput = document.getElementById("shakeDemoInput");
-    if (btnTriggerShake && shakeDemoInput) {
-      btnTriggerShake.addEventListener("click", () => {
-        shakeDemoInput.classList.remove("is-invalid");
-        void shakeDemoInput.offsetWidth;
-        shakeDemoInput.classList.add("is-invalid");
-        setTimeout(() => { shakeDemoInput.classList.remove("is-invalid"); }, 1500);
-      });
-    }
+    await import("/assets/js/pages/forms.js");
   </script>
 </body>
 </html>

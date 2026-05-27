@@ -7,9 +7,8 @@
   <script>
     (function() {
       var base = document.querySelector('base');
-      var seg = location.pathname.split('/');
-      if (seg.length > 2 && seg[1] === 'CSS-Components') {
-        base.href = '/' + seg[1] + '/';
+      if (location.pathname.startsWith('/CSS-Components')) {
+        base.href = '/CSS-Components/';
       }
     })();
   </script>
@@ -241,14 +240,6 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
     await injectNav();
     await injectFooter();
     await import("/assets/js/pages/feedback.js");
-
-    const { Toasts } = await import("/assets/js/components/toasts.js");
-    const bind = (id, title, msg, type) =>
-      document.getElementById(id)?.addEventListener("click", () => Toasts.show(title, msg, type));
-    bind("btn-toast-success", "Éxito", "Operación completada correctamente.", "success");
-    bind("btn-toast-info", "Información", "Este es un mensaje informativo.", "info");
-    bind("btn-toast-warning", "Advertencia", "Revise los datos ingresados.", "warning");
-    bind("btn-toast-danger", "Error", "No se pudo completar la operación.", "danger");
   </script>
 </body>
 </html>

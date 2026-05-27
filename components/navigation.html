@@ -7,9 +7,8 @@
   <script>
     (function() {
       var base = document.querySelector('base');
-      var seg = location.pathname.split('/');
-      if (seg.length > 2 && seg[1] === 'CSS-Components') {
-        base.href = '/' + seg[1] + '/';
+      if (location.pathname.startsWith('/CSS-Components')) {
+        base.href = '/CSS-Components/';
       }
     })();
   </script>
