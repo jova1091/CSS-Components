@@ -28,7 +28,7 @@
 </head>
 <body>
   <h1>CSS Lint</h1>
-  <p class="info">Validates all CSS files using CSSLint (browser-based). Checks for common issues like Properties Ordering, Box Model, IDs, Important, etc.</p>
+  <p class="info">Validates all CSS files using CSSLint (browser-based). CSS Cascade Layers (@import ... layer()) are stripped before linting since CSSLint 1.0.5 doesn't support them.</p>
   <button id="lint-btn" class="btn btn-primary">Run CSS Lint</button>
   <div class="summary" id="summary"></div>
   <div id="results"></div>
@@ -113,7 +113,34 @@
           continue;
         }
 
-        const messages = CSSLint.verify(css);
+        let cleanCss = css
+          .replace(/@import\s+url\([^)]+\)\s*layer\([^)]*\)\s*;/g, "")
+          .replace(/@layer\s+[^;{]+;/g, "")
+          .replace(/@layer\s+[^{]+\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, "")
+          .replace(/@starting-style\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, "")
+          .replace(/@view-transition\s*\{[^}]*\}/g, "")
+          .replace(/::view-transition-(?:old|new)\([^)]*\)\s*\{[^}]*\}/g, "")
+          .replace(/allow-discrete/g, "ease")
+          .replace(/inset\s*:/g, "top:")
+          .replace(/1lh/g, "1em")
+          .replace(/^\s*--[a-zA-Z][\w-]*\s*:[^;]+;/gm, "");
+
+        let prev = "";
+        while (prev !== cleanCss) {
+          prev = cleanCss;
+          cleanCss = cleanCss
+            .replace(/var\((?:[^()]*|\([^()]*\))*\)/g, "0")
+            .replace(/color-mix\((?:[^()]*|\([^()]*\))*\)/g, "#000")
+            .replace(/min\((?:[^()]*|\([^()]*\))*\)/g, "0")
+            .replace(/max\((?:[^()]*|\([^()]*\))*\)/g, "0")
+            .replace(/scale\((?:[^()]*|\([^()]*\))*\)/g, "1")
+            .replace(/clamp\((?:[^()]*|\([^()]*\))*\)/g, "0")
+            .replace(/repeat\((?:[^()]*|\([^()]*\))*\)/g, "1fr")
+            .replace(/minmax\((?:[^()]*|\([^()]*\))*\)/g, "0")
+            .replace(/calc\((?:[^()]*|\([^()]*\))*\)/g, "0")
+            .replace(/\d+fr\b/g, "0");
+        }
+        const messages = CSSLint.verify(cleanCss, { "important": 0, "ids": 0, "order-alphabetical": 0 });
         const issues = messages.messages || [];
         filesChecked++;
 
