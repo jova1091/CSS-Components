@@ -46,6 +46,31 @@
   /* Rectangle Skeleton */
   --skeleton-rect-width: 100%;
   --skeleton-rect-height: 150px;
+
+  /* Card Skeleton Pattern */
+  --skeleton-card-border-radius: 0.375rem;
+  --skeleton-card-border: 1px solid var(--color-border, #1b263b);
+  --skeleton-card-bg: var(--color-surface, #e0e1dd);
+  --skeleton-card-image-height: 160px;
+  --skeleton-card-body-padding: 1rem;
+  --skeleton-card-title-width: 70%;
+  --skeleton-card-text-last-width: 50%;
+
+  /* List Skeleton Pattern */
+  --skeleton-list-gap: 0.5rem;
+  --skeleton-list-item-gap: 0.75rem;
+  --skeleton-list-item-padding: 0.625rem;
+  --skeleton-list-item-radius: 0.25rem;
+  --skeleton-list-item-bg: transparent;
+  --skeleton-list-item-content-gap: 0.5rem;
+
+  /* Form Skeleton Pattern */
+  --skeleton-form-gap: 1rem;
+  --skeleton-form-group-gap: 0.375rem;
+  --skeleton-form-label-width: 35%;
+  --skeleton-form-label-height: 0.875rem;
+  --skeleton-form-input-height: 2.5rem;
+  --skeleton-form-input-radius: 0.375rem;
 }
 
 [data-theme="dark"] {

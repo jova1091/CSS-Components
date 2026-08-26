@@ -254,6 +254,179 @@
         </div>
       </article>
     </section>
+
+    <section id="combobox" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Combobox / Multi-select</h2>
+          <p>Autocomplete con filtrado en tiempo real, navegación por teclado y soporte para selección múltiple con chips.</p>
+        </div>
+        <div class="col-6">
+          <h4>Selección Simple</h4>
+          <div class="combobox" data-component="combobox">
+            <div class="combobox-input-wrapper">
+              <input type="text" class="combobox-input" placeholder="Seleccionar país..." autocomplete="off" />
+              <button type="button" class="combobox-clear" aria-label="Limpiar">&times;</button>
+              <button type="button" class="combobox-toggle" aria-label="Abrir menú">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="combobox-dropdown">
+              <div class="combobox-option" data-value="ar">Argentina</div>
+              <div class="combobox-option" data-value="bo">Bolivia</div>
+              <div class="combobox-option" data-value="br">Brasil</div>
+              <div class="combobox-option" data-value="cl">Chile</div>
+              <div class="combobox-option" data-value="co">Colombia</div>
+              <div class="combobox-option" data-value="ec">Ecuador</div>
+              <div class="combobox-option" data-value="py">Paraguay</div>
+              <div class="combobox-option" data-value="pe">Perú</div>
+              <div class="combobox-option" data-value="uy">Uruguay</div>
+              <div class="combobox-option" data-value="ve">Venezuela</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <h4>Selección Múltiple</h4>
+          <div class="combobox" data-multi data-component="combobox">
+            <div class="combobox-input-wrapper">
+              <span class="combobox-chips"></span>
+              <input type="text" class="combobox-input" placeholder="Agregar tecnología..." autocomplete="off" />
+              <button type="button" class="combobox-clear" aria-label="Limpiar">&times;</button>
+              <button type="button" class="combobox-toggle" aria-label="Abrir menú">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="combobox-dropdown">
+              <div class="combobox-option" data-value="html">HTML</div>
+              <div class="combobox-option" data-value="css">CSS</div>
+              <div class="combobox-option" data-value="js">JavaScript</div>
+              <div class="combobox-option" data-value="ts">TypeScript</div>
+              <div class="combobox-option" data-value="react">React</div>
+              <div class="combobox-option" data-value="vue">Vue.js</div>
+              <div class="combobox-option" data-value="angular">Angular</div>
+              <div class="combobox-option" data-value="svelte">Svelte</div>
+              <div class="combobox-option" data-value="node">Node.js</div>
+              <div class="combobox-option" data-value="python">Python</div>
+              <div class="combobox-option" data-value="rust">Rust</div>
+              <div class="combobox-option" data-value="go">Go</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="datepicker" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Date Picker</h2>
+          <p>Selector de fechas con calendario desplegable, navegación por teclado (flechas, Enter, Escape) y soporte para fechas mínimas/máximas.</p>
+        </div>
+        <div class="col-4">
+          <h4>Básico</h4>
+          <div class="datepicker" data-component="datepicker">
+            <div class="datepicker-input-wrapper">
+              <input type="text" class="datepicker-input" placeholder="Seleccionar fecha..." readonly autocomplete="off" />
+              <button type="button" class="datepicker-toggle" aria-label="Abrir calendario">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </button>
+            </div>
+            <div class="datepicker-calendar">
+              <div class="datepicker-header">
+                <div class="datepicker-nav">
+                  <button type="button" class="datepicker-nav-btn datepicker-nav-prev" aria-label="Mes anterior">
+                    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                </div>
+                <button type="button" class="datepicker-header-label"></button>
+                <div class="datepicker-nav">
+                  <button type="button" class="datepicker-nav-btn datepicker-nav-next" aria-label="Mes siguiente">
+                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="datepicker-weekdays">
+                <span class="datepicker-weekday">Lu</span>
+                <span class="datepicker-weekday">Ma</span>
+                <span class="datepicker-weekday">Mi</span>
+                <span class="datepicker-weekday">Ju</span>
+                <span class="datepicker-weekday">Vi</span>
+                <span class="datepicker-weekday">Sa</span>
+                <span class="datepicker-weekday">Do</span>
+              </div>
+              <div class="datepicker-days"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <h4>Con Rango de Fechas</h4>
+          <div class="datepicker" data-component="datepicker" data-min="2026-08-15" data-max="2026-09-15">
+            <div class="datepicker-input-wrapper">
+              <input type="text" class="datepicker-input" placeholder="Solo agosto-sept 2026..." readonly autocomplete="off" />
+              <button type="button" class="datepicker-toggle" aria-label="Abrir calendario">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </button>
+            </div>
+            <div class="datepicker-calendar">
+              <div class="datepicker-header">
+                <div class="datepicker-nav">
+                  <button type="button" class="datepicker-nav-btn datepicker-nav-prev" aria-label="Mes anterior">
+                    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                </div>
+                <button type="button" class="datepicker-header-label"></button>
+                <div class="datepicker-nav">
+                  <button type="button" class="datepicker-nav-btn datepicker-nav-next" aria-label="Mes siguiente">
+                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="datepicker-weekdays">
+                <span class="datepicker-weekday">Lu</span>
+                <span class="datepicker-weekday">Ma</span>
+                <span class="datepicker-weekday">Mi</span>
+                <span class="datepicker-weekday">Ju</span>
+                <span class="datepicker-weekday">Vi</span>
+                <span class="datepicker-weekday">Sa</span>
+                <span class="datepicker-weekday">Do</span>
+              </div>
+              <div class="datepicker-days"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <h4>Uso con Input</h4>
+          <pre><code>&lt;div class="datepicker" data-component="datepicker"&gt;
+  &lt;div class="datepicker-input-wrapper"&gt;
+    &lt;input class="datepicker-input"
+           placeholder="Seleccionar fecha..."
+           readonly /&gt;
+    &lt;button class="datepicker-toggle"&gt;...&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="datepicker-calendar"&gt;
+    &lt;!-- header, weekdays, days --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Options --&gt;
+data-min="2026-01-01"
+data-max="2026-12-31"
+data-locale="es-ES"</code></pre>
+          <div class="mt-3">
+            <strong>Eventos:</strong>
+            <pre><code>el.addEventListener("datepicker-change", (e) => {
+  console.log(e.detail.date);   // Date object
+  console.log(e.detail.value);  // "YYYY-MM-DD"
+});</code></pre>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer class="container-full">

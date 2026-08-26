@@ -10,7 +10,41 @@
   gap: var(--toast-container-gap);
   width: var(--toast-width);
   max-width: var(--toast-max-width);
-  pointer-events: var(--toast-container-pointer-events); /* Permite clics a través del fondo */
+  pointer-events: var(--toast-container-pointer-events);
+}
+
+/* Position variants */
+.toast-container-top-left {
+  top: var(--toast-container-top);
+  right: auto;
+  left: var(--toast-container-left, 1.5rem);
+}
+
+.toast-container-top-center {
+  top: var(--toast-container-top);
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-container-bottom-right {
+  top: auto;
+  bottom: var(--toast-container-bottom, 1.5rem);
+}
+
+.toast-container-bottom-left {
+  top: auto;
+  bottom: var(--toast-container-bottom, 1.5rem);
+  right: auto;
+  left: var(--toast-container-left, 1.5rem);
+}
+
+.toast-container-bottom-center {
+  top: auto;
+  bottom: var(--toast-container-bottom, 1.5rem);
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .toast {
@@ -51,6 +85,55 @@
     opacity: var(--toast-slide-in-to-opacity);
     transform: var(--toast-slide-in-to-transform);
   }
+}
+
+@keyframes toast-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toast-slide-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Position-specific animations */
+.toast-container-top-left .toast,
+.toast-container-bottom-left .toast {
+  animation-name: toast-slide-in-left;
+}
+
+.toast-container-bottom-right .toast,
+.toast-container-bottom-left .toast,
+.toast-container-bottom-center .toast {
+  animation-name: toast-slide-in-bottom;
+}
+
+/* Fade-out direction matches entry */
+.toast-container-top-left .toast.fade-out {
+  transform: translateX(-100px) scale(0.9);
+}
+
+.toast-container-bottom-right .toast.fade-out,
+.toast-container-bottom-left .toast.fade-out,
+.toast-container-bottom-center .toast.fade-out {
+  transform: translateY(100px) scale(0.9);
+}
+
+.toast-container-top-center .toast.fade-out {
+  transform: translateY(-100px) scale(0.9);
 }
 
 /* Variaciones del borde lateral izquierdo */

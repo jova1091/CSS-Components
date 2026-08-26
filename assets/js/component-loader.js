@@ -9,10 +9,12 @@ const COMPONENT_REGISTRY = {
   cards:        { css: 'components/cards/cards.css',            js: null },
   carousel:     { css: 'components/carousel/carousel.css',      js: 'components/carousel.js' },
   chips:        { css: 'components/chips/chips.css',            js: 'components/chips.js' },
+  combobox:     { css: 'components/combobox/combobox.css',     js: 'components/combobox.js' },
   drawer:       { css: 'components/drawer/drawer.css',          js: 'components/drawer.js' },
   dropdown:     { css: 'components/dropdown/dropdown.css',      js: 'components/dropdown.js' },
   dropzone:     { css: 'components/dropzone/dropzone.css',      js: 'components/dropzone.js' },
   'float-labels': { css: 'components/forms/float-labels.css',   js: 'components/float-labels.js' },
+  datepicker:   { css: 'components/datepicker/datepicker.css', js: 'components/datepicker.js' },
   forms:        { css: 'components/forms/forms.css',            js: null },
   helpers:      { css: 'utilities/helpers/helpers.css',         js: null },
   'list-groups': { css: 'components/list-groups/list-groups.css', js: null },
@@ -28,13 +30,14 @@ const COMPONENT_REGISTRY = {
   stepper:      { css: 'components/stepper/stepper.css',        js: 'components/stepper.js' },
   tables:       { css: 'components/tables/tables.css',          js: null },
   timeline:     { css: 'components/timeline/timeline.css',      js: null },
+  'tree-view':  { css: 'components/tree-view/tree-view.css',   js: 'components/tree-view.js' },
   tabs:         { css: 'components/tabs/tabs.css',              js: 'components/tabs.js' },
   toasts:       { css: 'components/toasts/toasts.css',          js: 'components/toasts.js' },
   tooltips:     { css: 'components/tooltips/tooltips.css',      js: 'components/tooltips.js' },
 };
 
 const loadedCSS = new Set();
-const loadedJS = new Set();
+const pendingJS = {};
 let modulesCache = {};
 let observer = null;
 
@@ -99,17 +102,21 @@ export class ComponentLoader {
   }
 
   static async _loadJS(relativePath, name) {
-    if (loadedJS.has(relativePath)) return modulesCache[name] || null;
-    loadedJS.add(relativePath);
+    if (modulesCache[name]) return modulesCache[name];
+    if (pendingJS[relativePath]) return pendingJS[relativePath];
 
-    try {
-      const module = await import(`./${relativePath}`);
-      modulesCache[name] = module;
-      return module;
-    } catch (e) {
-      loadedJS.delete(relativePath);
-      throw new Error(`Failed to load JS: ${relativePath} — ${e.message}`);
-    }
+    pendingJS[relativePath] = import(`./${relativePath}`)
+      .then((module) => {
+        modulesCache[name] = module;
+        delete pendingJS[relativePath];
+        return module;
+      })
+      .catch((e) => {
+        delete pendingJS[relativePath];
+        throw new Error(`Failed to load JS: ${relativePath} — ${e.message}`);
+      });
+
+    return pendingJS[relativePath];
   }
 
   static getRegistry() {

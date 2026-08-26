@@ -90,6 +90,21 @@ details[open] .accordion-header::after {
 }
 
 .accordion-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: var(--accordion-body-transition);
+}
+
+.accordion-body > * {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.accordion-body-inner {
   padding: var(--accordion-body-padding);
   border-top: var(--accordion-border-width) var(--accordion-border-style) var(--accordion-border-color);
+}
+
+details[open] > .accordion-body {
+  grid-template-rows: 1fr;
 }

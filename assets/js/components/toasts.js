@@ -4,17 +4,18 @@ class ToastService {
     this._ensureContainer();
   }
 
-  _ensureContainer() {
-    this.container = document.querySelector(".toast-container");
+  _ensureContainer(position = "top-right") {
+    const selector = `.toast-container.toast-container-${position}`;
+    this.container = document.querySelector(selector);
     if (!this.container) {
       this.container = document.createElement("div");
-      this.container.className = "toast-container";
+      this.container.className = `toast-container toast-container-${position}`;
       document.body.appendChild(this.container);
     }
   }
 
-  show(title, message, type = "info", duration = 4000) {
-    this._ensureContainer();
+  show(title, message, type = "info", duration = 4000, position = "top-right") {
+    this._ensureContainer(position);
 
     const toast = document.createElement("div");
     toast.className = `toast toast-${type}`;

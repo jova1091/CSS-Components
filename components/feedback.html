@@ -94,15 +94,26 @@
         <div class="col-12">
           <hr class="my-5" />
           <h2>Toasts (Notificaciones dinámicas)</h2>
-          <p>El componente Toast permite lanzar notificaciones flotantes temporales y accesibles en la esquina superior derecha. Admite cuatro variantes visuales:</p>
+          <p>El componente Toast permite lanzar notificaciones flotantes temporales y accesibles. Admite 6 posiciones y 4 variantes visuales:</p>
           <div class="my-3">
             <button id="btn-toast-success" class="btn btn-success">Lanzar Éxito</button>
             <button id="btn-toast-info" class="btn btn-info">Lanzar Info</button>
             <button id="btn-toast-warning" class="btn btn-warning">Lanzar Advertencia</button>
             <button id="btn-toast-danger" class="btn btn-danger">Lanzar Error</button>
           </div>
+          <h4 class="mt-4 mb-2">Posiciones</h4>
+          <div class="my-3 d-flex flex-wrap gap-2">
+            <button class="btn btn-sm btn-secondary toast-pos-btn" data-pos="top-right">Top Right</button>
+            <button class="btn btn-sm btn-secondary toast-pos-btn" data-pos="top-left">Top Left</button>
+            <button class="btn btn-sm btn-secondary toast-pos-btn" data-pos="top-center">Top Center</button>
+            <button class="btn btn-sm btn-secondary toast-pos-btn" data-pos="bottom-right">Bottom Right</button>
+            <button class="btn btn-sm btn-secondary toast-pos-btn" data-pos="bottom-left">Bottom Left</button>
+            <button class="btn btn-sm btn-secondary toast-pos-btn" data-pos="bottom-center">Bottom Center</button>
+          </div>
           <pre><code>import Toasts from "./components/toasts.js";
-Toasts.show("Notificación", "Operación completada con éxito.", "success", 4000);</code></pre>
+Toasts.show("Título", "Mensaje", "success", 4000, "top-right");
+// Posiciones: top-right, top-left, top-center,
+//             bottom-right, bottom-left, bottom-center</code></pre>
         </div>
       </article>
     </section>
@@ -238,6 +249,65 @@ Toasts.show("Notificación", "Operación completada con éxito.", "success", 400
                   <div class="skeleton skeleton-text" style="width: 35%;"></div>
                   <div class="skeleton skeleton-text" style="width: 25%;"></div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <h4 class="mt-4 mb-3">Patrones Compuestos</h4>
+          <div class="row my-4">
+            <div class="col-4 mb-4">
+              <h5>Card Skeleton</h5>
+              <div class="skeleton-card">
+                <div class="skeleton skeleton-card-image"></div>
+                <div class="skeleton-card-body">
+                  <div class="skeleton skeleton-title"></div>
+                  <div class="skeleton skeleton-text"></div>
+                  <div class="skeleton skeleton-text"></div>
+                  <div class="skeleton skeleton-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 mb-4">
+              <h5>List Skeleton</h5>
+              <div class="skeleton-list">
+                <div class="skeleton-list-item">
+                  <div class="skeleton skeleton-circle" style="width:40px;height:40px;"></div>
+                  <div class="skeleton-list-item-content">
+                    <div class="skeleton skeleton-title" style="width:60%;"></div>
+                    <div class="skeleton skeleton-text" style="width:80%;"></div>
+                  </div>
+                </div>
+                <div class="skeleton-list-item">
+                  <div class="skeleton skeleton-circle" style="width:40px;height:40px;"></div>
+                  <div class="skeleton-list-item-content">
+                    <div class="skeleton skeleton-title" style="width:45%;"></div>
+                    <div class="skeleton skeleton-text" style="width:70%;"></div>
+                  </div>
+                </div>
+                <div class="skeleton-list-item">
+                  <div class="skeleton skeleton-circle" style="width:40px;height:40px;"></div>
+                  <div class="skeleton-list-item-content">
+                    <div class="skeleton skeleton-title" style="width:55%;"></div>
+                    <div class="skeleton skeleton-text" style="width:90%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 mb-4">
+              <h5>Form Skeleton</h5>
+              <div class="skeleton-form">
+                <div class="skeleton-form-group">
+                  <div class="skeleton skeleton-label"></div>
+                  <div class="skeleton skeleton-input"></div>
+                </div>
+                <div class="skeleton-form-group">
+                  <div class="skeleton skeleton-label"></div>
+                  <div class="skeleton skeleton-input"></div>
+                </div>
+                <div class="skeleton-form-group">
+                  <div class="skeleton skeleton-label" style="width:50%;"></div>
+                  <div class="skeleton skeleton-input" style="height:5rem;"></div>
+                </div>
+                <div class="skeleton skeleton-rect" style="width:120px;height:36px;border-radius:0.375rem;"></div>
               </div>
             </div>
           </div>

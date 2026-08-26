@@ -232,6 +232,146 @@
       </article>
     </section>
 
+    <section id="tree-view" class="container">
+      <article class="row">
+        <div class="col-12">
+          <hr class="my-5" />
+          <h2>Tree View</h2>
+          <p>Navegación jerárquica con expansión/colapsado animado y navegación completa por teclado (flechas, Home, End, Enter, Space).</p>
+        </div>
+        <div class="col-6">
+          <h3>Básico</h3>
+          <div class="tree-view" data-component="tree-view">
+            <div class="tree-item" data-expanded="true" aria-expanded="true">
+              <div class="tree-item-content" tabindex="0">
+                <span class="tree-item-icon"></span>
+                <span class="tree-item-label">Proyecto</span>
+              </div>
+              <div class="tree-group">
+                <div class="tree-group-inner">
+                  <div class="tree-item" data-expanded="true" aria-expanded="true">
+                    <div class="tree-item-content" tabindex="0">
+                      <span class="tree-item-icon"></span>
+                      <span class="tree-item-label">src</span>
+                    </div>
+                    <div class="tree-group">
+                      <div class="tree-group-inner">
+                        <div class="tree-item">
+                          <div class="tree-item-content" tabindex="0">
+                            <span class="tree-item-icon-placeholder"></span>
+                            <span class="tree-item-label">index.js</span>
+                          </div>
+                        </div>
+                        <div class="tree-item">
+                          <div class="tree-item-content" tabindex="0">
+                            <span class="tree-item-icon-placeholder"></span>
+                            <span class="tree-item-label">styles.css</span>
+                          </div>
+                        </div>
+                        <div class="tree-item" data-expanded="false" aria-expanded="false">
+                          <div class="tree-item-content" tabindex="0">
+                            <span class="tree-item-icon"></span>
+                            <span class="tree-item-label">components</span>
+                          </div>
+                          <div class="tree-group">
+                            <div class="tree-group-inner">
+                              <div class="tree-item">
+                                <div class="tree-item-content" tabindex="0">
+                                  <span class="tree-item-icon-placeholder"></span>
+                                  <span class="tree-item-label">Button.js</span>
+                                </div>
+                              </div>
+                              <div class="tree-item">
+                                <div class="tree-item-content" tabindex="0">
+                                  <span class="tree-item-icon-placeholder"></span>
+                                  <span class="tree-item-label">Modal.js</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tree-item">
+                    <div class="tree-item-content" tabindex="0">
+                      <span class="tree-item-icon-placeholder"></span>
+                      <span class="tree-item-label">package.json</span>
+                    </div>
+                  </div>
+                  <div class="tree-item">
+                    <div class="tree-item-content" tabindex="0">
+                      <span class="tree-item-icon-placeholder"></span>
+                      <span class="tree-item-label">README.md</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <h3>Con Badges y Estado</h3>
+          <div class="tree-view" data-component="tree-view">
+            <div class="tree-item" data-expanded="true" aria-expanded="true">
+              <div class="tree-item-content" tabindex="0">
+                <span class="tree-item-icon"></span>
+                <span class="tree-item-label">Bandas</span>
+                <span class="tree-badge">12</span>
+              </div>
+              <div class="tree-group">
+                <div class="tree-group-inner">
+                  <div class="tree-item" data-selected="true">
+                    <div class="tree-item-content" tabindex="0">
+                      <span class="tree-item-icon-placeholder"></span>
+                      <span class="tree-item-label">Rock</span>
+                      <span class="tree-badge">5</span>
+                    </div>
+                  </div>
+                  <div class="tree-item">
+                    <div class="tree-item-content" tabindex="0">
+                      <span class="tree-item-icon-placeholder"></span>
+                      <span class="tree-item-label">Jazz</span>
+                      <span class="tree-badge">3</span>
+                    </div>
+                  </div>
+                  <div class="tree-item tree-item--disabled">
+                    <div class="tree-item-content" tabindex="-1">
+                      <span class="tree-item-icon-placeholder"></span>
+                      <span class="tree-item-label">Clásica (deshabilitado)</span>
+                    </div>
+                  </div>
+                  <div class="tree-item" data-expanded="false" aria-expanded="false">
+                    <div class="tree-item-content" tabindex="0">
+                      <span class="tree-item-icon"></span>
+                      <span class="tree-item-label">Electrónica</span>
+                      <span class="tree-badge">4</span>
+                    </div>
+                    <div class="tree-group">
+                      <div class="tree-group-inner">
+                        <div class="tree-item">
+                          <div class="tree-item-content" tabindex="0">
+                            <span class="tree-item-icon-placeholder"></span>
+                            <span class="tree-item-label">House</span>
+                          </div>
+                        </div>
+                        <div class="tree-item">
+                          <div class="tree-item-content" tabindex="0">
+                            <span class="tree-item-icon-placeholder"></span>
+                            <span class="tree-item-label">Techno</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
     <section id="pagination" class="container">
       <article class="row">
         <div class="col-12">

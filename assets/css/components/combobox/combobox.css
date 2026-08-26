@@ -1,0 +1,168 @@
+@import url("root.css") layer(components.combobox.vars);
+
+.combobox {
+  position: var(--combobox-position);
+  width: var(--combobox-width);
+}
+
+.combobox-input-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--combobox-chip-gap);
+  padding: calc(var(--combobox-input-padding-y) * 0.5) var(--combobox-input-padding-x);
+  background-color: var(--combobox-input-bg);
+  border: var(--combobox-input-border);
+  border-radius: var(--combobox-input-border-radius);
+  cursor: text;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.combobox-input-wrapper:focus-within {
+  border-color: var(--combobox-input-focus-border-color);
+  box-shadow: var(--combobox-input-focus-box-shadow);
+}
+
+.combobox-input {
+  flex: 1;
+  min-width: 80px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--combobox-input-color);
+  font-size: var(--combobox-input-font-size);
+  padding: 0;
+}
+
+.combobox-input::placeholder {
+  color: var(--combobox-placeholder-color);
+}
+
+.combobox-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--combobox-chip-gap);
+  padding: var(--combobox-chip-padding);
+  background-color: var(--combobox-chip-bg);
+  color: var(--combobox-chip-color);
+  border-radius: var(--combobox-chip-border-radius);
+  font-size: var(--combobox-chip-font-size);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.combobox-chip-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--combobox-chip-close-size);
+  height: var(--combobox-chip-close-size);
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 0;
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 50%;
+}
+
+.combobox-chip-remove:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.combobox-clear {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--combobox-placeholder-color);
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.combobox-clear:hover {
+  opacity: 1;
+}
+
+.combobox-has-value .combobox-clear {
+  display: inline-flex;
+}
+
+.combobox-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--combobox-placeholder-color);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.combobox[data-open="true"] .combobox-toggle {
+  transform: rotate(180deg);
+}
+
+.combobox-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--combobox-dropdown-margin-top);
+  background-color: var(--combobox-dropdown-bg);
+  border: var(--combobox-dropdown-border);
+  border-radius: var(--combobox-dropdown-border-radius);
+  box-shadow: var(--combobox-dropdown-shadow);
+  backdrop-filter: var(--combobox-dropdown-backdrop);
+  -webkit-backdrop-filter: var(--combobox-dropdown-backdrop);
+  max-height: var(--combobox-dropdown-max-height);
+  overflow-y: auto;
+  z-index: var(--combobox-dropdown-z-index);
+  display: none;
+}
+
+.combobox[data-open="true"] .combobox-dropdown {
+  display: block;
+}
+
+.combobox-option {
+  padding: var(--combobox-option-padding-y) var(--combobox-option-padding-x);
+  cursor: var(--combobox-option-cursor);
+  transition: background-color 0.1s ease;
+}
+
+.combobox-option:hover,
+.combobox-option[data-focused="true"] {
+  background-color: var(--combobox-option-hover-bg);
+}
+
+.combobox-option[data-selected="true"] {
+  background-color: var(--combobox-option-active-bg);
+  color: var(--combobox-option-active-color);
+  font-weight: 500;
+}
+
+.combobox-option[data-selected="true"]::before {
+  content: "\2713";
+  margin-right: 0.5rem;
+}
+
+.combobox-empty {
+  padding: var(--combobox-empty-padding);
+  color: var(--combobox-empty-color);
+  font-size: var(--combobox-empty-font-size);
+  text-align: center;
+}

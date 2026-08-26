@@ -50,4 +50,5 @@
 
   /* Body */
   --accordion-body-padding: 1rem 1.25rem;
+  --accordion-body-transition: grid-template-rows 0.3s ease-out;
 }
