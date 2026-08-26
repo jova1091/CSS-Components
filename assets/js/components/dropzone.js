@@ -1,5 +1,8 @@
 export function init(container = document) {
-  container.querySelectorAll(".dropzone[data-dropzone]").forEach((dz) => {
+  const dropzones = new Set(container.querySelectorAll(".dropzone[data-dropzone]"));
+  if (container.classList?.contains("dropzone") && container.hasAttribute("data-dropzone")) dropzones.add(container);
+
+  dropzones.forEach((dz) => {
     if (dz._dropzoneInit) return;
     dz._dropzoneInit = true;
 

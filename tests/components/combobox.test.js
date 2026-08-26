@@ -42,7 +42,7 @@ describe("Combobox", () => {
     input.focus();
     input.dispatchEvent(new Event("input"));
     const dropdown = el.querySelector(".combobox-dropdown");
-    expect(dropdown.classList.contains("show")).toBe(true);
+    expect(el.getAttribute("data-open")).toBe("true");
     el.remove();
   });
 

@@ -4,7 +4,7 @@ import { init } from "../../assets/js/components/drawer.js";
 function createDrawer() {
   const el = document.createElement("div");
   el.innerHTML = `
-    <button data-drawer-toggle="#test-drawer">Toggle</button>
+    <button data-drawer-toggle data-target="#test-drawer">Toggle</button>
     <div id="test-drawer" class="drawer" hidden>
       <div class="drawer-overlay"></div>
       <div class="drawer-content">

@@ -1,5 +1,6 @@
 export function init(container = document) {
-  const dropdownContainers = container.querySelectorAll(".dropdown, .nav-item.dropdown");
+  const dropdownContainers = new Set(container.querySelectorAll(".dropdown, .nav-item.dropdown"));
+  if (container.classList?.contains("dropdown") || container.classList?.contains("nav-item")) dropdownContainers.add(container);
 
   const openDropdown = (toggle, menu) => {
     closeAllDropdowns(menu);

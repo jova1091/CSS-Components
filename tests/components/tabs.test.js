@@ -5,7 +5,7 @@ function createTabs() {
   const el = document.createElement("div");
   el.innerHTML = `
     <div role="tablist">
-      <button role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1">Tab 1</button>
+      <button role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1" tabindex="0">Tab 1</button>
       <button role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1">Tab 2</button>
     </div>
     <div role="tabpanel" id="panel-1" aria-labelledby="tab-1">Content 1</div>

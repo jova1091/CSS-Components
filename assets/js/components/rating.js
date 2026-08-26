@@ -1,5 +1,8 @@
 export function init(container = document) {
-  container.querySelectorAll(".rating:not(.rating--readonly):not(.rating--disabled)").forEach((rating) => {
+  const ratings = new Set(container.querySelectorAll(".rating:not(.rating--readonly):not(.rating--disabled)"));
+  if (container.classList?.contains("rating") && !container.classList.contains("rating--readonly") && !container.classList.contains("rating--disabled")) ratings.add(container);
+
+  ratings.forEach((rating) => {
     if (rating._ratingInit) return;
     rating._ratingInit = true;
 

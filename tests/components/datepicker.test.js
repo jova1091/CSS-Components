@@ -7,11 +7,11 @@ function createDatepicker() {
   el.innerHTML = `
     <input type="text" class="datepicker-input" readonly placeholder="Select date" />
     <button class="datepicker-toggle">📅</button>
-    <div class="datepicker-calendar" hidden>
+    <div class="datepicker-calendar">
       <div class="datepicker-header">
-        <button class="datepicker-prev">‹</button>
-        <span class="datepicker-label"></span>
-        <button class="datepicker-next">›</button>
+      <button class="datepicker-nav-prev">‹</button>
+      <span class="datepicker-header-label"></span>
+      <button class="datepicker-nav-next">›</button>
       </div>
       <div class="datepicker-days"></div>
     </div>
@@ -42,8 +42,7 @@ describe("Datepicker", () => {
     init(el);
     const toggle = el.querySelector(".datepicker-toggle");
     toggle.click();
-    const calendar = el.querySelector(".datepicker-calendar");
-    expect(calendar.hidden).toBe(false);
+    expect(el.getAttribute("data-open")).toBe("true");
     el.remove();
   });
 
@@ -53,7 +52,7 @@ describe("Datepicker", () => {
     const toggle = el.querySelector(".datepicker-toggle");
     toggle.click();
     const days = el.querySelectorAll(".datepicker-day");
-    expect(days.length).toBeGreaterThan(0);
+    expect(days.length > 0).toBeTruthy();
     el.remove();
   });
 
