@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Components — Test Runner</title>
+  <link rel="stylesheet" href="../assets/css/master.css" />
+  <style>
+    body { max-width: 900px; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; }
+    h1 { margin-bottom: 0.25rem; }
+    #test-summary { display: none; font-size: 1.1rem; font-weight: 600; margin: 1rem 0; padding: 0.75rem 1rem; background: var(--color-surface, #f8f9fa); border-radius: 8px; }
+    .suite { margin: 1.5rem 0; }
+    .suite h3 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--color-text-secondary, #6c757d); }
+    .test { padding: 0.35rem 0.5rem; border-radius: 4px; font-size: 0.9rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .test .icon { flex-shrink: 0; width: 1.2em; text-align: center; }
+    .test.passed { color: #27ae60; }
+    .test.failed { color: #e74c3c; background: #fdf0ef; }
+    .test.skipped { color: #95a5a6; }
+    .error { margin: 0.25rem 0 0; padding: 0.5rem; background: #fff; border: 1px solid #e74c3c; border-radius: 4px; font-size: 0.8rem; white-space: pre-wrap; }
+    #run-btn { margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <h1>CSS Components — Test Runner</h1>
+  <p>Unit tests for all interactive JS components. Run in browser without Node.js.</p>
+  <button id="run-btn" class="btn btn-primary">Run All Tests</button>
+  <div id="test-summary"></div>
+  <div id="test-output"></div>
+
+  <script type="module">
+    import { runAll, reset } from "./test-framework.js";
+
+    import "./components/component-loader.test.js";
+    import "./components/accordion.test.js";
+    import "./components/chips.test.js";
+    import "./components/combobox.test.js";
+    import "./components/datepicker.test.js";
+    import "./components/drawer.test.js";
+    import "./components/dropdown.test.js";
+    import "./components/dropzone.test.js";
+    import "./components/float-labels.test.js";
+    import "./components/modal.test.js";
+    import "./components/popovers.test.js";
+    import "./components/rating.test.js";
+    import "./components/stepper.test.js";
+    import "./components/tabs.test.js";
+    import "./components/toasts.test.js";
+    import "./components/tooltips.test.js";
+    import "./components/tree-view.test.js";
+
+    document.getElementById("run-btn").addEventListener("click", async () => {
+      reset();
+      document.getElementById("test-output").innerHTML = "";
+      document.getElementById("test-summary").style.display = "none";
+      document.getElementById("run-btn").disabled = true;
+      document.getElementById("run-btn").textContent = "Running…";
+      await runAll();
+      document.getElementById("run-btn").disabled = false;
+      document.getElementById("run-btn").textContent = "Run All Tests";
+    });
+  </script>
+</body>
+</html>

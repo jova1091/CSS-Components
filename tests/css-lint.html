@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Components — CSS Lint</title>
+  <style>
+    body { max-width: 900px; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; }
+    h1 { margin-bottom: 0.25rem; }
+    .info { color: #6c757d; margin-bottom: 1.5rem; }
+    #lint-btn { margin: 1rem 0; }
+    #results { margin-top: 1rem; }
+    .file-result { margin: 1rem 0; border: 1px solid #dee2e6; border-radius: 8px; overflow: hidden; }
+    .file-header { padding: 0.75rem 1rem; background: #f8f9fa; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+    .badge { padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; }
+    .badge.pass { background: #d4edda; color: #155724; }
+    .badge.warn { background: #fff3cd; color: #856404; }
+    .badge.fail { background: #f8d7da; color: #721c24; }
+    .message { padding: 0.5rem 1rem; border-top: 1px solid #dee2e6; font-size: 0.85rem; }
+    .message:last-child { border-bottom: none; }
+    .message .line { color: #6c757d; font-size: 0.8rem; }
+    .message.error { color: #721c24; background: #fdf0ef; }
+    .message.warning { color: #856404; background: #fff8e1; }
+    .message.info { color: #0c5460; background: #d1ecf1; }
+    .no-issues { padding: 1rem; color: #27ae60; font-weight: 600; }
+    .summary { font-size: 1.1rem; font-weight: 600; margin: 1rem 0; padding: 0.75rem 1rem; background: #f8f9fa; border-radius: 8px; display: none; }
+  </style>
+</head>
+<body>
+  <h1>CSS Lint</h1>
+  <p class="info">Validates all CSS files using CSSLint (browser-based). Checks for common issues like Properties Ordering, Box Model, IDs, Important, etc.</p>
+  <button id="lint-btn" class="btn btn-primary">Run CSS Lint</button>
+  <div class="summary" id="summary"></div>
+  <div id="results"></div>
+
+  <script>
+    const BASE = "../";
+    const CSS_FILES = [
+      "assets/css/master.css",
+      "assets/css/base/typography/typography.css",
+      "assets/css/base/images/images.css",
+      "assets/css/grid/grid.css",
+      "assets/css/utilities/helpers/helpers.css",
+      "assets/css/utilities/spacers/spacers.css",
+      "assets/css/components/accordion/accordion.css",
+      "assets/css/components/alerts/alerts.css",
+      "assets/css/components/avatar/avatar.css",
+      "assets/css/components/badges/badges.css",
+      "assets/css/components/breadcrumb/breadcrumb.css",
+      "assets/css/components/buttons/buttons.css",
+      "assets/css/components/buttons/btn-group.css",
+      "assets/css/components/cards/cards.css",
+      "assets/css/components/carousel/carousel.css",
+      "assets/css/components/chips/chips.css",
+      "assets/css/components/combobox/combobox.css",
+      "assets/css/components/datepicker/datepicker.css",
+      "assets/css/components/drawer/drawer.css",
+      "assets/css/components/dropdown/dropdown.css",
+      "assets/css/components/dropzone/dropzone.css",
+      "assets/css/components/forms/forms.css",
+      "assets/css/components/forms/float-labels.css",
+      "assets/css/components/list-groups/list-groups.css",
+      "assets/css/components/modal/modal.css",
+      "assets/css/components/navbar/navbar.css",
+      "assets/css/components/pagination/pagination.css",
+      "assets/css/components/popovers/popovers.css",
+      "assets/css/components/progress/progress.css",
+      "assets/css/components/rating/rating.css",
+      "assets/css/components/skeletons/skeletons.css",
+      "assets/css/components/spinners/spinners.css",
+      "assets/css/components/stepper/stepper.css",
+      "assets/css/components/tables/tables.css",
+      "assets/css/components/tabs/tabs.css",
+      "assets/css/components/timeline/timeline.css",
+      "assets/css/components/toasts/toasts.css",
+      "assets/css/components/tooltips/tooltips.css",
+      "assets/css/components/tree-view/tree-view.css",
+      "assets/css/utilities/shared/btn-close.css",
+      "assets/css/utilities/shared/btn-close-root.css",
+    ];
+
+    document.getElementById("lint-btn").addEventListener("click", async () => {
+      const btn = document.getElementById("lint-btn");
+      const results = document.getElementById("results");
+      const summary = document.getElementById("summary");
+      btn.disabled = true;
+      btn.textContent = "Loading CSSLint…";
+      results.innerHTML = "";
+      summary.style.display = "none";
+
+      if (typeof CSSLint === "undefined") {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/csslint@1.0.5/dist/csslint.js";
+        document.head.appendChild(script);
+        await new Promise((resolve, reject) => {
+          script.onload = resolve;
+          script.onerror = () => reject(new Error("Failed to load CSSLint"));
+        });
+      }
+
+      btn.textContent = "Linting…";
+      let totalErrors = 0;
+      let totalWarnings = 0;
+      let filesChecked = 0;
+
+      for (const file of CSS_FILES) {
+        let css;
+        try {
+          const resp = await fetch(BASE + file);
+          if (!resp.ok) { continue; }
+          css = await resp.text();
+        } catch {
+          continue;
+        }
+
+        const messages = CSSLint.verify(css);
+        const issues = messages.messages || [];
+        filesChecked++;
+
+        const errors = issues.filter(m => m.type === "error");
+        const warnings = issues.filter(m => m.type === "warning");
+        totalErrors += errors.length;
+        totalWarnings += warnings.length;
+
+        const badgeClass = errors.length === 0 && warnings.length === 0 ? "pass" : errors.length > 0 ? "fail" : "warn";
+        const badgeText = errors.length === 0 && warnings.length === 0 ? "PASS" : `${errors.length}E ${warnings.length}W`;
+
+        let html = `<div class="file-result">`;
+        html += `<div class="file-header"><span>${file}</span><span class="badge ${badgeClass}">${badgeText}</span></div>`;
+
+        if (issues.length === 0) {
+          html += `<div class="no-issues">No issues</div>`;
+        } else {
+          for (const issue of issues.slice(0, 20)) {
+            const type = issue.type || "info";
+            const line = issue.line ? `L${issue.line}` : "";
+            html += `<div class="message ${type}">`;
+            html += `<span class="line">${line}</span> ${issue.message}`;
+            if (issue.rule?.name) html += ` <em>(${issue.rule.name})</em>`;
+            html += `</div>`;
+          }
+          if (issues.length > 20) {
+            html += `<div class="message info">… and ${issues.length - 20} more issues</div>`;
+          }
+        }
+        html += `</div>`;
+        results.innerHTML += html;
+      }
+
+      summary.style.display = "block";
+      summary.innerHTML = `${filesChecked} files checked · <span style="color:#e74c3c">${totalErrors} errors</span> · <span style="color:#856404">${totalWarnings} warnings</span>`;
+      btn.disabled = false;
+      btn.textContent = "Run CSS Lint";
+    });
+  </script>
+</body>
+</html>

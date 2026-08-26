@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Components — Manual QA Checklist</title>
+  <style>
+    body { max-width: 900px; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; }
+    h1 { margin-bottom: 0.25rem; }
+    .info { color: #6c757d; margin-bottom: 1.5rem; }
+    .section { margin: 2rem 0; }
+    .section h2 { font-size: 1.15rem; border-bottom: 2px solid #dee2e6; padding-bottom: 0.5rem; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 0.4rem 0; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .checklist input[type="checkbox"] { margin-top: 0.3rem; flex-shrink: 0; }
+    .checklist label { cursor: pointer; }
+    .checklist .note { color: #6c757d; font-size: 0.85rem; margin-left: 1.5rem; }
+    .progress-bar { position: sticky; top: 0; background: #fff; padding: 0.75rem 0; border-bottom: 1px solid #dee2e6; z-index: 10; display: flex; align-items: center; gap: 1rem; }
+    .progress-bar .bar { flex: 1; height: 8px; background: #e9ecef; border-radius: 4px; overflow: hidden; }
+    .progress-bar .fill { height: 100%; background: #27ae60; transition: width 0.3s; width: 0%; }
+    .progress-bar .text { font-size: 0.9rem; font-weight: 600; white-space: nowrap; }
+    #reset-btn { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <div class="progress-bar">
+    <span class="text" id="progress-text">0 / 0</span>
+    <div class="bar"><div class="fill" id="progress-fill"></div></div>
+  </div>
+
+  <h1>Manual QA Checklist</h1>
+  <p class="info">Check each item after visual/interactive verification. Progress is saved in localStorage.</p>
+
+  <div class="section">
+    <h2>Theme Toggle</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q1" /><label for="q1">Light/Dark toggle works from navbar</label></li>
+      <li><input type="checkbox" id="q2" /><label for="q2">All components update colors on toggle</label></li>
+      <li><input type="checkbox" id="q3" /><label for="q3">Toggle persists across page reload (localStorage)</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Typography & Base</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q4" /><label for="q4">Headings h1–h6 render correctly</label></li>
+      <li><input type="checkbox" id="q5" /><label for="q5">Blockquotes styled properly</label></li>
+      <li><input type="checkbox" id="q6" /><label for="q6">Images responsive (.img-thumbnail, .rounded-circle)</label></li>
+      <li><input type="checkbox" id="q7" /><label for="q7">Avatar sizes (xs/sm/md/lg/xl) render correctly</label></li>
+      <li><input type="checkbox" id="q8" /><label for="q8">Avatar status indicators visible</label></li>
+      <li><input type="checkbox" id="q9" /><label for="q9">Avatar stacked group with +N overflow</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Grid & Layout</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q10" /><label for="q10">12-column grid renders at all breakpoints</label></li>
+      <li><input type="checkbox" id="q11" /><label for="q11">Offset classes work (offset-3, etc.)</label></li>
+      <li><input type="checkbox" id="q12" /><label for="q12">Container max-width changes at breakpoints</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Buttons</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q13" /><label for="q13">All variants render (primary, secondary, success, etc.)</label></li>
+      <li><input type="checkbox" id="q14" /><label for="q14">Sizes (sm, md, lg) work</label></li>
+      <li><input type="checkbox" id="q15" /><label for="q15">Disabled state visually distinct</label></li>
+      <li><input type="checkbox" id="q16" /><label for="q16">Button group alignment correct</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Forms</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q17" /><label for="q17">All input types render (text, email, password, etc.)</label></li>
+      <li><input type="checkbox" id="q18" /><label for="q18">Floating labels animate on focus</label></li>
+      <li><input type="checkbox" id="q19" /><label for="q19">Switches toggle on click</label></li>
+      <li><input type="checkbox" id="q20" /><label for="q20">Validation states (valid, invalid, warning) display</label></li>
+      <li><input type="checkbox" id="q21" /><label for="q21">Shake animation fires on invalid submit</label></li>
+      <li><input type="checkbox" id="q22" /><label for="q22">Combobox search filters options</label></li>
+      <li><input type="checkbox" id="q23" /><label for="q23">Multi-select chips appear and are removable</label></li>
+      <li><input type="checkbox" id="q24" /><label for="q24">Datepicker opens, navigates months, selects date</label></li>
+      <li><input type="checkbox" id="q25" /><label for="q25">Datepicker min/max constraints work</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Navigation</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q26" /><label for="q26">Navbar responsive collapse on mobile</label></li>
+      <li><input type="checkbox" id="q27" /><label for="q27">Navbar offcanvas slides in/out</label></li>
+      <li><input type="checkbox" id="q28" /><label for="q28">Dropdown menus open/close on click</label></li>
+      <li><input type="checkbox" id="q29" /><label for="q29">Dropdown keyboard nav (arrows, Escape)</label></li>
+      <li><input type="checkbox" id="q30" /><label for="q30">Breadcrumb renders with separators</label></li>
+      <li><input type="checkbox" id="q31" /><label for="q31">Tree view expand/collapse animated</label></li>
+      <li><input type="checkbox" id="q32" /><label for="q32">Tree view keyboard navigation works</label></li>
+      <li><input type="checkbox" id="q33" /><label for="q33">Tree view with badges works</label></li>
+      <li><input type="checkbox" id="q34" /><label for="q34">Pagination active/disabled states correct</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Feedback</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q35" /><label for="q35">Alerts display with correct colors</label></li>
+      <li><input type="checkbox" id="q36" /><label for="q36">Alert dismiss button works</label></li>
+      <li><input type="checkbox" id="q37" /><label for="q37">Toast creates and auto-dismisses</label></li>
+      <li><input type="checkbox" id="q38" /><label for="q38">Toast 6 positions render correctly</label></li>
+      <li><input type="checkbox" id="q39" /><label for="q39">Toast manual close works</label></li>
+      <li><input type="checkbox" id="q40" /><label for="q40">Spinner border + grow animate</label></li>
+      <li><input type="checkbox" id="q41" /><label for="q41">Progress bars fill and animate stripes</label></li>
+      <li><input type="checkbox" id="q42" /><label for="q42">Skeleton shimmer animation smooth</label></li>
+      <li><input type="checkbox" id="q43" /><label for="q43">Tooltip shows on hover + focus</label></li>
+      <li><input type="checkbox" id="q44" /><label for="q44">Popover opens on click, closes on outside click</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Containers</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q45" /><label for="q45">Cards render all variants (vertical, horizontal, ticket)</label></li>
+      <li><input type="checkbox" id="q46" /><label for="q46">Accordion expand/collapse animated</label></li>
+      <li><input type="checkbox" id="q47" /><label for="q47">Accordion exclusive mode (one open at a time)</label></li>
+      <li><input type="checkbox" id="q48" /><label for="q48">Tabs switch panels correctly</label></li>
+      <li><input type="checkbox" id="q49" /><label for="q49">Tabs keyboard navigation (arrows, Home, End)</label></li>
+      <li><input type="checkbox" id="q50" /><label for="q50">Modal opens/closes with animation</label></li>
+      <li><input type="checkbox" id="q51" /><label for="q51">Modal backdrop click closes</label></li>
+      <li><input type="checkbox" id="q52" /><label for="q52">Drawer opens from 4 positions</label></li>
+      <li><input type="checkbox" id="q53" /><label for="q53">Drawer Escape key closes</label></li>
+      <li><input type="checkbox" id="q54" /><label for="q54">Carousel slides, indicators, autoplay work</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Data Components</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q55" /><label for="q55">Tables responsive on mobile</label></li>
+      <li><input type="checkbox" id="q56" /><label for="q56">Table zebra/hover/compact variants</label></li>
+      <li><input type="checkbox" id="q57" /><label for="q57">Badges render all variants</label></li>
+      <li><input type="checkbox" id="q58" /><label for="q58">Timeline basic/icon/alternated variants</label></li>
+      <li><input type="checkbox" id="q59" /><label for="q59">Chips render and close button works</label></li>
+      <li><input type="checkbox" id="q60" /><label for="q60">List groups interactive hover/active states</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Interactive Components</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q61" /><label for="q61">Rating click sets stars</label></li>
+      <li><input type="checkbox" id="q62" /><label for="q62">Rating keyboard nav works</label></li>
+      <li><input type="checkbox" id="q63" /><label for="q63">Stepper step transitions animate</label></li>
+      <li><input type="checkbox" id="q64" /><label for="q64">Dropzone drag highlight appears</label></li>
+      <li><input type="checkbox" id="q65" /><label for="q65">Dropzone file list renders after selection</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Cross-Browser</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q66" /><label for="q66">Chrome — all components functional</label></li>
+      <li><input type="checkbox" id="q67" /><label for="q67">Firefox — all components functional</label></li>
+      <li><input type="checkbox" id="q68" /><label for="q68">Safari — all components functional</label></li>
+      <li><input type="checkbox" id="q69" /><label for="q69">Edge — all components functional</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Responsive</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q70" /><label for="q70">Mobile (≤576px) — layout and components intact</label></li>
+      <li><input type="checkbox" id="q71" /><label for="q71">Tablet (768px) — layout adapts</label></li>
+      <li><input type="checkbox" id="q72" /><label for="q72">Desktop (≥1200px) — full layout</label></li>
+      <li><input type="checkbox" id="q73" /><label for="q73">Navbar offcanvas on mobile, horizontal on desktop</label></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Performance</h2>
+    <ul class="checklist">
+      <li><input type="checkbox" id="q74" /><label for="q74">No layout shift on page load</label></li>
+      <li><input type="checkbox" id="q75" /><label for="q75">Animations run at 60fps (no jank)</label></li>
+      <li><input type="checkbox" id="q76" /><label for="q76">ComponentLoader lazy loading works</label></li>
+    </ul>
+  </div>
+
+  <button id="reset-btn" class="btn btn-outline-danger">Reset All</button>
+
+  <script>
+    const STORAGE_KEY = "qa-checklist-v1";
+    const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+
+    function loadState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+        checkboxes.forEach((cb) => {
+          if (saved[cb.id]) cb.checked = true;
+        });
+      } catch {}
+    }
+
+    function saveState() {
+      const state = {};
+      checkboxes.forEach((cb) => {
+        if (cb.checked) state[cb.id] = true;
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const checked = document.querySelectorAll('.checklist input[type="checkbox"]:checked').length;
+      document.getElementById("progress-text").textContent = `${checked} / ${total}`;
+      document.getElementById("progress-fill").style.width = `${(checked / total) * 100}%`;
+    }
+
+    checkboxes.forEach((cb) => {
+      cb.addEventListener("change", () => {
+        saveState();
+        updateProgress();
+      });
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      if (confirm("Reset all checkboxes?")) {
+        checkboxes.forEach((cb) => { cb.checked = false; });
+        localStorage.removeItem(STORAGE_KEY);
+        updateProgress();
+      }
+    });
+
+    loadState();
+    updateProgress();
+  </script>
+</body>
+</html>
