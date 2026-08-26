@@ -58,10 +58,11 @@
 
       <div class="navbar-backdrop"></div>
     </div>
-  </nav>
+    </nav>
 
-  <a href="#main" class="skip-link">Saltar al contenido principal</a>
   <main id="main">
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    <h1 class="visually-hidden">Interactivos</h1>
     <section id="rating-demo" class="container">
       <article class="row">
         <div class="col-12">
@@ -239,7 +240,7 @@
               <p class="dropzone-text">Arrastra archivos aquí</p>
               <p class="dropzone-hint">o haz clic para seleccionar</p>
             </div>
-            <input type="file" class="dropzone-input" multiple hidden />
+            <input type="file" class="dropzone-input" multiple hidden aria-label="Subir archivos" />
             <ul class="dropzone-files" aria-live="polite"></ul>
           </div>
         </div>
@@ -256,7 +257,7 @@
                 <p class="dropzone-text">Arrastra archivos aquí</p>
                 <p class="dropzone-hint">o haz clic para seleccionar</p>
               </div>
-              <input type="file" class="dropzone-input" multiple hidden />
+              <input type="file" class="dropzone-input" multiple hidden aria-label="Subir archivos" />
               <ul class="dropzone-files" aria-live="polite"></ul>
             </div>
           </div>

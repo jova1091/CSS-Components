@@ -22,7 +22,7 @@
   <title>CSS Components — Navegación</title>
 </head>
 <body>
-  <nav class="navbar navbar-sticky">
+  <nav class="navbar navbar-sticky" aria-label="Principal">
     <div class="container-full">
       <a class="navbar-brand" href="index.html">CSS Components</a>
 
@@ -58,10 +58,11 @@
 
       <div class="navbar-backdrop"></div>
     </div>
-  </nav>
+    </nav>
 
-  <a href="#main" class="skip-link">Saltar al contenido principal</a>
   <main id="main">
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    <h1 class="visually-hidden">Navegacion</h1>
     <section id="navbar-docs" class="container">
       <article class="row">
         <div class="col-12">
@@ -70,9 +71,9 @@
           <div class="alert alert-info">
             <strong>Nota:</strong> Los siguientes ejemplos son estáticos para demostración. El Navbar principal del sitio está fijado arriba (Sticky).
           </div>
-          <h4 class="mt-4">1. Alineación a la Izquierda (Start)</h4>
+          <h3 class="mt-4">1. Alineación a la Izquierda (Start)</h3>
           <p>Clase: <code>.navbar-nav-start</code>.</p>
-          <nav class="navbar navbar-demo mb-3 rounded">
+          <nav class="navbar navbar-demo mb-3 rounded" aria-label="Demo: alineación izquierda">
             <div class="container-full">
               <a class="navbar-brand" href="#">Brand</a>
               <div class="d-none d-md-flex align-items-center flex-grow-1">
@@ -84,9 +85,9 @@
               </div>
             </div>
           </nav>
-          <h4 class="mt-4">2. Alineación al Centro (Center)</h4>
+          <h3 class="mt-4">2. Alineación al Centro (Center)</h3>
           <p>Clase: <code>.navbar-nav-center</code>.</p>
-          <nav class="navbar navbar-demo mb-3 rounded">
+          <nav class="navbar navbar-demo mb-3 rounded" aria-label="Demo: alineación centro">
             <div class="container-full">
               <a class="navbar-brand" href="#">Brand</a>
               <div class="d-none d-md-flex align-items-center flex-grow-1">
@@ -98,9 +99,9 @@
               </div>
             </div>
           </nav>
-          <h4 class="mt-4">3. Alineación a la Derecha (End)</h4>
+          <h3 class="mt-4">3. Alineación a la Derecha (End)</h3>
           <p>Clase: <code>.navbar-nav-end</code>.</p>
-          <nav class="navbar navbar-demo mb-3 rounded">
+          <nav class="navbar navbar-demo mb-3 rounded" aria-label="Demo: alineación derecha">
             <div class="container-full">
               <a class="navbar-brand" href="#">Brand</a>
               <div class="d-none d-md-flex align-items-center flex-grow-1">
@@ -112,8 +113,8 @@
               </div>
             </div>
           </nav>
-          <h4 class="mt-4">4. Brand Centrado (Absolute)</h4>
-          <nav class="navbar navbar-demo mb-3 rounded">
+          <h3 class="mt-4">4. Brand Centrado (Absolute)</h3>
+          <nav class="navbar navbar-demo mb-3 rounded" aria-label="Demo: brand centrado">
             <div class="container-full position-relative">
               <a class="navbar-brand navbar-brand-center" href="#">Brand</a>
               <div class="d-none d-md-flex align-items-center flex-grow-1">
@@ -124,25 +125,25 @@
               </div>
             </div>
           </nav>
-          <h4 class="mt-4">5. Offcanvas Siempre Visible (Always Offcanvas)</h4>
+          <h3 class="mt-4">5. Offcanvas Siempre Visible (Always Offcanvas)</h3>
           <p>Clase: <code>.navbar-offcanvas-always</code>.</p>
-          <nav class="navbar navbar-offcanvas-always navbar-demo mb-3 rounded">
+          <nav class="navbar navbar-offcanvas-always navbar-demo mb-3 rounded" aria-label="Demo: offcanvas visible">
             <div class="container-full">
               <a class="navbar-brand" href="#">Brand</a>
-              <button class="navbar-toggler" type="button">
+              <button class="navbar-toggler" type="button" aria-label="Alternar menú de navegación">
                 <span class="navbar-toggler-icon"></span>
               </button>
             </div>
           </nav>
-          <h4 class="mt-4">6. Brand con Imagen</h4>
-          <nav class="navbar navbar-demo mb-3 rounded">
+          <h3 class="mt-4">6. Brand con Imagen</h3>
+          <nav class="navbar navbar-demo mb-3 rounded" aria-label="Demo: brand con imagen">
             <div class="container-full">
               <a class="navbar-brand" href="#">
                 <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='30' height='30'%3e%3ccircle cx='15' cy='15' r='15' fill='%778da9'/%3e%3c/svg%3e" alt="Logo">
               </a>
             </div>
           </nav>
-          <nav class="navbar navbar-demo mb-3 rounded">
+          <nav class="navbar navbar-demo mb-3 rounded" aria-label="Demo: brand imagen y texto">
             <div class="container-full">
               <a class="navbar-brand" href="#">
                 <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='30' height='30'%3e%3ccircle cx='15' cy='15' r='15' fill='%778da9'/%3e%3c/svg%3e" alt="Logo">
@@ -150,8 +151,8 @@
               </a>
             </div>
           </nav>
-          <h4 class="mt-4">7. Navbar con Dropdown</h4>
-          <nav class="navbar navbar-demo mb-3 rounded">
+          <h3 class="mt-4">7. Navbar con Dropdown</h3>
+          <nav class="navbar navbar-demo mb-3 rounded" aria-label="Demo: navbar con dropdown">
             <div class="container-full">
               <a class="navbar-brand" href="#">Brand</a>
               <div class="d-none d-md-flex align-items-center flex-grow-1">
@@ -222,7 +223,7 @@
               <li class="breadcrumb-item active" aria-current="page">Datos</li>
             </ol>
           </nav>
-          <nav aria-label="breadcrumb">
+          <nav aria-label="breadcrumb con separadores">
             <ol class="breadcrumb breadcrumb-divider-arrow">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Biblioteca</li>
@@ -241,20 +242,20 @@
         </div>
         <div class="col-6">
           <h3>Básico</h3>
-          <div class="tree-view" data-component="tree-view">
-            <div class="tree-item" data-expanded="true" aria-expanded="true">
+          <div class="tree-view" data-component="tree-view" role="tree">
+            <div class="tree-item" data-expanded="true" aria-expanded="true" role="treeitem">
               <div class="tree-item-content" tabindex="0">
                 <span class="tree-item-icon"></span>
                 <span class="tree-item-label">Proyecto</span>
               </div>
-              <div class="tree-group">
+              <div class="tree-group" role="group">
                 <div class="tree-group-inner">
-                  <div class="tree-item" data-expanded="true" aria-expanded="true">
+                  <div class="tree-item" data-expanded="true" aria-expanded="true" role="treeitem">
                     <div class="tree-item-content" tabindex="0">
                       <span class="tree-item-icon"></span>
                       <span class="tree-item-label">src</span>
                     </div>
-                    <div class="tree-group">
+                    <div class="tree-group" role="group">
                       <div class="tree-group-inner">
                         <div class="tree-item">
                           <div class="tree-item-content" tabindex="0">
@@ -268,12 +269,12 @@
                             <span class="tree-item-label">styles.css</span>
                           </div>
                         </div>
-                        <div class="tree-item" data-expanded="false" aria-expanded="false">
+                        <div class="tree-item" data-expanded="false" aria-expanded="false" role="treeitem">
                           <div class="tree-item-content" tabindex="0">
                             <span class="tree-item-icon"></span>
                             <span class="tree-item-label">components</span>
                           </div>
-                          <div class="tree-group">
+                          <div class="tree-group" role="group">
                             <div class="tree-group-inner">
                               <div class="tree-item">
                                 <div class="tree-item-content" tabindex="0">
@@ -312,14 +313,14 @@
         </div>
         <div class="col-6">
           <h3>Con Badges y Estado</h3>
-          <div class="tree-view" data-component="tree-view">
-            <div class="tree-item" data-expanded="true" aria-expanded="true">
+          <div class="tree-view" data-component="tree-view" role="tree">
+            <div class="tree-item" data-expanded="true" aria-expanded="true" role="treeitem">
               <div class="tree-item-content" tabindex="0">
                 <span class="tree-item-icon"></span>
                 <span class="tree-item-label">Bandas</span>
                 <span class="tree-badge">12</span>
               </div>
-              <div class="tree-group">
+              <div class="tree-group" role="group">
                 <div class="tree-group-inner">
                   <div class="tree-item" data-selected="true">
                     <div class="tree-item-content" tabindex="0">
@@ -341,13 +342,13 @@
                       <span class="tree-item-label">Clásica (deshabilitado)</span>
                     </div>
                   </div>
-                  <div class="tree-item" data-expanded="false" aria-expanded="false">
+                  <div class="tree-item" data-expanded="false" aria-expanded="false" role="treeitem">
                     <div class="tree-item-content" tabindex="0">
                       <span class="tree-item-icon"></span>
                       <span class="tree-item-label">Electrónica</span>
                       <span class="tree-badge">4</span>
                     </div>
-                    <div class="tree-group">
+                    <div class="tree-group" role="group">
                       <div class="tree-group-inner">
                         <div class="tree-item">
                           <div class="tree-item-content" tabindex="0">

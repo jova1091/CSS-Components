@@ -58,10 +58,11 @@
 
       <div class="navbar-backdrop"></div>
     </div>
-  </nav>
+    </nav>
 
-  <a href="#main" class="skip-link">Saltar al contenido principal</a>
   <main id="main">
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    <h1 class="visually-hidden">Formularios</h1>
     <section id="forms" class="container">
       <article class="row">
         <div class="col-12">
@@ -262,8 +263,8 @@
           <h2>Combobox / Multi-select</h2>
           <p>Autocomplete con filtrado en tiempo real, navegación por teclado y soporte para selección múltiple con chips.</p>
         </div>
-        <div class="col-6">
-          <h4>Selección Simple</h4>
+        <div class="col-8 offset-2">
+          <h3>Selección Simple</h3>
           <div class="combobox" data-component="combobox">
             <div class="combobox-input-wrapper">
               <input type="text" class="combobox-input" placeholder="Seleccionar país..." autocomplete="off" />
@@ -285,9 +286,7 @@
               <div class="combobox-option" data-value="ve">Venezuela</div>
             </div>
           </div>
-        </div>
-        <div class="col-6">
-          <h4>Selección Múltiple</h4>
+          <h3 class="mt-4">Selección Múltiple</h3>
           <div class="combobox" data-multi data-component="combobox">
             <div class="combobox-input-wrapper">
               <span class="combobox-chips"></span>
@@ -323,8 +322,8 @@
           <h2>Date Picker</h2>
           <p>Selector de fechas con calendario desplegable, navegación por teclado (flechas, Enter, Escape) y soporte para fechas mínimas/máximas.</p>
         </div>
-        <div class="col-4">
-          <h4>Básico</h4>
+        <div class="col-8 offset-2">
+          <h3>Básico</h3>
           <div class="datepicker" data-component="datepicker">
             <div class="datepicker-input-wrapper">
               <input type="text" class="datepicker-input" placeholder="Seleccionar fecha..." readonly autocomplete="off" />
@@ -341,7 +340,7 @@
                     <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
                   </button>
                 </div>
-                <button type="button" class="datepicker-header-label"></button>
+                  <button type="button" class="datepicker-header-label" aria-label="Mes y año actual"></button>
                 <div class="datepicker-nav">
                   <button type="button" class="datepicker-nav-btn datepicker-nav-next" aria-label="Mes siguiente">
                     <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
@@ -360,9 +359,7 @@
               <div class="datepicker-days"></div>
             </div>
           </div>
-        </div>
-        <div class="col-4">
-          <h4>Con Rango de Fechas</h4>
+          <h3 class="mt-4">Con Rango de Fechas</h3>
           <div class="datepicker" data-component="datepicker" data-min="2026-08-15" data-max="2026-09-15">
             <div class="datepicker-input-wrapper">
               <input type="text" class="datepicker-input" placeholder="Solo agosto-sept 2026..." readonly autocomplete="off" />
@@ -379,7 +376,7 @@
                     <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
                   </button>
                 </div>
-                <button type="button" class="datepicker-header-label"></button>
+                  <button type="button" class="datepicker-header-label" aria-label="Mes y año actual"></button>
                 <div class="datepicker-nav">
                   <button type="button" class="datepicker-nav-btn datepicker-nav-next" aria-label="Mes siguiente">
                     <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
@@ -398,9 +395,7 @@
               <div class="datepicker-days"></div>
             </div>
           </div>
-        </div>
-        <div class="col-4">
-          <h4>Uso con Input</h4>
+          <h3 class="mt-4">Uso con Input</h3>
           <pre><code>&lt;div class="datepicker" data-component="datepicker"&gt;
   &lt;div class="datepicker-input-wrapper"&gt;
     &lt;input class="datepicker-input"

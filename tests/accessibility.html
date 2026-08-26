@@ -3,23 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Components — Accessibility Audit</title>
+  <title>CSS Components - Accessibility Audit</title>
   <style>
     body { max-width: 900px; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; }
     h1 { margin-bottom: 0.25rem; }
     .info { color: #6c757d; margin-bottom: 1.5rem; }
     #audit-btn { margin: 1rem 0; }
-    #results { margin-top: 1rem; }
     .page-result { margin: 1.5rem 0; border: 1px solid #dee2e6; border-radius: 8px; overflow: hidden; }
-    .page-header { padding: 0.75rem 1rem; background: #f8f9fa; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-    .page-header .badge { padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; }
+    .page-header { padding: 0.75rem 1rem; background: #f8f9fa; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+    .badge { padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; }
     .badge.pass { background: #d4edda; color: #155724; }
     .badge.fail { background: #f8d7da; color: #721c24; }
-    .page-header .count { font-weight: 400; color: #6c757d; font-size: 0.85rem; }
     .violation { padding: 0.75rem 1rem; border-top: 1px solid #dee2e6; }
     .violation:last-child { border-bottom: none; }
     .violation h4 { margin: 0 0 0.25rem; font-size: 0.9rem; }
-    .violation .impact { display: inline-block; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-right: 0.5rem; }
+    .impact { display: inline-block; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-right: 0.5rem; }
     .impact.critical { background: #721c24; color: #fff; }
     .impact.serious { background: #e74c3c; color: #fff; }
     .impact.moderate { background: #ffc107; color: #212529; }
@@ -28,93 +26,17 @@
     .violation .nodes { font-size: 0.8rem; color: #6c757d; }
     .violation code { background: #f1f1f1; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.8rem; }
     .no-violations { padding: 1rem; color: #27ae60; font-weight: 600; }
-    iframe { display: none; }
+    .summary { font-size: 1.1rem; font-weight: 600; margin: 1rem 0; padding: 0.75rem 1rem; background: #f8f9fa; border-radius: 8px; display: none; }
   </style>
 </head>
 <body>
   <h1>Accessibility Audit</h1>
-  <p class="info">Runs axe-core 4.x against each showcase page via CDN. Violations are grouped by page and impact level.</p>
+  <p class="info">Fetches each showcase page, strips scripts, and runs axe-core against the clean HTML structure.</p>
   <button id="audit-btn" class="btn btn-primary">Run A11y Audit</button>
+  <div class="summary" id="summary"></div>
   <div id="results"></div>
 
-  <script>
-    const PAGES = [
-      { name: "Base", file: "../components/base.html" },
-      { name: "Botones", file: "../components/buttons.html" },
-      { name: "Formularios", file: "../components/forms.html" },
-      { name: "Navegación", file: "../components/navigation.html" },
-      { name: "Feedback", file: "../components/feedback.html" },
-      { name: "Contenedores", file: "../components/contenedores.html" },
-      { name: "Datos", file: "../components/datos.html" },
-      { name: "Interactivos", file: "../components/interactivos.html" },
-    ];
-
-    document.getElementById("audit-btn").addEventListener("click", async () => {
-      const btn = document.getElementById("audit-btn");
-      const results = document.getElementById("results");
-      btn.disabled = true;
-      btn.textContent = "Auditing…";
-      results.innerHTML = "";
-
-      const script = document.createElement("script");
-      script.src = "https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.9.1/axe.min.js";
-      document.head.appendChild(script);
-      await new Promise((resolve, reject) => {
-        script.onload = resolve;
-        script.onerror = () => reject(new Error("Failed to load axe-core"));
-      });
-
-      for (const page of PAGES) {
-        const container = document.createElement("div");
-        container.className = "page-result";
-        const iframe = document.createElement("iframe");
-        iframe.src = page.file;
-        iframe.style.display = "none";
-        document.body.appendChild(iframe);
-
-        await new Promise((resolve) => {
-          iframe.onload = resolve;
-          setTimeout(resolve, 5000);
-        });
-
-        let violations = [];
-        try {
-          const results = await axe.run(iframe.contentDocument);
-          violations = results.violations;
-        } catch (e) {
-          violations = [{ id: "error", impact: "critical", description: e.message, nodes: [] }];
-        }
-
-        const count = violations.length;
-        const badgeClass = count === 0 ? "pass" : "fail";
-        const badgeText = count === 0 ? "PASS" : `${count} issue${count > 1 ? "s" : ""}`;
-
-        let html = `<div class="page-header"><span>${page.name}</span><span class="badge ${badgeClass}">${badgeText}</span></div>`;
-
-        if (count === 0) {
-          html += `<div class="no-violations">No violations found</div>`;
-        } else {
-          for (const v of violations) {
-            html += `<div class="violation">`;
-            html += `<h4><span class="impact ${v.impact}">${v.impact}</span> ${v.id}</h4>`;
-            html += `<p>${v.description}</p>`;
-            if (v.help) html += `<p><em>${v.help}</em></p>`;
-            if (v.nodes?.length > 0) {
-              html += `<div class="nodes">${v.nodes.length} element${v.nodes.length > 1 ? "s" : ""} affected`;
-              if (v.nodes[0]?.html) html += `<br><code>${v.nodes[0].html.substring(0, 120)}</code>`;
-              html += `</div>`;
-            }
-            html += `</div>`;
-          }
-        }
-        container.innerHTML = html;
-        results.appendChild(container);
-        iframe.remove();
-      }
-
-      btn.disabled = false;
-      btn.textContent = "Run A11y Audit";
-    });
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.9.1/axe.min.js"></script>
+  <script src="audit.js"></script>
 </body>
 </html>
