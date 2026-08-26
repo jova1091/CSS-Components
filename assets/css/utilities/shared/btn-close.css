@@ -1,0 +1,17 @@
+@import url("btn-close-root.css") layer(utilities.btn-close.vars);
+
+.btn-close {
+  box-sizing: var(--btn-close-box-sizing);
+  width: var(--btn-close-width);
+  height: var(--btn-close-height);
+  color: var(--btn-close-color);
+  background: var(--btn-close-bg-color) var(--btn-close-bg) center / var(--btn-close-width) auto no-repeat;
+  border: var(--btn-close-border);
+  border-radius: var(--btn-close-border-radius);
+  opacity: var(--btn-close-opacity);
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  opacity: var(--btn-close-hover-opacity);
+}

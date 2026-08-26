@@ -90,27 +90,12 @@
   padding-right: var(--alert-dismissible-padding-right);
 }
 
-.btn-close {
-  box-sizing: var(--btn-close-box-sizing);
-  width: var(--btn-close-width);
-  height: var(--btn-close-height);
-  color: var(--btn-close-color);
-  background: var(--btn-close-bg-color) var(--btn-close-bg) center / var(--btn-close-width) auto no-repeat;
-  border: var(--btn-close-border);
-  border-radius: var(--btn-close-border-radius);
-  opacity: var(--btn-close-opacity);
-  cursor: pointer;
-
-  /* Posicionamiento absoluto dentro de la alerta */
+.alert-dismissible .btn-close {
   position: var(--btn-close-position);
   top: var(--btn-close-top);
   right: var(--btn-close-right);
   z-index: var(--btn-close-zindex);
   padding: var(--btn-close-padding);
-}
-
-.btn-close:hover {
-  opacity: var(--btn-close-hover-opacity);
 }
 
 /* Logic for CSS-only dismiss (Checkbox Hack) */

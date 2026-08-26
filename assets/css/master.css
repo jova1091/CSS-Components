@@ -5,6 +5,7 @@
 @import url("base/images/images.css") layer(base.images);
 @import url("utilities/spacers/spacers.css") layer(utilities.spacers);
 @import url("utilities/helpers/helpers.css") layer(utilities.helpers);
+@import url("utilities/shared/btn-close.css") layer(utilities.btn-close);
 
 /* Global navigation infrastructure — needed on every page */
 @import url("components/navbar/navbar.css") layer(components);
@@ -285,7 +286,7 @@ footer {
     border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
     transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Efectos de Glassmorphism */
