@@ -57,6 +57,7 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Tipografía (Headings, párrafos, listas, etc.)
   - Imágenes (`.img-thumbnail`, `.rounded-circle`)
   - Figuras
+  - Avatar (imagen o iniciales, 5 tamaños, 3 formas, indicadores de estado, grupo apilado)
 - **Componentes:**
   - Accordion (Nativo con `<details>`, mejorado con navegación por teclado y exclusividad opcional)
   - Alerts (con variantes de color y opción de cierre)
@@ -66,7 +67,12 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Button Group
   - Cards (con variantes vertical, horizontal y de ticket)
   - Carousel (carrusel de diapositivas responsivo y accesible con autoplay seguro)
+  - Chips / Tags (etiquetas interactivas con variantes filled, outline y subtle)
+  - Combobox / Multi-select (select con búsqueda, selección múltiple y chips)
+  - Date Picker (selector de fechas con rangos mín/máx y API de eventos)
+  - Drawer (offcanvas en 4 posiciones: start, end, top, bottom)
   - Dropdowns
+  - Dropzone (zona de subida de archivos con drag & drop)
   - Forms (Inputs, Textarea, Select, Checkbox, Radio, File, Floating Labels, Switches)
   - Form Validation (estados de validación y advertencia con animación de sacudida y pulso de foco)
   - List Groups (grupos de listas estructuradas e interactivas)
@@ -75,11 +81,15 @@ El proyecto incluye los siguientes componentes listos para usar:
   - Pagination (paginación accesible con estados interactivos)
   - Popovers (ventanas flotantes informativas interactivas)
   - Progress Bars (barras de progreso semánticas, con rayas y animadas)
-  - Skeleton Loaders (cargadores de esqueleto animados con shimmer)
+  - Rating (estrellas interactivas o solo lectura, con soporte de media y tamaños)
+  - Skeleton Loaders (cargadores de esqueleto animados con shimmer, patrones compuestos)
   - Spinners (cargadores de espera circulares y pulsantes)
+  - Stepper (pasos horizontal/vertical con estados completado/activo/pendiente/error)
   - Tabs (accesible con navegación por teclado)
-  - Toasts (notificaciones dinámicas, accesibles y animadas con `aria-live` automático)
+  - Timeline (línea de tiempo básica, con iconos y alternada)
+  - Toasts (notificaciones dinámicas, accesibles y animadas con `aria-live` automático y 6 posiciones)
   - Tooltips Dinámicos (accesibles con posicionamiento inteligente)
+  - Tree View (árbol navegable con expand/collapse, selección, badges y estados)
   - Tablas (diseño responsivo, celdas compactas, zebra striping, hover y variantes semánticas)
 - **Utilidades:**
   - Espaciadores (clases `m-*`, `p-*` para márgenes y paddings)
@@ -150,11 +160,43 @@ document.getElementById("mi-boton").addEventListener("click", async () => {
 
 ### 6. Componentes disponibles en el registry
 
-| Nombre | CSS | JS |
-|---|---|---|
-| accordion, alerts, badges, breadcrumb, buttons, btn-group, cards | ✅ | Solo interactive |
-| carousel, dropdown, float-labels, modal, navbar, popovers, tabs, toasts, tooltips | ✅ | ✅ |
-| spacers, helpers, forms, list-groups, pagination, progress, skeletons, spinners, tables | ✅ | — |
+| Componente | CSS | JS | Notas |
+|---|---|---|---|
+| accordion | ✅ | ✅ | Navegación por teclado + exclusividad |
+| alerts | ✅ | — | Cierre con clase compartida |
+| avatar | ✅ | — | Imagen/iniciales, indicadores, grupo apilado |
+| badges | ✅ | — | |
+| breadcrumb | ✅ | — | |
+| buttons | ✅ | — | |
+| btn-group | ✅ | — | |
+| cards | ✅ | — | Vertical, horizontal, ticket |
+| carousel | ✅ | ✅ | Autoplay, scroll snap, debounce resize |
+| chips | ✅ | ✅ | Filled, outline, subtle; selectable |
+| combobox | ✅ | ✅ | Búsqueda, multi-select, chips |
+| datepicker | ✅ | ✅ | Rangos, API de eventos |
+| drawer | ✅ | ✅ | 4 posiciones, backdrop, cierre Escape |
+| dropdown | ✅ | ✅ | |
+| dropzone | ✅ | ✅ | Drag & drop, validación |
+| float-labels | ✅ | ✅ | Fallback JS para select |
+| forms | ✅ | — | Inputs, select, checkbox, radio, switch |
+| helpers | ✅ | — | Display, alineación, rounded |
+| list-groups | ✅ | — | |
+| modal | ✅ | ✅ | Nativo `<dialog>`, fullscreen |
+| navbar | ✅ | ✅ | Off-canvas, sticky, glassmorphism |
+| pagination | ✅ | — | |
+| popovers | ✅ | ✅ | Click-triggered, cierre automático |
+| progress | ✅ | — | Rayas animadas |
+| rating | ✅ | ✅ | Interactivo/lectura, media, tamaños |
+| skeletons | ✅ | — | Primitivos + patrones compuestos |
+| spacers | ✅ | — | Padding/margin |
+| spinners | ✅ | — | Border + grow |
+| stepper | ✅ | ✅ | Horizontal/vertical, 5 estados |
+| tables | ✅ | — | Zebra, compact, variantes semánticas |
+| tabs | ✅ | ✅ | ARIA, teclado |
+| timeline | ✅ | — | Básica, iconos, alternada |
+| toasts | ✅ | ✅ | 6 posiciones, `aria-live` automático |
+| tooltips | ✅ | ✅ | Posicionamiento dinámico |
+| tree-view | ✅ | ✅ | Expand/collapse, selección, badges |
 
 ---
 
@@ -173,6 +215,7 @@ Nuestra biblioteca no es solo un conjunto de estilos CSS; está diseñada con fo
 
 3. **Sistema Dinámico de Toasts:**
    - Gestión inteligente mediante JS (`toast.success()`, `toast.info()`, etc.).
+   - 6 posiciones independientes (top/bottom × left/center/right), cada una con su propio contenedor.
    - Accesibilidad nativa con asignación automática de `role="alert"` / `aria-live="assertive"` para notificaciones de peligro (`danger`) y `role="status"` / `aria-live="polite"` para las informativas.
    - Entrada dinámica con animación de muelle (scale + slide) y descarte suave.
 
@@ -204,3 +247,48 @@ Nuestra biblioteca no es solo un conjunto de estilos CSS; está diseñada con fo
    - Controles de navegación manual (previo/siguiente) e indicadores de posición interactivos sincronizados.
    - Autoplay seguro con pausa automática al pasar el cursor (`mouseenter`/`touchstart`) para cumplir con normativas de accesibilidad (A11y).
    - Optimización de redimensionado mediante debounce de eventos resize en JS.
+
+10. **Tree View Navegable:**
+    - Árbol con expand/collapse animado mediante CSS `grid-template-rows` (0fr → 1fr).
+    - Navegación completa por teclado (flechas, Home, End) y selección de nodos.
+    - Soporte para badges, estados (deshabilitado, seleccionado) y anidación multinivel.
+
+11. **Combobox y Multi-select:**
+    - Select con campo de búsqueda en tiempo real y filtrado de opciones.
+    - Modo multi-selección con chips removibles y API programática.
+    - Inicialización via `data-component` o import directo.
+
+12. **Date Picker:**
+    - Selector de fechas con calendario navigable por mes/año.
+    - Restricción de rangos con `data-min` y `data-max`.
+    - API de eventos: `date-select`, `month-change`, `year-change`.
+
+13. **Drawer (Offcanvas):**
+    - Panel deslizante en 4 posiciones (start, end, top, bottom) con backdrop semitransparente.
+    - Cierre automático al presionar `Escape` o hacer clic fuera.
+    - Soporte para glassmorphism con `backdrop-filter`.
+
+14. **Rating con Estrellas:**
+    - Estrellas interactivas con hover preview y selección por clic.
+    - Modo solo lectura con soporte de media (estrellas parciales).
+    - 5 tamaños (xs, sm, md, lg, xl) y personalización completa via variables.
+
+15. **Stepper de Pasos:**
+    - Navegación horizontal y vertical con 5 estados: pendiente, activo, completado, error, skips.
+    - Animaciones de transición entre estados.
+    - Accesibilidad con roles ARIA y navegación por teclado.
+
+16. **Chips y Tags:**
+    - Etiquetas interactivas con 3 estilos (filled, outline, subtle) y 3 tamaños.
+    - Chips seleccionables con toggle y variantes con avatar.
+    - Uso para filtros, contactos, tecnologías y etiquetado genérico.
+
+17. **Timeline:**
+    - Línea de tiempo con nodos coloridos y conexiones verticales.
+    - Variantes: básica, con iconos customizados y alternada (lados opuestos).
+    - Ideal para historiales, logs y chronologías visuales.
+
+18. **Avatar:**
+    - Soporte para imagen o iniciales con 5 tamaños (xs a xl) y 3 formas.
+    - Indicadores de estado (online, busy, away, offline) posicionados flexiblemente.
+    - Grupo apilado con overflow automático (+N).
